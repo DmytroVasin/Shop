@@ -8,6 +8,21 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require reset
  *= require_self
  *= require_tree .
  */
+
+body {
+	font-size: 62.5%;
+	font-family: Arial;
+	background: #f1f1f1 repeat top left;
+}
+
+#sitewrapper {
+	margin: 0 auto;
+	width: 980px;
+	background: #FFFFFF;
+	line-height: 1.8em;
+	color: #333;
+}
