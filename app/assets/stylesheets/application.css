@@ -14,20 +14,21 @@
  */
 
 body {
-	/*background: url(backgroud_style.png) 50% 0 no-repeat;*/
-	background: #f1f1f1 repeat top left;
-	/*background-color: #2f89df;*/
+	background: url(backgroud_style.png) 50% 0 no-repeat;
+	/*background: #f1f1f1 repeat top left;*/
+	background-color: #2f89df;
 }
 
 #sitewrapper {
 	margin: 0 auto;
-	width: 980px;
+	width: 1020px;
 	background: #FFFFFF;
 	line-height: 1.8em;
 	color: #333;
+	min-height: 600px;
 }
 
 #content {
-	width: 940px;
+	width: 980px;
 	margin: 0 20px 0 20px;
 }
