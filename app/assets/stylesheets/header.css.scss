@@ -218,36 +218,55 @@
 				position: absolute;
 				width: 328px;
 				overflow: hidden;
-				height: 164px;
 				top: 134px;
-				left: -164px;
+				left: -194px;
 				display: none;
 				background:url(mega-menu-dropdown-bg.jpg) repeat-x #fff;
 				z-index:5000;
 				padding:15px;
+				cursor: default;
+
+				line-height: 1.8em;
+				font-family: Arial;
 				
 				#crazy_menu {
 					a {
 						position: relative;
+						color: white;
+					}
+
+					a:active {
+						position: relative;
+					}
+
+					a:hover {
+						position: relative;
+						text-decoration: underline
 					}
 
 					.leftcolumn {
 						float: left;
 						display: block;
-						width: 70px;
+						width: 160px;
+						margin-left: 10px;
 					}
 					
 					.rightcolumn {
 						float: left;
 						display: block;
-						width: 70px;
 					}
-				}
-				
+					
+					.viewallbrandslink {
+						color: #F0F;
+					}
+				}				
 			}
 		}
 	}
 }
+
+
+
 
 
 ul.sdt_menu > li {
