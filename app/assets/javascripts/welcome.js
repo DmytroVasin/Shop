@@ -43,4 +43,10 @@ $(function (){
 		.find('.sdt_descr')
 		.css('display', 'none');
 	});
+
+  $('.clickTip').aToolTip({
+    clickIt: true,
+    tipContent: 'Например: Christian Dior'
+  });
+
 });

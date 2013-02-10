@@ -109,7 +109,6 @@
 				border-radius:6px;
 				border:1px solid #dcdcdc;
 				color: #555;
-				font-family:arial;
 				font-size:13px;
 				padding: 4px 12px;
 				text-decoration:none;
@@ -285,13 +284,6 @@
 	}
 }
 
-
-
-
-
-
-
-
 ul.sdt_menu > li {
 	float: left;
 	width: 120px;
@@ -331,4 +323,84 @@ ul.sdt_menu > li > a {
 		-webkit-box-shadow:0px 0px 4px #000;
 		box-shadow:0px 0px 4px #FFF;
 	}
+}
+
+
+// ------------------------------------------------------------------------------------------------   SEARCH
+
+#search input[type="text"] {
+  margin-left: 29px;
+  margin-top: 7px;
+	background: url(search-white.png) no-repeat 10px 6px #444;
+	border: 0 none;
+	font: bold 12px Arial,Helvetica,Sans-serif;
+	color: #d7d7d7;
+	width: 100px;
+	padding: 6px 15px 6px 35px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+	-webkit-transition: all 0.7s ease 0s;
+	-moz-transition: all 0.7s ease 0s;
+	-o-transition: all 0.7s ease 0s;
+	transition: all 0.7s ease 0s;
+	}
+
+#search input[type="text"]:focus{
+	background: url(search-dark.png) no-repeat 10px 6px #fcfcfc;
+	color: #6a6f75;
+	width: 150px;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+	text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+//  --------------------------------------------------------------------------------------Tooltip
+#aToolTip {
+	position: absolute;
+	display: none;
+	z-index: 50000;
+}
+
+#aToolTip .aToolTipContent {
+	position:relative;
+	margin:0;
+	padding:0;
+	font: bold italic 70% serif;
+}
+
+.defaultTheme {
+	border:2px solid #666;
+	background:#888;
+	color:#fff;
+	margin:0;
+	padding:6px 12px;	
+	
+	-moz-border-radius: 12px 12px 12px 0;
+	-webkit-border-radius: 12px 12px 12px 0;
+	-khtml-border-radius: 12px 12px 12px 0;
+	border-radius: 12px 12px 12px 0;
+	
+	-moz-box-shadow: 2px 2px 5px #111; /* for Firefox 3.5+ */
+	-webkit-box-shadow: 2px 2px 5px #111; /* for Safari and Chrome */
+	box-shadow: 2px 2px 5px #111; /* for Safari and Chrome */
+}
+	
+.defaultTheme #aToolTipCloseBtn {
+	display:block;
+	height:18px;
+	width:18px;
+	background:url(closeBtn.png) no-repeat;
+	text-indent:-9999px;
+	outline:none;
+	position:absolute;
+	top:-20px;
+	right:-30px;
+	margin:2px;
+	padding:4px;
 }
