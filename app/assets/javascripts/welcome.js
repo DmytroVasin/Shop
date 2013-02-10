@@ -4,21 +4,21 @@ $(function (){
 		$elem.find('img')
 		.stop(true)
 		.animate({
-			'width':'164px',
-			'height':'55px',
+			'width':'120px',
+			'height':'40px',
 			'left':'0px'
 		},300,'easeOutBack')
 		.andSelf()
 		.find('.sdt_wrap')
 		.stop(true)
-		.animate({'top':'70px'},400,'easeOutBack')
+		.animate({'top':'45px'},400,'easeOutBack')
 		.andSelf()
 		.find('.sdt_descr')
 		.css('display', 'block')
 		.andSelf()
 		.find('.sdt_active')
 		.stop(true)
-		.animate({'height':'80px'},300,function(){
+		.animate({'height':'60px'},300,function(){
 			var $sub_menu = $elem.find('.sdt_box');
 			$sub_menu.slideDown(600);
 		});
@@ -39,7 +39,7 @@ $(function (){
 		.andSelf()
 		.find('.sdt_wrap')
 		.stop(true)
-		.animate({'top':'11px'},500)
+		.animate({'top':'5px'},500)
 		.find('.sdt_descr')
 		.css('display', 'none');
 	});

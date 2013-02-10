@@ -14,9 +14,9 @@
  */
 
 body {
-	background: url(backgroud_style.png) 50% 0 no-repeat;
-	/*background: #f1f1f1 repeat top left;*/
-	background-color: #2f89df;
+	/*background: url(backgroud_style.png) 50% 0 no-repeat;*/
+	background: #f1f1f1 repeat top left;
+	/*background-color: #2f89df;*/
 }
 
 #sitewrapper {
