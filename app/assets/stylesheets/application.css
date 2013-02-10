@@ -14,9 +14,9 @@
  */
 
 body {
-	font-size: 62.5%;
-	font-family: Arial;
+	/*background: url(backgroud_style.png) 50% 0 no-repeat;*/
 	background: #f1f1f1 repeat top left;
+	/*background-color: #2f89df;*/
 }
 
 #sitewrapper {
@@ -25,4 +25,9 @@ body {
 	background: #FFFFFF;
 	line-height: 1.8em;
 	color: #333;
+}
+
+#content {
+	width: 940px;
+	margin: 0 20px 0 20px;
 }

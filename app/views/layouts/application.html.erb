@@ -8,9 +8,11 @@
 </head>
 <body>
 	<div id="sitewrapper">
-		
-		<%= yield %>
-		
+		<div id="content">
+			<%= render 'layouts/header' %>
+	
+			<%= yield %>
+		</div>
 	</div>
 </body>
 </html>
