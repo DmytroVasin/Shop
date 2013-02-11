@@ -25,3 +25,28 @@
 		}
 	}
 }
+
+#top_list {
+	width: 750px;
+	
+	background: url(top_list.png) 40% 0 no-repeat;
+																																		margin: 25px 0 200px 10px;
+
+	#top_icon {
+		#top_icon_img {
+			margin: 40px 25px 0 10px;
+			float: left;
+		}
+
+		#wrap {
+			padding-top: 40px;
+			
+			#slider {
+				li {
+					float: left;
+					width: 140px;
+				}
+			}
+		}
+	}
+}
