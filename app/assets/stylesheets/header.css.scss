@@ -170,6 +170,7 @@
 
 			span.sdt_active{
 				position: absolute;
+				border-radius: 0 0 5px 5px;
 			
 			  background: #777; /* Для старых браузров */
 			  background: -moz-linear-gradient(top, #777, #151515); /* Firefox 3.6+ */
@@ -336,7 +337,7 @@ ul.sdt_menu > li > a {
 	font: bold 12px Arial,Helvetica,Sans-serif;
 	color: #d7d7d7;
 	width: 100px;
-	padding: 6px 15px 6px 35px;
+	padding: 7px 15px 6px 30px;
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
 	border-radius: 20px;

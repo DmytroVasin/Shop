@@ -1,4 +1,6 @@
 $(function (){
+// ------------------------------------------ Main menu
+
 	$('#sdt_menu > li').bind('mouseenter',function(){
 		var $elem = $(this);
 		$elem.find('img')
@@ -44,9 +46,52 @@ $(function (){
 		.css('display', 'none');
 	});
 
+// ------------------------------------------ Tooltip
+
   $('.clickTip').aToolTip({
     clickIt: true,
     tipContent: 'Например: Christian Dior'
   });
 
+// ------------------------------------------ Slider
+
+	// $('#slides').slides({
+	// 	preload: true,
+	// 	preloadImage: 'images/loading.gif',
+	// 	play: 5000,
+	// 	pause: 2500,
+	// 	hoverPause: true,
+	// 	animationStart: function(current){
+	// 		$('.caption').animate({
+	// 			bottom:-35
+	// 		},100);
+	// 	},
+	// 	animationComplete: function(current){
+	// 		$('.caption').animate({
+	// 			bottom:0
+	// 		},200);
+	// 	},
+	// 	slidesLoaded: function() {
+	// 		$('.caption').animate({
+	// 			bottom:0
+	// 		},200);
+	// 	}
+	// });
+
+	theRotator();
+
 });
+
+
+function theRotator() {
+	$('div#rotator ul li').css({opacity: 0.0});
+	$('div#rotator ul li.show').css({opacity: 1.0});
+	setInterval('rotate()', 8000);
+}
+
+function rotate() {
+	var current = $('div#rotator ul li.show');
+	var next = ((current.next().length) ? current.next() : $('div#rotator ul li:first'));
+	next.addClass('show').animate({opacity: 1.0}, 3000);
+	current.animate({opacity: 0.0}, 3000).removeClass('show');
+}
