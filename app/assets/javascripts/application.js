@@ -17,6 +17,7 @@
 $(function (){
 
 // ------------------------------------------ Tooltip ( Ask Valera how to do blur and focus on tooltip ?)
+// TODO: Fix this!
 	input_field = $('.clickTip');
 	hidden_tooltip = $('#aToolTip');
 	input_field.focus(function() {

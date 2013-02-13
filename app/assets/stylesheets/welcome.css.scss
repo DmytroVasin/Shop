@@ -98,12 +98,14 @@
 	    width: 500px;
 
 			#slider {
+				position: relative;
+				width: 1200px;
+
 				li {
 					float: left;
 					width: 115px;
 					margin: 0 5px 0 5px;
 					font-size: 1.2em;
-	    		position: absolute;
 	    		display: block
 
 					a {
@@ -134,7 +136,7 @@
 					}
 
 					img {
-						width: 115px;
+						border: 1px solid #CCCCCC;
 					}
 				}
 			}
@@ -172,7 +174,8 @@
 					.image {
 						height: 120px;
 						width: 120px;
-						border-width: 0px 
+						border-width: 0px;
+						border: 1px solid #CCCCCC;
 					}
 				}
 

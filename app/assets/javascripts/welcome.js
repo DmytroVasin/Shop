@@ -3,41 +3,53 @@ $(function (){
 	theRotator();
 
 // ------------------------------------------ Top Product slider
-	$('.nextproduct').on('click', function(){
-		$(this).siblings("#wrap").find('li').each(function(){
-			if (!$(this).is(':animated')) {
-				currect_left = $(this).css('left');
-				if (currect_left == '500px') {
-					$(this).hide();
-					$(this).animate({ left: '-125px' }, 500, function() {
-					$(this).show();
-					});
-				}
-				else {
-					$(this).animate({ left: '+=125' }, 500 );
-				}
-			}
+
+
+var nextButton = $('.nextproduct'),
+prevButton = $('.previousproduct'),
+list = $('#slider');
+
+Navigate = {
+	isAnimated: false,
+	
+	forward: function () {
+		var that = this;
+		
+		if (this.isAnimated) {
+			return;
+		}
+		
+		this.isAnimated = true;
+		
+		list
+		.prepend( list.children().last() )
+		.css({ left: '-=125' })
+		.animate({ left: '+=125' }, 'fast', 'linear', function () {
+			that.isAnimated = false;
 		});
-	});
-	$('.previousproduct').on('click', function(){
-		$(this).siblings("#wrap").find('li').each(function(){
-			if (!$(this).is(':animated')) {
-				currect_left = $(this).css('left');
-				if (currect_left == '-125px') {
-					$(this).hide();
-					$(this).animate({ left: '500px' }, 500, function() {
-					$(this).show();
-					});
-				}
-				else {
-					$(this).animate({ left: '-=125' }, 500 );
-				}
-			}
+	},
+	
+	backward: function () {
+		var that = this;
+		
+		if (this.isAnimated) {
+			return;
+		}
+		
+		this.isAnimated = true;
+		
+		list
+		.animate({ left: '-=125' }, 'fast', 'linear', function () {
+			list
+			.append( list.children().first() )
+			.css({ left: '+=125' });
+			that.isAnimated = false;
 		});
-	});
+	}
+};
 
-
-
+nextButton.on('click', Navigate.forward.bind(Navigate));
+prevButton.on('click', Navigate.backward.bind(Navigate));
 
 });
 // ------------------------------------------- additional functions

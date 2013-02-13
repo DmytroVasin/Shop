@@ -14,18 +14,22 @@
  */
 
 body {
-	/*background: url(backgroud_style.png) 50% 0 no-repeat;*/
-	background: #f1f1f1 repeat top left;
+	background: url(backgroud_image_1.jpg) 20% 80% no-repeat;
+	/*background: url(background_image.jpg) 0% 0% no-repeat;*/
+
+	background-attachment: fixed;
+	/*background: #f1f1f1 repeat top left;*/
 	/*background-color: #2f89df;*/
+	height: 3000px;
 }
 
 #sitewrapper {
 	margin: 0 auto;
 	width: 1020px;
-	background: #FFFFFF;
+	background: #fff;
 	line-height: 1.8em;
 	color: #333;
-	min-height: 1500px;
+	box-shadow: 0 0 20px #FFF;
 }
 
 #content {
