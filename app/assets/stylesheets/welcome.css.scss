@@ -38,6 +38,7 @@
 
 #leftarea {
 	width: 730px;
+	margin-left: -10px;
 
 	#top_list {
 		width: 750px;
@@ -209,6 +210,10 @@
 							height: 35px;
 							color: #333333;
 							overflow: hidden;
+						}
+
+						li.button .btn_order {
+							margin-left: 35px;
 						}
 					}
 				}
