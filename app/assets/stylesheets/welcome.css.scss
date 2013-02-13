@@ -27,9 +27,9 @@
 }
 
 #top_list {
-		width: 750px;
-		background: url(top_list.png) 40% 0 no-repeat;
-		margin: 25px 0 0 10px;
+	width: 750px;
+	background: url(top_list.png) 40% 0 no-repeat;
+	margin: 25px 0 0 10px;
 
 	#top_icon {
 		width: 750px;
@@ -37,23 +37,87 @@
 	}
 
 	#top_icon_img {
-		margin: 40px 25px 0 10px;
+		margin: -20px 5px 0 10px;
 		float: left;
 		width: 150px;
 		height: 140px;
 	}
 
-	#wrap {
 
-		border: 1px solid red;
+// FIXTO: how to refactor ?
+	.previousproduct {
+		background: url("a_prev.png") no-repeat scroll 0 0 transparent;
+   	display: block;
+   	float: left;
+   	height: 40px;
+   	left: 0;
+   	width: 22px;
+   	z-index: 1;
+   	margin-top: 29px;
+
+   	margin-right: 5px; 
+	}
+
+	.nextproduct {
+		background: url("a_next.png") no-repeat scroll 0 0 transparent;
+   	display: block;
+   	float: left;
+   	height: 40px;
+   	left: 0;
+   	width: 22px;
+   	z-index: 1;
+   	margin-top: 29px;
+
+   	margin-left: 5px; 
+	}
+
+
+	#wrap {
 		float: left;
+		// border: 1px solid red;
+		//float: left;
 		
+		position: relative;
+
+		height: 170px;
+    overflow: hidden;
+    width: 500px;
+
 		#slider {
 			li {
 				float: left;
 				width: 115px;
 				margin: 0 5px 0 5px;
-				
+				font-size: 1.2em;
+    		position: absolute;
+    		display: block
+
+				a {
+					color: #333333;
+				}
+
+				.title {
+					margin-left: 3px;
+					width: 110px;
+ 					line-height: 15px;
+    			overflow: hidden;
+    			font-family: Arial;
+    			font-size: 12px;
+    			max-height: 28px;
+				}
+
+				.price {
+					margin-left: 3px;
+			    width: 110px;
+			    color: #CC0000;
+			    font-size: 14px;
+			    font-weight: bold;
+
+			    span {
+			    	font-size: 11px;
+			    }
+				}
+
 				img {
 					width: 115px;
 				}
