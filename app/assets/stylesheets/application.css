@@ -72,4 +72,16 @@ body {
 	top:1px;
 }
 
-/* --- Button order END --- */
+#sign_out {
+	background-color: red;
+	text-align: center;
+}
+#sign_out a {
+	color: white;
+}
+
+.alert-notice {
+	color: green;
+	background-color: #c8c8c8;
+	text-align: center;	
+}
