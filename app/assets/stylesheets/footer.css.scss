@@ -1,0 +1,173 @@
+#footer {
+	padding: 20px 10px 15px 20px;
+	width:  990px;
+	height: 170px;
+	margin: 0 auto;
+	background: -moz-linear-gradient(center top , #EEE, #a5a7a7) repeat scroll 0 0 transparent;
+	font-family: Arial, Helvetica, sans-serif;
+
+	.footernav {
+		width: 280px;
+		height: 160px;
+		padding-top: 10px;
+	  border-right: 3px double #474747;
+	  margin-right: 12px;
+	  margin-left: 10px;
+	  float: left;
+
+		ul {
+			float: left;
+			width: 140px;
+	
+			li {
+				font-size: 13px;
+				font-family: Georgia, Times, serif;
+			  text-shadow: 0 0 1px #777;
+				line-height: 17px;
+				
+				a {
+					color: #333;
+				}
+				
+				a:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	
+	.footer_payment {
+		float: left;
+		width: 350px;
+		height: 100%;
+	  border-right: 3px double #474747;
+	  margin-left: 10px;
+	
+		h2 {
+			font-size: 18px;
+			
+			font-weight: bold;
+			line-height: 18px;
+			color: #555;
+			margin-left: 90px;
+			margin-top: 10px;
+			text-shadow: 0 0 1px #777;
+		}
+		
+		p {
+			font-size: 13px;
+			font-family: Georgia, Times, serif;
+		  text-shadow: 0 0 1px #777;
+			line-height: 24px;
+			color: #333;
+		}
+		
+		ul {
+			margin: 12px 0 0 61px
+		}
+		
+	  ul li {
+			float: left;
+			margin-left: 13px;
+			
+			img {
+				width: 51px;
+				height: 32px;
+			}
+		}
+	}
+
+	.footer_contacts {
+		float: left;
+		margin-left: 15px;
+		margin-top: 4px;
+
+		.social {
+			font-size: 18px;
+			font-weight: bold;
+			line-height: 18px;
+			color: #555;
+			text-shadow: 0 0 1px #777;
+			
+			h2 {
+				float: left;
+				margin-top: 7px;
+				margin-right: 25px;
+			}
+
+			a {
+				background: url(twitter.png) no-repeat;
+				width: 32px;
+				height: 32px;
+				float: left;
+			}
+		}
+
+		.email {
+			margin-top: 5px;
+			
+			a {
+				margin-right: 15px;
+				float: left;
+				font-size: 18px;
+				
+				font-weight: bold;
+				line-height: 18px;
+				color: #555;
+				text-shadow: 0 0 1px #999;
+			}
+			
+			.email_number {
+				float: left;
+				font-size: 13px;
+				font-family: Georgia, Times, serif;
+			  text-shadow: 0 0 1px #777;
+				line-height: 17px;
+				color: #333;
+			}
+		}
+
+		.phone {
+			margin-top: 10px;
+			
+			.phone_description {
+				margin-right: 15px;
+				float: left;
+				font-size: 18px;
+				
+				font-weight: bold;
+				line-height: 18px;
+				color: #555;
+				text-shadow: 0 0 1px #999;
+			}
+			
+			.phone_number {
+				float: left;
+				font-size: 13px;
+				font-family: Georgia, Times, serif;
+			  text-shadow: 0 0 1px #777;
+				line-height: 17px;
+				color: #333;
+			}
+		}
+
+		.copyrightclient {
+			margin-left: 95px;
+		  margin-top: 75px;
+			font-size: 13px;
+			font-family: Georgia, Times, serif;
+		  text-shadow: 0 0 1px #777;
+			line-height: 17px;
+			color: #333;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
