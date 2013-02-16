@@ -1,0 +1,22 @@
+<div id='sign_in'>
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :id => 'form' }) do |f| %>
+
+    <fieldset>
+      <div class='fields'>
+        <%= f.label :email, 'Email:' %>
+        <%= f.text_field :email, :size => '30'%>
+      </div>
+
+      <div class='fields'>
+        <%= f.label :password, 'Password:' %>
+        <%= f.password_field :password, :size => '30' %>
+      </div>
+    </fieldset>
+
+    <div class="submit">
+      <%= f.button 'Sign in' %>
+    </div>
+
+    <div class="bottom"></div>
+  <% end %>
+</div>
