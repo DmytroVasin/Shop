@@ -1,7 +1,7 @@
 Shop::Application.routes.draw do
-  devise_for :admins
+  devise_for :admins, path: 'auth', path_names: {sign_in: 'login', sign_out: 'logout'}
 
-  root :to => 'welcome#index'
+  root to: 'welcome#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
