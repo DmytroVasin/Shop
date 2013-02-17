@@ -18,7 +18,7 @@
   */
 
 body {
-	background: url(backgroud_image_1.jpg) 20% 80% no-repeat;
+	background: url(/assets/backgroud_image_1.jpg) 20% 80% no-repeat;
 	/*background: url(background_image.jpg) 0 15% no-repeat;*/
 
 	background-attachment: fixed;

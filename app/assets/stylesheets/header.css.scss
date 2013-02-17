@@ -59,7 +59,7 @@
 		float:left;
 
 		.basketimg {
-			background: url(delivery.jpg) no-repeat 0 4px transparent;
+			background: url(/assets/delivery.jpg) no-repeat 0 4px transparent;
 			width: 70px;
 			height: 82px;
 			display: block;
@@ -188,7 +188,7 @@
 				top: 94px;
 				left: -238px;
 				display: none;
-				background:url(mega-menu-dropdown-bg.jpg) repeat-x #fff;
+				background:url(/assets/mega-menu-dropdown-bg.jpg) repeat-x #fff;
 				z-index:5000;
 				padding:15px 15px 30px 15px;
 				cursor: default;
@@ -298,7 +298,7 @@ ul.sdt_menu > li > a {
 #search input[type="text"] {
   margin-left: 29px;
   margin-top: 7px;
-	background: url(search-white.png) no-repeat 10px 6px #444;
+	background: url(/assets/search-white.png) no-repeat 10px 6px #444;
 	border: 0 none;
 	font: bold 12px Arial,Helvetica,Sans-serif;
 	color: #d7d7d7;
@@ -318,7 +318,7 @@ ul.sdt_menu > li > a {
 	}
 
 #search input[type="text"]:focus{
-	background: url(search-dark.png) no-repeat 10px 6px #fcfcfc;
+	background: url(/assets/search-dark.png) no-repeat 10px 6px #fcfcfc;
 	color: #6a6f75;
 	width: 150px;
 	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
@@ -364,7 +364,7 @@ ul.sdt_menu > li > a {
 	display:block;
 	height:18px;
 	width:18px;
-	background:url(closeBtn.png) no-repeat;
+	background:url(/assets/closeBtn.png) no-repeat;
 	text-indent:-9999px;
 	outline:none;
 	position:absolute;

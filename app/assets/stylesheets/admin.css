@@ -4,7 +4,7 @@
 
 #form{
     padding-top:10px;
-    background:url(form/form_top.gif) no-repeat 0 0;
+    background:url(/assets/form/form_top.gif) no-repeat 0 0;
 }
 #form fieldset{
     float:left;
@@ -19,7 +19,7 @@
     -moz-border-radius:.3em;
     -webkit-border-radius:.3em;
     border-radius:.3em;
-    background:#fff url(form/form_input.gif) repeat-x;
+    background:#fff url(/assets/form/form_input.gif) repeat-x;
     padding:3px;
 }
 #form .fields {
@@ -35,7 +35,7 @@
 
 #form div.bottom{
     clear:both;
-    background:url(form/form_bottom.gif) no-repeat 0 100%;
+    background:url(/assets/form/form_bottom.gif) no-repeat 0 100%;
     padding:0 25px 25px;
     margin:0;
     text-align:right;
@@ -45,7 +45,7 @@
     height:37px;
     line-height:37px;
     border:none;
-    background:url(form/form_button.gif) no-repeat 0 0;
+    background:url(/assets/form/form_button.gif) no-repeat 0 0;
     color:#fff;
     cursor:pointer;
     text-align:center;
