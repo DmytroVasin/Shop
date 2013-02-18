@@ -2,43 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91f2b1e0-b053-41f5-af4e-85ce417c8995" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/GiftLabel.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/e.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/mc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/must_have_1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/must_have_2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/prudence_paris_logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/q.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/r.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/top_1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/top_2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/top_3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/top_4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/top_5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/top_6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/top_icon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/w.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/1.jpg" afterPath="$PROJECT_DIR$/app/assets/images/1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_main_menu.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_main_menu.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/admin.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/admin.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/footer.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/footer.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/header.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/header.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/welcome/index.html.erb" afterPath="$PROJECT_DIR$/app/views/welcome/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/welcome.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/welcome.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" afterPath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shop.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="91f2b1e0-b053-41f5-af4e-85ce417c8995" time="1361111241011" ignored="false" />
+    <file path="/Dummy.txt" changelist="91f2b1e0-b053-41f5-af4e-85ce417c8995" time="1361207174336" ignored="false" />
     <file path="/.gitignore" changelist="91f2b1e0-b053-41f5-af4e-85ce417c8995" time="1361005442081" ignored="false" />
     <file path="/application.html.erb" changelist="91f2b1e0-b053-41f5-af4e-85ce417c8995" time="1361002313803" ignored="false" />
     <file path="/a.dummy" changelist="91f2b1e0-b053-41f5-af4e-85ce417c8995" time="1361112783765" ignored="false" />
@@ -50,6 +20,15 @@
     <file path="/devise.en.yml" changelist="91f2b1e0-b053-41f5-af4e-85ce417c8995" time="1361012312487" ignored="false" />
     <file path="/welcome.css.scss" changelist="91f2b1e0-b053-41f5-af4e-85ce417c8995" time="1361022289912" ignored="false" />
     <file path="/_flash_msg.html.erb" changelist="91f2b1e0-b053-41f5-af4e-85ce417c8995" time="1361025158664" ignored="false" />
+    <file path="/a.rxml" changelist="91f2b1e0-b053-41f5-af4e-85ce417c8995" time="1361207721470" ignored="false" />
+    <file path="/a.coffee" changelist="91f2b1e0-b053-41f5-af4e-85ce417c8995" time="1361207726182" ignored="false" />
+    <file path="/a.feature" changelist="91f2b1e0-b053-41f5-af4e-85ce417c8995" time="1361207305297" ignored="false" />
+    <file path="/a.css" changelist="91f2b1e0-b053-41f5-af4e-85ce417c8995" time="1361207300985" ignored="false" />
+    <file path="/a.html" changelist="91f2b1e0-b053-41f5-af4e-85ce417c8995" time="1361207323916" ignored="false" />
+    <file path="/a.js" changelist="91f2b1e0-b053-41f5-af4e-85ce417c8995" time="1361207328935" ignored="false" />
+    <file path="/a.less" changelist="91f2b1e0-b053-41f5-af4e-85ce417c8995" time="1361207333692" ignored="false" />
+    <file path="/a.sql" changelist="91f2b1e0-b053-41f5-af4e-85ce417c8995" time="1361207351397" ignored="false" />
+    <file path="/a.xml" changelist="91f2b1e0-b053-41f5-af4e-85ce417c8995" time="1361207753930" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +71,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/db/schema.rb" />
         <option value="$PROJECT_DIR$/app/models/admin.rb" />
         <option value="$PROJECT_DIR$/config/locales/devise.en.yml" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
@@ -106,6 +84,7 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/welcome.css.scss" />
         <option value="$PROJECT_DIR$/app/views/welcome/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_main_menu.html.erb" />
       </list>
@@ -164,6 +143,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="RailsProjectView">
         <subPane>
           <PATH>
@@ -174,7 +154,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -193,104 +172,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="welcome" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="devise" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sessions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -304,22 +185,22 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="132" />
-    <property name="options.lastSelected" value="preferences.keymap" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="138" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="932" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="932" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="932" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="138" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="134" />
     <property name="GoToClass.includeJavaFiles" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="134" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager" selected="Rails.Development: shop">
     <configuration default="true" type="RakeRunConfigurationType" factoryName="Rake">
@@ -597,10 +478,9 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32763976" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2408492" sideWeight="0.67236024" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2057101" sideWeight="0.67236024" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6714976" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32763976" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -608,6 +488,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32763976" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -679,105 +560,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="20" selection-start="2380" selection-end="2380" vertical-scroll-proportion="0.44174758">
-          <folding />
-        </state>
+        <state line="85" column="20" selection-start="2380" selection-end="2380" vertical-scroll-proportion="0.44174758" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="7" selection-start="437" selection-end="437" vertical-scroll-proportion="0.36407766">
-          <folding />
-        </state>
+        <state line="15" column="7" selection-start="437" selection-end="437" vertical-scroll-proportion="0.36407766" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/admin.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="27" selection-start="913" selection-end="913" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="47" column="27" selection-start="913" selection-end="913" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/footer.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="36" selection-start="2047" selection-end="2047" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="113" column="36" selection-start="2047" selection-end="2047" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/header.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="366" column="27" selection-start="7846" selection-end="7846" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="366" column="27" selection-start="7846" selection-end="7846" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/reset.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="5" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="55" column="5" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/welcome.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="309" column="35" selection-start="4901" selection-end="4901" vertical-scroll-proportion="0.9514563">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/devise/sessions/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="309" column="35" selection-start="4901" selection-end="4901" vertical-scroll-proportion="0.9514563" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/welcome/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="218" column="52" selection-start="6645" selection-end="6645" vertical-scroll-proportion="0.98357666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_admin.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_flash_msg.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="28" selection-start="78" selection-end="78" vertical-scroll-proportion="0.05050505">
-          <folding />
-        </state>
+        <state line="218" column="52" selection-start="6645" selection-end="6645" vertical-scroll-proportion="0.98357666" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="46" selection-start="1699" selection-end="1699" vertical-scroll-proportion="0.94727594">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="34" selection-start="73" selection-end="73" vertical-scroll-proportion="0.05272408">
-          <folding />
-        </state>
+        <state line="61" column="46" selection-start="1699" selection-end="1699" vertical-scroll-proportion="0.94727594" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="38" selection-start="192" selection-end="192" vertical-scroll-proportion="0.19337016">
+        <state line="7" column="38" selection-start="192" selection-end="192" vertical-scroll-proportion="0.19337016" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="8" selection-start="814" selection-end="814" vertical-scroll-proportion="0.63131315">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_main_menu.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="47" selection-start="856" selection-end="856" vertical-scroll-proportion="0.112338856">
+        <state line="69" column="33" selection-start="1804" selection-end="1804" vertical-scroll-proportion="1.7424242">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_admin.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="9" selection-start="157" selection-end="157" vertical-scroll-proportion="0.1010101">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_flash_msg.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="14" selection-start="78" selection-end="78" vertical-scroll-proportion="0.05050505">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/devise/sessions/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="566" selection-end="566" vertical-scroll-proportion="0.5555556">
           <folding />
         </state>
       </provider>
