@@ -3,6 +3,11 @@ Shop::Application.routes.draw do
 
   root to: 'welcome#index'
 
+  namespace :admin do
+    root :to => 'base#index'
+    resources :parfumes
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
