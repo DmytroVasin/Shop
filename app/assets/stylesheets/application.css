@@ -15,6 +15,7 @@
  *= require welcome
  REFACTOR
  *= require admin
+ *= require perfumes
   */
 
 body {
