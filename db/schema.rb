@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130215172731) do
+ActiveRecord::Schema.define(:version => 20130218190343) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",              :default => "", :null => false
@@ -21,5 +21,14 @@ ActiveRecord::Schema.define(:version => 20130215172731) do
   end
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
+
+  create_table "perfumes", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.decimal  "price",       :precision => 8, :scale => 2
+    t.boolean  "in_stock"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+  end
 
 end

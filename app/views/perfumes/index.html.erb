@@ -1,0 +1,7 @@
+<% @perfumes.each do |perfume| %>
+  <%= perfume.title %> <br />
+  <%= perfume.description %> <br />
+  <%= perfume.price %> <br />
+  <%= perfume.in_stock %>
+<% end %>
+<%= link_to 'back to results', :back %>
