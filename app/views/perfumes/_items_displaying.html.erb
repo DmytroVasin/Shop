@@ -1,0 +1,27 @@
+<div id="items">
+  <ul>
+    <% @perfumes.each_with_index do |perfume, n| %>
+
+      <% if (n-2)%3 == 0 %>
+        <li class='last'>
+      <% else %>
+        <li>
+      <% end %>
+      <a href="#"><img class="productimg" src="assets/item1.jpg"/></a>
+
+      <div class="productinfo">
+        <div class="paddingwrapper">
+          <div class="title">
+            <h2>
+              <a href="#"><%= perfume.title %></a>
+            </h2>
+          </div>
+          <div class="price">
+            Цена <%= perfume.price %>грн.
+          </div>
+        </div>
+      </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
