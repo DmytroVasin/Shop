@@ -1,0 +1,7 @@
+<blockquote><h2>Create new perfume:</h2></blockquote>
+
+<%= form_for [:admin, @perfume], :html => { :class => "form-horizontal" } do |f| %>
+  <%= render :partial => "form", :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'back to all post', admin_perfumes_path, :class => 'btn_back btn btn-inverse btn-large' %>

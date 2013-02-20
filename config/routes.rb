@@ -5,8 +5,11 @@ Shop::Application.routes.draw do
 
   namespace :admin do
     root :to => 'base#index'
+
     resources :categories
+    resources :perfumes
   end
+
   resources :perfumes
 
   # The priority is based upon order of creation:

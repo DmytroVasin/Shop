@@ -1,0 +1,24 @@
+<div id="box_of_perfume_show">
+  <div id="perfume_main_image">
+    <%= image_tag('admin/no_image_yet.jpg', :alt => "no_image") %>
+  </div>
+
+  <div id="description">
+    <div id="perfume_title">
+      <%= @perfume.title %>
+    </div>
+    <div id="perfume_description">
+      <%= @perfume.description %>
+    </div>
+    <div id="perfume_price">
+      Цена: <span><%= @perfume.price %></span> грн.
+    </div>
+  </div>
+    <div id="perfume_instock" class='perfume_instock_<%= @perfume.in_stock ? 'true' : 'false' %>'></div>
+  <div class="clear"></div>
+  <div id="perfume_actions">
+    <%= link_to 'All', admin_perfumes_path, :class => 'btn' %>
+    <%= link_to 'Edit', edit_admin_perfume_path(@perfume.id), :class => 'btn btn-warning' %>
+    <%= link_to 'Delete', admin_perfume_path(@perfume.id), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+  </div>
+</div>

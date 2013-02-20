@@ -1,0 +1,37 @@
+<div class="control-group">
+  <%= f.label :title, 'Title: ', :class => "control-label" %>
+  <div class="controls">
+    <div class="input-prepend">
+      <%= f.text_field :title, :id => "inputTitle", :placeholder => "Title of perfume" %>
+    </div>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :description, 'Descr. of perfume: ', :class => "control-label" %>
+  <div class="controls">
+    <div class="input-prepend">
+      <%= f.text_area :description, :id => "text_area", :placeholder => "Description of perfume" %>
+    </div>
+  </div>
+</div>
+
+<div class="controls">
+  <% Category.all.each do |category| %>
+    <label class="checkbox inline">
+      <%= check_box_tag 'perfume[category_ids][]', category.id %>
+      <%= category.name %>
+    </label>
+  <% end %>
+</div>
+
+<div class="control-group">
+  <div class="controls">
+    <%= f.file_field :image %>
+  </div>
+</div>
+
+<div class="control-group">
+  <div class="controls">
+    <%= f.submit "Create", :class => 'btn btn-success' %>
+  </div>
+</div>
