@@ -1,4 +1,4 @@
-#underline {
+.underline_index {
 	border-bottom: 1.6px solid #CCCCCC;
 	width: 620px;
 	margin-left: 62px;	
@@ -151,7 +151,7 @@
 			float:left;
 			margin: 10px 10px 0 10px;
 
-			#new_product_title {
+			.new_product_title {
 				margin: 10px 0 0 55px;
 				font-size: 17px;
 				font-weight: bold;
@@ -160,7 +160,7 @@
 				text-shadow: 1px 1px 3px #97D;
 			}
 
-			#new_product_content {
+			.new_product_content {
 				margin: 5px 0 0 15px;
 
 				.picture_new {
