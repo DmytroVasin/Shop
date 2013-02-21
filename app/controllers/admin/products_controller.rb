@@ -31,12 +31,12 @@ class Admin::ProductsController < Admin::BaseController
   def update
     @product = Product.find(params[:id])
 
-     if @product.update_attributes(params[:product])
+    if @product.update_attributes(params[:product])
       flash[:notice] = 'Perfume updated'
       redirect_to admin_product_path(@product.id)
-     else
+    else
       render 'edit'
-     end
+    end
   end
 
   def destroy
