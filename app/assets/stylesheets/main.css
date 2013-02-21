@@ -34,6 +34,10 @@ strong {
   width : 300px;
 }
 
+.controls label {
+  width : 60px;
+}
+
 .control-group label {
   margin-left : 28px;
 }
