@@ -17,7 +17,7 @@ class Admin::ProductsController < Admin::BaseController
     @product = Product.new(params[:product])
 
     if @product.save
-      flash[:notice] = "Pefume created!"
+      flash[:notice] = 'Pefume created!'
       redirect_to admin_product_path(@product.id)
     else
       render 'new'
@@ -32,7 +32,7 @@ class Admin::ProductsController < Admin::BaseController
     @product = Product.find(params[:id])
 
      if @product.update_attributes(params[:product])
-      flash[:notice] = "Perfume updated"
+      flash[:notice] = 'Perfume updated'
       redirect_to admin_product_path(@product.id)
      else
       render 'edit'

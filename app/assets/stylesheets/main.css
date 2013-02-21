@@ -19,6 +19,31 @@ body {
   background-color : #FAFAFA;
 }
 
+
+strong {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 30px;
+  margin-left: 10px;
+}
+
+
+.category_margin {
+  margin-left : 100px;
+}
+
+.category_table {
+  width : 300px;
+}
+
+.control-group label {
+  margin-left : 28px;
+}
+
+#category_new_perfume {
+  margin-left : 30px;
+}
+
 table {
   table-layout : fixed !important;
 }

@@ -1,0 +1,23 @@
+<blockquote>
+  <h3>Категории:<h3>
+</blockquote>
+
+<% if @categories.any? %>
+  <div class="category_margin">
+    <table class="table table-striped table-bordered category_table">
+      <tr>
+        <th>Categories name</th>
+        <th style='width: 24%'>Actions</th>
+      </tr>
+      <% @categories.each do |category| %>
+        <tr>
+          <td><strong><%= category.name %></strong></td>
+          <td>
+            <%= link_to 'Delete', admin_category_path(category.id), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+<% end %>
+<%= link_to 'Add categories', new_admin_category_path, :class => 'btn btn-primary' %>
+</div>
