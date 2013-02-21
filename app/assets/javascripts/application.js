@@ -13,20 +13,21 @@
 //= require jquery
 //= require jquery_ujs
 //= require welcome
+//= require jquery.easing.1.3.js
+//= require_self
 
 $(function () {
 
 // ------------------------------------------ Tooltip ( Ask Valera how to do blur and focus on tooltip ?)
 // TODO: Fix this!
-  input_field = $('.clickTip');
-  hidden_tooltip = $('#aToolTip');
+  var input_field = $('.clickTip');
+  var hidden_tooltip = $('#aToolTip');
   input_field.focus(function () {
     hidden_tooltip.show();
   });
   input_field.blur(function () {
     hidden_tooltip.hide();
   });
-
 
 // ------------------------------------------ Main menu
   $('#sdt_menu > li').bind('mouseenter',function () {

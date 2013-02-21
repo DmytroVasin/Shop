@@ -13,11 +13,11 @@
         <tr>
           <td><strong><%= category.name %></strong></td>
           <td>
-            <%= link_to 'Delete', admin_category_path(category.id), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+            <%= link_to 'Delete', admin_category_path(category.id), method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger' %>
           </td>
         </tr>
       <% end %>
     </table>
 <% end %>
-<%= link_to 'Add categories', new_admin_category_path, :class => 'btn btn-primary' %>
+<%= link_to 'Add categories', new_admin_category_path, class: 'btn btn-primary' %>
 </div>

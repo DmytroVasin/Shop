@@ -1,16 +1,16 @@
 <div class="control-group">
-  <%= f.label :title, 'Title: ', :class => "control-label" %>
+  <%= f.label :title, 'Title: ', class: 'control-label' %>
   <div class="controls">
     <div class="input-prepend">
-      <%= f.text_field :title, :id => "inputTitle", :placeholder => "Title of perfume" %>
+      <%= f.text_field :title, id: 'inputTitle', placeholder: 'Title of perfume' %>
     </div>
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :description, 'Descr. of perfume: ', :class => "control-label" %>
+  <%= f.label :description, 'Descr. of perfume: ', class: 'control-label' %>
   <div class="controls">
     <div class="input-prepend">
-      <%= f.text_area :description, :id => "text_area", :placeholder => "Description of perfume" %>
+      <%= f.text_area :description, id: 'text_area', placeholder: 'Description of perfume' %>
     </div>
   </div>
 </div>
@@ -32,6 +32,6 @@
 
 <div class="control-group">
   <div class="controls">
-    <%= f.submit 'Create', :class => 'btn btn-success' %>
+    <%= f.submit 'Create', class: 'btn btn-success' %>
   </div>
 </div>
