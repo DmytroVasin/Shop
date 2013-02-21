@@ -109,6 +109,28 @@ tr td .in_stock_false {
 }
 
 #text_area {
-  width: 500px;
-  height: 150px;
+  width  : 500px;
+  height : 150px;
 }
+
+.perfume_new_btn {
+  margin-left : 30px;
+}
+
+#perfume_category {
+  margin      : 5px 0 0 20px;
+  font-size   : 16px;
+  color       : #333;
+  font-family : Georgia, Times, serif;
+  text-shadow : 0 0 1px #777777;
+}
+
+#perfume_category ul {
+  margin : 3px 0 0 10px;
+  font-size   : 14px;
+}
+
+#perfume_category ul li {
+  line-height: 18px;
+}
+

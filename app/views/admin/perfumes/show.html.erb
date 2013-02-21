@@ -1,6 +1,14 @@
 <div id="box_of_perfume_show">
   <div id="perfume_main_image">
     <%= image_tag('admin/no_image_yet.jpg', :alt => "no_image") %>
+    <div id="perfume_category">
+      Category of perfume:
+      <ul>
+        <% @perfume.categories.each do |category| %>
+          <li><i class="icon-tag"></i><%= link_to category.name, '#' %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 
   <div id="description">
@@ -9,12 +17,42 @@
     </div>
     <div id="perfume_description">
       <%= @perfume.description %>
+      lorem asdkajkdl jakl;sdj lkasjd;a jdalksj alksjd jands fand f,sdnfasdfnajfl;asjdf lkjas ;fjsad fj
+      s jdfksajdnf sdfwfjaofijaoifjasdjf asj lsadj lasjd lksadj lasjdfl jsadf j
+      lorem asdkajkdl jakl;sdj lkasjd;a jdalksj alksjd jands fand f,sdnfasdfnaj
+      fl;asjdf lkjas ;fjsad fj
+      s jdfksajdnf sdfwfjaofijaoifjasdjf asj lsadj lasjd lksadj lasjdfl jsadf j
+      lorem asdkajkdl jakl;sdj lkasjd;a jdalksj alksjd jands fand f,sdnfasdfnaj
+      fl;asjdf lkjas ;fjsad fj
+      s jdfksajdnf sdfwfjaofijaoifjasdjf asj lsadj lasjd lksadj lasjdfl jsadf j
+      lorem asdkajkdl jakl;sdj lkasjd;a jdalksj alksjd jands fand f,sdnfasdfnaj
+      fl;asjdf lkjas ;fjsad fj
+      s jdfksajdnf sdfwfjaofijaoifjasdjf asj lsadj lasjd lksadj lasjdfl jsadf j
+
+      lorem asdkajkdl jakl;sdj lkasjd;a jdalksj alksjd jands fand f,sdnfasdfnaj
+      fl;asjdf lkjas ;fjsad fj
+      s jdfksajdnf sdfwfjaofijaoifjasdjf asj lsadj lasjd lksadj lasjdfl jsadf j
+      lorem asdkajkdl jakl;sdj lkasjd;a jdalksj alksjd jands fand f,sdnfasdfnaj
+      fl;asjdf lkjas ;fjsad fj
+      s jdfksajdnf sdfwfjaofijaoifjasdjf asj lsadj lasjd lksadj lasjdfl jsadf j
+      lorem asdkajkdl jakl;sdj lkasjd;a jdalksj alksjd jands fand f,sdnfasdfnaj
+      fl;asjdf lkjas ;fjsad fj
+      s jdfksajdnf sdfwfjaofijaoifjasdjf asj lsadj lasjd lksadj lasjdfl jsadf j
+      lorem asdkajkdl jakl;sdj lkasjd;a jdalksj alksjd jands fand f,sdnfasdfnaj
+      fl;asjdf lkjas ;fjsad fj
+      s jdfksajdnf sdfwfjaofijaoifjasdjf asj lsadj lasjd lksadj lasjdfl jsadf j
+      lorem asdkajkdl jakl;sdj lkasjd;a jdalksj alksjd jands fand f,sdnfasdfnaj
+      fl;asjdf lkjas ;fjsad fj
+      s jdfksajdnf sdfwfjaofijaoifjasdjf asj lsadj lasjd lksadj lasjdfl jsadf j
+      lorem asdkajkdl jakl;sdj lkasjd;a jdalksj alksjd jands fand f,sdnfasdfnaj
+      fl;asjdf lkjas ;fjsad fj
+      s jdfksajdnf sdfwfjaofijaoifjasdjf asj lsadj lasjd lksadj lasjdfl jsadf j
     </div>
     <div id="perfume_price">
       Цена: <span><%= @perfume.price %></span> грн.
     </div>
   </div>
-    <div id="perfume_instock" class='perfume_instock_<%= @perfume.in_stock ? 'true' : 'false' %>'></div>
+  <div id="perfume_instock" class='perfume_instock_<%= @perfume.in_stock ? 'true' : 'false' %>'></div>
   <div class="clear"></div>
   <div id="perfume_actions">
     <%= link_to 'All', admin_perfumes_path, :class => 'btn' %>

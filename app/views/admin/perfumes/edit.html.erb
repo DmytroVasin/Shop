@@ -1,7 +1,7 @@
 <blockquote><h2>Edit post:</h2></blockquote>
 
 <%= form_for [:admin, @perfume], :url => admin_perfume_path(@perfume), :html => { :class => "form-horizontal" }, :method => :put do |f| %>
-  <%= render :partial => "form", :locals => { :f => f } %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
 <% end %>
 
 <%= link_to 'back to post', admin_perfume_path(@perfume.id), :class => 'btn_back btn btn-inverse btn-large' %>
