@@ -1,1 +1,1 @@
-BetterErrors.editor = :sublime if defined? BetterErrors
+BetterErrors.editor = :mine if defined? BetterErrors

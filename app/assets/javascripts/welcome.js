@@ -52,6 +52,7 @@ nextButton.on('click', Navigate.forward.bind(Navigate));
 prevButton.on('click', Navigate.backward.bind(Navigate));
 
 });
+
 // ------------------------------------------- additional functions
 function theRotator() {
 	$('div#rotator ul li').css({opacity: 0.0});

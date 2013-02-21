@@ -8,14 +8,19 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require reset
+
+ /  (root_path)
+ *= require reset.css
  *= require_self
- *= require header
- *= require footer
- *= require welcome
- REFACTOR
- *= require admin
- *= require products
+ *= require header.css.scss
+ *= require footer.css.scss
+ *= require welcome.css.scss
+
+ /auth/login
+ *= require registration_form.css.scss
+
+ /products
+ *= require products.css.scss
   */
 
 body {

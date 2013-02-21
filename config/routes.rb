@@ -1,7 +1,8 @@
 Shop::Application.routes.draw do
+  root to: 'welcome#index'
+
   devise_for :admins, path: 'auth', path_names: { sign_in: 'login', sign_out: 'logout' }
 
-  root to: 'welcome#index'
 
   namespace :admin do
     root :to => 'base#index'

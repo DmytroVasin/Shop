@@ -2,21 +2,21 @@
 <html>
 <head>
   <title>Shop</title>
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="sitewrapper">
+  <div id='sitewrapper'>
     <div id="content">
-      <%= render 'layouts/admin' %>
-      <%= render 'layouts/flash_msg' %>
-      <%= render 'layouts/header' %>
-      <%= render 'layouts/main_menu' %>
+      <%= render 'shared/admin' %>
+      <%= render 'shared/flash_messages' %>
+      <%= render 'shared/header' %>
+      <%= render 'shared/main_menu' %>
       <%= yield %>
     </div>
   </div>
-  <%= render 'layouts/footer' %>
+  <%= render 'shared/footer' %>
 </body>
 </html>
 
