@@ -1,6 +1,6 @@
 <div id="items">
   <ul>
-    <% @perfumes.each_with_index do |perfume, n| %>
+    <% @products.each_with_index do |product, n| %>
 
       <% if (n-2)%3 == 0 %>
         <li class='last'>
@@ -13,11 +13,11 @@
         <div class="paddingwrapper">
           <div class="title">
             <h2>
-              <a href="#"><%= perfume.title %></a>
+              <a href="#"><%= product.title %></a>
             </h2>
           </div>
           <div class="price">
-            Цена <%= perfume.price %>грн.
+            Цена <%= product.price %>грн.
           </div>
         </div>
       </div>

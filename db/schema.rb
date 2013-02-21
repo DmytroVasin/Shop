@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(:version => 20130219220155) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "categories_perfumes", :id => false, :force => true do |t|
+  create_table "categories_products", :id => false, :force => true do |t|
     t.integer "category_id"
-    t.integer "perfume_id"
+    t.integer "product_id"
   end
 
-  create_table "perfumes", :force => true do |t|
+  create_table "products", :force => true do |t|
     t.string   "title"
     t.text     "description"
     t.decimal  "price",       :precision => 8, :scale => 2

@@ -1,0 +1,31 @@
+<blockquote>
+  <h2>Perfumes:</h2>
+</blockquote>
+
+<table class='table table-striped span12'>
+  <tr>
+    <th style="width: 2%">id</th>
+    <th style="width: 11%">title</th>
+    <th style="width: 35%">desription</th>
+    <th style="width: 5%">price</th>
+    <th style="width: 3%">Stock</th>
+    <th style="width: 8%">Actions</th>
+  </tr>
+
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.id %></td>
+      <td><%= link_to product.title, admin_product_path(product.id) %></td>
+      <td><%= product.description %></td>
+      <td><%= product.price %> грн</td>
+      <td>
+        <div class="in_stock_<%= product.in_stock ? 'true' : 'false' %>"></div>
+      </td>
+      <td>
+        <%= link_to 'edit', edit_admin_product_path(product.id), :class => 'btn' %>
+        <%= link_to 'delete', admin_product_path(product.id), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'New', new_admin_product_path, :class => 'btn btn-success perfume_new_btn' %>

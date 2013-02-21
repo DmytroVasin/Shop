@@ -13,7 +13,7 @@
  *= require_self
  REFACTOR
  *= require admin
- *= require perfumes
+ *= require products
   */
 body {
   background-color : #FAFAFA;
@@ -126,11 +126,11 @@ tr td .in_stock_false {
 }
 
 #perfume_category ul {
-  margin : 3px 0 0 10px;
-  font-size   : 14px;
+  margin    : 3px 0 0 10px;
+  font-size : 14px;
 }
 
 #perfume_category ul li {
-  line-height: 18px;
+  line-height : 18px;
 }
 

@@ -1,6 +1,6 @@
-class CreatePerfumes < ActiveRecord::Migration
+class CreateProducts < ActiveRecord::Migration
   def change
-    create_table :perfumes do |t|
+    create_table :products do |t|
       t.string :title
       t.text :description
       t.decimal :price, precision: 8, scale: 2

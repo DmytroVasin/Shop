@@ -1,5 +1,5 @@
 Shop::Application.routes.draw do
-  devise_for :admins, path: 'auth', path_names: {sign_in: 'login', sign_out: 'logout'}
+  devise_for :admins, path: 'auth', path_names: { sign_in: 'login', sign_out: 'logout' }
 
   root to: 'welcome#index'
 
@@ -7,10 +7,10 @@ Shop::Application.routes.draw do
     root :to => 'base#index'
 
     resources :categories
-    resources :perfumes
+    resources :products
   end
 
-  resources :perfumes
+  resources :products
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
