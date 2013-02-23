@@ -3,6 +3,11 @@
 <head>
   <title>Shop</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
+
+  <% if login_page? %>
+    <%= stylesheet_link_tag 'registration_form', media: 'all' %>
+  <% end %>
+
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
