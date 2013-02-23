@@ -6,6 +6,23 @@
     </div>
   </div>
 </div>
+
+<div class="control-group">
+  <%= f.label :price, 'Price: ', class: 'control-label' %>
+  <div class="controls">
+    <div class="input-prepend">
+      <%= f.text_field :price, id: 'inputPrice', placeholder: '26.80' %>
+    </div>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :in_stock, 'In stock: ', class: 'control-label' %>
+  <div class="controls">
+    <%= f.check_box :in_stock, { :class => 'inputInStock' }, 'true', 'false' %>
+  </div>
+</div>
+
 <div class="control-group">
   <%= f.label :description, 'Descr. of perfume: ', class: 'control-label' %>
   <div class="controls">

@@ -9,9 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require reset
+ *= require error
  *= require bootstrap_and_overrides
  *= require_self
-
   */
 
 body {
@@ -31,6 +31,10 @@ strong {
 
 .category_table {
   width : 300px;
+}
+
+.controls {
+  margin-left : 180px !important;
 }
 
 .controls label {
@@ -56,13 +60,14 @@ table th, table td {
 tr td .in_stock_true {
   width            : 20px;
   height           : 20px;
-  background-color : green;
   margin           : 6px 0 0 9px;
+  background-color : green;
 }
 
 tr td .in_stock_false {
   width            : 20px;
   height           : 20px;
+  margin           : 6px 0 0 9px;
   background-color : red;
 }
 
@@ -132,6 +137,7 @@ tr td .in_stock_false {
 
 #perfume_actions {
   text-align : center;
+  margin-bottom: 10px;
 }
 
 #text_area {
@@ -160,3 +166,14 @@ tr td .in_stock_false {
   line-height : 18px;
 }
 
+#product_in_stock {
+  margin-top : 8px;
+}
+
+#product_image {
+  margin-top : 15px;
+}
+
+.custom_black_btn {
+  margin-bottom : 10px;
+}
