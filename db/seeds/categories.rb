@@ -1,6 +1,6 @@
 module Seeds
   def create_categories
-    ['For Her', 'For Him', 'Specials', 'Gift set'].each do |name|
+    ['For Her', 'For Him', 'Specials', 'Gift set', 'Cosmetics', 'Heir Care'].each do |name|
       Category.create(name: name)
     end
   end

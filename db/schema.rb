@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130219220155) do
+ActiveRecord::Schema.define(:version => 20130223111855) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",              :default => "", :null => false
@@ -37,9 +37,10 @@ ActiveRecord::Schema.define(:version => 20130219220155) do
     t.string   "title"
     t.text     "description"
     t.decimal  "price",       :precision => 8, :scale => 2
-    t.boolean  "in_stock"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.boolean  "in_stock",                                  :default => false
+    t.datetime "created_at",                                                   :null => false
+    t.datetime "updated_at",                                                   :null => false
+    t.integer  "rank",                                      :default => 0
   end
 
 end

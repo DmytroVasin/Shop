@@ -7,27 +7,14 @@
     <h3>Product Type:</h3>
 
     <ul>
-      <li>
-        <label><input type="checkbox">Поставь галку!</label>
-      </li>
-      <li>
-        <label><input type="checkbox" />Special offers</label>
-      </li>
-      <li>
-        <label><input type="checkbox" />Gift sets</label>
-      </li>
-      <li>
-        <label><input type="checkbox" />Skin Care</label>
-      </li>
-      <li>
-        <label><input type="checkbox" />Hair Care</label>
-      </li>
-      <li>
-        <label><input type="checkbox" />Cosmetics</label>
-      </li>
-      <li>
-        <label><input type="checkbox" />Amy Childs</label>
-      </li>
+      <% Category.all.each do |category| %>
+        <li>
+          <label>
+            <%= check_box_tag 'product[category_ids][]', category.id %>
+            <%= category.name %>
+          </label>
+        </li>
+      <% end %>
     </ul>
   </div>
 

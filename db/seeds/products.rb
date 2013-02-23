@@ -10,4 +10,30 @@ def products_and_dependencies
 
   category_1 = Category.first
   perfume.categories  << category_1
+
+
+  perfume = Product.create(title:       'Eternity Eau De Parfum',
+                           description: 'Eternity by Calvin Klein is a popular womens fragrance. Fresh fruit notes of mandarin blend
+                                         with a floral background of lily of the valley, freesia, marigold, white lily, jasmine and
+                                         rose together with a sultry base of sandalwood, patchouli, amber and musk to create a sexy
+                                         and romantic day time scent for women of all ages. Available in a stylish eau de parfum
+                                         spray bottle.',
+                           price:       20.50,
+                           in_stock:    true)
+
+  category_2 = Category.last
+  perfume.categories  << category_2
+
+
+  perfume = Product.create(title:       'Amy Childs Eau De Toilette',
+                           description: 'Amy Childs debut fruity and floral fragrance opens with gloriously exotic notes of pomegranate
+                                         seed, fresh green leaves and kumquat, moving into a floral heart of lotus, champaca and purple
+                                         orchid. The gorgeous fragrance then dries down onto a sensual base of purple violet, amber,
+                                         skin musks, soft woods and vanilla. Amy Childs feminine scent is also encased in an adorable
+                                         deep purple, multi-faceted bottle embellished with a heart shaped charm.',
+                           price:       80,
+                           in_stock:    false)
+
+  perfume.categories  << category_1
+  perfume.categories  << category_2
 end
