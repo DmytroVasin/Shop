@@ -15,10 +15,8 @@ class Product < ActiveRecord::Base
   scope :low, order('price ASC')
   scope :best, order('rank DESC')
 
-
   scope :price_between, lambda { |min, max| where('price >= ? and price <= ?', min, max) }
 
-  #scope :by_lower_price, lambda { |price| where('price < ?', price) }
-  #scope :in_stock, where(in_stock: true)
+
   has_and_belongs_to_many :categories
 end
