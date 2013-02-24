@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
 
     @products = Product.all
 
-    @products = Product.new if params[:sort] == 'new'
+    @products = Product.newest if params[:sort] == 'newest'
     @products = Product.high if params[:sort] == 'high'
     @products = Product.low if params[:sort] == 'low'
     @products = Product.best if params[:sort] == 'best'

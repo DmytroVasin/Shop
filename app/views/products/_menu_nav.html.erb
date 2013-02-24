@@ -10,7 +10,7 @@
       <% Category.all.each do |category| %>
         <li>
           <label>
-            <%= check_box_tag 'product[category_ids][]', category.id %>
+            <%= check_box_tag 'product_type_checkboxes', category.id %>
             <%= category.name %>
           </label>
         </li>

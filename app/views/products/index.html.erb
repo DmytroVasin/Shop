@@ -18,11 +18,11 @@
     <div class="sort">
       Сортировать по:
 
-      <%= select_tag(:city_id, options_for_select([['Лучшее', 'best'],
-                                                   ['Цена low', 'low'],
-                                                   ['Цена high', 'high'],
-                                                   ['Новое', 'newest']], params[:sort]),
-                     class: 'sortdropdown' ) %>
+      <%= select_tag(:sort_drop_down, options_for_select([['Лучшее', 'best'],
+                                                          ['Цена low', 'low'],
+                                                          ['Цена high', 'high'],
+                                                          ['Новое', 'newest']], params[:sort]),
+                     class: 'sortdropdown', :include_blank => true) %>
 
     </div>
     <div class="clear"></div>
