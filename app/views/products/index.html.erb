@@ -1,3 +1,5 @@
+<%= form_tag( {}, method: 'get' ) do %>
+
 <div id="menu_bar">
   <div id="breadcrumb">
     <ul>
@@ -33,3 +35,6 @@
 
 </div>
 <div class="clear"></div>
+
+  <%= submit_tag 'Submit' %>
+<% end %>
