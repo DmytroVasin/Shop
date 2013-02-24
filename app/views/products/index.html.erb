@@ -17,18 +17,11 @@
     </div>
     <div class="sort">
       Сортировать по:
-      <!--<select class='sortdropdown'>-->
-        <!--<option value="new">Новое</option>-->
-        <!--<option value="high">Цена &#8657;</option>-->
-        <!--<option value="low">Цена &#8659;</option>-->
-        <!--<option value="best">Лучшее</option>-->
-      <!--</select>-->
-
 
       <%= select_tag(:city_id, options_for_select([['Лучшее', 'best'],
                                                    ['Цена low', 'low'],
                                                    ['Цена high', 'high'],
-                                                   ['Новое', 'new']], params[:sort]),
+                                                   ['Новое', 'newest']], params[:sort]),
                      class: 'sortdropdown' ) %>
 
     </div>

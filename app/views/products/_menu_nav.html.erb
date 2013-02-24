@@ -52,24 +52,16 @@
     <h3>Price:</h3>
 
     <ul>
-      <li>
-        <label><input type="checkbox">< 150</label>
-      </li>
-      <li>
-        <label><input type="checkbox" />150 < 200</label>
-      </li>
-      <li>
-        <label><input type="checkbox" />150 < 200</label>
-      </li>
-      <li>
-        <label><input type="checkbox" />150 < 200</label>
-      </li>
-      <li>
-        <label><input type="checkbox" />500 < 700</label>
-      </li>
-      <li>
-        <label><input type="checkbox" />700+</label>
-      </li>
+      <% @price_hash.each_pair do |key, value| %>
+        <% checked = false %>
+        <% checked = true if key == params[:price] %>
+
+        <li>
+          <%= check_box_tag 'price_checkboxes', key, checked %>
+          <%= value %>
+        </li>
+      <% end %>
     </ul>
+
   </div>
 </div>

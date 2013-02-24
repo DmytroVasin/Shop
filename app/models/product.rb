@@ -9,10 +9,14 @@ class Product < ActiveRecord::Base
   validates :description, length: { minimum: 100 }
   validates :rank, numericality: { only_integer: true }
 
-  scope :new, order('updated_at DESC')
+
+  scope :newest, order('updated_at DESC')
   scope :high, order('price DESC')
   scope :low, order('price ASC')
   scope :best, order('rank DESC')
+
+
+  scope :price_between, lambda { |min, max| where('price >= ? and price <= ?', min, max) }
 
   #scope :by_lower_price, lambda { |price| where('price < ?', price) }
   #scope :in_stock, where(in_stock: true)
