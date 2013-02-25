@@ -41,6 +41,10 @@
   <% end %>
 </div>
 
+<div class="controls">
+  <%= collection_select(:product, :brand_ids, Brand.all, :id, :name) %>
+</div>
+
 <div class="control-group">
   <div class="controls">
     <%= f.file_field :image %>
