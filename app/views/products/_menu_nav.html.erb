@@ -8,9 +8,12 @@
 
     <ul>
       <% Category.all.each do |category| %>
+        <% checked_type = false %>
+        <% checked_type = true if category.name == params[:product_type] %>
+
         <li>
           <label>
-            <%= check_box_tag 'product_type_checkboxes', category.id %>
+            <%= check_box_tag 'product_type', category.name, checked_type %>
             <%= category.name %>
           </label>
         </li>
@@ -53,12 +56,14 @@
 
     <ul>
       <% @price_hash.each_pair do |key, value| %>
-        <% checked = false %>
-        <% checked = true if key == params[:price_between] %>
+        <% checked_price = false %>
+        <% checked_price = true if key == params[:price_between] %>
 
         <li>
-          <%= check_box_tag 'price_between', key, checked %>
-          <%= value %>
+          <label>
+            <%= check_box_tag 'price_between', key, checked_price %>
+            <%= value %>
+          </label>
         </li>
       <% end %>
     </ul>

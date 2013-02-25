@@ -1,3 +1,4 @@
+# coding: utf-8
 class ProductsController < ApplicationController
 
   def index
@@ -9,20 +10,29 @@ class ProductsController < ApplicationController
                     '500:700' => '500 < 700',
                     '700'     => '700+' }
 
-    @sort_array = %w(newest high low best)
+    @sort_hash = { 'Лучшее'    => 'best',
+                   'Цена low'  => 'low',
+                   'Цена high' => 'high',
+                   'Новое'     => 'newest' }
 
-    @products = Product.all
+    @sort_method_array = %w(newest high low best)
 
-    if @sort_array.include? params[:sort_by]
+    @products = Product.order('created_at DESC')
+
+    if @sort_method_array.include? params[:sort_by]
       @products = Product.send(params[:sort_by])
+      #TODO: in this scope we use order - thats why we use Product model rather than @product
     end
-
 
     if @price_hash.include? params[:price_between]
       arr = params[:price_between].split(':')
       arr[1] = '10000' if arr[1].nil? # TODO: 10000 - this is max price ( how to remove it? or let it stay ?)
 
       @products = @products.price_between(arr[0], arr[1])
+    end
+
+    if Category.all.map(&:name).include? params[:product_type]
+      @products = @products.by_category_name(params[:product_type])
     end
 
   end

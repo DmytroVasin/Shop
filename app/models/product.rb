@@ -17,6 +17,8 @@ class Product < ActiveRecord::Base
 
   scope :price_between, lambda { |min, max| where('price >= ? AND price <= ?', min, max) }
 
+  scope :by_category_name, lambda { |catname| joins(:categories).where('categories.name = ?', catname) }
+
 
   has_and_belongs_to_many :categories
 end
