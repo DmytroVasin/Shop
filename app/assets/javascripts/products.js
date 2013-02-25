@@ -2,17 +2,17 @@ $(function () {
 
 // Sort menu - dropdown list
   $('.sortdropdown').on('change', function () {
-//    window.location='/products?sort='+ this.value;
+    $('#form_sort').submit();
   });
 
 
 // Sort Section PRICE list
-  var countChecked = function() {
+  var countChecked = function () {
     $(this).parent().siblings().find('input[type=checkbox]:checked').prop('checked', false);
-//    window.location='/products?price='+ this.value;
+    $('#form_sort').submit();
   };
 
-  $( 'input[name=price_checkboxes]' ).on( "click", function(){
+  $('input[name=price_between]').on("click", function () {
     countChecked.call(this);
-  } );
+  });
 });

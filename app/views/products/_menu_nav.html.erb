@@ -54,10 +54,10 @@
     <ul>
       <% @price_hash.each_pair do |key, value| %>
         <% checked = false %>
-        <% checked = true if key == params[:price] %>
+        <% checked = true if key == params[:price_between] %>
 
         <li>
-          <%= check_box_tag 'price_checkboxes', key, checked %>
+          <%= check_box_tag 'price_between', key, checked %>
           <%= value %>
         </li>
       <% end %>

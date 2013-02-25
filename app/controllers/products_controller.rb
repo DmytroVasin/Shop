@@ -9,20 +9,20 @@ class ProductsController < ApplicationController
                     '500:700' => '500 < 700',
                     '700'     => '700+' }
 
+    @sort_array = %w(newest high low best)
 
     @products = Product.all
 
-    @products = Product.newest if params[:sort] == 'newest'
-    @products = Product.high if params[:sort] == 'high'
-    @products = Product.low if params[:sort] == 'low'
-    @products = Product.best if params[:sort] == 'best'
+    if @sort_array.include? params[:sort_by]
+      @products = Product.send(params[:sort_by])
+    end
 
 
-    if @price_hash.include? params[:price]
-      arr = params[:price].split(':')
+    if @price_hash.include? params[:price_between]
+      arr = params[:price_between].split(':')
       arr[1] = '10000' if arr[1].nil? # TODO: 10000 - this is max price ( how to remove it? or let it stay ?)
 
-      @products = Product.price_between(arr[0], arr[1])
+      @products = @products.price_between(arr[0], arr[1])
     end
 
   end

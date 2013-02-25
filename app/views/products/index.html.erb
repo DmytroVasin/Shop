@@ -1,40 +1,39 @@
-<%= form_tag( {}, method: 'get' ) do %>
+<%= form_tag({}, method: 'get', :id => 'form_sort',) do %>
 
-<div id="menu_bar">
-  <div id="breadcrumb">
-    <ul>
-      <li><a href="/"> Home </a></li>
-      <li>&raquo; For Her</li>
-    </ul>
-    <div class="clear"></div>
+  <div id="menu_bar">
+    <div id="breadcrumb">
+      <ul>
+        <li><a href="/"> Home </a></li>
+        <li>&raquo; For Her</li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+
+    <%= render 'menu_nav' %>
   </div>
 
-  <%= render 'menu_nav' %>
-</div>
+  <div id="items_bar">
+    <div id="sort_bar">
+      <div class="class_name">
+        Для неё!
+      </div>
+      <div class="sort">
+        Сортировать по:
 
-<div id="items_bar">
-  <div id="sort_bar">
-    <div class="class_name">
-      Для неё!
+        <%= select_tag(:sort_by, options_for_select([['Лучшее', 'best'],
+                                                     ['Цена low', 'low'],
+                                                     ['Цена high', 'high'],
+                                                     ['Новое', 'newest']], params[:sort_by]),
+                       class: 'sortdropdown', :include_blank => true) %>
+
+      </div>
+      <div class="clear"></div>
+      <div class="underline"></div>
     </div>
-    <div class="sort">
-      Сортировать по:
 
-      <%= select_tag(:sort_drop_down, options_for_select([['Лучшее', 'best'],
-                                                          ['Цена low', 'low'],
-                                                          ['Цена high', 'high'],
-                                                          ['Новое', 'newest']], params[:sort]),
-                     class: 'sortdropdown', :include_blank => true) %>
+    <%= render 'items_displaying', locals: { products: @products } %>
 
-    </div>
-    <div class="clear"></div>
-    <div class="underline"></div>
   </div>
+  <div class="clear"></div>
 
-  <%= render 'items_displaying', locals: { products: @products } %>
-
-</div>
-<div class="clear"></div>
-
-  <%= submit_tag 'Submit' %>
 <% end %>
