@@ -1,0 +1,23 @@
+<blockquote>
+  <h3>Бренды:</h3>
+</blockquote>
+
+<% if @brands.any? %>
+  <div class="category_margin">
+    <table class="table table-striped table-bordered category_table">
+      <tr>
+        <th>Brands name</th>
+        <th style='width: 30%'>Actions</th>
+      </tr>
+      <% @brands.each do |brand| %>
+        <tr>
+          <td><strong><%= brand.name %></strong></td>
+          <td>
+            <%= link_to 'Delete', admin_brand_path(brand.id), method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+<% end %>
+<%= link_to 'Add brand', new_admin_brand_path, class: 'btn btn-primary' %>
+</div>

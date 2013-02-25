@@ -7,8 +7,9 @@ Shop::Application.routes.draw do
   namespace :admin do
     root :to => 'base#index'
 
-    resources :categories
     resources :products
+    resources :categories
+    resources :brands
   end
 
   resources :products
