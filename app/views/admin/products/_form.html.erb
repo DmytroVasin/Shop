@@ -42,7 +42,7 @@
 </div>
 
 <div class="controls">
-  <%= collection_select(:product, :brand_ids, Brand.all, :id, :name, :prompt => 'Выбери бренд') %>
+  <%= collection_select(:product, :brand_id, Brand.all, :id, :name, :prompt => 'Выбери бренд') %>
 </div>
 
 <div class="control-group">

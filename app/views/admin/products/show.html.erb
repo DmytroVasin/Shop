@@ -4,9 +4,7 @@
     <div id="perfume_category">
       Brand of perfume:
       <ul>
-        <% @product.brands.each do |brand| %>
-          <li><i class="icon-star"></i><%= link_to brand.name, '#' %></li>
-        <% end %>
+        <li><i class="icon-star"></i><%= link_to @product.brand.name, '#' %></li>
       </ul>
 
       Category of perfume:

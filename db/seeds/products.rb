@@ -37,3 +37,11 @@ def products_and_dependencies
   perfume.categories  << category_1
   perfume.categories  << category_2
 end
+
+
+def add_dependent_brand_product
+  brand = Brand.first
+  Product.all.each do |product|
+    brand.products << product
+  end
+end

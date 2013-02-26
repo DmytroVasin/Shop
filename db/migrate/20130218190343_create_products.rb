@@ -5,6 +5,7 @@ class CreateProducts < ActiveRecord::Migration
       t.text :description
       t.decimal :price, precision: 8, scale: 2
       t.boolean :in_stock, default: false
+      t.integer :brand_id
 
       t.timestamps
     end

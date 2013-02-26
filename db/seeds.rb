@@ -9,5 +9,6 @@ add_admins
 Seeds.create_categories
 products_and_dependencies
 add_brands
+add_dependent_brand_product
 
 puts 'Load seeds complite!'
