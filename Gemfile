@@ -8,8 +8,9 @@ gem 'rails', '3.2.12'
 gem 'pg'
 gem 'jquery-rails'
 gem 'valle'
-gem 'kaminari'
 gem 'devise'
+gem 'kaminari'
+gem 'kaminari-bootstrap'
 
 # Gems used only for assets and not required
 # in production environments by default.

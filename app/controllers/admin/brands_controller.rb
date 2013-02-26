@@ -2,7 +2,7 @@ class Admin::BrandsController < Admin::BaseController
   before_filter :authenticate_admin!
 
   def index
-    @brands = Brand.all
+    @brands = Brand.order('name').page(params[:page]).per(10)
   end
 
   def new
