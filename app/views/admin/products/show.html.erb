@@ -1,7 +1,14 @@
 <div id="box_of_perfume_show">
   <div id="perfume_main_image">
-    <%= image_tag('admin/no_image_yet.jpg', alt: "no_image") %>
+    <%= image_tag('admin/no_image_yet.jpg', alt: 'no_image') %>
     <div id="perfume_category">
+      Brand of perfume:
+      <ul>
+        <% @product.brands.each do |brand| %>
+          <li><i class="icon-star"></i><%= link_to brand.name, '#' %></li>
+        <% end %>
+      </ul>
+
       Category of perfume:
       <ul>
         <% @product.categories.each do |category| %>
