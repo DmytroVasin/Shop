@@ -1,6 +1,5 @@
 $('#products_displaying').append('<%= j render(@products) %>');
 $('.pagination').replaceWith('<%= j paginate @products %>');
-<%= sleep 1 %>
 
 if ($('.pagination ul li').last().hasClass('disabled')) {
   $('#ednless_paginator').remove();

@@ -40,7 +40,9 @@
 <div class="clear"></div>
 
 <div><%= paginate @products %></div>
-<div id="ednless_paginator">ЖМИ БЫСТРЕЕ</div>
 
+<% if @products.count>=6 %>
+  <div id="ednless_paginator">Показать еще...</div>
+<% end %>
 <div class="clear"></div>
 

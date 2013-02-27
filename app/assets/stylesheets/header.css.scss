@@ -1,378 +1,374 @@
 #header {
-  font-size: 62.5%;
-	width:100%;
+  font-size : 62.5%;
+  width     : 100%;
 
-	.left	{
-		float:left;
+  .left {
+    float               : left;
     // tric to load progres.gif
     background          : url(/assets/progres.gif) no-repeat;
     background-position : left center;
 
-		a {
-			display: block;
-			margin-top: 7px;
-		}
-	}
+    a {
+      display    : block;
+      margin-top : 7px;
+    }
+  }
 
-	.right {
-		float: right;
-		margin-top: 10px;
+  .right {
+    float      : right;
+    margin-top : 10px;
 
-		.topnav {
-			margin: 40px 70px 0 0;
-			float: left;
-			width: 335px;
+    .topnav {
+      margin : 40px 70px 0 0;
+      float  : left;
+      width  : 335px;
 
-			ul {
-				float:right;
+      ul {
+        float : right;
 
-				li {
-					float: left;
-					border-right: solid 1px #999999;
-					padding-right: 6px;
-					margin-left: 6px;
-					line-height: 0.9em;
+        li {
+          float         : left;
+          border-right  : solid 1px #999999;
+          padding-right : 6px;
+          margin-left   : 6px;
+          line-height   : 0.9em;
 
-					a {
-						font-size: 1.1em;
-						color: #777;
-					}
+          a {
+            font-size : 1.1em;
+            color     : #777;
+          }
 
-					a:hover {
-						text-decoration: underline;
-					}
-				}
+          a:hover {
+            text-decoration : underline;
+          }
+        }
 
-				.last {
-					float: left;
-					border: none;
-					padding-right: 0;
-				}
-			}
-		}
-	}
+        .last {
+          float         : left;
+          border        : none;
+          padding-right : 0;
+        }
+      }
+    }
+  }
 
-	img.giftLabel {
-		float: left;
-		z-index: 100;
-		position: relative;
-	}
+  img.giftLabel {
+    float    : left;
+    z-index  : 100;
+    position : relative;
+  }
 
-	.basket {
-		float:left;
+  .basket {
+    float : left;
 
-		.basketimg {
-			background: url(/assets/delivery.jpg) no-repeat 0 4px transparent;
-			width: 70px;
-			height: 82px;
-			display: block;
-			float: left;
-			text-indent: -5000px;
-			margin-top: 15px;
-		}
+    .basketimg {
+      background  : url(/assets/delivery.jpg) no-repeat 0 4px transparent;
+      width       : 70px;
+      height      : 82px;
+      display     : block;
+      float       : left;
+      text-indent : -5000px;
+      margin-top  : 15px;
+    }
 
-		.basketcontent {
-			float: left;
-			width: 80px;
-			margin: 20px 20px 0 10px;
+    .basketcontent {
+      float  : left;
+      width  : 80px;
+      margin : 20px 20px 0 10px;
 
- 			.baskettext {
-				color: #000;
-				font-size:1.2em;
-				display:block;
-				float:left;
-				font-style:italic;
-			}
+      .baskettext {
+        color      : #000;
+        font-size  : 1.2em;
+        display    : block;
+        float      : left;
+        font-style : italic;
+      }
 
-			.basketnum {
-				font-weight:bold;
-				font-size:1.6em;
-				color: #8e908f;
-				float:left;
-				margin-right:5px;
-			}
+      .basketnum {
+        font-weight  : bold;
+        font-size    : 1.6em;
+        color        : #8e908f;
+        float        : left;
+        margin-right : 5px;
+      }
 
-			.basketbutton {
-				float:left;
-				margin-top:5px;
-			}
-		}
+      .basketbutton {
+        float      : left;
+        margin-top : 5px;
+      }
+    }
 
-		.cartItems {
-			line-height: 20px;
-		  margin-left: 10px;
-		  margin-bottom: 24px;
-		}
-	}
+    .cartItems {
+      line-height   : 20px;
+      margin-left   : 10px;
+      margin-bottom : 24px;
+    }
+  }
 }
-
 
 // menu -----------------------------------------------------------------------------------------------
 
+#main_menu {
+  margin-left : -2px;
 
-#main_menu{
-	margin-left: -2px;
+  ul.sdt_menu {
+    margin      : 0;
+    padding     : 0;
+    list-style  : none;
+    font-family : "Myriad Pro", "Trebuchet MS", sans-serif;
+    font-size   : 14px;
+    width       : 984px;
 
-	ul.sdt_menu {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
-		font-size: 14px;
-		width: 984px;
+    a {
+      text-decoration : none;
+      outline         : none;
+    }
 
-		a {
-			text-decoration:none;
-			outline:none;
-		}
+    li {
 
-		li {
+      span.sdt_wrap {
+        position : absolute;
+        top      : 5px;
+        left     : 0px;
+        width    : 120px;
+        height   : 60px;
+        z-index  : 15;
+      }
 
-			span.sdt_wrap {
-				position: absolute;
-				top: 5px;
-				left: 0px;
-				width: 120px;
-				height: 60px;
-				z-index: 15;
-			}
+      span.sdt_active {
+        position           : absolute;
+        border-radius      : 0 0 5px 5px;
 
-			span.sdt_active{
-				position: absolute;
-				border-radius: 0 0 5px 5px;
+        background         : #777; /* Для старых браузров */
+        background         : -moz-linear-gradient(top, #777, #151515); /* Firefox 3.6+ */
+        background         : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #777), color-stop(100%, #151515));
+        background         : -webkit-linear-gradient(top, #777, #151515);
+        background         : -o-linear-gradient(top, #777, #151515); /* Opera 11.10+ */
+        background         : -ms-linear-gradient(top, #777, #151515); /* IE10 */
+        background         : linear-gradient(top, #777, #151515); /* CSS3 */
 
-			  background: #777; /* Для старых браузров */
-			  background: -moz-linear-gradient(top, #777, #151515); /* Firefox 3.6+ */
-			  background: -webkit-gradient(linear, left top, left bottom,
-			              color-stop(0%,#777), color-stop(100%,#151515));
-			  background: -webkit-linear-gradient(top, #777, #151515);
-			  background: -o-linear-gradient(top, #777, #151515); /* Opera 11.10+ */
-			  background: -ms-linear-gradient(top, #777, #151515); /* IE10 */
-			  background: linear-gradient(top, #777, #151515); /* CSS3 */
+        top                : 40px;
+        width              : 120px;
+        height             : 0px;
+        left               : 0px;
+        z-index            : 14;
+        -moz-box-shadow    : 0px 0px 4px #000 inset;
+        -webkit-box-shadow : 0px 0px 4px #000 inset;
+        box-shadow         : 0px 0px 4px #000 inset;
+      }
 
-				top: 40px;
-				width: 120px;
-				height: 0px;
-				left: 0px;
-				z-index: 14;
-				-moz-box-shadow:0px 0px 4px #000 inset;
-				-webkit-box-shadow:0px 0px 4px #000 inset;
-				box-shadow:0px 0px 4px #000 inset;
-			}
+      span.sdt_descr {
+        text-align     : center;
+        text-shadow    : 2px 2px 2px #777777;
+        color          : #fff;
+        float          : left;
+        clear          : both;
+        width          : 120px; /*For dumbass IE7*/
+        font-size      : 9px;
+        letter-spacing : 0.7px;
+        display        : none;
+        line-height    : 1.2em;
+      }
 
-			span.sdt_descr {
-				text-align: center;
-				text-shadow: 2px 2px 2px #777777;
-				color: #fff;
-				float: left;
-				clear: both;
-				width: 120px; /*For dumbass IE7*/
-				font-size: 9px;
-				letter-spacing: 0.7px;
-				display:none;
-				line-height: 1.2em;
-			}
+      span.sdt_link {
+        text-align     : center;
+        text-shadow    : 2px 2px 2px #777777;
+        color          : #fff;
+        font-size      : 15px;
+        float          : left;
+        clear          : both;
+        letter-spacing : 1px;
+        width          : 120px;
+      }
 
-			span.sdt_link {
-				text-align: center;
-				text-shadow: 2px 2px 2px #777777;
-				color: #fff;
-				font-size: 15px;
-				float: left;
-				clear: both;
-				letter-spacing: 1px;
-  			width: 120px;
-			}
+      div.sdt_box {
+        position    : absolute;
+        width       : 328px;
+        overflow    : hidden;
+        top         : 94px;
+        left        : -238px;
+        display     : none;
+        background  : url(/assets/mega-menu-dropdown-bg.jpg) repeat-x #fff;
+        z-index     : 5000;
+        padding     : 15px 15px 30px 15px;
+        cursor      : default;
 
-			div.sdt_box {
-				position: absolute;
-				width: 328px;
-				overflow: hidden;
-				top: 94px;
-				left: -238px;
-				display: none;
-				background:url(/assets/mega-menu-dropdown-bg.jpg) repeat-x #fff;
-				z-index:5000;
-				padding:15px 15px 30px 15px;
-				cursor: default;
+        line-height : 17px;
+        font-family : Arial;
 
-				line-height: 17px;
-				font-family: Arial;
+        #crazy_menu {
+          a {
+            position    : relative;
+            color       : white;
+            font-size   : 12px;
+            font-weight : 600;
+          }
 
-				#crazy_menu {
-					a {
-						position: relative;
-						color: white;
-						font-size: 12px;
-						font-weight: 600;
-					}
+          a:hover {
+            text-decoration : underline
+          }
 
-					a:hover {
-						text-decoration: underline
-					}
+          .leftcolumn {
+            float       : left;
+            display     : block;
+            width       : 50%;
+            margin-left : 10px;
+          }
 
-					.leftcolumn {
-						float: left;
-						display: block;
-						width: 50%;
-						margin-left: 10px;
-					}
+          .rightcolumn {
+            float   : left;
+            display : block;
+          }
 
-					.rightcolumn {
-						float: left;
-						display: block;
-					}
+          .viewallbrandslink {
+            bottom   : 8px;
+            left     : 80px;
+            position : absolute;
+            color    : #959796;
+          }
+        }
+      }
+    }
 
-					.viewallbrandslink {
-				    bottom: 8px;
-				    left: 80px;
-				    position: absolute;
-				    color: #959796;
-					}
-				}
-			}
-		}
+    #search {
+      width      : 260px;
 
-		#search {
-			width: 260px;
+      float      : left;
+      height     : 40px;
+      position   : relative;
+      cursor     : pointer;
+      background : #c5c7c7;
 
-			float: left;
-			height: 40px;
-			position: relative;
-			cursor: pointer;
-		  background: #c5c7c7;
+      background : -moz-linear-gradient(top, #c5c7c7, #8f9190);
+      background : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c5c7c7), color-stop(100%, #8f9190));
+      background : -webkit-linear-gradient(top, #c5c7c7, #8f9190);
+      background : -o-linear-gradient(top, #c5c7c7, #8f9190);
+      background : -ms-linear-gradient(top, #c5c7c7, #8f9190);
+      background : linear-gradient(top, #c5c7c7, #8f9190);
 
-		  background: -moz-linear-gradient(top, #c5c7c7, #8f9190);
-		  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c5c7c7), color-stop(100%,#8f9190));
-		  background: -webkit-linear-gradient(top, #c5c7c7, #8f9190);
-		  background: -o-linear-gradient(top, #c5c7c7, #8f9190);
-		  background: -ms-linear-gradient(top, #c5c7c7, #8f9190);
-		  background: linear-gradient(top, #c5c7c7, #8f9190);
-
-		  box-shadow: 0 0 1px #333333 inset;
-		}
-	}
+      box-shadow : 0 0 1px #333333 inset;
+    }
+  }
 }
 
 ul.sdt_menu > li {
-	float: left;
-	width: 120px;
-	height: 40px;
-	position: relative;
-	cursor: pointer;
-  background: #c5c7c7;
+  float      : left;
+  width      : 120px;
+  height     : 40px;
+  position   : relative;
+  cursor     : pointer;
+  background : #c5c7c7;
 
-  background: -moz-linear-gradient(top, #c5c7c7, #8f9190);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c5c7c7), color-stop(100%,#8f9190));
-  background: -webkit-linear-gradient(top, #c5c7c7, #8f9190);
-  background: -o-linear-gradient(top, #c5c7c7, #8f9190);
-  background: -ms-linear-gradient(top, #c5c7c7, #8f9190);
-  background: linear-gradient(top, #c5c7c7, #8f9190);
+  background : -moz-linear-gradient(top, #c5c7c7, #8f9190);
+  background : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c5c7c7), color-stop(100%, #8f9190));
+  background : -webkit-linear-gradient(top, #c5c7c7, #8f9190);
+  background : -o-linear-gradient(top, #c5c7c7, #8f9190);
+  background : -ms-linear-gradient(top, #c5c7c7, #8f9190);
+  background : linear-gradient(top, #c5c7c7, #8f9190);
 }
 
 ul.sdt_menu > li > a {
-	position:absolute;
-	top: 0px;
-	left: 0px;
-	width: 120px;
-	height: 40px;
-	z-index: 12;
-	-moz-box-shadow: 0px 0px 1px #333 inset;
-	-webkit-box-shadow: 0px 0px 1px #333 inset;
-	box-shadow:0px 0px 1px #333 inset;
+  position           : absolute;
+  top                : 0px;
+  left               : 0px;
+  width              : 120px;
+  height             : 40px;
+  z-index            : 12;
+  -moz-box-shadow    : 0px 0px 1px #333 inset;
+  -webkit-box-shadow : 0px 0px 1px #333 inset;
+  box-shadow         : 0px 0px 1px #333 inset;
 
-	img{
-		border:none;
-		position:absolute;
-		width:0px;
-		height:0px;
-		bottom:0px;
-		left:55px;
-		z-index:100;
-		-moz-box-shadow:0px 0px 4px #000;
-		-webkit-box-shadow:0px 0px 4px #000;
-		box-shadow:0px 0px 4px #FFF;
-	}
+  img {
+    border             : none;
+    position           : absolute;
+    width              : 0px;
+    height             : 0px;
+    bottom             : 0px;
+    left               : 55px;
+    z-index            : 100;
+    -moz-box-shadow    : 0px 0px 4px #000;
+    -webkit-box-shadow : 0px 0px 4px #000;
+    box-shadow         : 0px 0px 4px #FFF;
+  }
 }
-
 
 // ------------------------------------------------------------------------------------------------   SEARCH
 
 #search input[type="text"] {
-  margin-left: 29px;
-  margin-top: 7px;
-	background: url(/assets/search-white.png) no-repeat 10px 6px #444;
-	border: 0 none;
-	font: bold 12px Arial,Helvetica,Sans-serif;
-	color: #d7d7d7;
-	width: 100px;
-	padding: 7px 15px 6px 30px;
-	-webkit-border-radius: 20px;
-	-moz-border-radius: 20px;
-	border-radius: 20px;
-	text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
-	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
-	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
-	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
-	-webkit-transition: all 0.7s ease 0s;
-	-moz-transition: all 0.7s ease 0s;
-	-o-transition: all 0.7s ease 0s;
-	transition: all 0.7s ease 0s;
-	}
+  margin-left           : 29px;
+  margin-top            : 7px;
+  background            : url(/assets/search-white.png) no-repeat 10px 6px #444;
+  border                : 0 none;
+  font                  : bold 12px Arial, Helvetica, Sans-serif;
+  color                 : #d7d7d7;
+  width                 : 100px;
+  padding               : 7px 15px 6px 30px;
+  -webkit-border-radius : 20px;
+  -moz-border-radius    : 20px;
+  border-radius         : 20px;
+  text-shadow           : 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow    : 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow       : 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  box-shadow            : 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -webkit-transition    : all 0.7s ease 0s;
+  -moz-transition       : all 0.7s ease 0s;
+  -o-transition         : all 0.7s ease 0s;
+  transition            : all 0.7s ease 0s;
+}
 
-#search input[type="text"]:focus{
-	background: url(/assets/search-dark.png) no-repeat 10px 6px #fcfcfc;
-	color: #6a6f75;
-	width: 150px;
-	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
-	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
-	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
-	text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+#search input[type="text"]:focus {
+  background         : url(/assets/search-dark.png) no-repeat 10px 6px #fcfcfc;
+  color              : #6a6f75;
+  width              : 150px;
+  -webkit-box-shadow : 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+  -moz-box-shadow    : 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+  box-shadow         : 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+  text-shadow        : 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
 //  --------------------------------------------------------------------------------------Tooltip
 #aToolTip {
-	position: absolute;
-	display: none;
-	z-index: 50000;
-	top: 199px;
-	left: 968px;
+  position : absolute;
+  display  : none;
+  z-index  : 50000;
+  top      : 199px;
+  left     : 968px;
 }
 
 #aToolTip .aToolTipContent {
-	position:relative;
-	margin:0;
-	padding:0;
-	font: bold italic 70% serif;
+  position : relative;
+  margin   : 0;
+  padding  : 0;
+  font     : bold italic 70% serif;
 }
 
 .defaultTheme {
-	border:2px solid #666;
-	background:#888;
-	color:#fff;
-	margin:0;
-	padding:6px 12px;
+  border                : 2px solid #666;
+  background            : #888;
+  color                 : #fff;
+  margin                : 0;
+  padding               : 6px 12px;
 
-	-moz-border-radius: 12px 12px 12px 0;
-	-webkit-border-radius: 12px 12px 12px 0;
-	-khtml-border-radius: 12px 12px 12px 0;
-	border-radius: 12px 12px 12px 0;
+  -moz-border-radius    : 12px 12px 12px 0;
+  -webkit-border-radius : 12px 12px 12px 0;
+  -khtml-border-radius  : 12px 12px 12px 0;
+  border-radius         : 12px 12px 12px 0;
 
-	-moz-box-shadow: 2px 2px 5px #111; /* for Firefox 3.5+ */
-	-webkit-box-shadow: 2px 2px 5px #111; /* for Safari and Chrome */
-	box-shadow: 2px 2px 5px #111; /* for Safari and Chrome */
+  -moz-box-shadow       : 2px 2px 5px #111; /* for Firefox 3.5+ */
+  -webkit-box-shadow    : 2px 2px 5px #111; /* for Safari and Chrome */
+  box-shadow            : 2px 2px 5px #111; /* for Safari and Chrome */
 }
 
 .defaultTheme #aToolTipCloseBtn {
-	display:block;
-	height:18px;
-	width:18px;
-	background:url(/assets/closeBtn.png) no-repeat;
-	text-indent:-9999px;
-	outline:none;
-	position:absolute;
-	top:-20px;
-	right:-30px;
-	margin:2px;
-	padding:4px;
+  display     : block;
+  height      : 18px;
+  width       : 18px;
+  background  : url(/assets/closeBtn.png) no-repeat;
+  text-indent : -9999px;
+  outline     : none;
+  position    : absolute;
+  top         : -20px;
+  right       : -30px;
+  margin      : 2px;
+  padding     : 4px;
 }

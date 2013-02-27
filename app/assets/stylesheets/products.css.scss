@@ -196,10 +196,30 @@
 /*  ----   ITEMS END   ----  */
 
 #ednless_paginator {
-  color       : red;
-  font-size   : 16px;
-  font-weight : bold;
-  cursor      : pointer;
+  color            : #535353;
+  text-shadow      : 1px 1px 1px #aaa;
+  font-family      : Georgia, Times, serif;
+  font-size        : 15px;
+
+  background-color : #F8F8F8;
+  border           : 1px solid #C6C6C6;
+
+  cursor           : pointer;
+  width            : 751px;
+  height           : 24px;
+  margin-left      : 221px;
+  text-align       : center;
+}
+
+#ednless_paginator:hover {
+  background   : -moz-linear-gradient(top, #F8F8F8, #ddd);
+  background   : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F8F8F8), color-stop(100%, #ddd));
+  background   : -webkit-linear-gradient(top, #F8F8F8, #ddd);
+  background   : -o-linear-gradient(top, #F8F8F8, #ddd);
+  background   : -ms-linear-gradient(top, #F8F8F8, #ddd);
+  background   : linear-gradient(top, #F8F8F8, #ddd);
+  border-color : #c6c6c6;
+  border       : 1px solid #a2a2a2;
 }
 
 .pagination ul {

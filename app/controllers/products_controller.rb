@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
     @products = Product.order('created_at DESC').page(params[:page]).per(6)
 
     if @sort_method_array.include? params[:sort_by]
-      @products = Product.send(params[:sort_by])
+      @products = Product.send(params[:sort_by]).page(params[:page]).per(6)
       #TODO: in this scope we use order - thats why we use Product model rather than @product
     end
 
