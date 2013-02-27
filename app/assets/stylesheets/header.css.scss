@@ -4,7 +4,10 @@
 
 	.left	{
 		float:left;
-		
+    // tric to load progres.gif
+    background          : url(/assets/progres.gif) no-repeat;
+    background-position : left center;
+
 		a {
 			display: block;
 			margin-top: 7px;

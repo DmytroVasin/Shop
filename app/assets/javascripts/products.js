@@ -22,4 +22,14 @@ $(function () {
     countChecked.call(this);
   });
 
+// ENDLESS paginator
+  $('#ednless_paginator').on('click', function () {
+
+    url = $('.pagination .next_page').attr('href');
+    if (url) {
+      $.getScript(url);
+      $('.pagination ul').replaceWith('<div id="endless_message"></div>');
+    }
+  });
+
 });

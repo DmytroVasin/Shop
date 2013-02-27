@@ -28,9 +28,19 @@
       <div class="underline"></div>
     </div>
 
-    <%= render 'items_displaying', locals: { products: @products } %>
-
+    <div id="items">
+      <ul>
+        <div id='products_displaying'>
+          <%= render @products %>
+        </div>
+      </ul>
+    </div>
   </div>
-  <div class="clear"></div>
-
 <% end %>
+<div class="clear"></div>
+
+<div><%= paginate @products %></div>
+<div id="ednless_paginator">ЖМИ БЫСТРЕЕ</div>
+
+<div class="clear"></div>
+
