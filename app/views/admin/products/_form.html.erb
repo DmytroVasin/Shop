@@ -41,7 +41,7 @@
   <% end %>
 </div>
 
-<div class="controls">
+<div id='drop_brand_menu' class="controls">
   <%= collection_select(:product, :brand_id, Brand.all, :id, :name, :prompt => 'Выбери бренд') %>
 </div>
 
