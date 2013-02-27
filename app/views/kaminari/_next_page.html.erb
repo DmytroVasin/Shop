@@ -4,7 +4,7 @@
   </li>
 <% else %>
   <li>
-    <%= link_to raw(t 'views.pagination.next'), url, :rel => 'next', :remote => remote %>
+    <%= link_to raw(t 'views.pagination.next'), url, :rel => 'next', :remote => remote, class: 'next_page' %>
   </li>
 <% end %>
 

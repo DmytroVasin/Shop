@@ -1,0 +1,20 @@
+<% if (n-2)%3 == 0 %>
+    <li class='last'>
+  <% else %>
+    <li>
+  <% end %>
+  <a href="#"><img class="productimg" src="assets/item1.jpg" /></a>
+
+  <div class="productinfo">
+    <div class="paddingwrapper">
+      <div class="title">
+        <h2>
+          <a href="#"><%= product.title %></a>
+        </h2>
+      </div>
+      <div class="price">
+        Цена <%= product.price %>грн.
+      </div>
+    </div>
+  </div>
+  </li>

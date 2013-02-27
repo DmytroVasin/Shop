@@ -2,7 +2,7 @@ class Admin::ProductsController < Admin::BaseController
   before_filter :authenticate_admin!
 
   def index
-    @products = Product.order('id')
+    @products = Product.order('id').page(params[:page]).per(10)
   end
 
   def show

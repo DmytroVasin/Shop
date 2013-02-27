@@ -2,6 +2,7 @@
   <h2>Perfumes:</h2>
 </blockquote>
 <% if @products.any? %>
+  <%= paginate @products, window: 2 %>
   <table class='table table-striped span12'>
     <tr>
       <th style="width: 2%">id</th>
@@ -29,4 +30,4 @@
     <% end %>
   </table>
 <% end %>
-<%= link_to 'New', new_admin_product_path, class: 'btn btn-success perfume_new_btn' %>
+<%= link_to 'New', new_admin_product_path, class: 'btn btn-success perfume_new_btn custom_black_btn' %>

@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
 
     @sort_method_array = %w(newest high low best)
 
-    @products = Product.order('created_at DESC')
+    @products = Product.order('created_at DESC').page(params[:page]).per(6)
 
     if @sort_method_array.include? params[:sort_by]
       @products = Product.send(params[:sort_by])
