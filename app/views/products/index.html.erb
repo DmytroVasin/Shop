@@ -31,7 +31,13 @@
     <div id="items">
       <ul>
         <div id='products_displaying'>
-          <%= render @products %>
+          <% if @products.size > 0 %>
+            <%= render @products %>
+          <% else %>
+            <div id="no_match_criteria">
+              К сожалению, не найдено результатов, соответствующих Вашим критериям
+            </div>
+          <% end %>
         </div>
       </ul>
     </div>
