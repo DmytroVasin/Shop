@@ -18,7 +18,12 @@ class ProductsController < ApplicationController
     @sort_method_array = %w(newest high low best)
 
     @categories  = Category.all
-    @brands      = Brand.joins(:products).uniq!
+
+    @brands_with_product = Brand.joins(:products)
+    @brands      = @brands_with_product.uniq!
+
+    @brands_left  = @brands_with_product.random_by_id_shuffle(10)
+    @brands_right = @brands_with_product.random_by_id_shuffle(10)
 
     @products = Product.order('created_at DESC').page(params[:page]).per(6)
 

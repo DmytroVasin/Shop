@@ -1,7 +1,7 @@
 <div id='main_menu'>
   <ul id="sdt_menu" class="sdt_menu">
     <li>
-      <a href="#">
+      <a href="/products?product_type=For+Her">
         <img src="/assets/2.jpg" alt="" />
         <span class="sdt_active"></span>
 				<span class="sdt_wrap">
@@ -11,7 +11,7 @@
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="/products?product_type=For+Him">
         <img src="/assets/1.jpg" alt="" />
         <span class="sdt_active"></span>
 				<span class="sdt_wrap">
@@ -21,7 +21,7 @@
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="/products?product_type=Gift+set">
         <img src="/assets/3.jpg" alt="" />
         <span class="sdt_active"></span>
 				<span class="sdt_wrap">
@@ -41,7 +41,7 @@
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="/products?product_type=Specials">
         <img src="/assets/5.jpg" alt="" />
         <span class="sdt_active"></span>
 				<span class="sdt_wrap">
@@ -62,24 +62,10 @@
       <div class="sdt_box">
         <div id="crazy_menu">
           <ul class="leftcolumn">
-            <li><a href="#">Chloe asd aAAssss</a></li>
-            <li><a href="#">Diesel </a></li>
-            <li><a href="#">Dolce & Gabbana </a></li>
-            <li><a href="#">Guccias</a></li>
-            <li><a href="#">FAD</a></li>
-            <li><a href="#">Elizabeth Arden</a></li>
-            <li><a href="#">FCUK</a></li>
-            <li><a href="#">Guccias</a></li>
+            <%= render partial: 'shared/random_brands', collection: @brands_left, as: :item %>
           </ul>
           <ul class="rightcolumn">
-            <li><a href="#">Givenchy </a></li>
-            <li><a href="#">Jean Paul Gaultier</a></li>
-            <li><a href="#">Kate Moss</a></li>
-            <li><a href="#">Elizabeth Arden</a></li>
-            <li><a href="#">Hugo Bossics</a></li>
-            <li><a href="#">Elizabeth Arden</a></li>
-            <li><a href="#">Guccias</a></li>
-            <li><a href="#">Jean Paul Gaultier</a></li>
+            <%= render partial: 'shared/random_brands', collection: @brands_right, as: :item %>
           </ul>
           <div class="clear"></div>
           <a class="viewallbrandslink" href="#"> » Показать все бренды...</a>

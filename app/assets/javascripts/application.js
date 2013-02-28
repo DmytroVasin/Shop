@@ -15,6 +15,7 @@
 //= require welcome
 //= require products
 //= require jquery.easing.1.3.js
+//= require scrolling
 //= require_self
 
 $(function () {
