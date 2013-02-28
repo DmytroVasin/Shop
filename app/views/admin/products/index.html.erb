@@ -3,7 +3,7 @@
 </blockquote>
 <% if @products.any? %>
   <div id="paginator">
-    <%= paginate @products, window: 2, :remote => true %>
+    <%= paginate @products, window: 2, remote: true %>
   </div>
   <table class='table table-striped span12'>
     <thead style="text-align: center">

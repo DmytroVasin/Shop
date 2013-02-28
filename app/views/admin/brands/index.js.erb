@@ -1,0 +1,2 @@
+$('#brands_body').html('<%= escape_javascript render(@brands) %>');
+$('#paginator').html('<%= escape_javascript(paginate(@brands, window: 2, remote: true)) %>');
