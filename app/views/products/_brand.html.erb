@@ -1,0 +1,9 @@
+<% checked_type = false %>
+<% checked_type = true if brand.name == params[:brand_type] %>
+
+<li>
+  <label>
+    <%= check_box_tag 'brand_type', brand.name, checked_type %>
+    <%= brand.name %>
+  </label>
+</li>

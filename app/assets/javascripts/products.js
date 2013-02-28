@@ -22,6 +22,11 @@ $(function () {
     countChecked.call(this);
   });
 
+//  Sort Section BRAND TYPE list
+  $('input[name=brand_type]').on("click", function () {
+    countChecked.call(this);
+  });
+
 // ENDLESS paginator     -------------------------------------------------------------
   $('#ednless_paginator').on('click', function () {
 

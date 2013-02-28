@@ -90,22 +90,6 @@
   margin-right : 7px;
 }
 
-.menu .section .lock_at_all {
-  background          : url(/assets/plus.gif) no-repeat;
-  background-position : left center;
-  padding-left        : 20px;
-  margin              : -10px 0 0 17px;
-  cursor              : pointer;
-}
-
-.menu .section .lock_at_all a {
-  font-size   : 13px;
-  font-weight : bold;
-  line-height : 15px;
-  color       : #444;
-  font-family : Georgia, Times, serif;
-}
-
 /*   -----   MENU  END   -----   */
 #items_bar {
   float  : left;
@@ -195,6 +179,8 @@
 
 /*  ----   ITEMS END   ----  */
 
+/*  ----   ENDLESS PAGINATION START   ----  */
+
 #ednless_paginator {
   color            : #535353;
   text-shadow      : 1px 1px 1px #aaa;
@@ -232,4 +218,12 @@
   height              : 16px;
   width               : 210px;
   margin-left         : 493px;
+}
+
+/*  ----   ENDLESS PAGINATION END   ----  */
+
+#brands_section {
+  width    : 175px;
+  height   : 250px;
+  overflow : auto;
 }

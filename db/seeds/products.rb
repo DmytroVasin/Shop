@@ -6,10 +6,11 @@ def products_and_dependencies
                                          sandalwood and amber to create a fresh masculine scent thats perfect for day
                                          wear. Acqua Di Gio is available in eau de toilette spray and comes in a classic bottle.',
                            price:       10.85,
+                           rank:        1,
                            in_stock:    true)
 
   category_1 = Category.first
-  perfume.categories  << category_1
+  perfume.categories << category_1
 
 
   perfume = Product.create(title:       'Eternity Eau De Parfum',
@@ -19,10 +20,11 @@ def products_and_dependencies
                                          and romantic day time scent for women of all ages. Available in a stylish eau de parfum
                                          spray bottle.',
                            price:       20.50,
+                           rank:        2,
                            in_stock:    true)
 
   category_2 = Category.last
-  perfume.categories  << category_2
+  perfume.categories << category_2
 
 
   perfume = Product.create(title:       'Amy Childs Eau De Toilette',
@@ -32,10 +34,11 @@ def products_and_dependencies
                                          skin musks, soft woods and vanilla. Amy Childs feminine scent is also encased in an adorable
                                          deep purple, multi-faceted bottle embellished with a heart shaped charm.',
                            price:       80,
+                           rank:        3,
                            in_stock:    false)
 
-  perfume.categories  << category_1
-  perfume.categories  << category_2
+  perfume.categories << category_1
+  perfume.categories << category_2
 end
 
 

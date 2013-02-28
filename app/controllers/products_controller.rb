@@ -17,6 +17,9 @@ class ProductsController < ApplicationController
 
     @sort_method_array = %w(newest high low best)
 
+    @categories  = Category.all
+    @brands      = Brand.joins(:products).uniq!
+
     @products = Product.order('created_at DESC').page(params[:page]).per(6)
 
     if @sort_method_array.include? params[:sort_by]
@@ -31,10 +34,13 @@ class ProductsController < ApplicationController
       @products = @products.price_between(arr[0], arr[1])
     end
 
-    if Category.all.map(&:name).include? params[:product_type]
+    if @categories.map(&:name).include? params[:product_type]
       @products = @products.by_category_name(params[:product_type])
     end
 
+    if @brands.map(&:name).include? params[:brand_type]
+      @products = @products.by_brands_name(params[:brand_type])
+    end
   end
 
 end

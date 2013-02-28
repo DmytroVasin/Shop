@@ -7,7 +7,7 @@
     <h3>Product Type:</h3>
 
     <ul>
-      <% Category.all.each do |category| %>
+      <% @categories.each do |category| %>
         <% checked_type = false %>
         <% checked_type = true if category.name == params[:product_type] %>
 
@@ -23,32 +23,9 @@
 
   <div class="section">
     <h3>Бренды:</h3>
-
-    <ul>
-      <li>
-        <label><input type="checkbox">Calvin Klein</label>
-      </li>
-      <li>
-        <label><input type="checkbox" />Christian Dior</label>
-      </li>
-      <li>
-        <label><input type="checkbox" />Diesel</label>
-      </li>
-      <li>
-        <label><input type="checkbox" />Dolce & Gabbana</label>
-      </li>
-      <li>
-        <label><input type="checkbox" />Yves Saint Laurent</label>
-      </li>
-      <li>
-        <label><input type="checkbox" />Paco Rabanne</label>
-      </li>
+    <ul id="brands_section">
+      <%= render :partial => 'products/brand', collection: @brands %>
     </ul>
-    <div class="lock_at_all">
-      <a href="#">
-        Все бренды.
-      </a>
-    </div>
   </div>
 
   <div class="section">

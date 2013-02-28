@@ -1,7 +1,6 @@
 <blockquote>
   <h3>Бренды:</h3>
 </blockquote>
-
 <% if @brands.any? %>
   <div id="paginator">
     <%= paginate @brands, window: 2, remote: true %>
