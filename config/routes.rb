@@ -14,11 +14,11 @@ Shop::Application.routes.draw do
 
   resources :products
 
-  match 'about_us' => 'welcome#about_us'
-  match 'to_order' => 'welcome#to_order'
-  match 'warranties' => 'welcome#warranties'
-  match 'service' => 'welcome#service'
-  match 'faqs' => 'welcome#faqs'
+  match 'about_us' => 'optional_pages#about_us'
+  match 'to_order' => 'optional_pages#to_order'
+  match 'warranties' => 'optional_pages#warranties'
+  match 'service' => 'optional_pages#service'
+  match 'faqs' => 'optional_pages#faqs'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
