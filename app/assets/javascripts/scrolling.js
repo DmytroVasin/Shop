@@ -1,7 +1,7 @@
 $(function () {
 //  Scrolling page aftee loading
   $('.viewallbrandslink').on('click', function(){
-//    window.location='/products';
-//    $('body').scrollTo(350)
+    window.location='/products';
+    $('body').scrollTo(350)
   });
 });
