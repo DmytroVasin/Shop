@@ -6,7 +6,7 @@
 
 .menu .section ul li a {
   margin-left : -3px;
-  font-family : Georgia, ​ Times, ​ serif;
+  font-family : Georgia, "Times New Roman", serif;
   font-size   : 13px;
   color       : #777;
 }
@@ -26,3 +26,42 @@
 }
 
 /*   -----   MENU  END   -----   */
+
+/*   -----   WITH TEXT START  -----   */
+
+.rights_column {
+  float  : left;
+  width  : 700px;
+  margin : 40px 0 0 25px;
+}
+
+.rights_column h3 {
+  font-family : Georgia, "Times New Roman", serif;
+  font-size   : 20px;
+  font-weight : bold;
+  margin-left : 20px;
+}
+
+.rights_column p {
+  color       : #5E5E5E;
+  font-family : Arial;
+  font-size   : 13px;
+  margin-top  : 16px;
+  line-height : 22px;
+}
+
+.rights_column ul {
+  list-style-type : circle;
+  margin-left     : 40px;
+  font-size       : 12px;
+  color           : #111;
+  line-height     : 18px;
+  margin-top      : 10px;
+  text-shadow     : 1px 1px 1px #777777;
+}
+
+.rights_column ul li {
+
+}
+
+/*   -----   WITH TEXT END   -----   */
