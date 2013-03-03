@@ -17,16 +17,10 @@
 
  / only for welcome page
  *= require welcome.css.scss
-
- /products for products page ( and for optional page )
-
-
- /optional_pages
- *= require optional_pages.css.scss
-  */
+ */
 
 body {
-  /* *= require products.css.scss */
+
 
   background            : url(/assets/backgroud_image_1.jpg) 20% 80% no-repeat;
   /*background: url(background_image.jpg) 0 15% no-repeat;*/
