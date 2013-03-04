@@ -16,6 +16,12 @@ class OptionalPagesController < ApplicationController
   def faqs
   end
 
+  def security
+  end
+
+  def policy
+  end
+
   private
   def set_brands
     @brands_left  = Brand.joins(:products).random_by_id_shuffle(10)

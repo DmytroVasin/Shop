@@ -19,6 +19,8 @@ Shop::Application.routes.draw do
   match 'warranties' => 'optional_pages#warranties'
   match 'service' => 'optional_pages#service'
   match 'faqs' => 'optional_pages#faqs'
+  match 'security' => 'optional_pages#security'
+  match 'policy' => 'optional_pages#policy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
