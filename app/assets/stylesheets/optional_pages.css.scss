@@ -60,10 +60,22 @@
 }
 
 strong {
-  color: #676767;
-  font-family: Georgia;
-  font-size: 15px;
-  text-shadow: 1px 1px 1px #838383;
+  color       : #676767;
+  font-family : Georgia;
+  font-size   : 15px;
+  text-shadow : 1px 1px 1px #838383;
+}
+
+.rights_column ul.faq {
+  list-style : none;
+}
+
+.rights_column ul.faq p {
+  margin: 0;
+}
+
+.rights_column strong.red {
+  color: red;
 }
 
 /*   -----   WITH TEXT END   -----   */
