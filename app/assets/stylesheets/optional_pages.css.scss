@@ -3,27 +3,28 @@
 .menu .section ul {
   margin           : 5px 0 10px 40px;
   list-style-image : url(/assets/arrow.gif);
+
+  li {
+    line-height : 17px;
+
+    a {
+      margin-left : -3px;
+      font-family : Georgia, "Times New Roman", serif;
+      font-size   : 13px;
+      color       : #777;
+    }
+
+    a.current_page {
+      font-weight : bold;
+      color       : #333;
+    }
+
+    a:hover {
+      text-decoration : underline;
+    }
+  }
 }
 
-.menu .section ul li {
-  line-height : 17px;
-}
-
-.menu .section ul li a {
-  margin-left : -3px;
-  font-family : Georgia, "Times New Roman", serif;
-  font-size   : 13px;
-  color       : #777;
-}
-
-.menu .section ul li a.current_page {
-  font-weight : bold;
-  color       : #333;
-}
-
-.menu .section ul li a:hover {
-  text-decoration : underline;
-}
 /*   -----   MENU  END   -----   */
 
 /*   -----   WITH TEXT START  -----   */
@@ -32,48 +33,49 @@
   float       : left;
   width       : 700px;
   margin-left : 25px;
+
+  h3 {
+    font-family : Georgia, "Times New Roman", serif;
+    font-size   : 20px;
+    font-weight : bold;
+    margin      : 40px 0 10px 20px;
+  }
+
+  p {
+    color         : #5E5E5E;
+    font-family   : Arial;
+    font-size     : 13px;
+    margin-bottom : 16px;
+    line-height   : 22px;
+  }
+
+  ul {
+    list-style-type : disc;
+    font-size       : 12px;
+    color           : #111;
+    line-height     : 18px;
+    text-shadow     : 1px 1px 1px #8A8A8A;
+    margin          : -5px 0 15px 40px;
+  }
+
+  ul.faq {
+    list-style : none;
+
+    p {
+      margin : 0;
+    }
+  }
+
+  strong {
+    color       : #676767;
+    font-family : Georgia;
+    font-size   : 15px;
+    text-shadow : 1px 1px 1px #838383;
+  }
+
+  strong.red {
+    color : red;
+  }
 }
 
-.rights_column h3 {
-  font-family : Georgia, "Times New Roman", serif;
-  font-size   : 20px;
-  font-weight : bold;
-  margin      : 40px 0 10px 20px;
-}
-
-.rights_column p {
-  color         : #5E5E5E;
-  font-family   : Arial;
-  font-size     : 13px;
-  margin-bottom : 16px;
-  line-height   : 22px;
-}
-
-.rights_column ul {
-  list-style-type : disc;
-  font-size       : 12px;
-  color           : #111;
-  line-height     : 18px;
-  text-shadow     : 1px 1px 1px #8A8A8A;
-  margin          : -5px 0 15px 40px;
-}
-
-strong {
-  color       : #676767;
-  font-family : Georgia;
-  font-size   : 15px;
-  text-shadow : 1px 1px 1px #838383;
-}
-
-.rights_column ul.faq {
-  list-style : none;
-}
-
-.rights_column ul.faq p {
-  margin: 0;
-}
-
-.rights_column strong.red {
-  color: red;
-}
 /*   -----   WITH TEXT END   -----   */
