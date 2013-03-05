@@ -1,5 +1,10 @@
 @import "shared/menu_for_optional_and_products_pages.css.scss";
 
+.menu .section ul {
+  margin           : 5px 0 10px 40px;
+  list-style-image : url(/assets/arrow.gif);
+}
+
 .menu .section ul li {
   line-height : 17px;
 }
@@ -19,12 +24,6 @@
 .menu .section ul li a:hover {
   text-decoration : underline;
 }
-
-.menu .section ul {
-  margin           : 5px 0 10px 40px;
-  list-style-image : url(/assets/arrow.gif);
-}
-
 /*   -----   MENU  END   -----   */
 
 /*   -----   WITH TEXT START  -----   */
@@ -77,5 +76,4 @@ strong {
 .rights_column strong.red {
   color: red;
 }
-
 /*   -----   WITH TEXT END   -----   */

@@ -14,16 +14,15 @@
 
     <div class="section">
       <ul>
-        <li><a href="#">О нас</a></li>
-        <li><a href="#" class='current_page'>Как заказать</a></li>
-        <li><a href="#">Гарантии</a></li>
-        <li><a href="#">Обслуживание</a></li>
-        <li><a href="#">FAQs</a></li>
-        <li><a href="#">Доставка</a></li>
-        <li><a href="#">Задержки</a></li>
-        <li><a href="#">Конфиденциальность</a></li>
-        <li><a href="#">Безопастность</a></li>
-        <li><a href="#">Полезные ресурсы</a></li>
+        <li><%= link_to 'О нас', about_us_path, class: current_page(about_us_path) %></li>
+        <li><%= link_to 'Как заказать', to_order_path, class: current_page(to_order_path) %></li>
+        <li><%= link_to 'Гарантии', warranties_path, class: current_page(warranties_path) %></li>
+        <li><%= link_to 'Обслуживание', service_path, class: current_page(service_path) %></li>
+        <li><%= link_to 'FAQs', faqs_path, class: current_page(faqs_path) %></li>
+        <li><%= link_to 'Доставка', delivery_path, class: current_page(delivery_path) %></li>
+        <li><%= link_to 'Задержки', delay_prodcuts_path, class: current_page(delay_prodcuts_path) %></li>
+        <li><%= link_to 'Конфиденциальность', policy_path, class: current_page(policy_path) %></li>
+        <li><%= link_to 'Полезные ресурсы', another_path, class: current_page(another_path) %></li>
       </ul>
     </div>
   </div>

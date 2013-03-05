@@ -23,6 +23,7 @@ Shop::Application.routes.draw do
   match 'policy' => 'optional_pages#policy'
   match 'delay_prodcuts' => 'optional_pages#delay_prodcuts'
   match 'delivery' => 'optional_pages#delivery'
+  match 'another' => 'optional_pages#another'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
