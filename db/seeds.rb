@@ -7,8 +7,7 @@ require Rails.root.join('db/seeds/brands')
 
 add_admins
 Seeds.create_categories
-products_and_dependencies
 add_brands
-add_dependent_brand_product
+products_and_dependencies
 
 puts 'Load seeds complite!'
