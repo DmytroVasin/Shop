@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
     @categories  = Category.all
 
     @brands_with_product = Brand.joins(:products)
-    @brands      = @brands_with_product.uniq!
+    @brands      = @brands_with_product.uniq
 
     @brands_left  = @brands_with_product.random_by_id_shuffle(10)
     @brands_right = @brands_with_product.random_by_id_shuffle(10)

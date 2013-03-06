@@ -28,6 +28,8 @@
     </div>
   </div>
   <div id="perfume_instock" class='perfume_instock_<%= @product.in_stock ? 'true' : 'false' %>'></div>
+  <div id="perfume_instock" class='rank'><%= @product.rank %></div>
+
   <div class="clear"></div>
   <div id="perfume_actions">
     <%= link_to 'All', admin_products_path, class: 'btn' %>
