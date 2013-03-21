@@ -1,15 +1,15 @@
 == In the development...
 
-  main page:
+* main page:
     http://perfume-shop-dn.herokuapp.com/
 
-  login page:
+* login page:
     http://perfume-shop-dn.herokuapp.com/auth/login
 
-  optional page:
+* optional page:
     http://perfume-shop-dn.herokuapp.com/faqs#one
 
-  products page:
+* products page:
     http://perfume-shop-dn.herokuapp.com/products
 
 == Getting Started
