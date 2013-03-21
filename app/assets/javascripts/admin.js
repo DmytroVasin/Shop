@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_self
-//= require twitter/bootstrap
 
 $(function () {
   $('.disabled').click(function (e) {
