@@ -21,7 +21,8 @@
         Сортировать по:
 
         <%= select_tag(:sort_by, options_for_select(@sort_hash, params[:sort_by]),
-                       class: 'sortdropdown', :include_blank => true) %>
+                       class: 'sortdropdown',
+                       include_blank: true) %>
 
       </div>
       <div class="clear"></div>

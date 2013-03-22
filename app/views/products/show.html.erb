@@ -1,0 +1,46 @@
+<div id="menu_bar">
+  <div id="breadcrumb">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>&raquo; <%= link_to 'Perfumes', :back %></li>
+      <li>&raquo; <%= @product.title %></li>
+    </ul>
+    <div class="clear"></div>
+  </div>
+
+  <div>
+    <div class='product_image'>
+      <img class='productimg' src='/assets/item1.jpg' />
+      <div class='moved_from_top'>
+        <%= link_to '« Back to Results', :back, class: 'get_back' %>
+      </div>
+    </div>
+
+    <div class="product_info">
+      <div class='title_of_product'>
+        <span class='brand_of_product'><%= @product.brand.name %>:</span><%= @product.title %>
+      </div>
+
+      <div class="description_of_product">
+        <%= @product.description %>
+      </div>
+
+      <a href='/delivery' class='get_back'>Просмотреть возможные способы доставки</a>
+
+      <div class='actions_for_product'>
+        <% if @product.in_stock? %>
+          <div class='in_stock yes'>Есть в наличии</div>
+          <a href="#" class="btn_order right">Добавить в корзину</a>
+        <% else %>
+          <div class='in_stock no'>Нет в наличии</div>
+        <% end %>
+
+        <div class="price">
+          <span class="price_count">цена:</span>
+          <span class="price_inscription"> $11.56</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>

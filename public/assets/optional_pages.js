@@ -1,1 +1,0 @@
-$(function(){$("ul.faq li a").on("click",function(){$("strong").removeClass("red");var e=this.href.split("#")[1];$("html, body").animate({scrollTop:$("."+e).offset().top},"slow","linear"),$("strong."+e).addClass("red")})});

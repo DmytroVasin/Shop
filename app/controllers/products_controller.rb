@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
 
     @sort_method_array = %w(newest high low best)
 
-    @categories  = Category.all
+    @categories = Category.all
 
     @brands = Brand.joins(:products).joins(:products).group('brands.id').order('SUM(products.rank) DESC')
 
@@ -47,4 +47,9 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+    @product      = Product.find(params[:id])
+    @brands_left  = Brand.joins(:products).random_by_id_shuffle(10)
+    @brands_right = Brand.joins(:products).random_by_id_shuffle(10)
+  end
 end

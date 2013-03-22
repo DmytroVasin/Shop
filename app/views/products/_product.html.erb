@@ -3,13 +3,14 @@
 <% else %>
   <li>
 <% end %>
-<a href="#"><img class="productimg" src="assets/item1.jpg" /></a>
 
-<div class="productinfo">
+<%= link_to image_tag('/assets/item1.jpg', class: 'productimg'), product_path(product.id) %>
+
+    <div class="productinfo">
   <div class="paddingwrapper">
     <div class="title">
       <h2>
-        <a href="#"><%= product.title %></a>
+        <%= link_to product.title, product_path(product.id) %>
       </h2>
     </div>
     <div class="price">
