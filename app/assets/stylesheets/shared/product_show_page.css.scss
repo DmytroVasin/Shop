@@ -48,6 +48,7 @@
       float        : left;
       padding-left : 23px;
       margin-left  : 10px;
+      margin-top   : 8px
     }
 
     .yes {
@@ -70,12 +71,13 @@
     }
 
     .right {
-      float : right;
+      float  : right;
+      height : 34px;
     }
 
     .price {
       float          : left;
-      margin-left    : 40px;
+      margin         : 5px 0 0 64px;
       font-weight    : bold;
       vertical-align : middle;
 

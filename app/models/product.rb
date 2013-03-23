@@ -35,7 +35,7 @@ class Product < ActiveRecord::Base
     if line_items.empty?
       return true
     else
-      errors.add(:base, 'существуют товарные позиции!')
+      errors.add(:base, 'cant destroy - line_items is present')
       return false
     end
   end
