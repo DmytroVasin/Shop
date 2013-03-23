@@ -6,29 +6,35 @@
   <div class="clear"></div>
 </div>
 
+<div class="title_of_cart">Моя Корзина:</div>
+
 <div id='my_cart'>
-  <div class="title_of_cart">Моя Корзина:</div>
 
-
-  <table>
-    <thead>
-      <th>Image</th>
-      <th>Product</th>
-      <th>Price</th>
-      <th colspan="3">Quantity</th>
-      <th>Remove</th>
+  <table class='table_cart'>
+    <thead class='table_head'>
+    <th>Image</th>
+    <th>Product</th>
+    <th>Price</th>
+    <th colspan="2">Quantity</th>
+    <th>Remove</th>
     </thead>
 
     <tbody id='cart'>
-      <%= render partial: 'carts/items', locals: { items: @items } %>
+    <%= render partial: 'carts/items', locals: { items: @items } %>
     </tbody>
   </table>
 
-  <div id="cart_total_price">
-    <%= render partial: 'carts/price', locals: { cart: @cart } %>
+  <div id="cart_bottom">
+    <%= link_to 'Empty Cart', cart_path(@cart.id),
+                method:  :delete,
+                confirm: 'Are you sure?',
+                class:   'empty_cart' %>
+
+    <div id="cart_total_price">
+      <%= render partial: 'carts/price', locals: { cart: @cart } %>
+    </div>
   </div>
-
-  <%= button_to 'Empty Cart', cart_path(@cart.id), method: :delete, confirm: 'Are you sure?' %>
-
-  <%= link_to 'Обратно к Покупкам', products_path %>
+</div>
+<div class='back_from_cart'>
+  <%= link_to '« Обратно к покупкам', products_path %>
 </div>

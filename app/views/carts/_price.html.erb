@@ -1,1 +1,1 @@
-<p><%= number_to_currency(cart.total_price) %></p>
+<p>Итого: <%= raw "&nbsp;" + number_to_currency(cart.total_price, unit: 'грн.', format: '%n %u') %></p>

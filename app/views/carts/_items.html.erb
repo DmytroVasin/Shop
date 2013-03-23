@@ -1,29 +1,32 @@
 <% items.each do |item| %>
-  <tr >
+  <tr>
     <td>
       <%= image_tag('/assets/item1.jpg', class: 'cart_image') %>
     </td>
     <td class="namesize">
       <%= link_to item.product.title, product_path(item.product.id) %>
     </td>
-    <td>
-      <%= number_to_currency(item.price) %>
+    <td class='item_price'>
+      <%= number_to_currency(item.price, unit: 'грн.', format: '%n %u') %>
+    </td>
+    <td class='quantity'>
+      <div><%= item.quantity %></div>
     </td>
     <td>
-      <%= link_to '^', increase_line_item_path(item.id), method: :put, remote: true %>
+      <div class='quantity_sell'>
+
+        <div class='actions_with_quantity'>
+          <%= link_to image_tag('plus.png'), increase_line_item_path(item.id), method: :put, remote: true %>
+          <% if item.quantity == 1 %>
+            <%= link_to image_tag('minus.png'), decrease_line_item_path(item.id), method: :put %>
+          <% else %>
+            <%= link_to image_tag('minus.png'), decrease_line_item_path(item.id), method: :put, remote: true %>
+          <% end %>
+        </div>
+      </div>
     </td>
-    <td>
-      <%= item.quantity %>
-    </td>
-    <td>
-      <% if item.quantity == 1 %>
-        <%= link_to 'v', decrease_line_item_path(item.id), method: :put %>
-      <% else %>
-        <%= link_to 'v', decrease_line_item_path(item.id), method: :put, remote: true %>
-      <% end %>
-    </td>
-    <td>
-      <%= button_to 'Delete Line Item', line_item_path(item.id), method: :delete, :confirm => 'Are You Sure' %>
+    <td class='delete_line_item'>
+      <%= link_to image_tag('delete.png'), line_item_path(item.id), method: :delete, confirm: 'Are You Sure' %>
     </td>
   </tr>
 <% end %>

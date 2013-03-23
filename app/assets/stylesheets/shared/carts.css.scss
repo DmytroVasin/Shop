@@ -1,16 +1,123 @@
-#my_cart {
-  margin : 10px 0 0 30px;
+.extended_class {
+  color          : #6C6C6C;
+  font-family    : Georgia, Times, serif;
+  font-size      : 16px;
+  line-height    : 17px;
+  text-shadow    : 0 0 1px #949494;
+  vertical-align : middle;
+}
 
-  .title_of_cart {
-    color       : #555555;
-    font-size   : 18px;
-    font-weight : bold;
-    line-height : 18px;
-    text-shadow : 0 0 1px #777777;
-  }
+#my_cart {
+  margin        : 10px 0 0 90px;
+  width         : 800px;
+  border-radius : 3px;
+  border        : 1px solid #cdcdcd;
+}
+
+.title_of_cart {
+  color       : #555555;
+  font-size   : 18px;
+  font-weight : bold;
+  line-height : 18px;
+  text-shadow : 0 0 1px #777777;
+  margin-left : 405px;
 }
 
 .cart_image {
   width  : 75px;
   height : 75px;
+}
+
+.table_head {
+  background-image    : url(/assets/tab_h.png);
+  background-position : left top;
+  background-repeat   : repeat-x;
+  border-bottom       : 1px dashed #D7D7D7;
+  height              : 42px;
+}
+
+#cart_bottom {
+  background-image    : url("/assets/tab_b.png");
+  background-position : left bottom;
+  background-repeat   : repeat-x;
+  border-top          : 1px dashed #D7D7D7;
+  height              : 40px;
+
+  .empty_cart {
+    color       : #9D9D9D;
+    margin-left : 42px;
+    text-shadow : -1px 1px 0 #363636;
+  }
+
+  #cart_total_price {
+    display     : inline-block;
+    color       : #555555;
+    font-size   : 17px;
+    font-weight : bold;
+    line-height : 18px;
+    text-shadow : 0 0 1px #777777;
+
+    p {
+      margin : 12px 0 0 260px;
+    }
+  }
+}
+
+.table_head tr th {
+  @extend .extended_class;
+}
+
+.table_cart {
+  width : 100%;
+}
+
+#cart tr td {
+  padding    : 10px;
+  text-align : center;
+}
+
+.namesize a {
+  line-height : 75px;
+  color       : #333333;
+  float       : left;
+  font-family : Georgia, Times, serif;
+  font-size   : 13px;
+  text-shadow : 0 0 1px #777777;
+}
+
+.item_price {
+  @extend .extended_class;
+}
+
+.quantity {
+  @extend .extended_class;
+}
+
+.quantity_sell {
+  position : relative;
+
+  .actions_with_quantity {
+    width    : 40px;
+    height   : 78px;
+    position : absolute;
+    right    : 0px;
+    bottom   : -7px;
+  }
+}
+
+.delete_line_item {
+  vertical-align : middle;
+
+  a {
+    display    : block;
+    margin-top : 12px;
+  }
+}
+
+.back_from_cart {
+  margin-top: 10px;
+
+  a {
+    @extend .get_back;
+  }
 }
