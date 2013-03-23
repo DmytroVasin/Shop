@@ -62,9 +62,6 @@ class LineItemsController < ApplicationController
       if @line_item.update_attributes(params[:line_item])
         format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
         format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -77,11 +74,9 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
 
-    @cart.destroy
-    session[:cart_id] = nil
-
     respond_to do |format|
       if current_cart.line_items.empty?
+        @cart.destroy
         session[:cart_id] = nil
         format.html { redirect_to(products_path, notice: 'Your cart is empty') }
       else
@@ -95,7 +90,7 @@ class LineItemsController < ApplicationController
     @cart      = current_cart
     @line_item = @cart.decrease(params[:id])
 
-    @items = @cart.line_items
+    @items = @cart.line_items.order('created_at ASC')
 
     respond_to do |format|
       if @items.empty?
@@ -106,11 +101,8 @@ class LineItemsController < ApplicationController
         format.html { redirect_to products_path, notice: 'Empty cart' }
       else
         if @line_item.save
-          format.html { redirect_to @line_item.cart, notice: 'Line item was successfully updated.' }
+          format.html { redirect_to @line_item.cart, notice: 'Item was successfully removed' }
           format.js { @current_item = @line_item, @items }
-        else
-          format.html { render action: "edit" }
-          format.json { render json: @line_item.errors, status: :unprocessable_entity }
         end
       end
     end
@@ -120,15 +112,12 @@ class LineItemsController < ApplicationController
     @cart      = current_cart
     @line_item = @cart.increase(params[:id])
 
-    @items = @cart.line_items
+    @items = @cart.line_items.order('created_at ASC')
 
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to @line_item.cart, notice: 'Line item was successfully updated.' }
         format.js { @current_item = @line_item, @items }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end
   end

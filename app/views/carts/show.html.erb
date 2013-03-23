@@ -6,13 +6,29 @@
   <div class="clear"></div>
 </div>
 
-<h2>YOUR cart</h2>
+<div id='my_cart'>
+  <div class="title_of_cart">Моя Корзина:</div>
 
-<div id='cart'>
-  <%= render partial: 'carts/items', locals: { items: @items } %>
+
+  <table>
+    <thead>
+      <th>Image</th>
+      <th>Product</th>
+      <th>Price</th>
+      <th colspan="3">Quantity</th>
+      <th>Remove</th>
+    </thead>
+
+    <tbody id='cart'>
+      <%= render partial: 'carts/items', locals: { items: @items } %>
+    </tbody>
+  </table>
+
+  <div id="cart_total_price">
+    <%= render partial: 'carts/price', locals: { cart: @cart } %>
+  </div>
+
+  <%= button_to 'Empty Cart', cart_path(@cart.id), method: :delete, confirm: 'Are you sure?' %>
+
+  <%= link_to 'Обратно к Покупкам', products_path %>
 </div>
-
-
-<br />
-<p><%= number_to_currency(@cart.total_price) %></p>
-<%= button_to 'Empty Cart', cart_path(@cart.id), method: :delete, confirm: 'Are you sure?' %>
