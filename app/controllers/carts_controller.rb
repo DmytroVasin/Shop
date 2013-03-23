@@ -15,6 +15,7 @@ class CartsController < ApplicationController
   def show
     begin
       @cart = Cart.find(params[:id])
+      @items = @cart.line_items.order('created_at ASC')
     rescue ActiveRecord::RecordNotFound
       logger.error '----> Try access to invalid cart'
       redirect_to products_path, alert: 'Invalid cart'

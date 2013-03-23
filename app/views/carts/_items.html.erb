@@ -1,0 +1,18 @@
+<% items.each do |item| %>
+  <div>
+    <%= item.quantity %> &times; <%= item.product.title %>
+
+    <p><%= number_to_currency(item.price) %></p>
+    <p><%= link_to 'show this product', product_path(item.product.id) %></p>
+    <p><%= button_to 'Delete Line Item', line_item_path(item.id), method: :delete, :confirm => 'Are You Sure' %></p>
+
+
+    <% if item.quantity == 1 %>
+      <p><%= link_to 'decrease', decrease_line_item_path(item.id), method: :put %></p>
+    <% else %>
+      <p><%= link_to 'decrease', decrease_line_item_path(item.id), method: :put, remote: true %></p>
+    <% end %>
+
+    <p><%= link_to 'increase', increase_line_item_path(item.id), method: :put, remote: true %></p>
+  </div>
+<% end %>

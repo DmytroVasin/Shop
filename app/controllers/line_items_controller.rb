@@ -72,8 +72,13 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
+    @cart = current_cart
+
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
+
+    @cart.destroy
+    session[:cart_id] = nil
 
     respond_to do |format|
       if current_cart.line_items.empty?
@@ -81,6 +86,49 @@ class LineItemsController < ApplicationController
         format.html { redirect_to(products_path, notice: 'Your cart is empty') }
       else
         format.html { redirect_to(@line_item.cart, notice: 'Item has been removed from your cart.') }
+      end
+    end
+  end
+
+
+  def decrease
+    @cart      = current_cart
+    @line_item = @cart.decrease(params[:id])
+
+    @items = @cart.line_items
+
+    respond_to do |format|
+      if @items.empty?
+
+        @cart.destroy
+        session[:cart_id] = nil
+
+        format.html { redirect_to products_path, notice: 'Empty cart' }
+      else
+        if @line_item.save
+          format.html { redirect_to @line_item.cart, notice: 'Line item was successfully updated.' }
+          format.js { @current_item = @line_item, @items }
+        else
+          format.html { render action: "edit" }
+          format.json { render json: @line_item.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+  end
+
+  def increase
+    @cart      = current_cart
+    @line_item = @cart.increase(params[:id])
+
+    @items = @cart.line_items
+
+    respond_to do |format|
+      if @line_item.save
+        format.html { redirect_to @line_item.cart, notice: 'Line item was successfully updated.' }
+        format.js { @current_item = @line_item, @items }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end
   end
