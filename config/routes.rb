@@ -1,4 +1,8 @@
 Shop::Application.routes.draw do
+  resources :line_items
+  resources :carts
+
+
   root to: 'welcome#index'
 
   devise_for :admins, path: 'auth', path_names: { sign_in: 'login', sign_out: 'logout' }, controllers: { sessions: 'sessions' }

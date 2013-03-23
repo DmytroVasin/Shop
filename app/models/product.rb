@@ -25,4 +25,18 @@ class Product < ActiveRecord::Base
 
   has_and_belongs_to_many :categories
   belongs_to :brand
+  has_many :line_items
+
+  before_destroy :not_referenced_by_any_line_items
+
+  private
+
+  def not_referenced_by_any_line_items
+    if line_items.empty?
+      return true
+    else
+      errors.add(:base, 'существуют товарные позиции!')
+      return false
+    end
+  end
 end
