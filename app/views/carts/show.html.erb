@@ -1,9 +1,19 @@
+<div id="breadcrumb">
+  <ul>
+    <li><a href="/"> Home </a></li>
+    <li>&raquo; My Cart</li>
+  </ul>
+  <div class="clear"></div>
+</div>
+
+
 <h2>YOUR cart</h2>
 <% @cart.line_items.each do |item| %>
   <div>
     <%= item.quantity %> &times; <%= item.product.title %>
 
     <p><%= number_to_currency(item.price) %></p>
+    <p><%= link_to 'show this product', product_path(item.product.id) %></p>
     <p><%= button_to 'Delete Line Item', line_item_path(item.id), method: :delete, :confirm => 'Are You Sure' %></p>
   </div>
 <% end %>
@@ -11,6 +21,3 @@
 <br />
 <p><%= number_to_currency(@cart.total_price) %></p>
 <%= button_to 'Empty Cart', cart_path(@cart.id), method: :delete, confirm: 'Are you sure?' %>
-
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
