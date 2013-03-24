@@ -45,8 +45,9 @@
 
   .empty_cart {
     color       : #9D9D9D;
-    margin-left : 42px;
+    margin      : 7px 0 0 39px;
     text-shadow : -1px 1px 0 #363636;
+    float       : left;
   }
 
   #cart_total_price {
@@ -56,10 +57,17 @@
     font-weight : bold;
     line-height : 18px;
     text-shadow : 0 0 1px #777777;
+    float       : left;
+    margin-top  : 2px;
 
     p {
       margin : 12px 0 0 260px;
     }
+  }
+
+  .checkout {
+    float: left;
+    margin: 5px 0 0 123px;
   }
 }
 
@@ -115,7 +123,7 @@
 }
 
 .back_from_cart {
-  margin-top: 10px;
+  margin-top : 10px;
 
   a {
     @extend .get_back;
