@@ -25,6 +25,8 @@ class OrdersController < ApplicationController
   # GET /orders/new.json
   def new
     @cart = current_cart
+    @line_items = @cart.line_items
+
     if @cart.line_items.empty?
       redirect_to products_path, alert: 'Can"t create order without perfumes'
       return

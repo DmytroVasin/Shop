@@ -1,0 +1,23 @@
+<table class="sale_order_full">
+  <tbody>
+  <tr>
+    <th>Название</th>
+    <th>Количество</th>
+    <th>Цена</th>
+  </tr>
+  <% @line_items.each do |item|  %>
+    <tr>
+      <td class="order_title normal"><%= item.product.title %></td>
+      <td style="text-align:center" class="normal"><%= item.quantity %>шт.</td>
+      <td align="right" class="normal"><%= number_to_currency(item.price, unit: 'грн.', format: '%n %u') %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td align="right" class="normal bold">Сумма:</td>
+    <td align="right" colspan="6" class="normal  bold"><b>
+      <%= number_to_currency(@cart.total_price, unit: 'грн.', format: '%n %u') %>
+    </b>
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -54,12 +54,17 @@ ActiveRecord::Schema.define(:version => 20130324071510) do
 
   create_table "orders", :force => true do |t|
     t.string   "name"
-    t.text     "address"
+    t.string   "surname"
+    t.string   "phone"
+    t.string   "additional_phone"
+    t.string   "address"
+    t.string   "region"
+    t.string   "city"
     t.string   "email"
     t.string   "pay_type"
-    t.string   "phone"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.text     "info"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "products", :force => true do |t|

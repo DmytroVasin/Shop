@@ -20,6 +20,10 @@
         <%= f.text_field :name %>
       </li>
       <li>
+        <%= f.label :surname, "Фамилия <span class=\"orange\">*</span>".html_safe %>
+        <%= f.text_field :surname %>
+      </li>
+      <li>
         <%= f.label :email, "Email <span class=\"orange\">*</span>".html_safe %>
         <%= f.text_field :email %>
       </li>
@@ -27,36 +31,59 @@
         <%= f.label :phone, "Телефон <span class=\"orange\">*</span>".html_safe %>
         <%= f.text_field :phone %>
       </li>
-
       <li>
-        <%= f.label :phone, 'Дом. телефон' %>
-        <%= f.text_field :phone %>
+        <%= f.label :additional_phone, 'Дом. телефон' %>
+        <%= f.text_field :additional_phone %>
+      </li>
+      <li>
+        <%= f.label :address, "Адрес <span class=\"orange\">*</span>".html_safe %>
+        <%= f.text_field :address %>
+      </li>
+      <li>
+        <%= f.label :city, "Город <span class=\"orange\">*</span>".html_safe %>
+        <%= f.text_field :city %>
       </li>
 
-      <li>
-        <label for="city">Город <span class="orange">*</span></label>
-        <input name="city" id="city">
-      </li>
       <li>
         <label for="state">Область <span class="orange">*</span></label>
         <select tabindex="7" name="state" id="state">
-          <option value="125">Черниговская</option>
-          <option value="126">Черновицкая</option>
+          <option value="1">Винницкая область</option>
+          <option value="2">Волынская область</option>
+          <option value="3">Днепропетровская область</option>
+          <option value="4">Донецкая область</option>
+          <option value="5">Житомирская область</option>
+          <option value="6">Закарпатская область</option>
+          <option value="7">Запорожская область</option>
+          <option value="8">Ивано-Франковская область</option>
+          <option value="9">Киевская область</option>
+          <option value="10">Кировоградская область</option>
+          <option value="11">Луганская область</option>
+          <option value="12">Львовская область</option>
+          <option value="13">Николаевская область</option>
+          <option value="14">Одесская область</option>
+          <option value="15">Полтавская область</option>
+          <option value="16">Ровенская область</option>
+          <option value="17">Сумская область</option>
+          <option value="18">Тернопольская область</option>
+          <option value="19">Харьковская область</option>
+          <option value="20">Херсонская область</option>
+          <option value="21">Хмельницкая область</option>
+          <option value="22">Черкасская область</option>
+          <option value="23">Черниговская область</option>
+          <option value="24">Черновицкая область</option>
+          <option value="25">АР Крым</option>
         </select>
       </li>
       <li>
-        <label for="selectedCountry">Страна <span class="orange">*</span></label>
-        <select tabindex="8" name="selectedCountry" id="selectedCountry">
-          <option value="123">Maкао</option>
-          <option value="104">Япония</option>
-        </select>
+        <%= f.label :pay_type, "Город <span class=\"orange\">*</span>".html_safe %>
+        <%= f.select :pay_type, Order::PAYMENT_TYPES, prompt: "Выберите метод оплаты" %>
+      </li>
+      <li>
+        <%= f.label :info, 'Доп. информация по доставке:' %>
+        <%= f.text_area :info, size: '43x5' %>
       </li>
     </ul>
   </fieldset>
-
-
-
-
 
   <ul class='terms'>
     <li class='header'>
@@ -65,7 +92,7 @@
 
     <li class='terms_wrapper'>
       <div class='checkbox'>
-        <input type="checkbox">
+        <%= f.check_box :terms_of_service %>
       </div>
       <div class='label'>
         Please agree to our Terms & Conditions before proceeding.

@@ -1,36 +1,39 @@
+.orders_composition {
+  margin      : 10px 0 0 118px;
+  font-weight : bold;
+  font-size   : 13px;
+}
+
 table.sale_order_full {
   background-color : #F9FAFB;
   line-height      : 22px;
   margin-left      : 118px;
   width            : 600px;
-}
 
-table.sale_order_full th,
-table.sale_order_full td {
-  border         : 1px solid #ADC3D5;
-  padding        : 3px 5px;
-  vertical-align : middle;
-}
+  th, td {
+    border         : 1px solid #ADC3D5;
+    padding        : 3px 5px;
+    vertical-align : middle;
+  }
 
-table.sale_order_full th {
-  color       : #25639A;
-  text-align  : center;
-  font-size   : 13px;
-  font-weight : bold;
-}
+  th {
+    color       : #25639A;
+    text-align  : center;
+    font-size   : 13px;
+    font-weight : bold;
+  }
 
-.normal {
-  font-size : 14px;
-}
+  td.normal {
+    font-size : 14px;
+  }
 
-.bold {
-  font-weight : bold;
-}
+  td.order_title {
+    padding-left : 15px !important;
+  }
 
-.orders_composition {
-  margin      : 10px 0 0 118px;
-  font-weight : bold;
-  font-size   : 13px;
+  td.bold {
+    font-weight : bold;
+  }
 }
 
 fieldset {
@@ -80,31 +83,33 @@ fieldset {
 ul.terms {
   margin-left : 180px;
   width       : 635px;
-}
 
-ul.terms li.header {
-  border-bottom : 1px solid #cdcdcd;
-  font-weight   : bold;
-  padding       : 25px 0 10px 30px;
-}
+  li {
+    .label {
+      font-size   : 13px;
+      line-height : 20px;
+      float       : left;
+      width       : 570px;
+    }
 
-ul.terms li .label {
-  font-size   : 13px;
-  line-height : 20px;
-  float       : left;
-  width       : 570px;
-}
+    .checkbox {
+      float   : left;
+      padding : 18px 20px 0;
+    }
+  }
 
-ul.terms li .checkbox {
-  float   : left;
-  padding : 18px 20px 0;
-}
+  li.header {
+    border-bottom : 1px solid #cdcdcd;
+    font-weight   : bold;
+    padding       : 25px 0 10px 30px;
+  }
 
-ul.terms li.terms_wrapper {
-  margin-top : 10px;
+  li.terms_wrapper {
+    margin-top : 10px;
 
-  .witout_btn {
-    margin : 10px;
+    .witout_btn {
+      margin : 10px;
+    }
   }
 }
 
@@ -113,7 +118,6 @@ ul.terms li.terms_wrapper {
   margin : 10px 160px 0 0;
 
   .send_order_data_sbmt {
-    padding: 7px 15px;
+    padding : 7px 15px;
   }
 }
-
