@@ -1,0 +1,119 @@
+table.sale_order_full {
+  background-color : #F9FAFB;
+  line-height      : 22px;
+  margin-left      : 118px;
+  width            : 600px;
+}
+
+table.sale_order_full th,
+table.sale_order_full td {
+  border         : 1px solid #ADC3D5;
+  padding        : 3px 5px;
+  vertical-align : middle;
+}
+
+table.sale_order_full th {
+  color       : #25639A;
+  text-align  : center;
+  font-size   : 13px;
+  font-weight : bold;
+}
+
+.normal {
+  font-size : 14px;
+}
+
+.bold {
+  font-weight : bold;
+}
+
+.orders_composition {
+  margin      : 10px 0 0 118px;
+  font-weight : bold;
+  font-size   : 13px;
+}
+
+fieldset {
+  font-size  : 12px;
+  background : #F9FAFB;
+  border     : 1px solid #ADC3D5;
+
+  margin     : 40px 0 10px 118px;
+  width      : 745px;
+
+  legend {
+    margin-left : 40px;
+    color       : black;
+    border      : 1px solid #ADC3D5;
+    padding     : 5px 10px;
+
+    font-family : Georgia, Times, serif;
+    font-size   : 13px;
+    line-height : 17px;
+    text-shadow : 0 0 1px #777777;
+  }
+
+  ul {
+    li {
+      padding : 10px 6px;
+      clear   : both;
+      padding : 5px;
+
+      label {
+        display       : block;
+        float         : left;
+        color         : #212121;
+        font-size     : 13px;
+        width         : 250px;
+        text-align    : right;
+        padding-right : 20px;
+
+        .orange {
+          color : #a0000d;
+        }
+      }
+    }
+
+  }
+}
+
+ul.terms {
+  margin-left : 180px;
+  width       : 635px;
+}
+
+ul.terms li.header {
+  border-bottom : 1px solid #cdcdcd;
+  font-weight   : bold;
+  padding       : 25px 0 10px 30px;
+}
+
+ul.terms li .label {
+  font-size   : 13px;
+  line-height : 20px;
+  float       : left;
+  width       : 570px;
+}
+
+ul.terms li .checkbox {
+  float   : left;
+  padding : 18px 20px 0;
+}
+
+ul.terms li.terms_wrapper {
+  margin-top : 10px;
+
+  .witout_btn {
+    margin : 10px;
+  }
+}
+
+.send_order_data {
+  float  : right;
+  margin : 10px 160px 0 0;
+
+  .send_order_data_sbmt {
+    padding: 7px 15px;
+  }
+}
+

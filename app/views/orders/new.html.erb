@@ -1,0 +1,50 @@
+<div id="breadcrumb">
+  <ul>
+    <li><a href="/"> Home </a></li>
+    <li>&raquo; Отчёт</li>
+  </ul>
+  <div class="clear"></div>
+</div>
+
+<div class="title_of_cart">Оформление заказа:</div>
+<div class='orders_composition'>Состав заказа:</div>
+
+<table class="sale_order_full">
+  <tbody>
+  <tr>
+    <th>Название</th>
+    <th>Количество</th>
+    <th>Цена</th>
+  </tr>
+  <tr>
+    <td class="normal">Apple iPad 4 retina 16Gb black</td>
+    <td style="text-align:center" class="normal">2 шт.</td>
+    <td align="right" class="normal">
+      4399.00 грн.
+    </td>
+  </tr>
+  <tr>
+    <td class="normal">НТС Desire X T328e white</td>
+    <td style="text-align:center" class="normal">1 шт.</td>
+    <td align="right" class="normal">
+      2481.00 грн.
+    </td>
+  </tr>
+  <tr>
+    <td align="right" class="normal bold">Сумма:</td>
+    <td align="right" colspan="6" class="normal  bold"><b>
+      11279.00 грн.
+    </b>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
+<%= render 'form' %>
+
+<div class="clear"></div>
+
+<div class="back_from_cart">
+<%= link_to '« Обратно к корзине', :back %>
+</div>
