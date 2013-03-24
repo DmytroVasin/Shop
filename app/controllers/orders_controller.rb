@@ -49,14 +49,17 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(params[:order])
+    @order.input_line_items_to_order(current_cart)
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render json: @order, status: :created, location: @order }
+        Cart.destroy(session[:cart_id])
+        session[:cart_id] = nil
+
+        format.html { redirect_to root_path, notice: 'Order was successfully created.' }
       else
+        @cart = current_cart
         format.html { render action: "new" }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
   end

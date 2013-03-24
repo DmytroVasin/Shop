@@ -43,36 +43,9 @@
         <%= f.label :city, "Город <span class=\"orange\">*</span>".html_safe %>
         <%= f.text_field :city %>
       </li>
-
       <li>
-        <label for="state">Область <span class="orange">*</span></label>
-        <select tabindex="7" name="state" id="state">
-          <option value="1">Винницкая область</option>
-          <option value="2">Волынская область</option>
-          <option value="3">Днепропетровская область</option>
-          <option value="4">Донецкая область</option>
-          <option value="5">Житомирская область</option>
-          <option value="6">Закарпатская область</option>
-          <option value="7">Запорожская область</option>
-          <option value="8">Ивано-Франковская область</option>
-          <option value="9">Киевская область</option>
-          <option value="10">Кировоградская область</option>
-          <option value="11">Луганская область</option>
-          <option value="12">Львовская область</option>
-          <option value="13">Николаевская область</option>
-          <option value="14">Одесская область</option>
-          <option value="15">Полтавская область</option>
-          <option value="16">Ровенская область</option>
-          <option value="17">Сумская область</option>
-          <option value="18">Тернопольская область</option>
-          <option value="19">Харьковская область</option>
-          <option value="20">Херсонская область</option>
-          <option value="21">Хмельницкая область</option>
-          <option value="22">Черкасская область</option>
-          <option value="23">Черниговская область</option>
-          <option value="24">Черновицкая область</option>
-          <option value="25">АР Крым</option>
-        </select>
+        <%= f.label :region, "Область <span class=\"orange\">*</span>".html_safe %>
+        <%= f.select(:region, Order::REGIONS, { include_blank: true }) %>
       </li>
       <li>
         <%= f.label :pay_type, "Город <span class=\"orange\">*</span>".html_safe %>
@@ -125,7 +98,7 @@
   <div class="clear"></div>
 
   <div class='send_order_data'>
-    <%= link_to 'Оформить заказ', '#', class: 'btn_order send_order_data_sbmt' %>
+    <%= f.submit 'Оформить заказ', class: 'btn_order send_order_data_sbmt' %>
   </div>
 <% end %>
 
