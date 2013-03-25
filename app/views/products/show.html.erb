@@ -30,7 +30,6 @@
       <div class='actions_for_product'>
         <% if @product.in_stock? %>
           <div class='in_stock yes'>Есть в наличии</div>
-          <!--<a href="#" class="btn_order right">Добавить в корзину</a>-->
           <%= button_to 'Добавить в корзину', line_items_path(product_id: @product.id), class: 'btn_order right' %>
 
         <% else %>
