@@ -46,7 +46,13 @@ class Order < ActiveRecord::Base
 
   validates :terms_of_service, acceptance: true
   validates :pay_type, inclusion: PAYMENT_TYPES
+  validates :region, inclusion: REGIONS
   validates :address, :email, :name, :surname, :phone, :region, :city, presence: true
+  validates :email, length: { minimum: 7, maximum: 254 },
+                    format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
+  validates :name, :surname, length: { minimum: 2, maximum: 254}
+  validates :phone, numericality: true
+  validates :additional_phone, numericality: true, allow_blank: true
 
   def input_line_items_to_order(cart)
     cart.line_items.each do |item|
