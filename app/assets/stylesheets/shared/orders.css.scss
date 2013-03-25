@@ -121,3 +121,16 @@ ul.terms {
     padding : 7px 15px;
   }
 }
+
+.error_msg_for_li {
+  background-repeat   : no-repeat;
+  background-position : 650px 5px;
+}
+
+.errors_true {
+  background-image : url(/assets/errors_yes.png);
+}
+
+.errors_false {
+  background-image : url(/assets/errors_no.png);
+}

@@ -2,41 +2,41 @@
   <fieldset>
     <legend>Заполните личные данные</legend>
     <ul>
-      <li>
+      <li class='error_msg_for_li'>
         <%= f.label :name, "Имя и oтчeствo <span class=\"orange\">*</span>".html_safe %>
         <%= f.text_field :name %>
       </li>
-      <li>
+      <li class='error_msg_for_li'>
         <%= f.label :surname, "Фамилия <span class=\"orange\">*</span>".html_safe %>
         <%= f.text_field :surname %>
       </li>
-      <li>
+      <li class='error_msg_for_li'>
         <%= f.label :email, "Email <span class=\"orange\">*</span>".html_safe %>
-        <%= f.text_field :email %>
+        <%= f.text_field :email, placeholder: 'example@gmail.com' %>
       </li>
-      <li>
+      <li class='error_msg_for_li'>
         <%= f.label :phone, "Телефон <span class=\"orange\">*</span>".html_safe %>
-        <%= f.text_field :phone %>
+        <%= f.text_field :phone, placeholder: '0939256658' %>
       </li>
       <li>
         <%= f.label :additional_phone, 'Дом. телефон' %>
         <%= f.text_field :additional_phone %>
       </li>
-      <li>
+      <li class='error_msg_for_li'>
         <%= f.label :address, "Адрес <span class=\"orange\">*</span>".html_safe %>
-        <%= f.text_field :address %>
+        <%= f.text_field :address, placeholder: 'ул. Антропова дом 52 кв 15' %>
       </li>
-      <li>
+      <li class='error_msg_for_li'>
         <%= f.label :city, "Город <span class=\"orange\">*</span>".html_safe %>
         <%= f.text_field :city %>
       </li>
       <li>
         <%= f.label :region, "Область <span class=\"orange\">*</span>".html_safe %>
-        <%= f.select(:region, Order::REGIONS, { include_blank: true }) %>
+        <%= f.select :region, Order::REGIONS, { include_blank: true }, required: true %>
       </li>
       <li>
-        <%= f.label :pay_type, "Город <span class=\"orange\">*</span>".html_safe %>
-        <%= f.select :pay_type, Order::PAYMENT_TYPES, prompt: "Выберите метод оплаты" %>
+        <%= f.label :pay_type, "Оплата <span class=\"orange\">*</span>".html_safe %>
+        <%= f.select :pay_type, Order::PAYMENT_TYPES, { include_blank: true }, required: true %>
       </li>
       <li>
         <%= f.label :info, 'Доп. информация по доставке:' %>
@@ -52,7 +52,7 @@
 
     <li class='terms_wrapper'>
       <div class='checkbox'>
-        <%= f.check_box :terms_of_service %>
+        <%= f.check_box :terms_of_service, required: true %>
       </div>
       <div class='label'>
         Please agree to our Terms & Conditions before proceeding.

@@ -51,7 +51,7 @@ class Order < ActiveRecord::Base
   validates :email, length: { minimum: 7, maximum: 254 },
                     format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
   validates :name, :surname, length: { minimum: 2, maximum: 254}
-  validates :phone, numericality: true
+  validates :phone, numericality: true, length: { minimum: 9, maximum: 10 }
   validates :additional_phone, numericality: true, allow_blank: true
 
   def input_line_items_to_order(cart)
