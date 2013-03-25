@@ -12,6 +12,7 @@ gem 'devise'
 gem 'kaminari'
 gem 'randumb'
 gem 'twitter-bootstrap-rails'
+gem 'phony_rails'
 
 
 # Gems used only for assets and not required
