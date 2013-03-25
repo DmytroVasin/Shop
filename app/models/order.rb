@@ -41,8 +41,11 @@ class Order < ActiveRecord::Base
       "АР Крым"
   ]
 
-
   has_many :line_items, dependent: :destroy
+
+  phony_normalize :phone
+  validates :phone, phony_plausible: true
+
 
   validates :terms_of_service, acceptance: true
   validates :pay_type, inclusion: PAYMENT_TYPES
@@ -52,7 +55,6 @@ class Order < ActiveRecord::Base
                     format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
   validates :name, :surname, length: { minimum: 2, maximum: 254}
   validates :phone, numericality: true, length: { minimum: 9, maximum: 10 }
-  validates :additional_phone, numericality: true, allow_blank: true
 
   def input_line_items_to_order(cart)
     cart.line_items.each do |item|

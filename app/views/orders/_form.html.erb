@@ -12,11 +12,18 @@
       </li>
       <li class='error_msg_for_li'>
         <%= f.label :email, "Email <span class=\"orange\">*</span>".html_safe %>
-        <%= f.text_field :email, placeholder: 'example@gmail.com' %>
+        <%= f.text_field :email,
+                         data:        { value: 'email' },
+                         placeholder: 'example@gmail.com' %>
       </li>
       <li class='error_msg_for_li'>
         <%= f.label :phone, "Телефон <span class=\"orange\">*</span>".html_safe %>
-        <%= f.text_field :phone, placeholder: '0939256658' %>
+
+        <%= f.text_field :phone,
+                         value:       f.object.phone.to_s[1..-1],
+                         data:        { mask: '(999) 999-9999', value: 'phone' },
+                         placeholder: '(___) ___-____' %>
+
       </li>
       <li>
         <%= f.label :additional_phone, 'Дом. телефон' %>

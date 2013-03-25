@@ -1,19 +1,24 @@
 $(function() {
   var condition
-  var RegExpEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  var email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  var phone = /^([0-9\(\)\/\+ \-]*)$/;
+  var RegExp;
 
   $("#order_name, #order_surname, #order_city, #order_address").on('blur', function() {
     condition = $(this).val().length > 2;
     classChanger.call(this, condition);
   });
 
-  $("#order_phone").on('blur', function() {
-    condition = $(this).val().length === 10;
-    classChanger.call(this, condition);
-  });
+  $("#order_email, #order_phone").on('blur', function() {
+    if ( $(this).data('value') == 'phone' ) {
+      RegExp = phone;
+      console.log(RegExp);
+    } else {
+      RegExp = email;
+      console.log(RegExp);
+    }
 
-  $("#order_email").on('blur', function() {
-    condition = RegExpEmail.test(this.value);
+    condition = RegExp.test(this.value);
     classChanger.call(this, condition);
   });
 
