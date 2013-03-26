@@ -27,8 +27,8 @@
       Цена: <span><%= @product.price %></span> грн.
     </div>
   </div>
-  <div id="perfume_instock" class='perfume_instock_<%= @product.in_stock ? 'true' : 'false' %>'></div>
-  <div id="perfume_instock" class='rank'><%= @product.rank %></div>
+  <div class='perfume_instock perfume_instock_<%= @product.in_stock ? 'true' : 'false' %>'></div>
+  <div class='perfume_instock rank'><%= @product.rank %></div>
 
   <div class="clear"></div>
   <div id="perfume_actions">

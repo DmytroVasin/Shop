@@ -5,4 +5,8 @@ class Admin::OrdersController < Admin::BaseController
     #@orders = Order.joins(:line_items).where('line_items.cart_id IS NOT NULL')
     @orders = Order.includes(:line_items)
   end
+
+  def show
+    @order = Order.find(params[:id])
+  end
 end

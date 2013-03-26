@@ -1,3 +1,7 @@
+.wrapper_for_orders {
+  margin:  10px 0 0 12px;
+}
+
 #no_match_criteria {
   color       : #333333;
   font-family : Georgia, Times, serif;
@@ -7,10 +11,58 @@
 }
 
 #table {
-  width:  1300px;
-  font-size: 12px;
+  width     : 1300px;
+  font-size : 12px;
+
+  .status_delivery {
+    color : #5BB75B;
+  }
+
+  .status_not_delivery {
+    color : #b71f00;
+  }
+}
+
+.orders_table {
 
   th, td {
-    text-align: center;
+    text-align : center;
   }
+}
+
+table.sale_order_full {
+  background-color : #F9FAFB;
+  line-height      : 22px;
+  margin-right     : 40px;
+  width            : 600px;
+  float            : right;
+
+  th, td {
+    border         : 1px solid #ADC3D5;
+    padding        : 3px 5px;
+    vertical-align : middle;
+  }
+
+  th {
+    color       : #25639A;
+    text-align  : center;
+    font-size   : 13px;
+    font-weight : bold;
+  }
+
+  td.normal {
+    font-size : 14px;
+  }
+
+  td.order_title {
+    padding-left : 15px !important;
+  }
+
+  td.bold {
+    font-weight : bold;
+  }
+}
+
+dd {
+  margin-left : 25px;
 }

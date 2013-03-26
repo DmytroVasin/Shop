@@ -1,0 +1,55 @@
+<div class='wrapper_for_orders'>
+  <table class="sale_order_full">
+    <tbody>
+    <tr>
+      <th>Название</th>
+      <th>Количество</th>
+      <th>Цена</th>
+    </tr>
+    <% @order.line_items.each do |item| %>
+      <tr>
+        <td class="order_title normal"><%= item.product.title %></td>
+        <td style="text-align:center" class="normal"><%= item.quantity %>шт.</td>
+        <td align="right" class="normal"><%= number_to_currency(item.price, unit: 'грн.', format: '%n %u') %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td align="right" class="normal bold">Сумма:</td>
+      <td align="right" colspan="2" class="normal bold"><b>
+        <%= number_to_currency(@order.total_price, unit: 'грн.', format: '%n %u') %>
+      </b>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <dl>
+    <dt>Фамилия Имя Отчество</dt>
+    <dd><%= @order.surname %>, <%= @order.name %></dd>
+    <dt>Телефон</dt>
+    <dd><%= @order.phone %></dd>
+    <dt>Область</dt>
+    <dd><%= @order.region %></dd>
+    <dt>Город</dt>
+    <dd><%= @order.city %></dd>
+    <dt>Адрес</dt>
+    <dd><%= @order.address %></dd>
+    <dt>Email</dt>
+    <dd><%= @order.email %></dd>
+    <dt>Способ оплаты</dt>
+    <dd><%= @order.pay_type %></dd>
+    <% if @order.additional_phone.present? %>
+      <dt>Доп. телефон</dt>
+      <dd><%= @order.additional_phone %></dd>
+    <% end %>
+    <% if @order.info.present? %>
+      <dt>Доп. информация о заказе</dt>
+      <dd><%= @order.info %></dd>
+    <% end %>
+    <dt>Время заказа</dt>
+    <dd class="text-error"><%= @order.updated_at.localtime.strftime("%b %d '%Y, %H:%M") %></dd>
+  </dl>
+
+  <%= link_to '« All orders', orders_path, class: 'btn btn-inverse' %>
+  <%= link_to 'Update', edit_order_path(@order.id), class: 'btn btn-primary' %>
+</div>
