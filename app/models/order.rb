@@ -52,8 +52,8 @@ class Order < ActiveRecord::Base
   validates :region, inclusion: REGIONS
   validates :address, :email, :name, :surname, :phone, :region, :city, presence: true
   validates :email, length: { minimum: 7, maximum: 254 },
-                    format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
-  validates :name, :surname, length: { minimum: 2, maximum: 254}
+            format:         { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
+  validates :name, :surname, length: { minimum: 2, maximum: 254 }
   validates :phone, numericality: true, length: { minimum: 9, maximum: 10 }
 
   def input_line_items_to_order(cart)
@@ -62,5 +62,9 @@ class Order < ActiveRecord::Base
       line_items << item
       # In table line_item in each item we remove cart.id and add order_id
     end
+  end
+
+  def total_price
+    line_items.to_a.sum { |item| item.price*item.quantity }
   end
 end

@@ -1,14 +1,11 @@
 Shop::Application.routes.draw do
   resources :orders
-
+  resources :carts
 
   resources :line_items do
     put 'decrease', on: :member
     put 'increase', on: :member
   end
-
-
-  resources :carts
 
 
   root to: 'welcome#index'
@@ -22,6 +19,7 @@ Shop::Application.routes.draw do
     resources :products
     resources :categories
     resources :brands
+    resources :orders
   end
 
   resources :products

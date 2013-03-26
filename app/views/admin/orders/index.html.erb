@@ -1,0 +1,26 @@
+<blockquote>
+  <h3>Заказы:</h3>
+</blockquote>
+
+<% if @orders.any? %>
+  <table id='table' class='table table-striped span12'>
+    <thead>
+    <tr>
+      <th style="width: 2%">№</th>
+      <th style="width: 6%">Статус товара</th>
+      <th style="width: 10%">Область</th>
+      <th style="width: 10%">Тип оплаты</th>
+      <th style="width: 11%">Общ.цена</th>
+      <th style="width: 11%">Заказано в</th>
+      <th style="width: 11%">Действия</th>
+    </tr>
+    </thead>
+    <tbody id="products_body">
+    <%= render @orders %>
+    </tbody>
+  </table>
+<% else %>
+  <div id="no_match_criteria">
+    К сожалению, новых заказов нет
+  </div>
+<% end %>

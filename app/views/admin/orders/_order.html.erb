@@ -1,0 +1,12 @@
+<tr>
+  <td><%= order.id %></td>
+  <td>Отправленно</td>
+  <td><%= order.region %></td>
+  <td><%= truncate(order.pay_type, length: 25) %></td>
+  <td><%= number_to_currency(order.total_price, unit: 'грн.', format: '%n %u') %></td>
+  <td><%= order.updated_at.localtime.strftime("%b %d '%Y, %H:%M") %></td>
+  <td>
+    <%= link_to 'Show', admin_order_path(order.id), class: 'btn btn-small btn-primary' %>
+    <%= link_to 'Edit', edit_order_path(order.id), class: 'btn btn-small btn-success' %>
+  </td>
+</tr>

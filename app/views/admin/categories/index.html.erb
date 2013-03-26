@@ -2,8 +2,9 @@
   <h3>Категории:</h3>
 </blockquote>
 
-<% if @categories.any? %>
-  <div class="category_margin">
+
+<div class="category_margin">
+  <% if @categories.any? %>
     <table class="table table-striped table-bordered category_table">
       <tr>
         <th>Categories name</th>
@@ -18,6 +19,6 @@
         </tr>
       <% end %>
     </table>
-<% end %>
-<%= link_to 'Add categories', new_admin_category_path, class: 'btn btn-primary' %>
+  <% end %>
+  <%= link_to 'Add categories', new_admin_category_path, class: 'btn btn-primary' %>
 </div>

@@ -20,7 +20,6 @@
         <%= f.label :phone, "Телефон <span class=\"orange\">*</span>".html_safe %>
 
         <%= f.text_field :phone,
-                         value:       f.object.phone.to_s[1..-1],
                          data:        { mask: '(999) 999-9999', value: 'phone' },
                          placeholder: '(___) ___-____' %>
 

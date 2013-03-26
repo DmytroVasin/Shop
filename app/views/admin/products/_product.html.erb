@@ -1,7 +1,7 @@
 <tr>
   <td><%= product.id %></td>
-  <td><%= link_to truncate(product.title, length: 25), admin_product_path(product.id) %></td>
-  <td><%= truncate(product.description, length: 70) %></td>
+  <td><%= link_to truncate(product.title, length: 35), admin_product_path(product.id) %></td>
+  <td><%= truncate(product.description, length: 140) %></td>
   <td><%= product.price %> грн</td>
   <td>
     <div class="in_stock_<%= product.in_stock ? 'true' : 'false' %>"></div>
