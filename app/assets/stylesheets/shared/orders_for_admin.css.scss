@@ -1,5 +1,25 @@
+.successfully {
+  color : #0000FF;
+}
+
+.un_successfully {
+  color : #FF0000;
+}
+
 .wrapper_for_orders {
   margin:  10px 0 0 12px;
+}
+
+.adm_info {
+  float: right;
+}
+
+.edit_order {
+  margin-top: 20px;
+}
+
+#order_adm_info {
+  width: 586px;
 }
 
 #no_match_criteria {
@@ -35,7 +55,6 @@ table.sale_order_full {
   line-height      : 22px;
   margin-right     : 40px;
   width            : 600px;
-  float            : right;
 
   th, td {
     border         : 1px solid #ADC3D5;

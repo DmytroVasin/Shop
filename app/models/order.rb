@@ -10,9 +10,12 @@ class Order < ActiveRecord::Base
                   :region,
                   :city,
                   :info,
-                  :terms_of_service
+                  :terms_of_service,
+                  :status,
+                  :adm_info
 
   PAYMENT_TYPES = ["Новая почта - наложенный плтёж", "Укр Почта"]
+  STATUSES      = ['Заказано', 'Отправленно']
   REGIONS       = [
       "Винницкая область",
       "Волынская область",
@@ -50,6 +53,7 @@ class Order < ActiveRecord::Base
   validates :terms_of_service, acceptance: true
   validates :pay_type, inclusion: PAYMENT_TYPES
   validates :region, inclusion: REGIONS
+  validates :status, inclusion: STATUSES
   validates :address, :email, :name, :surname, :phone, :region, :city, presence: true
   validates :email, length: { minimum: 7, maximum: 254 },
             format:         { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }

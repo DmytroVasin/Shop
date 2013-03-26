@@ -1,29 +1,45 @@
 <div class='wrapper_for_orders'>
-  <table class="sale_order_full">
-    <tbody>
-    <tr>
-      <th>Название</th>
-      <th>Количество</th>
-      <th>Цена</th>
-    </tr>
-    <% @order.line_items.each do |item| %>
+  <div class='adm_info'>
+
+    <table class="sale_order_full">
+      <tbody>
       <tr>
-        <td class="order_title normal"><%= item.product.title %></td>
-        <td style="text-align:center" class="normal"><%= item.quantity %>шт.</td>
-        <td align="right" class="normal"><%= number_to_currency(item.price, unit: 'грн.', format: '%n %u') %></td>
+        <th>Название</th>
+        <th>Количество</th>
+        <th>Цена</th>
       </tr>
+      <% @order.line_items.each do |item| %>
+        <tr>
+          <td class="order_title normal"><%= item.product.title %></td>
+          <td style="text-align:center" class="normal"><%= item.quantity %>шт.</td>
+          <td align="right" class="normal"><%= number_to_currency(item.price, unit: 'грн.', format: '%n %u') %></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td align="right" class="normal bold">Сумма:</td>
+        <td align="right" colspan="2" class="normal bold"><b>
+          <%= number_to_currency(@order.total_price, unit: 'грн.', format: '%n %u') %>
+        </b>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <%= form_for([:admin, @order], method: :put) do |f| %>
+      <%= f.text_area :adm_info, rows: '5', placeholder: 'Put some information for note' %>
+      <div class="clear"></div>
+      <%= f.select :status, Order::STATUSES %>
     <% end %>
-    <tr>
-      <td align="right" class="normal bold">Сумма:</td>
-      <td align="right" colspan="2" class="normal bold"><b>
-        <%= number_to_currency(@order.total_price, unit: 'грн.', format: '%n %u') %>
-      </b>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  </div>
 
   <dl>
+    <dt>Статус заказа:</dt>
+    <dd class="<%= 'un_' if @order.status == 'Заказано' %>successfully"><%= @order.status %></dd>
+    <% if @order.adm_info.present? %>
+    <dt>Информация для администратора</dt>
+    <dd class="successfully"><%= @order.adm_info %></dd>
+    <% end %>
+    <br />
     <dt>Фамилия Имя Отчество</dt>
     <dd><%= @order.surname %>, <%= @order.name %></dd>
     <dt>Телефон</dt>
@@ -47,9 +63,9 @@
       <dd><%= @order.info %></dd>
     <% end %>
     <dt>Время заказа</dt>
-    <dd class="text-error"><%= @order.updated_at.localtime.strftime("%b %d '%Y, %H:%M") %></dd>
+    <dd class="successfully"><%= @order.updated_at.localtime.strftime("%b %d '%Y, %H:%M") %></dd>
   </dl>
 
   <%= link_to '« All orders', orders_path, class: 'btn btn-inverse' %>
-  <%= link_to 'Update', edit_order_path(@order.id), class: 'btn btn-primary' %>
+  <%= link_to 'Update', '#', class: 'btn btn-primary', onclick: "$('form').submit()" %>
 </div>
