@@ -12,6 +12,9 @@
 * products page:
     http://perfume-shop-dn.herokuapp.com/products
 
+* orders page:
+    http://perfume-shop-dn.herokuapp.com/admin/orders
+
 == Getting Started
 
 * auth/login  - страница что бы ввести данные:
@@ -19,5 +22,4 @@
        password
 
 1. interrogation ( in main page ) does not work
-2. Cart does not work
-4. Search does not work
+2. Search does not work
