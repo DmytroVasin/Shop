@@ -27,6 +27,9 @@ group :development do
   gem 'better_errors'
   gem 'pry-rails'
   gem 'binding_of_caller'
+
+  gem 'meta_request'
+  # gem for rails panel
 end
 
 group :test do
