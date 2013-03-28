@@ -53,3 +53,11 @@ production:
   pool: 5
   username: demitriy
   password:
+
+staging:
+  adapter: postgresql
+  encoding: unicode
+  database: shop_staging
+  pool: 5
+  username: demitriy
+  password:
