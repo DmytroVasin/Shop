@@ -14,6 +14,8 @@ gem 'randumb'
 gem 'twitter-bootstrap-rails'
 gem 'phony_rails'
 
+gem 'populator'
+gem 'faker'
 
 # Gems used only for assets and not required
 # in production environments by default.

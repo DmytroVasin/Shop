@@ -72,6 +72,8 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    faker (1.1.2)
+      i18n (~> 0.5)
     ffaker (1.15.0)
     ffi (1.5.0)
     hike (1.2.1)
@@ -103,6 +105,7 @@ GEM
       countries (>= 0.8.2)
       phony (>= 1.7.7)
     polyglot (0.3.3)
+    populator (1.0.0)
     pry (0.9.12)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -205,12 +208,14 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl_rails
+  faker
   ffaker
   jquery-rails
   kaminari
   meta_request
   pg
   phony_rails
+  populator
   pry-rails
   rails (= 3.2.12)
   randumb
