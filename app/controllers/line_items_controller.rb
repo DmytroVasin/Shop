@@ -32,7 +32,7 @@ class LineItemsController < ApplicationController
   def decrease
     @cart      = current_cart
     @line_item = @cart.decrease(params[:id])
-    @items     = @cart.line_items.order('created_at ASC')
+    @items     = @cart.line_items
 
     respond_to do |format|
       if @items.empty?
