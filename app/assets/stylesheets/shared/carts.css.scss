@@ -33,7 +33,10 @@
   background-position : left top;
   background-repeat   : repeat-x;
   border-bottom       : 1px dashed #D7D7D7;
-  height              : 42px;
+
+  tr {
+    height : 42px;
+  }
 }
 
 #cart_bottom {
@@ -62,12 +65,13 @@
 
     p {
       margin : 12px 0 0 260px;
+      font-size: 17px;
     }
   }
 
   .checkout {
-    float: left;
-    margin: 5px 0 0 123px;
+    float  : right;
+    margin : 5px 10px 0 0;
   }
 }
 
@@ -102,14 +106,13 @@
 }
 
 .quantity_sell {
-  position : relative;
+  width          : 40px;
+  height         : 80px;
+  vertical-align : middle;
 
   .actions_with_quantity {
-    width    : 40px;
-    height   : 78px;
-    position : absolute;
-    right    : 0px;
-    bottom   : -7px;
+    width  : 40px;
+    height : 78px;
   }
 }
 

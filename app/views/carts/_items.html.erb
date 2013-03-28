@@ -12,17 +12,14 @@
     <td class='quantity'>
       <div><%= item.quantity %></div>
     </td>
-    <td>
-      <div class='quantity_sell'>
-
-        <div class='actions_with_quantity'>
-          <%= link_to image_tag('plus.png'), increase_line_item_path(item.id), method: :put, remote: true %>
-          <% if item.quantity == 1 %>
-            <%= link_to image_tag('minus.png'), decrease_line_item_path(item.id), method: :put %>
-          <% else %>
-            <%= link_to image_tag('minus.png'), decrease_line_item_path(item.id), method: :put, remote: true %>
-          <% end %>
-        </div>
+    <td class='quantity_sell'>
+      <div class='actions_with_quantity'>
+        <%= link_to image_tag('plus.png'), increase_line_item_path(item.id), method: :put, remote: true %>
+        <% if item.quantity == 1 %>
+          <%= link_to image_tag('minus.png'), decrease_line_item_path(item.id), method: :put %>
+        <% else %>
+          <%= link_to image_tag('minus.png'), decrease_line_item_path(item.id), method: :put, remote: true %>
+        <% end %>
       </div>
     </td>
     <td class='delete_line_item'>
