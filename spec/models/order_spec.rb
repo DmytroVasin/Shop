@@ -1,5 +1,35 @@
 require 'spec_helper'
 
-describe Order do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Product do
+  before :each do
+    @some_var = 'abrakadabraasasdasdasdasdasd'
+  end
+
+  it 'should have som_var' do
+    @some_var.should_not be_nil
+  end
+  it 'should have som_var' do
+    @some_var.should_not be_nil
+  end
+
+  it 'should have som_var' do
+    @some_var.should_not be_nil
+  end
+
+  it 'should have som_var' do
+    @some_var.should_not be_nil
+  end
+
+  it 'should have som_var' do
+    @some_var.should_not be_nil
+  end
+
+  it 'should have som_var' do
+    @some_var.should_not be_nil
+  end
+
+  it 'should have som_var' do
+    @some_var.should_not be_nil
+  end
+
 end
