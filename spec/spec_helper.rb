@@ -10,6 +10,7 @@ Spork.prefork do
   require 'rspec/rails'
   require 'factory_girl'
   require 'capybara/rspec'
+  require 'database_cleaner'
 
   Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
@@ -24,9 +25,32 @@ Spork.prefork do
     # --seed 1234
     config.order                                      = 'random'
 
+
+
+    config.before(:suite) do
+      # DatabaseCleaner.clean_with :truncation
+      DatabaseCleaner.strategy = :truncation
+    end
+
+    config.before(:each) do
+      DatabaseCleaner.strategy = :transaction
+      DatabaseCleaner.start
+    end
+
+    config.before(:each, js: true) do
+      DatabaseCleaner.strategy = :truncation
+    end
+
+    config.after(:each) do
+      DatabaseCleaner.clean
+    end
+
     config.after(:each, js: true) do
       Capybara.reset_sessions!
     end
+
+
+
   end
 end
 
