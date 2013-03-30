@@ -1,4 +1,6 @@
 def products_and_dependencies
+  brands = Brand.pluck('id')
+
   Product.populate 100 do |product|
     product.title       = Populator.words(2..3).titleize
     product.description = Populator.sentences(5)
@@ -6,7 +8,7 @@ def products_and_dependencies
     product.created_at  = 1.months.ago..Time.now
     product.rank        = [0, 1, 2, 3, 4, 5, 6]
     product.in_stock    = [true, false]
-    product.brand_id    = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    product.brand_id    = brands
   end
 
   category_ids = Category.pluck('id')
