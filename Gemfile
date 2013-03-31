@@ -30,6 +30,7 @@ group :development do
   gem 'pry-rails'
   gem 'binding_of_caller'
 
+  gem 'debugger'
   gem 'meta_request'
   # gem for rails panel
 end
