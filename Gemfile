@@ -31,6 +31,7 @@ group :development do
   gem 'binding_of_caller'
 
   gem 'debugger'
+  gem 'hirb'
   gem 'meta_request'
   # gem for rails panel
 end
