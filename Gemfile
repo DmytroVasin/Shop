@@ -35,6 +35,8 @@ group :development do
   gem 'hirb'
   gem 'meta_request'
   # gem for rails panel
+
+  gem 'brakeman', :require => false
 end
 
 group :test do
