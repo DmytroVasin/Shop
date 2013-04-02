@@ -14,5 +14,7 @@
 /log/*.log
 /tmp
 .idea/*
-/coverage
-brakeman.html
+
+# /coverage
+# brakeman.html
+# rails_best_practices_output.html

@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'pg'
 gem 'jquery-rails'
 gem 'valle'
@@ -17,8 +14,6 @@ gem 'phony_rails'
 gem 'populator'
 gem 'faker'
 
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -34,13 +29,28 @@ group :development do
   gem 'debugger'
   gem 'hirb'
   gem 'meta_request'
-  # gem for rails panel
+  # rails panel
 
   gem 'brakeman', :require => false
+  # brakeman -o brakeman.html
+
+  gem 'roodi'
+
+  gem 'rails_best_practices'
+  # rails_best_practices -f html --with-textmate
+
+  gem 'metrical', :require => false
+  # metrical
+    gem 'fattr'
+    gem 'arrayfields'
+    gem 'map'
+    gem 'ripl-ripper'
 end
 
 group :test do
   gem 'simplecov', require: false
+  #COVERAGE=true rspec spec/
+
   gem 'database_cleaner', require: false
   gem 'factory_girl_rails', require: false
   gem 'ffaker', require: false
@@ -55,6 +65,7 @@ group :test, :development do
   gem 'rspec-rails', '>= 2.0.1'
   gem 'capybara'
 end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

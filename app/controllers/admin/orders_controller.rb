@@ -12,7 +12,7 @@ class Admin::OrdersController < Admin::BaseController
 
   def update
     @order = Order.find(params[:id])
-    @order.update_attributes(params[:order])
+    @order.update_attributes!(params[:order])
 
     flash[:notice] = 'Success updated this order note'
     redirect_to admin_order_path(@order.id)
