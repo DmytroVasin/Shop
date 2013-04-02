@@ -5,6 +5,23 @@ require 'spork'
 Spork.prefork do
   ENV['RAILS_ENV'] ||= 'test'
 
+  if ENV['COVERAGE']
+    require 'simplecov'
+
+    SimpleCov.start 'rails'
+    #SimpleCov.start 'rails' do
+      #add_filter "/app/admin/"
+      #add_filter '/config/'
+      #add_filter do |source_file|
+      #  source_file.lines.count < 5
+      #end
+      #add_filter do |source_file|
+      #  source_file.src.include? "ActiveAdmin"
+      #end
+    #end
+  end
+
+
   require File.expand_path('../../config/environment', __FILE__)
 
   require 'rspec/rails'
@@ -19,12 +36,11 @@ Spork.prefork do
     config.include UrlHelper
     config.include Devise::TestHelpers, :type => :controller
 
-    config.run_all_when_everything_filtered           = true
+    config.run_all_when_everything_filtered = true
     #config.fixture_path                               = "#{::Rails.root}/spec/fixtures"
 
     # --seed 1234
-    config.order                                      = 'random'
-
+    config.order                            = 'random'
 
 
     config.before(:suite) do
@@ -48,7 +64,6 @@ Spork.prefork do
     config.after(:each, js: true) do
       Capybara.reset_sessions!
     end
-
 
 
   end

@@ -27,6 +27,7 @@ end
 
 group :development do
   gem 'better_errors'
+  # programs/.../../__better_errors for ajax
   gem 'pry-rails'
   gem 'binding_of_caller'
 
