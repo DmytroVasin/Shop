@@ -25,6 +25,11 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
 
+        # email send to admin verification letter
+        OrderNotifier.received(@order).deliver
+        # email send to user witch create order
+        OrderNotifier.shipped(@order).deliver
+
         format.html { redirect_to root_path, notice: 'Order was successfully created.' }
       else
         @cart = current_cart

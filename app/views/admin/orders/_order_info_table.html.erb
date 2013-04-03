@@ -1,0 +1,24 @@
+<dt>Фамилия Имя Отчество</dt>
+<dd><%= @order.surname %>, <%= @order.name %></dd>
+<dt>Телефон</dt>
+<dd><%= @order.phone %></dd>
+<dt>Область</dt>
+<dd><%= @order.region %></dd>
+<dt>Город</dt>
+<dd><%= @order.city %></dd>
+<dt>Адрес</dt>
+<dd><%= @order.address %></dd>
+<dt>Email</dt>
+<dd><%= @order.email %></dd>
+<dt>Способ оплаты</dt>
+<dd><%= @order.pay_type %></dd>
+<% if @order.additional_phone.present? %>
+  <dt>Доп. телефон</dt>
+  <dd><%= @order.additional_phone %></dd>
+<% end %>
+<% if @order.info.present? %>
+  <dt>Доп. информация о заказе</dt>
+  <dd><%= @order.info %></dd>
+<% end %>
+<dt>Время заказа</dt>
+<dd class="successfully"><%= @order.updated_at.localtime.strftime("%b %d '%Y, %H:%M") %></dd>

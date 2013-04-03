@@ -15,7 +15,11 @@
   <tr>
     <td align="right" class="normal bold">Сумма:</td>
     <td align="right" colspan="6" class="normal  bold"><b>
+      <% if @cart.nil? %>
+      <%= number_to_currency(@order.total_price, unit: 'грн.', format: '%n %u') %>
+      <% else %>
       <%= number_to_currency(@cart.total_price, unit: 'грн.', format: '%n %u') %>
+      <% end %>
     </b>
     </td>
   </tr>

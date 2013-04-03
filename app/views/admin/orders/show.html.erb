@@ -36,34 +36,11 @@
     <dt>Статус заказа:</dt>
     <dd class="<%= 'un_' if @order.status == 'Заказано' %>successfully"><%= @order.status %></dd>
     <% if @order.adm_info.present? %>
-    <dt>Информация для администратора</dt>
-    <dd class="successfully"><%= @order.adm_info %></dd>
+      <dt>Информация для администратора</dt>
+      <dd class="successfully"><%= @order.adm_info %></dd>
     <% end %>
     <br />
-    <dt>Фамилия Имя Отчество</dt>
-    <dd><%= @order.surname %>, <%= @order.name %></dd>
-    <dt>Телефон</dt>
-    <dd><%= @order.phone %></dd>
-    <dt>Область</dt>
-    <dd><%= @order.region %></dd>
-    <dt>Город</dt>
-    <dd><%= @order.city %></dd>
-    <dt>Адрес</dt>
-    <dd><%= @order.address %></dd>
-    <dt>Email</dt>
-    <dd><%= @order.email %></dd>
-    <dt>Способ оплаты</dt>
-    <dd><%= @order.pay_type %></dd>
-    <% if @order.additional_phone.present? %>
-      <dt>Доп. телефон</dt>
-      <dd><%= @order.additional_phone %></dd>
-    <% end %>
-    <% if @order.info.present? %>
-      <dt>Доп. информация о заказе</dt>
-      <dd><%= @order.info %></dd>
-    <% end %>
-    <dt>Время заказа</dt>
-    <dd class="successfully"><%= @order.updated_at.localtime.strftime("%b %d '%Y, %H:%M") %></dd>
+    <%= render 'order_info_table' %>
   </dl>
 
   <%= link_to '« All orders', orders_path, class: 'btn btn-inverse' %>
