@@ -1,9 +1,12 @@
 class CartsController < ApplicationController
   def show
     begin
-      @cart = Cart.find(params[:id])
-      #TODO: params[:id] change to session[:id]
-      @items = @cart.line_items
+      session_id = session[:cart_id]
+      @cart      = Cart.find(session_id)
+      @items     = @cart.line_items
+
+      raise ActiveRecord::RecordNotFound unless params[:id].to_i == session_id
+
     rescue ActiveRecord::RecordNotFound
       logger.error '----> Try access to invalid cart'
       redirect_to products_path, alert: 'Invalid cart'
