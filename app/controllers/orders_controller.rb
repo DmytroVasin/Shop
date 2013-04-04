@@ -26,9 +26,9 @@ class OrdersController < ApplicationController
         session[:cart_id] = nil
 
         # email send to admin verification letter
-        OrderNotifier.received(@order).deliver
+        OrderNotifier.delay.received(@order)
         # email send to user witch create order
-        OrderNotifier.shipped(@order).deliver
+        OrderNotifier.delay.shipped(@order)
 
         format.html { redirect_to root_path, notice: 'Order was successfully created.' }
       else

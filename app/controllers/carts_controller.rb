@@ -2,6 +2,7 @@ class CartsController < ApplicationController
   def show
     begin
       @cart = Cart.find(params[:id])
+      #TODO: params[:id] change to session[:id]
       @items = @cart.line_items
     rescue ActiveRecord::RecordNotFound
       logger.error '----> Try access to invalid cart'
