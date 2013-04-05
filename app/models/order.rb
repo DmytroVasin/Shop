@@ -56,7 +56,8 @@ class Order < ActiveRecord::Base
   validates :status, inclusion: STATUSES
   validates :address, :email, :name, :surname, :phone, :region, :city, presence: true
   validates :email, length: { minimum: 7, maximum: 254 },
-            format:         { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
+            format:         { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, 
+                              message: "must be a valid email address" }
   validates :name, :surname, length: { minimum: 2, maximum: 254 }
   validates :phone, numericality: true, length: { minimum: 9, maximum: 10 }
 
