@@ -162,43 +162,8 @@
   <div class='clear'></div>
 </div>
 <div id="rightarea">
-  <div class="questions">
-    <div class="votes_logo"></div>
-    <div class="question">
-      Какую цену вы готовы заплатить за парфюм? ( грн )
-    </div>
-    <form name="test" method="post" action="input1.php">
-      <div class="list_of_price">
-        <input type=radio name="price" value="1">
-        <label for="1">до 150</label>
-      </div>
-      <div class="list_of_price">
-        <input type=radio name="price" value="2">
-        <label for="2">150 < 200</label>
-      </div>
-      <div class="list_of_price">
-        <input type=radio name="price" value="3">
-        <label for="3">200 < 350</label>
-      </div>
-      <div class="list_of_price">
-        <input type=radio name="price" value="4">
-        <label for="4">350 < 400</label>
-      </div>
-      <div class="list_of_price">
-        <input type=radio name="price" value="5">
-        <label for="5">400 < 500</label>
-      </div>
-      <div class="list_of_price">
-        <input type=radio name="price" value="6">
-        <label for="6">500+</label>
-      </div>
-      <div class="list_of_price">
-        <input type=radio name="price" value="7">
-        <label for="7">Цена не важна</label>
-      </div>
-      <button type="submit" form="data" id='subm_vote'>Отправить!</button>
-    </form>
-  </div>
+  <%= render 'ratings/ratings' %>
+
   <div id="remote_site">
     <div class="aboveline_blog"></div>
     <div class="wrapper_of_remote_site">
