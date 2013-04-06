@@ -1,14 +1,69 @@
 <div>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat.
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat.
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat.
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat.
+  <blockquote>
+    <h3>Preferred cost:</h3>
+  </blockquote>
+  <div class='description_admin_index'>
+    <table class="table table-condensed">
+      <tr>
+        <th>Описание (грн)</th>
+        <th>Количество</th>
+      </tr>
+      <tr class="charlie">
+        <td>До 150</td>
+        <td><%= @hash_with_counts['1'] %></td>
+      </tr>
+      <tr class="bravo">
+        <td>150 < 200</td>
+        <td><%= @hash_with_counts['2'] %></td>
+      </tr>
+      <tr class="golf">
+        <td>200 < 350</td>
+        <td><%= @hash_with_counts['3'] %></td>
+      </tr>
+      <tr class="foxtrot">
+        <td>350 < 400</td>
+        <td><%= @hash_with_counts['4'] %></td>
+      </tr>
+      <tr class="november">
+        <td>400 < 500</td>
+        <td><%= @hash_with_counts['5'] %></td>
+      </tr>
+      <tr class="juliet">
+        <td>500+</td>
+        <td><%= @hash_with_counts['6'] %></td>
+      </tr>
+      <tr class="india">
+        <td>Цена не важна</td>
+        <td><%= @hash_with_counts['7'] %></td>
+      </tr>
+      <tr class="">
+        <td></td>
+        <td><strong><%= @count %></strong></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="progress_table">
+    <div class="progress">
+      <div class="bar charlie" style="width: <%= @hash_with_percentege['1'] %>%"></div>
+    </div>
+    <div class="progress">
+      <div class="bar bravo" style="width: <%= @hash_with_percentege['2'] %>%"></div>
+    </div>
+    <div class="progress">
+      <div class="bar golf" style="width: <%= @hash_with_percentege['3'] %>%"></div>
+    </div>
+    <div class="progress">
+      <div class="bar foxtrot" style="width: <%= @hash_with_percentege['4'] %>%"></div>
+    </div>
+    <div class="progress">
+      <div class="bar november" style="width: <%= @hash_with_percentege['5'] %>%"></div>
+    </div>
+    <div class="progress">
+      <div class="bar juliet" style="width: <%= @hash_with_percentege['6'] %>%"></div>
+    </div>
+    <div class="progress">
+      <div class="bar india" style="width: <%= @hash_with_percentege['7'] %>%"></div>
+    </div>
+  </div>
 </div>

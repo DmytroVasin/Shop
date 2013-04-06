@@ -16,4 +16,10 @@ def products_and_dependencies
   Product.all.each do |product|
     product.categories << Category.find(category_ids.sample)
   end
+
+  #[Rating].each(&:delete_all)
+  #Rating.populate 1000 do |rating|
+  #  rating.point = [1, 2, 3, 4, 5, 6, 7]
+  #  rating.ip    = Populator.words(1)
+  #end
 end

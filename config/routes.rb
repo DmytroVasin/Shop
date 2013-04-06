@@ -1,6 +1,5 @@
 Shop::Application.routes.draw do
-  # only create
-  resources :ratings
+  resources :ratings, only: [:create]
 
   resources :orders
   resources :carts
