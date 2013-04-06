@@ -3,35 +3,36 @@
   <div class="question">
     Какую цену вы готовы заплатить за парфюм? ( грн )
   </div>
-  <form name="test" method="post" action="input1.php">
+  <%= form_for @ratings, url: ratings_path do |f| %>
     <div class="list_of_price">
-      <input type=radio name="price" value="1">
-      <label for="1">до 150</label>
+      <%= f.radio_button('point', '1') %>
+      <%= f.label :point, 'до 150' %>
     </div>
     <div class="list_of_price">
-      <input type=radio name="price" value="2">
-      <label for="2">150 < 200</label>
+      <%= f.radio_button('point', '2') %>
+      <%= f.label :point, '150 < 200' %>
     </div>
     <div class="list_of_price">
-      <input type=radio name="price" value="3">
-      <label for="3">200 < 350</label>
+      <%= f.radio_button('point', '3') %>
+      <%= f.label :point, '200 < 350' %>
     </div>
     <div class="list_of_price">
-      <input type=radio name="price" value="4">
-      <label for="4">350 < 400</label>
+      <%= f.radio_button('point', '4') %>
+      <%= f.label :point, '350 < 400' %>
     </div>
     <div class="list_of_price">
-      <input type=radio name="price" value="5">
-      <label for="5">400 < 500</label>
+      <%= f.radio_button('point', '5') %>
+      <%= f.label :point, '400 < 500' %>
     </div>
     <div class="list_of_price">
-      <input type=radio name="price" value="6">
-      <label for="6">500+</label>
+      <%= f.radio_button('point', '6') %>
+      <%= f.label :point, '500+' %>
     </div>
     <div class="list_of_price">
-      <input type=radio name="price" value="7">
-      <label for="7">Цена не важна</label>
+      <%= f.radio_button('point', '7') %>
+      <%= f.label :point, 'Цена не важна' %>
     </div>
-    <button type="submit" form="data" id='subm_vote'>Отправить!</button>
-  </form>
+
+    <%= f.submit 'Отправить', id: 'subm_vote' %>
+  <% end %>
 </div>

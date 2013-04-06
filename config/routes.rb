@@ -1,4 +1,6 @@
 Shop::Application.routes.draw do
+  resources :ratings
+
   resources :orders
   resources :carts
 
