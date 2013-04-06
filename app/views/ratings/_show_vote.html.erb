@@ -1,0 +1,46 @@
+<div class="questions">
+  <div class="votes_logo"></div>
+  <div class="question">
+    Какую цену вы готовы заплатить за парфюм? ( грн )
+  </div>
+
+  <div class='progress_table'>
+    до 150
+    <span>(<%= @hash_with_counts['1'] %>)</span>
+    <div class="progress_bar">
+      <div class="bar" style="width: <%= @hash_with_percentege['1'] %>%"></div>
+    </div>
+    150 < 200
+    <span>(<%= @hash_with_counts['2'] %>)</span>
+    <div class="progress_bar">
+      <div class="bar" style="width: <%= @hash_with_percentege['2'] %>%"></div>
+    </div>
+    200 < 350
+    <span>(<%= @hash_with_counts['3'] %>)</span>
+    <div class="progress_bar">
+      <div class="bar" style="width: <%= @hash_with_percentege['3'] %>%"></div>
+    </div>
+    350 < 400
+    <span>(<%= @hash_with_counts['4'] %>)</span>
+    <div class="progress_bar">
+      <div class="bar" style="width: <%= @hash_with_percentege['4'] %>%"></div>
+    </div>
+    400 < 500
+    <span>(<%= @hash_with_counts['5'] %>)</span>
+    <div class="progress_bar">
+      <div class="bar" style="width: <%= @hash_with_percentege['5'] %>%"></div>
+    </div>
+    500+
+    <span>(<%= @hash_with_counts['6'] %>)</span>
+    <div class="progress_bar">
+      <div class="bar" style="width: <%= @hash_with_percentege['6'] %>%"></div>
+    </div>
+    Цена не важна
+    <span>(<%= @hash_with_counts['7'] %>)</span>
+    <div class="progress_bar">
+      <div class="bar" style="width: <%= @hash_with_percentege['7'] %>%"></div>
+    </div>
+
+    <div class='count_of_vote'>Кол-во голосов: <span><%= @count %></span></div>
+  </div>
+</div>

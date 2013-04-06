@@ -16,6 +16,8 @@ class RatingsController < ApplicationController
     else
       error_flash
     end
+
+    session[:vote_flag] = true
     redirect_to root_path
   end
 

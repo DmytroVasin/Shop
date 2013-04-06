@@ -3,7 +3,7 @@ class Admin::BaseController < ApplicationController
   layout 'admin'
 
   def index
-    ratings          = Rating.all
+    ratings          = Rating.select(:point)
     @count           = ratings.count
     hash_with_points = ratings.group_by(&:point)
 
