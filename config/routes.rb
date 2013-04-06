@@ -1,4 +1,5 @@
 Shop::Application.routes.draw do
+  # only create
   resources :ratings
 
   resources :orders
