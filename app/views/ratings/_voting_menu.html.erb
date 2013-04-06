@@ -1,0 +1,5 @@
+<% if session[:counter] %>
+  <%= render 'ratings/ratings' %>
+<% else %>
+  <%= render 'ratings/show_vote' %>
+<% end %>

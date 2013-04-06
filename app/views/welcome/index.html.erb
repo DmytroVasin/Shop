@@ -162,11 +162,7 @@
   <div class='clear'></div>
 </div>
 <div id="rightarea">
-  <% if session[:counter] %>
-    <%= render 'ratings/ratings' %>
-  <% else %>
-    <%= render 'ratings/show_vote' %>
-  <% end %>
+  <%= render 'ratings/voting_menu' %>
 
   <div id="remote_site">
     <div class="aboveline_blog"></div>
