@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
 
     @categories = Category.all
 
-    @brands = Brand.joins(:products).joins(:products).group('brands.id').order('SUM(products.rank) DESC')
+    @brands = Brand.joins(:products).group('brands.id').order('name ASC')
 
     @brands_left  = @brands.random_by_id_shuffle(10)
     @brands_right = @brands.random_by_id_shuffle(10)

@@ -3,7 +3,5 @@ class Brand < ActiveRecord::Base
 
   validates :name, presence: true
 
-  before_destroy {|brand| brand.products.clear}
-
-  has_many :products
+  has_many :products, dependent: :destroy
 end
