@@ -23,5 +23,6 @@
 
 1. Search does not work
 
+== Report from codeclimate.com
 
-![Alt text](http://i.imm.io/12lnJ.png)
+http://i.imm.io/12lnJ.png
