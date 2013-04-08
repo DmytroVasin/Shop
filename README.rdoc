@@ -21,5 +21,7 @@
        dracon779@gmail.com
        password
 
-1. interrogation ( in main page ) does not work
-2. Search does not work
+1. Search does not work
+
+
+![Alt text](http://i.imm.io/12lnJ.png)
