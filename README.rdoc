@@ -26,3 +26,15 @@
 == Report from codeclimate.com
 
 http://i.imm.io/12lnJ.png
+
+== Report from SimpleCov
+
+http://i.imm.io/12lqt.png
+
+== Report from Rails best practice
+
+http://i.imm.io/12lqK.png
+
+== Report from BrakeMan
+
+http://i.imm.io/12lqZ.png
