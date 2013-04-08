@@ -1,16 +1,14 @@
 class CartsController < ApplicationController
   def show
-    begin
-      session_id = session[:cart_id]
-      @cart      = Cart.find(session_id)
-      @items     = @cart.line_items
+    session_id = session[:cart_id]
 
-      raise ActiveRecord::RecordNotFound unless params[:id].to_i == session_id
-
-    rescue ActiveRecord::RecordNotFound
+    if params[:id].to_i != session_id
       logger.error '----> Try access to invalid cart'
       redirect_to products_path, alert: 'Invalid cart'
     else
+      @cart  = Cart.find(session_id)
+      @items = @cart.line_items
+
       respond_to do |format|
         format.html # show.html.erb
         format.json { render json: @cart }
