@@ -1,0 +1,30 @@
+<% new_products.each_with_index do |new_product, i| %>
+  <div class="new_product">
+    <% if i < 2 %>
+      <div class="new_product_title">Новые - для неё!...</div>
+    <% else %>
+      <div class="new_product_title">Новые - для него!...</div>
+    <% end %>
+
+    <div class="new_product_content">
+      <div class="picture_new">
+        <img class="image" src="/assets/must_have_1.jpg" />
+      </div>
+      <div class="description">
+        <ul>
+          <li class="title">
+            <%= new_product.title %>
+          </li>
+          <li class="price">
+            <span class="price_count">цена:</span>
+            <span class="price_inscription"><%= number_to_currency(new_product.price, unit: 'грн.', format: '%n %u') %></span>
+          </li>
+          <li class="button">
+            <%= link_to 'Просмотр', product_path(new_product.id), class: 'btn_order' %>
+          </li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+<% end %>

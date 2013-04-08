@@ -1,11 +1,12 @@
 class WelcomeController < ApplicationController
   def index
-    brands = Brand.joins(:products)
-    @brands_left  = brands.random_by_id_shuffle(10)
-    @brands_right = brands.random_by_id_shuffle(10)
+    # BRANDS for menu
+    brands           = Brand.joins(:products)
+    @brands_left     = brands.random_by_id_shuffle(10)
+    @brands_right    = brands.random_by_id_shuffle(10)
 
-    @ratings = Rating.new
-
+    # Rating menu ( Vote menu )
+    @ratings         = Rating.new
 
     ratings          = Rating.select(:point)
     @count           = ratings.count
@@ -18,5 +19,12 @@ class WelcomeController < ApplicationController
       @hash_with_counts["#{key}"]     = value.count
       @hash_with_percentege["#{key}"] = (value.count * 100)/@count.to_f
     end
+
+    # New parfume's - for her and him
+    products = Product.order('created_at ASC')
+    for_him = products.by_category_name('For Him').limit(2)
+    for_her = products.by_category_name('For Her').limit(2)
+
+    @for_them = for_her + for_him
   end
 end
