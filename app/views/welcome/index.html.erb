@@ -13,48 +13,7 @@
     <a href="javascript:void(0);" class="previousproduct"></a>
     <div id='wrap'>
       <ul id="slider" style="left: 0px;">
-        <li>
-          <a href="#">
-            <img src="/assets/top_1.jpg" width="115" height="100" />
-            <div class="title">Yves Saint Laurent Paris Eau De Toilette</div>
-            <div class="price"><span class="small">цена: </span> $26.49</div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="/assets/top_2.jpg" width="115" height="100" />
-            <div class="title">Kenzo Flower Eau De Parfum</div>
-            <div class="price"><span class="small">цена: </span> $18.99</div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="/assets/top_3.jpg" width="115" height="100" />
-            <div class="title">Yves Saint Laurent Paris Eau De Toilette</div>
-            <div class="price"><span class="small">цена: </span> $26.49</div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="/assets/top_4.jpg" width="115" height="100" />
-            <div class="title">Yves Saint Laurent Paris Eau De Toilette</div>
-            <div class="price"><span class="small">цена: </span> $26.49</div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="/assets/top_5.jpg" width="115" height="100" />
-            <div class="title">Dolce & Gabbana The One For Men Eau De Toilette</div>
-            <div class="price"><span class="small">цена: </span> $26.49</div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="/assets/top_6.jpg" width="115" height="100" />
-            <div class="title">Yves Saint Laurent Paris Eau De Toilette</div>
-            <div class="price"><span class="small">от</span> $26.49</div>
-          </a>
-        </li>
+        <%= render partial: 'best_sellers', collection: @best_sellers %>
       </ul>
     </div>
     <a href="javascript:void(0);" class="nextproduct"></a>
