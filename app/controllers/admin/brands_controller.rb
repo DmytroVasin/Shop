@@ -13,8 +13,7 @@ class Admin::BrandsController < Admin::BaseController
     @brand = Brand.new(params[:brand])
 
     if @brand.save
-      flash[:notice] = 'Brand created'
-      redirect_to admin_brands_path
+      redirect_to admin_brands_path, notice: 'Brand created'
     else
       render 'new'
     end
@@ -24,7 +23,6 @@ class Admin::BrandsController < Admin::BaseController
     @brand = Brand.find(params[:id])
     @brand.destroy
 
-    flash[:notice] = 'Brand deleted'
-    redirect_to admin_brands_path
+    redirect_to admin_brands_path, notice: 'Brand deleted'
   end
 end

@@ -13,8 +13,7 @@ class Admin::CategoriesController < Admin::BaseController
     @category = Category.new(params[:category])
 
     if @category.save
-      flash[:notice] = 'Category created'
-      redirect_to admin_categories_path
+      redirect_to admin_categories_path, notice: 'Category created'
     else
       render 'new'
     end
@@ -24,7 +23,6 @@ class Admin::CategoriesController < Admin::BaseController
     @category = Category.find(params[:id])
     @category.destroy
 
-    flash[:notice] = 'Category deleted'
-    redirect_to admin_categories_path
+    redirect_to admin_categories_path, notice: 'Category deleted'
   end
 end
