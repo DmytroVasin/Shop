@@ -14,7 +14,7 @@ class LineItemsController < ApplicationController
   end
 
   def destroy
-    @cart = current_cart
+    @cart      = current_cart
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
 
@@ -39,11 +39,8 @@ class LineItemsController < ApplicationController
         @cart.destroy
         session[:cart_id] = nil
         format.html { redirect_to products_path, notice: 'Empty cart' }
-      else
-        if @line_item.save
-          format.html { redirect_to @line_item.cart, notice: 'Item was successfully removed' }
-          format.js { @current_item = @line_item, @items }
-        end
+      elsif @line_item.save
+        rendering(format)
       end
     end
   end
@@ -54,9 +51,15 @@ class LineItemsController < ApplicationController
     @items     = @cart.line_items.order('created_at ASC')
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart, notice: 'Line item was successfully updated.' }
-        format.js { @current_item = @line_item, @items }
+        rendering(format)
       end
     end
+  end
+
+  private
+
+  def rendering(format)
+    format.html { redirect_to @line_item.cart, notice: 'Item was successfully removed' }
+    format.js { @current_item = @line_item, @items }
   end
 end
