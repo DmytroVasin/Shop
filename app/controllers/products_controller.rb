@@ -3,28 +3,16 @@ class ProductsController < ApplicationController
 
   def index
 
-    @price_hash = { '0:150'   => '< 150',
-                    '150:200' => '150 < 200',
-                    '200:350' => '200 < 350',
-                    '350:500' => '350 < 500',
-                    '500:700' => '500 < 700',
-                    '700'     => '700+' }
-
-    @sort_hash = { 'Лучшее'    => 'best',
-                   'Цена low'  => 'low',
-                   'Цена high' => 'high',
-                   'Новое'     => 'newest' }
-
-    @sort_method_array = %w(newest high low best)
-
+    @price_hash = hash_of_prices
+    @sort_hash = hash_of_sort
+    @sort_method_array = @sort_hash.values
+                                                                   ``
     @categories = Category.all
-
     @brands = Brand.joins(:products).group('brands.id').order('name ASC')
+    @products = Product.order('created_at DESC').page(params[:page]).per(12)
 
     @brands_left  = @brands.random_by_id_shuffle(10)
     @brands_right = @brands.random_by_id_shuffle(10)
-
-    @products = Product.order('created_at DESC').page(params[:page]).per(12)
 
     if @sort_method_array.include? params[:sort_by]
       @products = Product.send(params[:sort_by]).page(params[:page]).per(12)
@@ -49,7 +37,27 @@ class ProductsController < ApplicationController
 
   def show
     @product      = Product.find(params[:id])
-    @brands_left  = Brand.joins(:products).random_by_id_shuffle(10)
-    @brands_right = Brand.joins(:products).random_by_id_shuffle(10)
+    brands        = Brand.joins(:products)
+    @brands_left  = brands.random_by_id_shuffle(10)
+    @brands_right = brands.random_by_id_shuffle(10)
   end
+
+
+  private
+
+    def hash_of_prices
+      { '0:150'   => '< 150',
+        '150:200' => '150 < 200',
+        '200:350' => '200 < 350',
+        '350:500' => '350 < 500',
+        '500:700' => '500 < 700',
+        '700'     => '700+' }
+    end
+
+    def hash_of_sort
+      { 'Лучшее'    => 'best',
+        'Цена low'  => 'low',
+        'Цена high' => 'high',
+        'Новое'     => 'newest' }
+    end
 end
