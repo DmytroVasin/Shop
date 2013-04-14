@@ -2,7 +2,8 @@ class Admin::ProductsController < Admin::BaseController
   before_filter :authenticate_admin!
 
   def index
-    @products = Product.order('id').page(params[:page]).per(10)
+    @products = Product.page(params[:page]).per(10)
+    @products = @products.order(params[:sort] + ' ' + params[:direction]) if params[:sort]
   end
 
   def show
