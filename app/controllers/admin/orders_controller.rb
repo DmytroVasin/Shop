@@ -4,6 +4,8 @@ class Admin::OrdersController < Admin::BaseController
   def index
     #@orders = Order.joins(:line_items).where('line_items.cart_id IS NOT NULL')
     @orders = Order.includes(:line_items)
+    @orders = @orders.order(params[:sort] + ' ' + params[:direction]) if params[:sort]
+    @orders = @orders.order('updated_at ASC') unless params[:sort]
   end
 
   def show
