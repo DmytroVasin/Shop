@@ -1,2 +1,3 @@
 $('#cart').html("<%=j render partial: 'carts/items', locals: { items: @items } %>");
 $('#cart_total_price').html("<%=j render partial: 'carts/price', locals: { cart: @cart } %>");
+$('.basket').html("<%=j render partial: 'shared/header_cart' %>");

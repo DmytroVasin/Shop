@@ -16,19 +16,19 @@
 
     <img src="/assets/GiftLabel.png" alt="free standard Ucraine delivery" class="giftLabel">
 
-    <div class="basket">
-      <a href="/" class="basketimg">Basket</a>
-      <div class="basketcontent">
-        <div class="cartItems">
-          <span class="basketnum">2 </span>
-          <span class="baskettext">Товара: </span>
-          <br />
-          <span class="basketnum">$ 246.98</span> 
-        </div>
-        <a href="#" class="btn_order">Оформить</a>
+    <% if session[:cart_id] %>
+      <div class="basket">
+        <%= render 'shared/header_cart' %>
       </div>
-      <div class="clear"></div>
-    </div>
+    <% else %>
+      <div class="basket">
+        <a href="/" class="basketimg">Basket</a>
+        <div class="no_basketcontent">
+          <img src="/assets/empty_cart.jpg" alt="empty">
+        </div>
+        <div class="clear"></div>
+      </div>
+    <% end %>
   </div>
 </div>
 <div class="clear"></div>

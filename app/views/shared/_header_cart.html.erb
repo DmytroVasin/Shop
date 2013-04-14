@@ -1,0 +1,10 @@
+<%= link_to 'Basket', cart_path(session[:cart_id]), class: 'basketimg' %>
+<div class="basketcontent">
+  <div class="cartItems">
+    <span class="basketnum"><%= pluralize_ru(current_cart.line_items.sum(:quantity), 'Товар') %>:</span>
+    <br />
+    <span class="basketnum"><%= number_to_currency(current_cart.line_items.sum(:price), unit: 'грн.', format: '%n %u') %></span>
+  </div>
+  <a href="#" class="btn_order">Оформить</a>
+</div>
+<div class="clear"></div>

@@ -61,7 +61,8 @@
   }
 
   .basket {
-    float : left;
+    float      : left;
+    margin-top : 15px;
 
     .basketimg {
       background  : url(/assets/delivery.jpg) no-repeat 0 4px transparent;
@@ -70,13 +71,13 @@
       display     : block;
       float       : left;
       text-indent : -5000px;
-      margin-top  : 15px;
     }
 
     .basketcontent {
-      float  : left;
-      width  : 80px;
-      margin : 20px 20px 0 10px;
+      float      : left;
+      width      : 130px;
+      margin     : 8px 7px 0 0;
+      text-align : center;
 
       .baskettext {
         color      : #000;
@@ -98,12 +99,22 @@
         float      : left;
         margin-top : 5px;
       }
+
+      .cartItems {
+        line-height   : 20px;
+        margin-left   : 10px;
+        margin-bottom : 24px;
+
+        span {
+          text-align : center;
+          width      : 100%;
+        }
+      }
     }
 
-    .cartItems {
-      line-height   : 20px;
-      margin-left   : 10px;
-      margin-bottom : 24px;
+    .no_basketcontent {
+      float      : left;
+      margin-top : 2px;
     }
   }
 }

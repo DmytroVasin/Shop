@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :login_page?
+  helper_method :login_page?, :current_cart
 
 
   private
