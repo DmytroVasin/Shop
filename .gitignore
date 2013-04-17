@@ -14,7 +14,7 @@
 /log/*.log
 /tmp
 .idea/*
-/public
+/public/uploads
 
 # /coverage
 # brakeman.html
