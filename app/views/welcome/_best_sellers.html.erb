@@ -1,6 +1,6 @@
 <li>
   <a href="#">
-    <img src="/assets/top_1.jpg" width="115" height="100" />
+    <%= image_tag best_sellers.image_url(:welcome).to_s, class: 'best_seller_image' %>
     <div class="title"><%= truncate(best_sellers.title, length: 20) %></div>
     <div class="price"><span class="small">цена: </span>&nbsp;&#8372;<%= number_to_currency(best_sellers.price, unit: 'грн.', format: '%n') %></div>
   </a>

@@ -10,7 +10,7 @@
 
   <div>
     <div class='product_image'>
-      <img class='productimg' src='/assets/item1.jpg' />
+      <%= image_tag @product.image_url(:productshowing).to_s %>
       <div class='moved_from_top'>
         <%= link_to '« Back to Results', :back, class: 'get_back' %>
       </div>

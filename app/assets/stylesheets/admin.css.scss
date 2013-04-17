@@ -38,7 +38,7 @@ strong {
 }
 
 .controls {
-  margin-left : 180px !important;
+  margin-left : 200px !important;
 }
 
 .control-group label {
@@ -230,3 +230,10 @@ tr td .in_stock_false {
 }
 
 //    ADMIN INDEX PAGE END
+
+
+//    ADMIN PRODUCTS EDIT PAGE START
+.control-label {
+  padding-right: 10px;
+}
+//    ADMIN PRODUCTS EDIT PAGE END

@@ -4,7 +4,7 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 gem 'jquery-rails'
-gem 'valle'
+#gem 'valle'
 gem 'devise'
 gem 'kaminari'
 gem 'randumb'
@@ -17,6 +17,9 @@ gem 'faker'
 gem 'delayed_job_active_record'
 gem 'daemons'
 # in capistrano should start and stop differently.
+
+gem 'mini_magick'
+gem 'carrierwave'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'

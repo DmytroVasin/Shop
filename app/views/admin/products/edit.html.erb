@@ -1,6 +1,6 @@
 <blockquote><h2>Edit perfume:</h2></blockquote>
 
-<%= form_for [:admin, @product], url: admin_product_path(@product), html: { class: 'form-horizontal' }, method: :put do |f| %>
+<%= form_for [:admin, @product], url: admin_product_path(@product), html: { class: 'form-horizontal', multipart: true }, method: :put do |f| %>
   <%= render partial: 'error', locals: { product: @product } %>
   <%= render partial: 'form', locals: { f: f } %>
 <% end %>

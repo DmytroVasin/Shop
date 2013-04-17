@@ -4,9 +4,9 @@
   <li>
 <% end %>
 
-<%= link_to image_tag('/assets/item1.jpg', class: 'productimg'), product_path(product.id) %>
+<%= link_to image_tag(product.image_url(:productchoosing).to_s, class: 'productimg'), product_path(product.id) %>
 
-    <div class="productinfo">
+<div class="productinfo">
   <div class="paddingwrapper">
     <div class="title">
       <h2>
