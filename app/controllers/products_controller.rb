@@ -2,7 +2,6 @@
 class ProductsController < ApplicationController
 
   def index
-
     @price_hash = hash_of_prices
     @sort_hash = hash_of_sort
     @sort_method_array = @sort_hash.values
@@ -33,6 +32,8 @@ class ProductsController < ApplicationController
     if @brands.map(&:name).include? params[:brand_type]
       @products = @products.by_brands_name(params[:brand_type])
     end
+
+    session[:products_params] = params
   end
 
   def show

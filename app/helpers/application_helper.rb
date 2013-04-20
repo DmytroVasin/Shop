@@ -19,4 +19,12 @@ module ApplicationHelper
     direction = column == params[:sort] && params[:direction] == 'asc' ? 'desc' : 'asc'
     link_to title, { sort: column, direction: direction }
   end
+
+  def back_to_products(title, class_name = nil)
+    if session[:products_params]
+      link_to title, session[:products_params], class: class_name
+    else
+      link_to title, products_path, class: class_name
+    end
+  end
 end

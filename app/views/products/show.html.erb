@@ -2,7 +2,7 @@
   <div id="breadcrumb">
     <ul>
       <li><a href="/">Home</a></li>
-      <li>&raquo; <%= link_to 'Perfumes', :back %></li>
+      <li>&raquo; <%= back_to_products('Perfumes') %></li>
       <li>&raquo; <%= @product.title %></li>
     </ul>
     <div class="clear"></div>
@@ -12,7 +12,7 @@
     <div class='product_image'>
       <%= image_tag @product.image_url(:productshowing).to_s %>
       <div class='moved_from_top'>
-        <%= link_to '« Back to Results', :back, class: 'get_back' %>
+        <%= back_to_products('« Back to Results', 'get_back') %>
       </div>
     </div>
 

@@ -15,5 +15,5 @@
 <div class="clear"></div>
 
 <div class="back_from_cart">
-<%= link_to '« Обратно к корзине', :back %>
+  <%= link_to '« Обратно к корзине', cart_path(session[:cart_id]) %>
 </div>
