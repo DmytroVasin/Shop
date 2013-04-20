@@ -2,10 +2,8 @@ class Admin::OrdersController < Admin::BaseController
   before_filter :authenticate_admin!
 
   def index
-    #@orders = Order.joins(:line_items).where('line_items.cart_id IS NOT NULL')
     @orders = Order.includes(:line_items)
-    @orders = @orders.order(params[:sort] + ' ' + params[:direction]) if params[:sort]
-    @orders = @orders.order('updated_at ASC') unless params[:sort]
+    @orders = @orders.order(sort_column('Order') + ' ' + sort_direction).page(params[:page]).per(10)
   end
 
   def show

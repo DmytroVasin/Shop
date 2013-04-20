@@ -19,7 +19,7 @@ $(function() {
     e.preventDefault();
   });
 
-  $('.row').on("click", '#table th a, #paginator .pagination a', function() {
+  $('.row').on("click", '#table th a, #perfume_table #paginator .pagination a', function() {
     $.getScript(this.href);
     return false;
   });

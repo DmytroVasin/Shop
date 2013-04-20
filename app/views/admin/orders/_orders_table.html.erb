@@ -1,0 +1,24 @@
+<% if @orders.any? %>
+  <%= paginate @orders, window: 2, remote: true %>
+
+  <table id='table' class='table table-striped span12 orders_table'>
+    <thead>
+    <tr>
+      <th style="width: 2%"><%= sortable 'id', '№' %></th>
+      <th style="width: 6%"><%= sortable 'status', 'Статус товара', 'Order' %></th>
+      <th style="width: 10%">Область</th>
+      <th style="width: 10%">Тип оплаты</th>
+      <th style="width: 11%">Общ.цена</th>
+      <th style="width: 11%">Заказано в</th>
+      <th style="width: 11%">Действия</th>
+    </tr>
+    </thead>
+    <tbody id="orders_body">
+    <%= render @orders %>
+    </tbody>
+  </table>
+<% else %>
+  <div id="no_match_criteria">
+    К сожалению, новых заказов нет
+  </div>
+<% end %>
