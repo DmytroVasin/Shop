@@ -1,0 +1,19 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<div id="paginator">
+  <%= paginate @products, window: 2 %>
+</div>
+<table id='table' class='table table-striped span12'>
+  <thead style="text-align: center">
+  <th style="width: 2%"><%= sortable 'id' %></th>
+  <th style="width: 11%">title</th>
+  <th style="width: 35%">desription</th>
+  <th style="width: 5%"><%= sortable 'price' %></th>
+  <th style="width: 3%"><%= sortable 'in_stock', 'Stock' %></th>
+  <th style="width: 8%">Actions</th>
+  </thead>
+
+  <tbody id="products_body">
+  <%= render @products %>
+  </tbody>
+</table>

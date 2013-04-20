@@ -136,13 +136,12 @@ tr td .in_stock_false {
 }
 
 .rank {
-    color: red;
-    font-size: 40px;
-    font-weight: bold;
-    margin-top: 5px;
-    font-family : Georgia, Times, serif;
+  color       : red;
+  font-size   : 40px;
+  font-weight : bold;
+  margin-top  : 5px;
+  font-family : Georgia, Times, serif;
 }
-
 
 #perfume_actions {
   text-align    : center;
@@ -188,52 +187,59 @@ tr td .in_stock_false {
 }
 
 #drop_brand_menu {
-  margin: 10px 0 0 0;
+  margin : 10px 0 0 0;
 }
-
-
 
 //    ADMIN INDEX PAGE START
 
 .progress_table {
-  width: 650px;
-  float: left;
-  margin-left: 30px;
+  width       : 650px;
+  float       : left;
+  margin-left : 30px;
 }
+
 .description_admin_index {
-  float: left;
-  width:  300px;
+  float : left;
+  width : 300px;
 }
+
 .table-condensed td, .table-condensed th {
- text-align: center;
+  text-align : center;
 }
+
 .charlie {
-  background-image: linear-gradient(to bottom, #daf6b5, #7cc817) !important;
+  background-image : linear-gradient(to bottom, #daf6b5, #7cc817) !important;
 }
+
 .bravo {
-  background-image: linear-gradient(to bottom, #ffad32, #cc7a00) !important;
+  background-image : linear-gradient(to bottom, #ffad32, #cc7a00) !important;
 }
+
 .golf {
-  background-image: linear-gradient(to bottom, #56c5eb, #1798c4) !important;
+  background-image : linear-gradient(to bottom, #56c5eb, #1798c4) !important;
 }
+
 .november {
-  background-image: linear-gradient(to bottom, #cdf3dd, #7adfa4) !important;
+  background-image : linear-gradient(to bottom, #cdf3dd, #7adfa4) !important;
 }
+
 .juliet {
-  background-image: linear-gradient(to bottom, #f5dc93, #eab823) !important;
+  background-image : linear-gradient(to bottom, #f5dc93, #eab823) !important;
 }
+
 .india {
-  background-image: linear-gradient(to bottom, #ced9e8, #577eb1) !important;
+  background-image : linear-gradient(to bottom, #ced9e8, #577eb1) !important;
 }
+
 .foxtrot {
-  background-image: linear-gradient(to bottom, #fecccc, #fea3a3) !important;
+  background-image : linear-gradient(to bottom, #fecccc, #fea3a3) !important;
 }
 
 //    ADMIN INDEX PAGE END
 
-
 //    ADMIN PRODUCTS EDIT PAGE START
 .control-label {
-  padding-right: 10px;
+  padding-right : 10px;
 }
+
 //    ADMIN PRODUCTS EDIT PAGE END

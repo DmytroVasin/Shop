@@ -14,8 +14,19 @@
 //= require jquery_ujs
 //= require_self
 
-$(function () {
-  $('.disabled').click(function (e) {
+$(function() {
+  $('.disabled').click(function( e ) {
     e.preventDefault();
+  });
+
+  $('.row').on("click", '#table th a, #paginator .pagination a', function() {
+    $.getScript(this.href);
+    return false;
+  });
+
+  var search_elem = $('#products_search');
+  search_elem.on('keyup', 'input', function() {
+    $.get(search_elem.attr("action"), search_elem.serialize(), null, "script");
+    return false;
   });
 });

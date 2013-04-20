@@ -2,22 +2,18 @@
   <h2>Perfumes:</h2>
 </blockquote>
 <% if @products.any? %>
-  <div id="paginator">
-    <%= paginate @products, window: 2, remote: true %>
-  </div>
-  <table id='table' class='table table-striped span12'>
-    <thead style="text-align: center">
-    <th style="width: 2%"><%= sortable 'id' %></th>
-    <th style="width: 11%">title</th>
-    <th style="width: 35%">desription</th>
-    <th style="width: 5%"><%= sortable 'price' %></th>
-    <th style="width: 3%"><%= sortable 'in_stock', 'Stock' %></th>
-    <th style="width: 8%">Actions</th>
-    </thead>
 
-    <tbody id="products_body">
-    <%= render @products %>
-    </tbody>
-  </table>
+
+  <%= form_tag admin_products_path, method: 'get', id: 'products_search' do %>
+    <p>
+      <%= text_field_tag :search, params[:search], autocomplete: :off %>
+      <%= submit_tag 'Search', name: nil %>
+    </p>
+
+    <div id="perfume_table">
+      <%= render 'perfume_table' %>
+    </div>
+
+  <% end %>
 <% end %>
 <%= link_to 'New', new_admin_product_path, class: 'btn btn-success perfume_new_btn custom_black_btn' %>

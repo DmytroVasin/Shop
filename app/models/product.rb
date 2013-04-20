@@ -41,4 +41,16 @@ class Product < ActiveRecord::Base
       return false
     end
   end
+
+
+
+  def self.search(search)
+    if search
+      where('title like ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
+
+
 end

@@ -1,9 +1,11 @@
 class Admin::ProductsController < Admin::BaseController
   before_filter :authenticate_admin!
+  helper_method :sort_column, :sort_direction
 
   def index
-    @products = Product.page(params[:page]).per(10)
-    @products = @products.order(params[:sort] + ' ' + params[:direction]) if params[:sort]
+    #@products = Product.search(params[:search]).page(params[:page]).per(10)
+    @products = Product.search(params[:search]).order(sort_column + ' ' + sort_direction).page(params[:page]).per(10)
+    #@products = @products if params[:sort]
   end
 
   def show
@@ -45,5 +47,19 @@ class Admin::ProductsController < Admin::BaseController
 
     @product.destroy
     redirect_to admin_products_path
+  end
+
+
+
+
+
+  private
+
+  def sort_column
+    Product.column_names.include?(params[:sort]) ? params[:sort] : 'id'
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
   end
 end
