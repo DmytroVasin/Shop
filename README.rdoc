@@ -1,10 +1,14 @@
 == In the development...
 
-* main page:
-    http://perfume-shop-dn.herokuapp.com/
-
 * login page:
     http://perfume-shop-dn.herokuapp.com/auth/login
+
+* auth/login  - страница что бы ввести данные:
+       dracon779@gmail.com
+       password
+
+* main page:
+    http://perfume-shop-dn.herokuapp.com/
 
 * optional page:
     http://perfume-shop-dn.herokuapp.com/faqs#one
@@ -16,10 +20,6 @@
     http://perfume-shop-dn.herokuapp.com/admin/orders
 
 == Getting Started
-
-* auth/login  - страница что бы ввести данные:
-       dracon779@gmail.com
-       password
 
 1. Search does not work
 
