@@ -1,7 +1,7 @@
 <li>
   <a href="#">
-    <%= image_tag best_sellers.image_url(:welcome).to_s, class: 'best_seller_image' %>
-    <div class="title"><%= truncate(best_sellers.title, length: 20) %></div>
+    <%= link_to image_tag(best_sellers.image_url(:welcome).to_s, class: 'best_seller_image'), product_path(best_sellers) %>
+    <div class="title"><%= truncate(best_sellers.title, length: 15) %></div>
     <div class="price"><span class="small">цена: </span>&nbsp;&#8372;<%= number_to_currency(best_sellers.price, unit: 'грн.', format: '%n') %></div>
   </a>
 </li>

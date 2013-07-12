@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+Xx<html>
+<head>
+  <title>Shop</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= stylesheet_link_tag 'optional_pages', media: 'all' %>
+
+
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'optional_pages' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id='sitewrapper'>
+    <div id="content">
+      <%= render 'shared/admin' %>
+      <%= render 'shared/flash_messages' %>
+      <%= render 'shared/header' %>
+      <%= render 'shared/main_menu' %>
+      <%= render 'shared/menu_for_optional' %>
+      <%= yield %>
+      <div class='clear'></div>
+    </div>
+  </div>
+  <%= render 'shared/footer' %>
+</body>
+</html>
+

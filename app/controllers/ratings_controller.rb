@@ -23,6 +23,6 @@ class RatingsController < ApplicationController
 
   private
   def error_flash
-    flash[:alert] = 'Incorrect value'
+    flash[:alert] = 'Incorrect value or You already voted'
   end
 end
