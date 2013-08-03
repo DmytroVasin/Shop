@@ -189,6 +189,7 @@ GEM
     mini_magick (3.5.0)
       subexec (~> 0.2.1)
     multi_json (1.7.2)
+    newrelic_rpm (3.6.6.147)
     nokogiri (1.5.9)
     orm_adapter (0.4.0)
     pg (0.15.0)
@@ -355,6 +356,7 @@ DEPENDENCIES
   meta_request
   metrical
   mini_magick
+  newrelic_rpm
   pg
   phony_rails
   populator
