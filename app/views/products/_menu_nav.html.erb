@@ -4,9 +4,9 @@
   </div>
 
   <div class="section">
-    <h3>Product Type:</h3>
+    <h3>Категории:</h3>
 
-    <ul>
+    <ul id="categories_section">
       <% @categories.each do |category| %>
         <% checked_type = false %>
         <% checked_type = true if category.name == params[:product_type] %>
@@ -30,7 +30,7 @@
 
   <div class="section">
     <h3>Gender:</h3>
-    <ul id="genders_section">
+    <ul>
       <%= render partial: 'products/gender', collection: @genders %>
     </ul>
   </div>

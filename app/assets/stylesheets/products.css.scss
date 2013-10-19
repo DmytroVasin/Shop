@@ -160,10 +160,17 @@
 
 /*  ----   ENDLESS PAGINATION END   ----  */
 
-#brands_section {
+#brands_section, #categories_section {
   width    : 175px;
-  height   : 250px;
   overflow : auto;
+}
+
+#categories_section {
+  height   : 190px;
+}
+
+#brands_section {
+  height   : 250px;
 }
 
 #no_match_criteria {
