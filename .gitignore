@@ -15,7 +15,7 @@
 /tmp
 .idea/*
 /public/uploads
-
+.DS_Store
 # /coverage
 # brakeman.html
 # rails_best_practices_output.html
