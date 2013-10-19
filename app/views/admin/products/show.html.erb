@@ -2,15 +2,22 @@
   <div id="perfume_main_image">
     <%= image_tag @product.image_url(:admshowing).to_s %>
     <div id="perfume_category">
-      Brand of perfume:
+      Brand of product:
       <ul>
         <li><i class="icon-star"></i><%= link_to @product.brand.name, '#' %></li>
       </ul>
 
-      Category of perfume:
+      Category of product:
       <ul>
         <% @product.categories.each do |category| %>
           <li><i class="icon-tag"></i><%= link_to category.name, '#' %></li>
+        <% end %>
+      </ul>
+
+      Gender:
+      <ul>
+        <% @product.genders.each do |gender| %>
+          <li><i class="icon-user"></i><%= link_to gender.gender, '#' %></li>
         <% end %>
       </ul>
     </div>

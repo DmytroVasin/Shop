@@ -18,6 +18,7 @@
 //= require bootstrap-inputmask.js
 //= require scrolling
 //= require order_validations
+//= require jquery.elevateZoom-3.0.3.min
 //= require_self
 
 $(function () {
@@ -32,6 +33,12 @@ $(function () {
   input_field.blur(function () {
     hidden_tooltip.hide();
   });
+
+  $("#zooming").elevateZoom({zoomWindowPosition: 1, zoomWindowOffetx: 100});
+
+
+
+
 
 // ------------------------------------------ Main menu
   $('#sdt_menu > li').bind('mouseenter',function () {

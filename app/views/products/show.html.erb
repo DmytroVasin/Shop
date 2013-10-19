@@ -10,10 +10,10 @@
 
   <div>
     <div class='product_image'>
-      <%= image_tag @product.image_url(:productshowing).to_s %>
-      <div class='moved_from_top'>
-        <%= back_to_products('« Back to Results', 'get_back') %>
+      <div class='image_polaroid'>
+        <%= image_tag @product.image_url(:productshowing).to_s, id: 'zooming', data: { :"zoom-image" =>  '/assets/background_image.jpg' } %>
       </div>
+      <%= back_to_products('« Back to Results', 'get_back') %>
     </div>
 
     <div class="product_info">
