@@ -28,10 +28,6 @@ class ProductsController < ApplicationController
       @products = @products.price_between(arr[0], arr[1])
     end
 
-    if @categories.map(&:name).include? params[:product_type]
-      @products = @products.by_category_name(params[:product_type])
-    end
-
     if @brands.map(&:name).include? params[:brand_type]
       @products = @products.by_brands_name(params[:brand_type])
     end

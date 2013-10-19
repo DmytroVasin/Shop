@@ -19,8 +19,8 @@ class WelcomeController < ApplicationController
     products          = Product.where(in_stock: true)
 
     products_for_them = products.order('created_at ASC')
-    for_him           = products_for_them.by_category_name('For Him').limit(2)
-    for_her           = products_for_them.by_category_name('For Her').limit(2)
+    for_him           = products_for_them.by_gender('Boys').limit(2)
+    for_her           = products_for_them.by_gender('Girls').limit(2)
 
     @for_them         = for_her + for_him
 

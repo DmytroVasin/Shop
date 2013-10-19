@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
   validates :title, length: { minimum: 10 }
   validates :description, length: { minimum: 10 }
   validates :rank, numericality: { only_integer: true }
-  validates :brand, :gender, :categories, presence: true
+  validates :brand, :categories, presence: true
 
 
   scope :newest, order('updated_at DESC')
@@ -18,13 +18,13 @@ class Product < ActiveRecord::Base
 
   scope :price_between, lambda { |min, max| where('price >= ? AND price <= ?', min, max) }
 
-  scope :by_category_name, lambda { |catname| joins(:categories).where('categories.name = ?', catname) }
+  scope :by_gender, lambda { |g| joins(:genders).where('genders.gender = ?', g ) }
   scope :by_brands_name, lambda { |brandname| joins(:brand).where('brands.name = ?', brandname) }
 
 
   has_and_belongs_to_many :categories
+  has_and_belongs_to_many :genders
   belongs_to :brand
-  belongs_to :gender
   has_many :line_items
   mount_uploader :image, ImageUploader
 
