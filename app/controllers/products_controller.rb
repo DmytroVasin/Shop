@@ -5,9 +5,12 @@ class ProductsController < ApplicationController
     @price_hash = hash_of_prices
     @sort_hash = hash_of_sort
     @sort_method_array = @sort_hash.values
-                                                                   ``
+
     @categories = Category.all
     @brands = Brand.joins(:products).group('brands.id').order('name ASC')
+    @genders = Gender.joins(:products).group('genders.id').order('gender ASC')
+
+
     @products = Product.order('created_at DESC').page(params[:page]).per(12)
 
     @brands_left  = @brands.random_by_id_shuffle(10)

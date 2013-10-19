@@ -1,5 +1,6 @@
 def products_and_dependencies
-  brands = Brand.pluck('id')
+  brands = Brand.pluck(:id)
+  genders = Gender.pluck(:id)
 
   Product.populate 100 do |product|
     product.title       = Populator.words(2..3).titleize
@@ -9,6 +10,7 @@ def products_and_dependencies
     product.rank        = [0, 1, 2, 3, 4, 5, 6]
     product.in_stock    = [true, false]
     product.brand_id    = brands
+    product.gender_id   = genders
   end
 
   category_ids = Category.pluck('id')
@@ -16,10 +18,4 @@ def products_and_dependencies
   Product.all.each do |product|
     product.categories << Category.find(category_ids.sample)
   end
-
-  #[Rating].each(&:delete_all)
-  #Rating.populate 1000 do |rating|
-  #  rating.point = [1, 2, 3, 4, 5, 6, 7]
-  #  rating.ip    = Populator.words(1)
-  #end
 end
