@@ -28,6 +28,7 @@ class Product < ActiveRecord::Base
   has_many :line_items
   mount_uploader :image, ImageUploader
 
+  accepts_nested_attributes_for :categories
 
   before_destroy :not_referenced_by_any_line_items
 

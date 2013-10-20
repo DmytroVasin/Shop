@@ -22,8 +22,11 @@ class Admin::ParsersController < Admin::BaseController
 	   	data['colors'] << d.content
     end
 
+    brand = Brand.where( name: data['brand'] ).first_or_create
+
+
    	Rails.logger.info 'data  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
-   	Rails.logger.info data
+   	Rails.logger.info brand
    	Rails.logger.info 'data  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'
 
     render :index
