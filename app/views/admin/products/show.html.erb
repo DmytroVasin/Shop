@@ -20,6 +20,13 @@
           <li><i class="icon-user"></i><%= link_to gender.gender, '#' %></li>
         <% end %>
       </ul>
+
+      Color:
+      <ul>
+        <% @product.colors.each do |color| %>
+          <li><i class="icon-user"></i><%= link_to color.name, '#' %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
 

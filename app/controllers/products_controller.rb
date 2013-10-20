@@ -7,8 +7,9 @@ class ProductsController < ApplicationController
     @sort_method_array = @sort_hash.values
 
     @categories = Category.all
-    @brands = Brand.joins(:products).group('brands.id').order('name ASC')
+    @brands  = Brand.joins(:products).group('brands.id').order('name ASC')
     @genders = Gender.joins(:products).group('genders.id').order('gender ASC')
+    @colors  = Color.joins(:products).group('colors.id').order('name ASC')
 
 
     @products = Product.order('created_at DESC').page(params[:page]).per(12)
