@@ -3,10 +3,10 @@ class Product < ActiveRecord::Base
 
   validates :title, :price, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }
-  validates :title, uniqueness: true
   validates :in_stock, inclusion: { in: [true, false] }
   validates :rank, numericality: { only_integer: true }
   validates :brand, :categories, presence: true
+  validates :title, uniqueness: { case_sensitive: false }
 
 
   scope :newest, order('updated_at DESC')

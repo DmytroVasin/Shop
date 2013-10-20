@@ -27,7 +27,7 @@ class Admin::ParsersController < Admin::BaseController
       product.brand = Brand.where( name: link.content ).first_or_create if index == 3
     end
 
-    product.save!
+    product.save
     Rails.logger.info 'data  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
     Rails.logger.info 'data  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'
 
