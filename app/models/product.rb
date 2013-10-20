@@ -1,12 +1,10 @@
 class Product < ActiveRecord::Base
   attr_accessible :description, :price, :title, :in_stock, :category_ids, :brand_id, :rank, :image, :remote_image_url, :gender_ids, :color_ids
 
-  validates :title, :description, :price, presence: true
+  validates :title, :price, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }
   validates :title, uniqueness: true
   validates :in_stock, inclusion: { in: [true, false] }
-  validates :title, length: { minimum: 10 }
-  validates :description, length: { minimum: 10 }
   validates :rank, numericality: { only_integer: true }
   validates :brand, :categories, presence: true
 
