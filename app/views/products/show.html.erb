@@ -11,7 +11,7 @@
   <div>
     <div class='product_image'>
       <div class='image_polaroid'>
-        <%= image_tag @product.image_url(:productshowing).to_s, id: 'zooming', data: { :"zoom-image" =>  'http://a1.zassets.com/images/z/1/8/7/6/8/0/1876808-1-4x.jpg' } %>
+        <%= image_tag middle_image(@product), id: 'zooming', data: { :"zoom-image" =>  'http://a1.zassets.com/images/z/1/8/7/6/8/0/1876808-1-4x.jpg' } %>
       </div>
       <%= back_to_products('« Back to Results', 'get_back') %>
     </div>

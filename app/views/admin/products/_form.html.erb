@@ -47,7 +47,7 @@
 <div class="control-group">
   <%= f.label :color, 'Color: ', class: 'control-label' %>
   <div class="controls">
-    <% Color.all.each do |gender| %>
+    <% Color.all.each do |color| %>
       <label class="checkbox inline">
         <%= check_box_tag 'product[color_ids][]', color.id, @product.color_ids.include?(color.id) %>
         <%= color.name %>
@@ -81,19 +81,6 @@
 
 <div id='drop_brand_menu' class="controls">
   <%= collection_select(:product, :brand_id, Brand.all, :id, :name, :prompt => 'Выбери бренд') %>
-</div>
-
-<div class="control-group">
-  <div class="controls">
-    <%= f.file_field :image %>
-  </div>
-</div>
-
-<div class="control-group">
-  <label for="remote_image_url" class="control-label">Remote Image: </label>
-  <div class="controls">
-    <%= f.text_field :remote_image_url %>
-  </div>
 </div>
 
 <div class="control-group">

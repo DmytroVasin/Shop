@@ -1,4 +1,4 @@
 class Image < ActiveRecord::Base
   attr_accessible :small, :middle, :large
-  belongs_to :product
+  has_and_belongs_to_many :product
 end

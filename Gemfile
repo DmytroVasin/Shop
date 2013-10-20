@@ -18,9 +18,6 @@ gem 'delayed_job_active_record'
 gem 'daemons'
 # in capistrano should start and stop differently.
 
-gem 'mini_magick'
-gem 'carrierwave'
-
 gem 'nokogiri'
 
 group :assets do

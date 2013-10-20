@@ -19,5 +19,6 @@ def products_and_dependencies
     product.categories << Category.find(category_ids.sample)
     product.genders << Gender.find(genders_ids.sample)
     product.colors << Color.find(colors_ids.sample)
+    product.images << Image.first
   end
 end

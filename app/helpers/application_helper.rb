@@ -27,4 +27,14 @@ module ApplicationHelper
     direction = column == sort_column(model) && sort_direction == 'asc' ? 'desc' : 'asc'
     link_to title, params.merge(sort: column, direction: direction, page: nil)
   end
+
+  def small_image
+  end
+
+  def middle_image(product)
+    product.images.first.middle
+  end
+
+  def large_image
+  end
 end
