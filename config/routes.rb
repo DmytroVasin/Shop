@@ -22,6 +22,9 @@ Shop::Application.routes.draw do
     resources :categories
     resources :brands
     resources :orders
+    resources :parsers, only: [:index] do
+      post 'get_product', on: :collection
+    end
   end
 
   resources :products

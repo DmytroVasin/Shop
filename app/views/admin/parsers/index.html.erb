@@ -1,0 +1,6 @@
+<%= form_tag get_product_admin_parsers_path, method: 'post', id: "products_parse" do %>
+	<div class="input-append">
+		<%= text_field_tag 'remote_url', params[:remote_url], class: 'input-xxlarge', autofocus: true %>
+		<button id='send_request' class="btn" type="submith">Go!</button>
+	</div>
+<% end %>
