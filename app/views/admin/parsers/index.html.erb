@@ -1,6 +1,60 @@
-<%= form_tag get_product_admin_parsers_path, method: 'post', id: "products_parse" do %>
+<%= form_tag get_product_admin_parsers_path, method: 'post', id: "products_parse", remote: true do %>
 	<div class="input-append">
 		<%= text_field_tag 'remote_url', params[:remote_url], class: 'input-xxlarge', autofocus: true %>
 		<button id='send_request' class="btn" type="submith">Go!</button>
 	</div>
+<% end %>
+
+<% if @product %>
+<!-- 	<div id="box_of_perfume_show">
+	  <div id="perfume_main_image">
+	    <%= image_tag middle_image(@product) %>
+	    <div id="perfume_category">
+	      Brand of product:
+	      <ul>
+	        <li><i class="icon-star"></i><%= link_to @product.brand.name, '#' %></li>
+	      </ul>
+
+	      Category of product:
+	      <ul>
+	        <% @product.categories.each do |category| %>
+	          <li><i class="icon-tag"></i><%= link_to category.name, '#' %></li>
+	        <% end %>
+	      </ul>
+
+	      Gender:
+	      <ul>
+	        <% @product.genders.each do |gender| %>
+	          <li><i class="icon-user"></i><%= link_to gender.gender, '#' %></li>
+	        <% end %>
+	      </ul>
+
+	      Color:
+	      <ul>
+	        <% @product.colors.each do |color| %>
+	          <li><i class="icon-user"></i><%= link_to color.name, '#' %></li>
+	        <% end %>
+	      </ul>
+	    </div>
+	  </div>
+
+	  <div id="description">
+	    <div id="perfume_title">
+	      <%= @product.title %>
+	    </div>
+	    <div id="perfume_description">
+	      <%= @product.description %>
+	    </div>
+	    <div id="perfume_price">
+	      Цена: <span><%= @product.price %></span> грн.
+	    </div>
+	  </div>
+	  <div class='perfume_instock perfume_instock_<%= @product.in_stock ? 'true' : 'false' %>'></div>
+	  <div class='perfume_instock rank'><%= @product.rank %></div>
+
+	  <div class="clear"></div>
+	  <div id="perfume_actions">
+	    <%= link_to 'Показать', edit_admin_product_path(@product.id), class: 'btn btn-warning' %>
+	  </div>
+	</div> -->
 <% end %>

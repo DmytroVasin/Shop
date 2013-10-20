@@ -32,7 +32,11 @@ module ApplicationHelper
   end
 
   def middle_image(product)
-    product.images.first.middle
+    if product.images.empty?
+      '/assets/no_image_yet.jpg'
+    else
+      product.images.first.middle
+    end
   end
 
   def large_image
