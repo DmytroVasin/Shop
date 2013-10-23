@@ -24,9 +24,14 @@ class Admin::ParsersController < Admin::BaseController
     unless single_color.blank?
       @product.colors << Color.where( name: single_color.content ).first_or_create
     end
+
     page.css('#crumbs a').each_with_index do |link, index|
       @product.categories << Category.where( name: link.content ).first_or_create if index == 2
       @product.brand = Brand.where( name: link.content ).first_or_create if index == 3
+    end
+
+    page.css('#productImages ul li').each do |source|
+      @product.images << Image.create({ small: source.search('img').first['src'], middle: source.search('a').first['href'] })
     end
 
     respond_to do |format|
