@@ -37,16 +37,16 @@
 
 		<div id='perfume_description'>
 			<%= form_for [:admin, @product], url: admin_product_path(@product), html: { class: 'form-horizontal' }, method: :put, remote: true do |f| %>
-				<div class="control-group">
-					<div class="description_margin">
-						<div class="input-prepend">
-							<%= f.text_area :description, id: 'text_area', placeholder: 'Description of perfume' %>
-						</div>
+			<div class="control-group">
+				<div class="description_margin">
+					<div class="input-prepend">
+						<%= f.text_area :description, id: 'text_area', placeholder: 'Description of perfume' %>
 					</div>
 				</div>
-				<div class="description_margin">
-					<%= f.submit "Save!", class: "btn btn-primary" %>
-				</div>
+			</div>
+			<div class="description_margin">
+				<%= f.submit "Save!", class: "btn btn-primary" %>
+			</div>
 			<% end %>
 		</div>
 
@@ -56,6 +56,24 @@
 	</div>
 	<div class='perfume_instock perfume_instock_<%= product.in_stock ? 'true' : 'false' %>'></div>
 	<div class='perfume_instock rank'><%= product.rank %></div>
+
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Small</th>
+				<th>Middle</th>
+				<th>Large</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @product.images.each do |image| %>
+			<tr>
+				<td><%= link_to image_tag(image.small, class: "small_icon_img"), image.small %></td>
+				<td><%= link_to image_tag(image.middle, class: "middle_icon_img"), image.middle %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
 
 	<div class="clear"></div>
 	<div id="perfume_actions">
