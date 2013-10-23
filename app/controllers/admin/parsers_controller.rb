@@ -30,13 +30,9 @@ class Admin::ParsersController < Admin::BaseController
     end
 
     respond_to do |format|
-      if @product.save
-        format.html { redirect_to admin_parsers_path, notice: 'Item was successfully created' }
-        format.js
-        # format.js { @product = @line_item, @items }
-      else
-        redirect_to admin_parsers_path, alert: "Something wrong"
-      end
+      @product.save
+      format.html { redirect_to admin_parsers_path, notice: 'Item was successfully created' }
+      format.js
     end
   end
 end

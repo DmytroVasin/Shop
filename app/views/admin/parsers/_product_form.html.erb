@@ -1,0 +1,64 @@
+<div id="box_of_perfume_show">
+	<div id="perfume_main_image">
+		<%= image_tag middle_image(product) %>
+		<div id="perfume_category">
+			Brand of product:
+			<ul>
+				<li><i class="icon-star"></i><%= link_to product.brand.name, '#' %></li>
+			</ul>
+
+			Category of product:
+			<ul>
+				<% product.categories.each do |category| %>
+				<li><i class="icon-tag"></i><%= link_to category.name, '#' %></li>
+				<% end %>
+			</ul>
+
+			Gender:
+			<ul>
+				<% product.genders.each do |gender| %>
+				<li><i class="icon-user"></i><%= link_to gender.gender, '#' %></li>
+				<% end %>
+			</ul>
+
+			Color:
+			<ul>
+				<% product.colors.each do |color| %>
+				<li><i class="icon-user"></i><%= link_to color.name, '#' %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+
+	<div id="description">
+		<div id="perfume_title">
+			<%= product.title %>
+		</div>
+
+		<div id='perfume_description'>
+			<%= form_for [:admin, @product], url: admin_product_path(@product), html: { class: 'form-horizontal' }, method: :put, remote: true do |f| %>
+				<div class="control-group">
+					<div class="description_margin">
+						<div class="input-prepend">
+							<%= f.text_area :description, id: 'text_area', placeholder: 'Description of perfume' %>
+						</div>
+					</div>
+				</div>
+				<div class="description_margin">
+					<%= f.submit "Save!", class: "btn btn-primary" %>
+				</div>
+			<% end %>
+		</div>
+
+		<div id="perfume_price">
+			Цена: <span><%= product.price %></span> грн.
+		</div>
+	</div>
+	<div class='perfume_instock perfume_instock_<%= product.in_stock ? 'true' : 'false' %>'></div>
+	<div class='perfume_instock rank'><%= product.rank %></div>
+
+	<div class="clear"></div>
+	<div id="perfume_actions">
+		<%= link_to 'Показать', edit_admin_product_path(product.id), class: 'btn btn-warning' %>
+	</div>
+</div>

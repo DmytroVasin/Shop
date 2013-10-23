@@ -1,0 +1,6 @@
+$('#remote_url').val('');
+<% if @product.valid? %>
+  $('#product_form').html("<%=j render partial: 'product_form', locals: { product: @product } %>");
+<% else %>
+  $('#product_form').html("<%=j render partial: 'went_wrong' %>");
+<% end %>
