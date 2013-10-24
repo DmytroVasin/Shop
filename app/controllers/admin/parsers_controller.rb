@@ -30,8 +30,11 @@ class Admin::ParsersController < Admin::BaseController
       @product.brand = Brand.where( name: link.content ).first_or_create if index == 3
     end
 
+    page.search('#video').remove
     page.css('#productImages ul li').each do |source|
-      @product.images << Image.create({ small: source.search('img').first['src'], middle: source.search('a').first['href'], large: source.search('a').first['href'].sub("MULTIVIEW", "4x")  })
+      @product.images << Image.create({ small: source.search('img').first['src'],
+                                        middle: source.search('a').first['href'],
+                                        large: source.search('a').first['href'].sub("MULTIVIEW", "4x") })
     end
 
     respond_to do |format|

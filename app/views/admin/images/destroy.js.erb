@@ -1,0 +1,1 @@
+$(".table-hover tbody").html("<%= escape_javascript(render( partial: 'admin/parsers/table_body', collection: @images, as: :image )).html_safe %>");
