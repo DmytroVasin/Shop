@@ -31,7 +31,7 @@ class Admin::ParsersController < Admin::BaseController
     end
 
     page.css('#productImages ul li').each do |source|
-      @product.images << Image.create({ small: source.search('img').first['src'], middle: source.search('a').first['href'] })
+      @product.images << Image.create({ small: source.search('img').first['src'], middle: source.search('a').first['href'], large: source.search('a').first['href'].sub("MULTIVIEW", "4x")  })
     end
 
     respond_to do |format|
