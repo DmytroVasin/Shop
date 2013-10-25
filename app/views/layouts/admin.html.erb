@@ -13,14 +13,17 @@
     <div class="navbar-inner">
       <div class="container">
         <%= link_to 'К сайту', root_path, class: 'brand' %>
-
         <div class="nav-collapse">
           <ul class="nav">
+            <li class="divider-vertical"></li>
             <li><%= link_to 'Все Парфюмы', admin_products_path %></li>
             <li><%= link_to 'Категории', admin_categories_path %></li>
             <li><%= link_to 'Бренды', admin_brands_path %></li>
             <li><%= link_to 'Заказы', admin_orders_path %></li>
-            <li><%= link_to 'Заказы', admin_orders_path %></li>
+          </ul>
+          <ul class="nav pull-right">
+            <li class="divider-vertical"></li>
+            <li><%= link_to 'Парсер', admin_parsers_path %></li>
           </ul>
         </div>
       </div>
