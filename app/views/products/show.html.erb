@@ -11,8 +11,19 @@
   <div>
     <div class='product_image'>
       <div class='image_polaroid'>
-        <%= image_tag middle_image(@product), id: 'zooming', data: { :"zoom-image" =>  'http://a1.zassets.com/images/z/1/8/7/6/8/0/1876808-1-4x.jpg' } %>
+        <%= image_tag middle_image(@product), id: 'zooming', data: { :"zoom-image" =>   @product.images.first.large } %>
       </div>
+
+      <div id="all_images_wrapper">
+        <div class="prev_img"></div>
+        <div id='wrap_image_rotator'>
+          <ul id="image_rotator" class="thumbnails">
+            <%= render partial: 'images', collection: @product.images, as: :image %>
+          </ul>
+        </div>
+        <div class="next_img"></div>
+      </div>
+
       <%= back_to_products('« Back to Results', 'get_back') %>
     </div>
 
@@ -45,4 +56,3 @@
   </div>
 </div>
 <div class="clear"></div>
-<iframe src="http://www.6pm.com/video/player.zml?videos=http://www.6pm.com/media/video/7/9/9/7998153.mp4,http://www.6pm.com/media/video/7/9/9/7998153.flv"></iframe>

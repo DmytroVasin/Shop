@@ -13,7 +13,6 @@
 
   img {
     width: 380px;
-    height: 380px;
   }
 }
 
@@ -28,6 +27,8 @@
   line-height : 17px;
   cursor      : pointer;
   margin-left : 10px;
+  width: 130px;
+  display: block;
 }
 
 .link_color {
