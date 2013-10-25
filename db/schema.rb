@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131020131536) do
+ActiveRecord::Schema.define(:version => 20131025184023) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",              :default => "", :null => false
@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(:version => 20131020131536) do
     t.datetime "created_at",                                                   :null => false
     t.datetime "updated_at",                                                   :null => false
     t.integer  "rank",                                      :default => 0
+    t.text     "video_href"
   end
 
   create_table "ratings", :force => true do |t|

@@ -77,9 +77,21 @@
   </div>
 </div>
 
-<div id='drop_brand_menu' class="controls">
-  <%= collection_select(:product, :brand_id, Brand.all, :id, :name, :prompt => 'Выбери бренд') %>
+<div class="control-group">
+  <%= f.label :brand_id, 'Brand: ', class: 'control-label' %>
+  <div class="controls">
+    <%= collection_select(:product, :brand_id, Brand.all, :id, :name, :prompt => 'Выбери бренд') %>
+  </div>
 </div>
+
+<% if @product.video_href %>
+  <div class="control-group">
+    <%= f.label :video, 'Video: ', class: 'control-label' %>
+    <div class="controls">
+      <iframe class='iframe_video' src="<%= @product.video_href %>"></iframe>
+    </div>
+  </div>
+<% end %>
 
 <div class="control-group">
   <div class="controls">

@@ -1,5 +1,5 @@
 class Admin::ParsersController < Admin::BaseController
-	before_filter :authenticate_admin!
+  before_filter :authenticate_admin!
 
   require 'open-uri'
   require 'nokogiri'
@@ -9,10 +9,10 @@ class Admin::ParsersController < Admin::BaseController
   end
 
   def get_product
-		source = params['remote_url']
+    source = params['remote_url']
     page = Nokogiri::HTML(open(source.to_s))
 
-	  @product = Product.new()
+    @product = Product.new()
     @product.price = page.css('#priceSlot .price').first.content[1..-1] unless page.css('#priceSlot .price').blank?
     @product.title = page.css('.fn').first.content unless page.css('.fn').blank?
 
@@ -29,6 +29,8 @@ class Admin::ParsersController < Admin::BaseController
       @product.categories << Category.where( name: link.content ).first_or_create if index == 2
       @product.brand = Brand.where( name: link.content ).first_or_create if index == 3
     end
+
+    @product.video_href = page.css('#video a').first['href'].gsub("&autoPlays=true", "")
 
     page.search('#video').remove
     page.css('#productImages ul li').each do |source|
