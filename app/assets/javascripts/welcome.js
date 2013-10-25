@@ -7,49 +7,53 @@ $(function (){
 
 var nextButton = $('.nextproduct'),
 prevButton = $('.previousproduct'),
+nextImg = $('.next_img'),
+prevImg = $('.prev_img'),
 list = $('#slider');
 
 Navigate = {
 	isAnimated: false,
-	
-	forward: function () {
+
+	forwarding: function (size) {
 		var that = this;
-		
+
 		if (this.isAnimated) {
 			return;
 		}
-		
+
 		this.isAnimated = true;
-		
+
 		list
 		.prepend( list.children().last() )
-		.css({ left: '-=125' })
-		.animate({ left: '+=125' }, 'fast', 'linear', function () {
+		.css({ left: '-='+size })
+		.animate({ left: '+='+size }, 'fast', 'linear', function () {
 			that.isAnimated = false;
 		});
 	},
-	
-	backward: function () {
+
+	backward: function (size) {
 		var that = this;
-		
+
 		if (this.isAnimated) {
 			return;
 		}
-		
+
 		this.isAnimated = true;
-		
+
 		list
-		.animate({ left: '-=125' }, 'fast', 'linear', function () {
+		.animate({ left: '-='+size }, 'fast', 'linear', function () {
 			list
 			.append( list.children().first() )
-			.css({ left: '+=125' });
+			.css({ left: '+='+size });
 			that.isAnimated = false;
 		});
 	}
 };
 
-nextButton.on('click', Navigate.forward.bind(Navigate));
-prevButton.on('click', Navigate.backward.bind(Navigate));
+nextButton.on('click', Navigate.forwarding.bind(Navigate, 125));
+prevButton.on('click', Navigate.backward.bind(Navigate, 125));
+nextImg.on('click', Navigate.forwarding.bind(Navigate, 85));
+prevImg.on('click', Navigate.backward.bind(Navigate, 85));
 
 });
 

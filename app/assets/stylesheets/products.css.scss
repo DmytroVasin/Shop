@@ -191,26 +191,26 @@
     height: 40px;
     float: left;
     cursor: pointer;
+    left       : 0;
+    z-index    : 1;
   }
 
   .next_img {
     background : url("a_next.png") no-repeat scroll 0 0 transparent;
-    left       : 0;
-    z-index    : 1;
   }
   .prev_img {
     background : url("a_prev.png") no-repeat scroll 0 0 transparent;
-    left       : 0;
-    z-index    : 1;
   }
 
   #wrap_image_rotator {
     overflow : hidden;
     width    : 340px;
     float: left;
+    position: relative;
 
-    #image_rotator {
+    #slider {
       width    : 1200px;
+      position : relative;
 
       li {
         float     : left;
