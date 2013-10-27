@@ -1,6 +1,7 @@
 $(function () {
 	$('.video_slider').on('click', function(){
-		$('.iframe_video_wrapper').stop(true).slideToggle('hide');
+		$('.iframe_video_wrapper').stop(true).slideToggle('show');
+		$(this).toggleClass('border_bottom');
 	});
 // // ENDLESS paginator     -------------------------------------------------------------
 //   $('#ednless_paginator').on('click', function () {
