@@ -15,6 +15,11 @@
  *= require 'welcome'
  */
 
+html, body {
+  min-height: 100%;
+  height: 100%;
+}
+
 body {
   background            : url(/assets/backgroud_image_1.jpg) 20% 80% no-repeat;
   /*background: url(background_image.jpg) 0 15% no-repeat;*/
@@ -33,8 +38,11 @@ body {
   line-height    : 1.8em;
   color          : #333;
   box-shadow     : 0 0 20px #FFF;
-  padding-bottom : 20px;
-  min-height     : 500px;
+  min-height     : 100%;
+}
+
+.footer_to_bottom {
+  height: 205px;
 }
 
 #content {
