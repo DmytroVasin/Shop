@@ -1,5 +1,7 @@
-// $(function () {
-
+$(function () {
+	$('.video_slider').on('click', function(){
+		$('.iframe_video_wrapper').stop(true).slideToggle('hide');
+	});
 // // ENDLESS paginator     -------------------------------------------------------------
 //   $('#ednless_paginator').on('click', function () {
 
@@ -14,4 +16,4 @@
 //     $('#ednless_paginator').remove();
 //   }
 // // ENDLESS pagination END  ----------------------------------------------------------
-// });
+});

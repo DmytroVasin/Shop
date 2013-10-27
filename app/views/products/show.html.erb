@@ -28,6 +28,16 @@
     </div>
 
     <div class="product_info">
+      <% if @product.video_href %>
+        <div id="video_space">
+          <div class="video_slider btn_order">Show video</div>
+          <div class="iframe_video_wrapper">
+            <iframe class='iframe_video' src="<%= @product.video_href %>"></iframe>
+          </div>
+        </div>
+        <div class="clear"></div>
+      <% end %>
+
       <div class='title_of_product'>
         <span class='brand_of_product'><%= @product.brand.name %>:</span><%= @product.title %>
       </div>
