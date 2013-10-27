@@ -32,10 +32,6 @@
   display: block;
 }
 
-.link_color {
-  color: #1956B2;
-}
-
 .product_info {
   float       : left;
   margin-left : 30px;
@@ -123,6 +119,7 @@
     height: 280px;
   }
   .video_slider {
+
     font-size: 15px;
     width: 462px;
     height: 20px;
@@ -134,5 +131,10 @@
     border-bottom-right-radius: 0px;
     border-top-left-radius: 13px;
     border-top-right-radius: 13px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
 }
+
