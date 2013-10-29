@@ -16,7 +16,7 @@
 .idea/*
 /public/uploads
 .DS_Store
-config/database.yml
+# config/database.yml
 # /coverage
 # brakeman.html
 # rails_best_practices_output.html
