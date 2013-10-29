@@ -49,12 +49,29 @@ Shop::Application.configure do
 
   # Precompile additional assets (application.js, application.css.scss, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( products.css, optional_pages.css )
-  config.assets.precompile += ['admin.css', 
-                               'products.css', 
-                               'registration_form.css', 
+  config.assets.precompile += ['admin.css',
+                               'products.css',
+                               'registration_form.css',
                                'optional_pages.css',
                                'optional_pages.js',
                                'admin.js']
+
+  # ----------------------------------------------------------------------
+
+  config.action_mailer.default_url_options = { :host => 'shop-dn.herokuapp.com/' }
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+      :address              => 'smtp.gmail.com',
+      :port                 => 587,
+      :domain               => 'myapp.com',
+      :authentication       => 'plain',
+      :user_name            => 'vasinvaleriy779@gmail.com',
+      :password             => 'D80939256658',
+      :enable_starttls_auto => true
+  }
+
+  # ----------------------------------------------------------------------
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
