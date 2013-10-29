@@ -14,10 +14,6 @@ gem 'phony_rails'
 gem 'populator'
 gem 'faker'
 
-gem 'delayed_job_active_record'
-gem 'daemons'
-# in capistrano should start and stop differently.
-
 gem 'nokogiri'
 
 group :assets do
