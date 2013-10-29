@@ -41,6 +41,7 @@ class ProductsController < ApplicationController
     brands        = Brand.joins(:products)
     @brands_left  = brands.random_by_id_shuffle(10)
     @brands_right = brands.random_by_id_shuffle(10)
+    @images_count = @product.images.count > 4
   end
 
 

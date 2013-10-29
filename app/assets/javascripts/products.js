@@ -1,8 +1,20 @@
 $(function () {
+  $("#zooming").elevateZoom({ zoomWindowPosition: 2, zoomWindowOffetx: 35 });
+
 	$('.video_slider').on('click', function(){
 		$('.iframe_video_wrapper').stop(true).slideToggle('show');
 		$(this).toggleClass('border_bottom');
 	});
+
+	$(".image_polaroid img").elevateZoom({gallery:'wrap_image_rotator', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: '/assets/progres.gif'}); 
+
+	$(".image_polaroid img").bind("click", function(e) {  
+	  var ez =   $('.image_polaroid img').data('elevateZoom');	
+		$.fancybox(ez.getGalleryList());
+	  return false;
+	});
+
+
 // // ENDLESS paginator     -------------------------------------------------------------
 //   $('#ednless_paginator').on('click', function () {
 

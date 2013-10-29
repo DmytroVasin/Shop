@@ -15,13 +15,17 @@
       </div>
 
       <div id="all_images_wrapper">
-        <div class="prev_img"></div>
-        <div id='wrap_image_rotator'>
-          <ul id="slider" style="left: 0px;">
-            <%= render partial: 'images', collection: @product.images, as: :image %>
-          </ul>
-        </div>
-        <div class="next_img"></div>
+        <% if @images_count %>
+          <div class="prev_img"></div>
+        <% end %>
+          <div id='wrap_image_rotator'>
+            <div id="slider" style="left: 0px;">
+              <%= render partial: 'images', collection: @product.images, as: :image %>
+            </div>
+          </div>
+        <% if @images_count %>
+          <div class="next_img"></div>
+        <% end %>
       </div>
 
       <%= back_to_products('« Back to Results', 'get_back') %>

@@ -34,12 +34,6 @@ $(function () {
     hidden_tooltip.hide();
   });
 
-  $("#zooming").elevateZoom({zoomWindowPosition: 1, zoomWindowOffetx: 100});
-
-
-
-
-
 // ------------------------------------------ Main menu
   $('#sdt_menu > li').bind('mouseenter',function () {
     var $elem = $(this);

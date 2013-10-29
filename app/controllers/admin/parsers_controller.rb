@@ -30,7 +30,8 @@ class Admin::ParsersController < Admin::BaseController
       @product.brand = Brand.where( name: link.content ).first_or_create if index == 3
     end
 
-    @product.video_href = page.css('#video a').first['href'].gsub("&autoPlays=true", "")
+    video_href = page.css('#video a')
+    @product.video_href = video_href.first['href'].gsub("&autoPlays=true", "") unless video_href.blank?
 
     page.search('#video').remove
     page.css('#productImages ul li').each do |source|
