@@ -64,7 +64,7 @@ Shop::Application.configure do
   config.action_mailer.smtp_settings = {
       :address              => 'smtp.gmail.com',
       :port                 => 587,
-      :domain               => 'myapp.com',
+      :domain               => 'heroku.com',
       :authentication       => 'plain',
       :user_name            => 'vasinvaleriy779@gmail.com',
       :password             => 'D80939256658',
