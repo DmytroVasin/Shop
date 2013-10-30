@@ -1,3 +1,4 @@
+
 Shop::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -66,8 +67,8 @@ Shop::Application.configure do
       :port                 => 587,
       :domain               => 'heroku.com',
       :authentication       => 'plain',
-      :user_name            => 'vasinvaleriy779@gmail.com',
-      :password             => 'D80939256658',
+      :user_name            => 'vasindima779@gmail.com',
+      :password             => 'D80939256658Dima',
       :enable_starttls_auto => true
   }
 
