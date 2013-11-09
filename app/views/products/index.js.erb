@@ -1,6 +1,19 @@
-$('#products_displaying').append('<%= j render(@products) %>');
-$('.pagination').replaceWith('<%= j paginate @products %>');
+<% if @flag %>
 
-if ($('.pagination ul li').last().hasClass('disabled')) {
-  $('#ednless_paginator').remove();
-}
+	$('#products_displaying').replaceWith('<%= j render(@products) %>');
+	$('.pagination').replaceWith('<%= j paginate(@products) %>');
+
+	if ($('.pagination ul li').last().hasClass('disabled')) {
+	  $('#ednless_paginator').remove();
+	}
+
+<% else %>
+
+	$('#products_displaying').append('<%= j render(@products) %>');
+	$('.pagination').replaceWith('<%= j paginate @products %>');
+
+	if ($('.pagination ul li').last().hasClass('disabled')) {
+	  $('#ednless_paginator').remove();
+	}
+
+<% end %>
