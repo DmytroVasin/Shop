@@ -1,10 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    # BRANDS for menu
-    brands        = Brand.joins(:products)
-    @brands_left  = brands.random_by_id_shuffle(10)
-    @brands_right = brands.random_by_id_shuffle(10)
-
     # Rating menu ( Vote menu )
     @ratings      = Rating.new
 

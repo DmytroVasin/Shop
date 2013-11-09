@@ -60,9 +60,6 @@ $(function () {
         });
   }).bind('mouseleave', function () {
         var $elem = $(this);
-        var $sub_menu = $elem.find('.sdt_box');
-        if ($sub_menu.length)
-          $sub_menu.hide();
         $elem.find('.sdt_active')
             .stop(true)
             .animate({'height': '0px'}, 200)

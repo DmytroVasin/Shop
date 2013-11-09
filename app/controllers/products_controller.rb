@@ -14,9 +14,6 @@ class ProductsController < ApplicationController
 
     @products = Product.order('created_at DESC').page(params[:page]).per(12)
 
-    @brands_left  = @brands.random_by_id_shuffle(10)
-    @brands_right = @brands.random_by_id_shuffle(10)
-
     if @sort_method_array.include? params[:sort_by]
       @products = Product.send(params[:sort_by]).page(params[:page]).per(12)
       #TODO: in this scope we use order - thats why we use Product model rather than @product
@@ -38,9 +35,6 @@ class ProductsController < ApplicationController
 
   def show
     @product      = Product.find(params[:id])
-    brands        = Brand.joins(:products)
-    @brands_left  = brands.random_by_id_shuffle(10)
-    @brands_right = brands.random_by_id_shuffle(10)
     @images_count = @product.images.count > 4
   end
 

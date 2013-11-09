@@ -1,6 +1,4 @@
 class OptionalPagesController < ApplicationController
-  before_filter :set_brands
-
   def about_us
   end
 
@@ -29,11 +27,5 @@ class OptionalPagesController < ApplicationController
   end
 
   def another
-  end
-
-  private
-  def set_brands
-    @brands_left  = Brand.joins(:products).random_by_id_shuffle(10)
-    @brands_right = Brand.joins(:products).random_by_id_shuffle(10)
   end
 end

@@ -59,19 +59,6 @@
 					<span class="sdt_descr">Самые популярные</span>
 				</span>
       </a>
-      <div class="sdt_box">
-        <div id="crazy_menu">
-          <ul class="leftcolumn">
-            <%= render partial: 'shared/random_brands', collection: @brands_left, as: :item %>
-          </ul>
-          <ul class="rightcolumn">
-            <%= render partial: 'shared/random_brands', collection: @brands_right, as: :item %>
-          </ul>
-          <div class="clear"></div>
-          <a class="viewallbrandslink" href="#"> » Показать все бренды...</a>
-          <div class="clear"></div>
-        </div>
-      </div>
     </li>
     <li id='search'>
       <form method="get" action="/search">
