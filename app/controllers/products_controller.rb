@@ -16,78 +16,34 @@ class ProductsController < ApplicationController
 
     @products = Product.order('created_at DESC')
 
-    # if @sort_method_array.include? params[:sort_by]
-      # @products = Product.send(params[:sort_by]).page(params[:page]).per(12)
-      #TODO: in this scope we use order - thats why we use Product model rather than @product
-    # end
 
 
-
-
-
-    # ["0:150", "150:200", "350:500", "700"]
     price_between_array = params[:price_between] ? params[:price_between] : []
 
-
+    array_query = [];
     sql_query_start = 'select * from products where price between ? and ?'
-    if price_between_array.count > 1
-      #Create SQL string
-
+    if price_between_array.count > 0
       (price_between_array.count - 1).times do
         sql_query_start << " or price between ? and ?"
       end
 
+      array_query.push(sql_query_start)
 
       price_between_array.each do |pb|
-
-      #   if @price_hash.include? pb
-      #     arr = pb.split(':')
-      #     arr[1] = '10000' if arr[1].nil? # TODO: 10000 - this is max price ( how to remove it? or let it stay ?)
-
-      #     @products = @products.price_between(arr[0], arr[1])
-      #   end
+        string = pb.split(':')
+        array_query.push(string[0].to_i)
+        array_query.push(string[1].to_i)
       end
     end
 
-
-
-    Rails.logger.info '>>>'*50
-    Rails.logger.info sql_query_start
-    Rails.logger.info '<<<'*50
-
-
-
-    # if @brands.map(&:name).include? params[:brand_type]
-    #   @products = @products.by_brands_name(params[:brand_type])
-    # end
-
-
-    #
-    #
-    #
-    #
-    @products = Product.find_by_sql [ "select * from products where price between ? and ? or price between ? and ?", 10, 20, 90, 105 ]
-    #
-    #
-    #
-    #
-
-
-
-    # if @colors.include? params[:sort_by]
-
-
-
-
+    # @products = Product.find_by_sql [ "select * from products where price between ? and ? or price between ? and ?", 10, 20, 90, 105 ]
+    @products = Product.find_by_sql array_query if array_query.present?
 
     unless @products.kind_of?(Array)
       @products = @products.page(params[:page]).per(12)
     else
       @products = Kaminari.paginate_array(@products).page(params[:page]).per(12)
     end
-
-
-    @products = @products.page(params[:page]).per(12)
 
     session[:products_params] = params
 
@@ -106,12 +62,12 @@ class ProductsController < ApplicationController
   private
 
   def hash_of_prices
-    { '0:150'   => '< 150',
-      '150:200' => '150 < 200',
-      '200:350' => '200 < 350',
-      '350:500' => '350 < 500',
-      '500:700' => '500 < 700',
-      '700'     => '700+' }
+    { '0:150'    => '< 150',
+      '150:199'  => '150 < 200',
+      '200:349'  => '200 < 350',
+      '350:399'  => '350 < 500',
+      '500:699'  => '500 < 700',
+      '700:9999' => '700+' }
   end
 
   def hash_of_sort
