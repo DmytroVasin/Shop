@@ -39,6 +39,12 @@ class ProductsController < ApplicationController
     # @products = Product.find_by_sql [ "select * from products where price between ? and ? or price between ? and ?", 10, 20, 90, 105 ]
     @products = Product.find_by_sql array_query if array_query.present?
 
+
+
+# Product.find_by_sql("SELECT * FROM products INNER JOIN colors_products ON colors_products.product_id = products.id INNER JOIN colors ON colors.id = colors_products.color_id WHERE name = 'Red' or name = 'Black'")
+
+# Product.find_by_sql("SELECT * FROM products INNER JOIN colors_products ON colors_products.product_id = products.id INNER JOIN colors ON colors.id = colors_products.color_id WHERE (name = 'Red' or name = 'Black') AND (price between 10 and 12 or price between 90 and 100)").count
+
     unless @products.kind_of?(Array)
       @products = @products.page(params[:page]).per(12)
     else
