@@ -2,7 +2,7 @@
 class ProductsController < ApplicationController
 
   def index
-    @flag = true;
+    # @flag = true;
 
     @price_hash = hash_of_prices
     @sort_hash = hash_of_sort
@@ -22,17 +22,38 @@ class ProductsController < ApplicationController
     # end
 
 
-    price_between_array = params[:price_between]
-    price_between_array.each do |pb|
-      if @price_hash.include? pb
-        arr = pb.split(':')
-        arr[1] = '10000' if arr[1].nil? # TODO: 10000 - this is max price ( how to remove it? or let it stay ?)
 
-        @products = @products.price_between(arr[0], arr[1])
+
+
+    # ["0:150", "150:200", "350:500", "700"]
+    price_between_array = params[:price_between] ? params[:price_between] : []
+
+
+    sql_query_start = 'select * from products where price between ? and ?'
+    if price_between_array.count > 1
+      #Create SQL string
+
+      (price_between_array.count - 1).times do
+        sql_query_start << " or price between ? and ?"
+      end
+
+
+      price_between_array.each do |pb|
+
+      #   if @price_hash.include? pb
+      #     arr = pb.split(':')
+      #     arr[1] = '10000' if arr[1].nil? # TODO: 10000 - this is max price ( how to remove it? or let it stay ?)
+
+      #     @products = @products.price_between(arr[0], arr[1])
+      #   end
       end
     end
 
 
+
+    Rails.logger.info '>>>'*50
+    Rails.logger.info sql_query_start
+    Rails.logger.info '<<<'*50
 
 
 
@@ -41,7 +62,15 @@ class ProductsController < ApplicationController
     # end
 
 
-
+    #
+    #
+    #
+    #
+    @products = Product.find_by_sql [ "select * from products where price between ? and ? or price between ? and ?", 10, 20, 90, 105 ]
+    #
+    #
+    #
+    #
 
 
 
@@ -51,9 +80,12 @@ class ProductsController < ApplicationController
 
 
 
-    Rails.logger.info '>>>'*50
-    Rails.logger.info @products.count
-    Rails.logger.info '<<<'*50
+    unless @products.kind_of?(Array)
+      @products = @products.page(params[:page]).per(12)
+    else
+      @products = Kaminari.paginate_array(@products).page(params[:page]).per(12)
+    end
+
 
     @products = @products.page(params[:page]).per(12)
 
