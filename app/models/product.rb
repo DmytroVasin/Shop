@@ -13,11 +13,7 @@ class Product < ActiveRecord::Base
   scope :high, order('price DESC')
   scope :low, order('price ASC')
   scope :best, order('rank DESC')
-
-  scope :price_between, lambda { |min, max| where('price >= ? AND price <= ?', min, max) }
-
   scope :by_gender, lambda { |g| joins(:genders).where('genders.gender = ?', g ) }
-  scope :by_brands_name, lambda { |brandname| joins(:brand).where('brands.name = ?', brandname) }
 
 
   has_many :line_items
@@ -42,11 +38,52 @@ class Product < ActiveRecord::Base
     end
   end
 
-
-
   def self.search(search)
     if search
       where('title like ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
+
+# Scope's:
+
+  def self.selecting_by(params_arr, type, ing = '', name = 'name')
+    if params_arr
+      where_query = "#{type}#{ing}.#{name} = ?"
+      (params_arr.count - 1).times do
+        where_query << " OR #{type}#{ing}.#{name} = ?"
+      end
+
+      query_full = []
+      query_full = query_full.push(where_query)
+
+      params_arr.each { |x| query_full.push(x) }
+
+      joins(:"#{type}").where(query_full)
+    else
+      scoped
+    end
+  end
+
+  def self.price_between(params_arr)
+    if params_arr
+
+      where_query = "price between ? AND ?"
+      (params_arr.count - 1).times do
+        where_query << " OR price between ? AND ?"
+      end
+
+      query_full = []
+      query_full = query_full.push(where_query)
+
+      params_arr.each do |pb|
+        string = pb.split(':')
+        query_full.push(string[0].to_i)
+        query_full.push(string[1].to_i)
+      end
+
+      where(query_full)
     else
       scoped
     end

@@ -14,36 +14,12 @@ class ProductsController < ApplicationController
     @colors  = Color.joins(:products).group('colors.id').order('name ASC')
 
 
-    @products = Product.order('created_at DESC')
+    @products = Product.selecting_by(params[:categories_params], 'categories').selecting_by(params[:brands_params], 'brand', 's').selecting_by(params[:gender_params], 'genders', '', 'gender').selecting_by(params[:color_params], 'colors').price_between(params[:price_between])
 
-
-
-    price_between_array = params[:price_between] ? params[:price_between] : []
-
-    array_query = [];
-    sql_query_start = 'select * from products where price between ? and ?'
-    if price_between_array.count > 0
-      (price_between_array.count - 1).times do
-        sql_query_start << " or price between ? and ?"
-      end
-
-      array_query.push(sql_query_start)
-
-      price_between_array.each do |pb|
-        string = pb.split(':')
-        array_query.push(string[0].to_i)
-        array_query.push(string[1].to_i)
-      end
-    end
-
-    # @products = Product.find_by_sql [ "select * from products where price between ? and ? or price between ? and ?", 10, 20, 90, 105 ]
-    @products = Product.find_by_sql array_query if array_query.present?
-
-
-
-# Product.find_by_sql("SELECT * FROM products INNER JOIN colors_products ON colors_products.product_id = products.id INNER JOIN colors ON colors.id = colors_products.color_id WHERE name = 'Red' or name = 'Black'")
-
-# Product.find_by_sql("SELECT * FROM products INNER JOIN colors_products ON colors_products.product_id = products.id INNER JOIN colors ON colors.id = colors_products.color_id WHERE (name = 'Red' or name = 'Black') AND (price between 10 and 12 or price between 90 and 100)").count
+    # !!!!
+    # Product.find_by_sql("SELECT * FROM products INNER JOIN colors_products ON colors_products.product_id = products.id INNER JOIN colors ON colors.id = colors_products.color_id WHERE (name = 'Red' or name = 'Black') AND (price between 10 and 12 or price between 90 and 100)").count
+    # Product.joins(:categories).where("categories.name = 'Makeup' OR categories.name = 'Duffle Bags'").joins(:brand).where("brands.name = 'Collistar' OR brands.name = 'Elizabeth Arden'").joins(:genders).where("genders.gender = 'Women' OR genders.gender = 'Girls'").joins(:colors).where("colors.name = 'Red' OR colors.name = 'Black'").where("price between 10 AND 20 OR price between 90 AND 110").scoped
+    # !!!!
 
     unless @products.kind_of?(Array)
       @products = @products.page(params[:page]).per(12)
@@ -68,7 +44,7 @@ class ProductsController < ApplicationController
   private
 
   def hash_of_prices
-    { '0:150'    => '< 150',
+    { '0:149'    => '< 150',
       '150:199'  => '150 < 200',
       '200:349'  => '200 < 350',
       '350:399'  => '350 < 500',

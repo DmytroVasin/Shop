@@ -67,17 +67,42 @@ $(function () {
 
 	// Submit form in every change:
 	$('body').on('change', ".sortdropdown, input[type=checkbox]", function () {
-		var prices = $('.price_bar input[type=checkbox]:checked');
-		var prices_params = [];
+		var categories_params = [];
+		var brands_params     = [];
+		var gender_params     = [];
+		var color_params      = [];
+		var prices_params     = [];
+
+		var categories = $('.categories_bar input[type=checkbox]:checked');
+		var brands     = $('.brand_bar input[type=checkbox]:checked');
+		var gender     = $('.gender_bar input[type=checkbox]:checked');
+		var color      = $('.color_bar input[type=checkbox]:checked');
+		var prices     = $('.price_bar input[type=checkbox]:checked');
+
+		$.each(categories, function(){
+			categories_params.push($(this).val());
+		});
+
+		$.each(brands, function(){
+			brands_params.push($(this).val());
+		});
+
+		$.each(gender, function(){
+			gender_params.push($(this).val());
+		});
+
+		$.each(color, function(){
+			color_params.push($(this).val());
+		});
 
 		$.each(prices, function(){
 			prices_params.push($(this).val());
-		})
+		});
 
 		$.ajax({
 		  type: "GET",
 		  url: '/products.js',
-		  data: { price_between: prices_params }
+		  data: { categories_params: categories_params, brands_params: brands_params, gender_params: gender_params, color_params: color_params, price_between: prices_params }
 		})
 
 
