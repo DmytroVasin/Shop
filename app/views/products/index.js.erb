@@ -8,10 +8,13 @@
   <% end %>
 
 
-	$('.pagination').replaceWith('<%= j paginate(@products) %>');
-
-	if ($('.pagination ul li').last().hasClass('disabled')) {
+	$('#hidden_element').replaceWith("<div id='hidden_element'><%= j paginate(@products) %></div>");
+	if ( $('.pagination ul li').length === 0 || $('.pagination ul li').last().hasClass('disabled') ) {
 	  $('#ednless_paginator').remove();
+	} else {
+		if ( $('#ednless_paginator').length === 0 ) {
+			$( "#hidden_element" ).after("<div id='ednless_paginator'>Показать еще...</div>");
+		}
 	}
 
 <% else %>

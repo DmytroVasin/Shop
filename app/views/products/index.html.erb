@@ -46,9 +46,7 @@
 <% end %>
 <div class="clear"></div>
 
-<div><%= paginate @products %></div>
+<div id='hidden_element'><%= paginate @products %></div>
 
-<% if @products.count>=6 %>
-  <div id="ednless_paginator">Показать еще...</div>
-<% end %>
+<div id="ednless_paginator">Показать еще...</div>
 <div class="clear"></div>
