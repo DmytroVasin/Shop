@@ -15,20 +15,19 @@ $(function () {
 	});
 
 
-	// // ENDLESS paginator     -------------------------------------------------------------
-	//   $('#ednless_paginator').on('click', function () {
+	// ENDLESS paginator     -------------------------------------------------------------
+	  $('body').on('click', '#ednless_paginator', function () {
 
-	//     url = $('.pagination .next_page').attr('href');
-	//     if (url) {
-	//       $.getScript(url);
-	//       $('.pagination ul').replaceWith('<div id="endless_message"></div>');
-	//     }
-	//   });
-	// // ENDLESS pagination ( remove adding link - if count of products == 6 )
-	//   if (!($('div').hasClass('pagination'))) {
-	//     $('#ednless_paginator').remove();
-	//   }
-	// // ENDLESS pagination END  ----------------------------------------------------------
+	    url = $('.pagination .next_page').attr('href').replace("flag=true","flag=false");;
+	    console.log('.....');
+	    console.log(url);
+	    console.log('.....');
+	    if (url) {
+	      $.getScript(url);
+	      $('.pagination ul').replaceWith('<div id="endless_message"></div>');
+	    }
+	  });
+	// ENDLESS pagination END  ----------------------------------------------------------
 
 
 
@@ -72,6 +71,7 @@ $(function () {
 				gender_params: getValues(gender),
 				color_params: getValues(color),
 				price_between: getValues(prices),
+				flag: true
 			}
 		});
 	});
