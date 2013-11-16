@@ -21,6 +21,10 @@ class ProductsController < ApplicationController
     # Product.joins(:categories).where("categories.name = 'Makeup' OR categories.name = 'Duffle Bags'").joins(:brand).where("brands.name = 'Collistar' OR brands.name = 'Elizabeth Arden'").joins(:genders).where("genders.gender = 'Women' OR genders.gender = 'Girls'").joins(:colors).where("colors.name = 'Red' OR colors.name = 'Black'").where("price between 10 AND 20 OR price between 90 AND 110").scoped
     # !!!!
 
+    # Rails.logger.info '>>>>'*50
+    # Rails.logger.info @products.count
+    # Rails.logger.info '>>>>'*50
+
     unless @products.kind_of?(Array)
       @products = @products.page(params[:page]).per(12)
     else

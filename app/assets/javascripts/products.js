@@ -66,49 +66,30 @@ $(function () {
 
 
 	// Submit form in every change:
-	$('body').on('change', ".sortdropdown, input[type=checkbox]", function () {
-		var categories_params = [];
-		var brands_params     = [];
-		var gender_params     = [];
-		var color_params      = [];
-		var prices_params     = [];
-
+	$('body').on('change', ".sortdropdown, input:checkbox", function () {
 		var categories = $('.categories_bar input[type=checkbox]:checked');
 		var brands     = $('.brand_bar input[type=checkbox]:checked');
 		var gender     = $('.gender_bar input[type=checkbox]:checked');
 		var color      = $('.color_bar input[type=checkbox]:checked');
 		var prices     = $('.price_bar input[type=checkbox]:checked');
 
-		$.each(categories, function(){
-			categories_params.push($(this).val());
-		});
-
-		$.each(brands, function(){
-			brands_params.push($(this).val());
-		});
-
-		$.each(gender, function(){
-			gender_params.push($(this).val());
-		});
-
-		$.each(color, function(){
-			color_params.push($(this).val());
-		});
-
-		$.each(prices, function(){
-			prices_params.push($(this).val());
-		});
+		function getValues(checkboxes) {
+			return checkboxes.map(function (index, element) {
+				return $(element).val();
+			}).toArray();
+		};
 
 		$.ajax({
-		  type: "GET",
-		  url: '/products.js',
-		  data: { categories_params: categories_params, brands_params: brands_params, gender_params: gender_params, color_params: color_params, price_between: prices_params }
-		})
-
-
-
-
-
+			type: "GET",
+			url: '/products.js',
+			data: {
+				categories_params: getValues(categories),
+				brands_params: getValues(brands),
+				gender_params: getValues(gender),
+				color_params: getValues(color),
+				price_between: getValues(prices),
+			}
+		});
 
 		// $('#form_sort').submit();
 		// var value = $(this).val();
