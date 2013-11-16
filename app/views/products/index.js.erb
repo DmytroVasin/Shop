@@ -2,7 +2,7 @@
 	<% if @products.size > 0 %>
     $('#products_displaying').html("<%= j render(@products) %>");
   <% else %>
-  	$('#products_displaying').html("<div id='no_match_criteria'>К сожалению, не найдено результатов, соответствующих Вашим критериям</div>")
+  	$('#products_displaying').html("<%= j render 'no_match_criteria' %>");
   <% end %>
 
 	$('#hidden_element').replaceWith("<div id='hidden_element'><%= j paginate(@products) %></div>");

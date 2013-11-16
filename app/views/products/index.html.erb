@@ -35,9 +35,7 @@
           <% if @products.size > 0 %>
             <%= render @products %>
           <% else %>
-            <div id="no_match_criteria">
-              К сожалению, не найдено результатов, соответствующих Вашим критериям
-            </div>
+            <%= render 'no_match_criteria' %>
           <% end %>
         </div>
       </ul>
