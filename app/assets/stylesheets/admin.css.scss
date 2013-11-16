@@ -106,11 +106,15 @@ tr td .in_stock_false {
   color         : #323232;
   margin-left   : 100px;
   margin-bottom : 10px;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 #perfume_description {
   font-size   : 16px;
-  margin-left : 40px;
+  margin-left : 20px;
 }
 
 #perfume_price {

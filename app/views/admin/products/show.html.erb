@@ -32,7 +32,7 @@
 
   <div id="description">
     <div id="perfume_title">
-      <%= @product.title %>
+      <%= link_to @product.title, @product.link_href %>
     </div>
     <div id="perfume_description">
       <%= @product.description %>
