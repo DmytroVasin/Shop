@@ -1,6 +1,13 @@
 <% if @flag %>
+	console.log( <%= @products.size %> );
 
-	$('#products_displaying').replaceWith('<%= j render(@products) %>');
+	<% if @products.size > 0 %>
+    $('#products_displaying').html("<%= j render(@products) %>");
+  <% else %>
+  	$('#products_displaying').html("<div id='no_match_criteria'>К сожалению, не найдено результатов, соответствующих Вашим критериям</div>")
+  <% end %>
+
+
 	$('.pagination').replaceWith('<%= j paginate(@products) %>');
 
 	if ($('.pagination ul li').last().hasClass('disabled')) {

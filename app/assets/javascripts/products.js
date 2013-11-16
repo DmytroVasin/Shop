@@ -49,22 +49,6 @@ $(function () {
 	// 	countChecked.call(this);
 	// });
 
-  function getParam(sParamName){
-    var Params = location.search.substring(1).split("&");
-    var variable = "";
-    for (var i = 0; i < Params.length; i++){
-      if (Params[i].split("=")[0] == sParamName){
-        if (Params[i].split("=").length > 1) variable = Params[i].split("=")[1];
-        return variable;
-      }
-    }
-    return "";
-  };
-
-  console.log( getParam("filter") );
-
-
-
 	// Submit form in every change:
 	$('body').on('change', ".sortdropdown, input:checkbox", function () {
 		var categories = $('.categories_bar input[type=checkbox]:checked');
@@ -90,10 +74,6 @@ $(function () {
 				price_between: getValues(prices),
 			}
 		});
-
-		// $('#form_sort').submit();
-		// var value = $(this).val();
-		// window.location.search = 'filter='+prices_params;
 	});
 
 });

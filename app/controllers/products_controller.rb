@@ -2,7 +2,7 @@
 class ProductsController < ApplicationController
 
   def index
-    # @flag = true;
+    @flag = true;
 
     @price_hash = hash_of_prices
     @sort_hash = hash_of_sort
