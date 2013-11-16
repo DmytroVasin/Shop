@@ -89,4 +89,11 @@ class Product < ActiveRecord::Base
     end
   end
 
+  def self.sort_direction(direction, hash_of_sort)
+    if hash_of_sort.values.include? direction
+      self.send(direction.to_sym)
+    else
+      scoped
+    end
+  end
 end

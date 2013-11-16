@@ -29,25 +29,6 @@ $(function () {
 	  });
 	// ENDLESS pagination END  ----------------------------------------------------------
 
-
-
-
-	// // Sort menu - dropdown list
-	// $('.sortdropdown').on('change', function () {
-	// 	$('#form_sort').submit();
-	// });
-
-	// // Sort Section PRICE list
-	// var countChecked = function () {
-	// 	$(this).parent().parent().siblings().find('input[type=checkbox]:checked').prop('checked', false);
-
-	// 	$('#form_sort').submit();
-	// };
-
-	// $('input[name=price_between]').on("click", function () {
-	// 	countChecked.call(this);
-	// });
-
 	// Submit form in every change:
 	$('body').on('change', ".sortdropdown, input:checkbox", function () {
 		var categories = $('.categories_bar input[type=checkbox]:checked');
@@ -55,6 +36,7 @@ $(function () {
 		var gender     = $('.gender_bar input[type=checkbox]:checked');
 		var color      = $('.color_bar input[type=checkbox]:checked');
 		var prices     = $('.price_bar input[type=checkbox]:checked');
+		var select_val = $('.sortdropdown').val();
 
 		function getValues(checkboxes) {
 			return checkboxes.map(function (index, element) {
@@ -71,6 +53,7 @@ $(function () {
 				gender_params: getValues(gender),
 				color_params: getValues(color),
 				price_between: getValues(prices),
+				sort_direction: select_val,
 				flag: true
 			}
 		});
