@@ -2,7 +2,7 @@ Shop::Application.routes.draw do
   resources :ratings, only: [:create]
 
   resources :orders
-  resources :carts
+  resources :carts, only: [:show, :destroy]
 
   resources :line_items do
     put 'decrease', on: :member
