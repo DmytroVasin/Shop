@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131116180959) do
+ActiveRecord::Schema.define(:version => 20131117102154) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",              :default => "", :null => false
@@ -113,6 +113,7 @@ ActiveRecord::Schema.define(:version => 20131116180959) do
     t.integer  "rank",                                      :default => 0
     t.text     "video_href"
     t.text     "link_href"
+    t.decimal  "old_price",   :precision => 8, :scale => 2
   end
 
   create_table "ratings", :force => true do |t|

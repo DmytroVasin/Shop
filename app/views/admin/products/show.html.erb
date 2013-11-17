@@ -40,6 +40,9 @@
     <div id="perfume_price">
       Цена: <span><%= @product.price %></span> грн.
     </div>
+    <div id="old_price">
+      <span><del><%= @product.old_price %></del></span> грн.
+    </div>
   </div>
   <div class='perfume_instock perfume_instock_<%= @product.in_stock ? 'true' : 'false' %>'></div>
   <div class='perfume_instock rank'><%= @product.rank %></div>

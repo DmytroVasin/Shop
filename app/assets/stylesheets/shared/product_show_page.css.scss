@@ -67,27 +67,28 @@
   }
 
   .actions_for_product {
-    .in_stock {
-      float        : left;
-      padding-left : 23px;
-      margin-left  : 10px;
-      margin-top   : 8px
-    }
 
-    .yes {
-      background          : url(/assets/yes.png) no-repeat;
-      background-position : left center;
-      color               : #83C135;
-      text-shadow         : 1px 1px 1px #83C135;
+    // .in_stock {
+    //   float        : left;
+    //   padding-left : 23px;
+    //   margin-left  : 10px;
+    //   margin-top   : 8px
+    // }
 
-    }
+    // .yes {
+    //   background          : url(/assets/yes.png) no-repeat;
+    //   background-position : left center;
+    //   color               : #83C135;
+    //   text-shadow         : 1px 1px 1px #83C135;
 
-    .no {
-      background          : url(/assets/no.png) no-repeat;
-      background-position : left center;
-      color               : #a6a6a6;
-      text-shadow         : 1px 1px 1px #a6a6a6;
-    }
+    // }
+
+    // .no {
+    //   background          : url(/assets/no.png) no-repeat;
+    //   background-position : left center;
+    //   color               : #a6a6a6;
+    //   text-shadow         : 1px 1px 1px #a6a6a6;
+    // }
 
     .btn_order {
       float : left;
@@ -100,9 +101,17 @@
 
     .price {
       float          : left;
-      margin         : 5px 0 0 58px;
+      margin         : 5px 0 0 0px;
       font-weight    : bold;
       vertical-align : middle;
+      width          : 360px;
+
+      .old_price_stock {
+        margin     : 5px 0 0 10px;
+        color      : #807D7D;
+        font-size  : 18px;
+        text-shadow: 0 0 1px #777;
+      }
 
       .price_count {
         font-size : 12px;

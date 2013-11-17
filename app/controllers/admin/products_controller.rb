@@ -37,7 +37,7 @@ class Admin::ProductsController < Admin::BaseController
         format.html { redirect_to admin_product_path(@product.id) }
         format.js
       else
-        render 'edit'
+        format.html { render 'new' }
       end
     end
   end
