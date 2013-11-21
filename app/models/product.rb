@@ -73,22 +73,8 @@ class Product < ActiveRecord::Base
 
   def self.price_between(params_arr)
     if params_arr
-
-      where_query = "price between ? AND ?"
-      (params_arr.count - 1).times do
-        where_query << " OR price between ? AND ?"
-      end
-
-      query_full = []
-      query_full = query_full.push(where_query)
-
-      params_arr.each do |pb|
-        string = pb.split(':')
-        query_full.push(string[0].to_i)
-        query_full.push(string[1].to_i)
-      end
-
-      where(query_full)
+      price_arr = params_arr.split(',')
+      where("price between ? AND ?", price_arr[0], price_arr[1])
     else
       scoped
     end

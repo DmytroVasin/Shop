@@ -33,18 +33,25 @@
   </div>
 
   <div class="section price_bar">
-    <h3>Price:</h3>
+    <h3>Цена (грн):</h3>
+    <%= hidden_field_tag 'leftValue' %>
+    <%= hidden_field_tag 'rightValue' %>
+    <!-- <div>width: 250, roundUp: 50, leftLimit: 100, leftValue: 500, rightLimit: 5000, rightValue: 1500</div> -->
+    <script type="text/javascript">
 
-    <ul>
-      <% @price_hash.each_pair do |key, value| %>
-        <li>
-          <label>
-            <%= check_box_tag 'price_between', key %>
-            <%= value %>
-          </label>
-        </li>
-      <% end %>
-    </ul>
+    trackbar.getObject('one').init({
+      onMove : function() {
+        $('#leftValue').val(this.leftValue);
+        $('#rightValue').val(this.rightValue);
+      },
+      width : 140, // px
+      leftLimit : 0, // unit of value
+      leftValue : 0, // unit of value
+      rightLimit : 2500, // unit of value
+      rightValue : 2500, // unit of value
+      roundUp : 5, // unit of value
+    });
+    </script>
 
   </div>
 </div>

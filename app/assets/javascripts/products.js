@@ -19,9 +19,6 @@ $(function () {
 	  $('body').on('click', '#ednless_paginator', function () {
 
 	    url = $('.pagination .next_page').attr('href').replace("flag=true","flag=false");;
-	    console.log('.....');
-	    console.log(url);
-	    console.log('.....');
 	    if (url) {
 	      $.getScript(url);
 	      $('.pagination ul').replaceWith('<div id="endless_message"></div>');
@@ -35,13 +32,16 @@ $(function () {
 		var brands     = $('.brand_bar input[type=checkbox]:checked');
 		var gender     = $('.gender_bar input[type=checkbox]:checked');
 		var color      = $('.color_bar input[type=checkbox]:checked');
-		var prices     = $('.price_bar input[type=checkbox]:checked');
 		var select_val = $('.sortdropdown').val();
 
 		function getValues(checkboxes) {
 			return checkboxes.map(function (index, element) {
 				return $(element).val();
 			}).toArray();
+		};
+
+		function getPrice() {
+			return Array($('#leftValue').val(), $('#rightValue').val());
 		};
 
 		$.ajax({
@@ -52,7 +52,7 @@ $(function () {
 				brands_params: getValues(brands),
 				gender_params: getValues(gender),
 				color_params: getValues(color),
-				price_between: getValues(prices),
+				price_between: getPrice,
 				sort_direction: select_val,
 				flag: true
 			}

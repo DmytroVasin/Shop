@@ -20,6 +20,7 @@
 //= require order_validations
 //= require jquery.elevateZoom-3.0.3.min
 //= require_self
+//= require trackbar
 
 $(function () {
 
