@@ -16,6 +16,7 @@ module ApplicationHelper
 
   def back_to_products(title, class_name = nil)
     if session[:products_params]
+      session[:products_params][:format] = 'html'
       link_to title, session[:products_params], class: class_name
     else
       link_to title, products_path, class: class_name
