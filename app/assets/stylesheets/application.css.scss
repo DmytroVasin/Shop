@@ -22,14 +22,21 @@ html, body {
 }
 
 body {
-  background            : url(/assets/backgroud_image_1.jpg) 20% 80% no-repeat;
+  // background            : url(/assets/backgroud_image_1.jpg) 20% 80% no-repeat;
   /*background: url(background_image.jpg) 0 15% no-repeat;*/
 
-  background-attachment : fixed;
+  // background-attachment : fixed;
   /*background: #f1f1f1 repeat top left;*/
 
   /*background-color: #bbb;*/
   /*height: 3000px;*/
+
+
+
+}
+
+body {
+  background: -webkit-radial-gradient(top center, ellipse cover, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.5) 90%), url('http://sapphion.com/wp-content/themes/Sapphion%20Cleansed/images/bg.jpg') repeat;
 }
 
 #sitewrapper {
