@@ -41,8 +41,8 @@
 
     trackbar.getObject('one').init({
       onMove : function() {
-        $('#leftValue').val(this.leftValue);
-        $('#rightValue').val(this.rightValue);
+        $('#leftValue').val(this.leftValue).change();
+        $('#rightValue').val(this.rightValue).change();
       },
       width : 140, // px
       leftLimit : 0, // unit of value
