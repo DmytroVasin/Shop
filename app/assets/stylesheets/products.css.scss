@@ -181,6 +181,19 @@
   margin-left : 23px;
 }
 
+#hidden_loading {
+  width: 150px;
+  height: 150px;
+  background-color: #F00;
+  position: absolute;
+  left: 522px;
+  top: 380px;
+}
+
+.hidden_loading {
+  opacity: 0.3;
+}
+
 #all_images_wrapper {
   margin-top: 8px;
   height: 60px;
