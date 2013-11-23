@@ -182,12 +182,12 @@
 }
 
 #hidden_loading {
-  width: 150px;
-  height: 150px;
-  background-color: #F00;
+  width: 67px;
+  height: 67px;
+  background : url(/assets/hidden_loading.gif) no-repeat scroll 0 0 transparent;
   position: absolute;
-  left: 522px;
-  top: 380px;
+  left: 565px;
+  top: 410px;
 }
 
 .hidden_loading {

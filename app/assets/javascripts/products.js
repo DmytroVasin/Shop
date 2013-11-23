@@ -32,10 +32,12 @@ $(function () {
     var timeout = null;
     var previous = 0;
     options || (options = {});
-    console.log(options);
     var later = function() {
       previous = options.leading === false ? 0 : new Date;
       timeout = null;
+      // console.log('Hide loading');
+      $('#items_bar').removeClass('hidden_loading');
+      $('#hidden_loading').remove();
       result = func.apply(context, args);
     };
     return function() {
@@ -50,6 +52,8 @@ $(function () {
         previous = now;
         result = func.apply(context, args);
       } else if (!timeout && options.trailing !== false) {
+      	// console.log('Show loading');
+      	$('#items_bar').addClass('hidden_loading').after("<div id='hidden_loading'></div>");
         timeout = setTimeout(later, remaining);
       }
       return result;
@@ -88,5 +92,5 @@ $(function () {
       }
 	  })
 	};
-	$('body').on('change', ".sortdropdown, input:checkbox, #leftValue, #rightValue", throttle(changeMeter, 3000, {leading: false}));
+	$('body').on('change', ".sortdropdown, input:checkbox, #leftValue, #rightValue", throttle(changeMeter, 2000, {leading: false}));
 });
