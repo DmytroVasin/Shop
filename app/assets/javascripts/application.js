@@ -41,7 +41,7 @@ $(function () {
     $elem.find('img')
         .stop(true)
         .animate({
-          'width': '120px',
+          'width': '144px',
           'height': '40px',
           'left': '0px'
         }, 300, 'easeOutBack')
