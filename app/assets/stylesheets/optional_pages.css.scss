@@ -76,6 +76,26 @@
   strong.red {
     color : red;
   }
+
+
+  // Reviews:
+  .critic {
+    text-align: right;
+    margin-bottom: 5px;
+    color: #CF6666;
+  }
+  p span {
+    font-weight: bold;
+    font-style: italic;
+  }
+  img {
+    float: left;
+    width: 100px;
+    margin: 0 10px 5px 0;
+  }
+  .link_color {
+    color: blue;
+  }
 }
 
 /*   -----   WITH TEXT END   -----   */

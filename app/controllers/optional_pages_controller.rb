@@ -28,4 +28,7 @@ class OptionalPagesController < ApplicationController
 
   def another
   end
+
+  def reviews
+  end
 end
