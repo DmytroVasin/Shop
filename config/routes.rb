@@ -18,7 +18,9 @@ Shop::Application.routes.draw do
   namespace :admin do
     root :to => 'base#index'
 
-    resources :products
+    resources :products do
+      post 'best_sell', on: :collection
+    end
     resources :categories
     resources :brands
     resources :orders

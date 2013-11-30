@@ -2,6 +2,7 @@ class Admin::ProductsController < Admin::BaseController
   before_filter :authenticate_admin!
 
   def index
+    @best_count = Product.count_of_best_sellers.count
     @products = Product.search(params[:search]).order(sort_column + ' ' + sort_direction).page(params[:page]).per(10)
   end
 
@@ -47,5 +48,15 @@ class Admin::ProductsController < Admin::BaseController
 
     @product.destroy
     redirect_to admin_products_path
+  end
+
+  def best_sell
+    if params[:checked].in? ["true", "false"]
+      Product.find(params[:product_id]).update_attributes({ bestseller: params[:checked] })
+    end
+
+    @best_count = Product.count_of_best_sellers.count
+    @products = Product.search(params[:search]).order(sort_column + ' ' + sort_direction).page(params[:page]).per(10)
+    render :index
   end
 end

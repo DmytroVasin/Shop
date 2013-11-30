@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  attr_accessible :description, :price, :title, :category_ids, :brand_id, :rank, :gender_ids, :color_ids, :video_href, :link_href, :old_price
+  attr_accessible :description, :price, :title, :category_ids, :brand_id, :rank, :gender_ids, :color_ids, :video_href, :link_href, :old_price, :bestseller
 
   validates :title, :price, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }
@@ -12,11 +12,12 @@ class Product < ActiveRecord::Base
   validate :price_must_be_lower_than_old_price
 
 
-  scope :newest, order('updated_at DESC')
-  scope :high, order('price DESC')
-  scope :low, order('price ASC')
-  scope :best, order('rank DESC')
-  scope :by_gender, lambda { |g| joins(:genders).where('genders.gender = ?', g ) }
+  scope :newest, -> { order('updated_at DESC') }
+  scope :high, -> { order('price DESC') }
+  scope :low, -> { order('price ASC') }
+  scope :best, -> { order('rank DESC') }
+  scope :by_gender, ->(g) { joins(:genders).where('genders.gender = ?', g ) }
+  scope :count_of_best_sellers, -> { where(bestseller: true) }
 
 
   has_many :line_items

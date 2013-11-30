@@ -29,9 +29,6 @@ module ApplicationHelper
     link_to title, params.merge(sort: column, direction: direction, page: nil), style: "color: red;"
   end
 
-  def small_image
-  end
-
   def middle_image(product)
     if product.images.empty?
       '/assets/no_image_yet.jpg'
@@ -40,6 +37,8 @@ module ApplicationHelper
     end
   end
 
-  def large_image
+  def best_sellers_tag(id, value, count)
+    disabling = ( count >= 4 && value == false )
+    check_box_tag 'best_sellers', value, value, disabled: disabling, data: { product_id: id }
   end
 end
