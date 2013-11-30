@@ -41,4 +41,9 @@ module ApplicationHelper
     disabling = ( count >= 4 && value == false )
     check_box_tag 'best_sellers', value, value, disabled: disabling, data: { product_id: id }
   end
+
+  def set_value_by_params(gender)
+    return gender.in? params[:gender_params] if params[:gender_params]
+    false
+  end
 end
