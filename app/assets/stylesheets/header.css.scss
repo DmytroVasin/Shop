@@ -162,12 +162,12 @@
         border-radius      : 0 0 5px 5px;
 
         background         : #777; /* Для старых браузров */
-        background         : -moz-linear-gradient(top, #777, #151515); /* Firefox 3.6+ */
-        background         : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #777), color-stop(100%, #151515));
-        background         : -webkit-linear-gradient(top, #777, #151515);
-        background         : -o-linear-gradient(top, #777, #151515); /* Opera 11.10+ */
-        background         : -ms-linear-gradient(top, #777, #151515); /* IE10 */
-        background         : linear-gradient(top, #777, #151515); /* CSS3 */
+        background         : -moz-linear-gradient(top, #777, #e183a0); /* Firefox 3.6+ */
+        background         : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #777), color-stop(100%, #e183a0));
+        background         : -webkit-linear-gradient(top, #777, #e183a0);
+        background         : -o-linear-gradient(top, #777, #e183a0); /* Opera 11.10+ */
+        background         : -ms-linear-gradient(top, #777, #e183a0); /* IE10 */
+        background         : linear-gradient(top, #777, #e183a0); /* CSS3 */
 
         top                : 40px;
         width              : 144px;
@@ -212,16 +212,20 @@
       height     : 40px;
       position   : relative;
       cursor     : pointer;
-      background : #c5c7c7;
+      background : #e183a0;
 
-      background : -moz-linear-gradient(top, #c5c7c7, #8f9190);
-      background : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c5c7c7), color-stop(100%, #8f9190));
-      background : -webkit-linear-gradient(top, #c5c7c7, #8f9190);
-      background : -o-linear-gradient(top, #c5c7c7, #8f9190);
-      background : -ms-linear-gradient(top, #c5c7c7, #8f9190);
-      background : linear-gradient(top, #c5c7c7, #8f9190);
+      background : -moz-linear-gradient(top, #e183a0, #97002e);
+      background : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e183a0), color-stop(100%, #97002e));
+      background : -webkit-linear-gradient(top, #e183a0, #97002e);
+      background : -o-linear-gradient(top, #e183a0, #97002e);
+      background : -ms-linear-gradient(top, #e183a0, #97002e);
+      background : linear-gradient(top, #e183a0, #97002e);
 
       box-shadow : 0 0 1px #333333 inset;
+
+      input:focus {
+        outline:none;
+      }
     }
   }
 }
@@ -232,14 +236,14 @@ ul.sdt_menu > li {
   height     : 40px;
   position   : relative;
   cursor     : pointer;
-  background : #c5c7c7;
+  background : #e183a0;
 
-  background : -moz-linear-gradient(top, #c5c7c7, #8f9190);
-  background : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c5c7c7), color-stop(100%, #8f9190));
-  background : -webkit-linear-gradient(top, #c5c7c7, #8f9190);
-  background : -o-linear-gradient(top, #c5c7c7, #8f9190);
-  background : -ms-linear-gradient(top, #c5c7c7, #8f9190);
-  background : linear-gradient(top, #c5c7c7, #8f9190);
+  background : -moz-linear-gradient(top, #e183a0, #97002e);
+  background : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e183a0), color-stop(100%, #97002e));
+  background : -webkit-linear-gradient(top, #e183a0, #97002e);
+  background : -o-linear-gradient(top, #e183a0, #97002e);
+  background : -ms-linear-gradient(top, #e183a0, #97002e);
+  background : linear-gradient(top, #e183a0, #97002e);
 }
 
 ul.sdt_menu > li > a {
