@@ -93,4 +93,20 @@ $(function () {
 	  })
 	};
 	$('body').on('change', ".sortdropdown, input:checkbox, #leftValue, #rightValue", throttle(changeMeter, 2000, {leading: false}));
+
+
+	absoluteLinkToGendered = function(sort_by){
+		if (sort_by === 'for_him'){
+			$('.gender_bar input:not(:odd)').each(function(){ $(this).prop('checked', true) });
+			changeMeter();
+		} else {
+			$('.gender_bar input:not(:even)').each(function(){ $(this).prop('checked', true) });
+			changeMeter();
+		}
+	};
+
+	var url_parms = window.location.search.split('=');
+	if (url_parms[0] === '?display'){
+		absoluteLinkToGendered(url_parms[1]);
+	}
 });
