@@ -1,11 +1,9 @@
 <tr>
-  <td><%= product.id %></td>
+  <td style='text-align: center;'><%= product.id %></td>
+  <td><%= image_tag product.images.first.small, alt: "Small img" %></td>
   <td><%= link_to truncate(product.title, length: 35), admin_product_path(product.id) %></td>
   <td><%= truncate(product.description, length: 140) %></td>
-  <td><%= product.price %> грн</td>
-  <td>
-    <div class="in_stock_<%= product.in_stock ? 'true' : 'false' %>"></div>
-  </td>
+  <td style='padding-left: 22px;'><%= product.price %> грн</td>
   <td>
     <%= link_to 'edit', edit_admin_product_path(product.id), class: 'btn' %>
     <%= link_to 'delete', admin_product_path(product.id), method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger' %>

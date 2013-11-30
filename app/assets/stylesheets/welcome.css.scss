@@ -152,12 +152,13 @@
       margin     : 10px 10px 0 10px;
 
       .new_product_title {
-        margin      : 10px 0 0 55px;
+        margin-top  : 10px;
         font-size   : 17px;
         font-weight : bold;
         font-family : Georgia, Times, serif;
         color       : #444;
-        text-shadow : 1px 1px 3px #97D;
+        text-shadow : 1px 1px 3px #F04C52;
+        text-align  : center;
       }
 
       .new_product_content {

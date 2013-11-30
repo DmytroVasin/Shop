@@ -35,13 +35,6 @@
 </div>
 
 <div class="control-group">
-  <%= f.label :in_stock, 'In stock: ', class: 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :in_stock, { :class => 'inputInStock' }, 'true', 'false' %>
-  </div>
-</div>
-
-<div class="control-group">
   <%= f.label :gender, 'Gender: ', class: 'control-label' %>
   <div class="controls">
     <% Gender.all.each do |gender| %>

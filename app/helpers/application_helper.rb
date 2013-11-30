@@ -26,7 +26,7 @@ module ApplicationHelper
   def sortable(column, title = nil, model = 'Product')
     title     ||= column.titleize
     direction = column == sort_column(model) && sort_direction == 'asc' ? 'desc' : 'asc'
-    link_to title, params.merge(sort: column, direction: direction, page: nil)
+    link_to title, params.merge(sort: column, direction: direction, page: nil), style: "color: red;"
   end
 
   def small_image

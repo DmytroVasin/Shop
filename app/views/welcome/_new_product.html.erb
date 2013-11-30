@@ -1,11 +1,6 @@
-<% new_products.each_with_index do |new_product, i| %>
+<% new_products.each do |new_product| %>
   <div class="new_product">
-    <% if i < 2 %>
-      <div class="new_product_title">Новые - для неё!...</div>
-    <% else %>
-      <div class="new_product_title">Новые - для него!...</div>
-    <% end %>
-
+    <div class="new_product_title"><%= truncate(new_product.brand.name, length: 15) %></div>
     <div class="new_product_content">
       <div class="picture_new">
         <%= image_tag middle_image(new_product) %>

@@ -1,13 +1,15 @@
 class Product < ActiveRecord::Base
-  attr_accessible :description, :price, :title, :in_stock, :category_ids, :brand_id, :rank, :gender_ids, :color_ids, :video_href, :link_href, :old_price
+  attr_accessible :description, :price, :title, :category_ids, :brand_id, :rank, :gender_ids, :color_ids, :video_href, :link_href, :old_price
 
-  validates :title, :price, :old_price, presence: true
-  validates :price, :old_price, numericality: { greater_than_or_equal_to: 0.01 }
-  validates :in_stock, inclusion: { in: [true, false] }
+  validates :title, :price, presence: true
+  validates :price, numericality: { greater_than_or_equal_to: 0.01 }
+
+  validates :old_price, numericality: { greater_than_or_equal_to: 0.01 }, allow_blank: true
+
   validates :rank, numericality: { only_integer: true }
   validates :brand, :categories, presence: true
   validates :title, uniqueness: { case_sensitive: false }
-  validate :price_must_be_greater_than_old_price
+  validate :price_must_be_lower_than_old_price
 
 
   scope :newest, order('updated_at DESC')
@@ -28,8 +30,8 @@ class Product < ActiveRecord::Base
 
   before_destroy :not_referenced_by_any_line_items
 
-  def price_must_be_greater_than_old_price
-    errors.add(:price, "must be greater then old price") if self.old_price.to_i <= self.price.to_i
+  def price_must_be_lower_than_old_price
+    errors.add(:price, "must be greater then old price") if self.old_price.to_i <= self.price.to_i  && self.old_price
   end
 
   private

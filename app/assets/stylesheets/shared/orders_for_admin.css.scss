@@ -34,6 +34,12 @@
   width     : 1170px;
   font-size : 12px;
 
+  tr {
+    th {
+      text-align: center;
+    }
+  }
+
   .status_delivery {
     color : #5BB75B;
   }

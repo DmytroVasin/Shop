@@ -11,7 +11,7 @@ class WelcomeController < ApplicationController
 
     # New parfume's - for her and him
 
-    products          = Product.where(in_stock: true)
+    products = Product.scoped
 
     products_for_them = products.order('created_at ASC')
     for_him           = products_for_them.by_gender('Boys').limit(2)
@@ -21,6 +21,5 @@ class WelcomeController < ApplicationController
 
     # Our best sellers
     @best_sellers = products.order('rank DESC').limit(6)
-
   end
 end
