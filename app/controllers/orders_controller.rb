@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
         OrderNotifier.shipped(@order).deliver
 
         format.html { redirect_to root_path, notice: 'Order was successfully created.' }
-      else
+			else
         @cart = current_cart
         @line_items = @cart.line_items
 

@@ -37,6 +37,11 @@ module ApplicationHelper
     end
   end
 
+  def small_image_by_id(id)
+    product = Product.find(id)
+    product ? product.images.first.small : '/assets/no_image_yet.jpg'
+  end
+
   def best_sellers_tag(id, value, count)
     disabling = ( count >= 4 && value == false )
     check_box_tag 'best_sellers', value, value, disabled: disabling, data: { product_id: id }
@@ -45,5 +50,14 @@ module ApplicationHelper
   def set_value_by_params(gender)
     return gender.in? params[:gender_params] if params[:gender_params]
     false
+  end
+
+  def url_to_product(id)
+    "products/#{id}"
+  end
+
+  def title_of_product(id)
+    product = Product.find(id)
+    product ? product.title : 'incorrect url'
   end
 end

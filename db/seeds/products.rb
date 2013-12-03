@@ -21,4 +21,13 @@ def products_and_dependencies
     product.colors << Color.find(colors_ids.sample)
     product.images << Image.first
   end
+
+  Review.populate 3 do |review|
+    review.full_name = Faker::Name.name
+    review.address = Faker::Address.city
+    review.url_id = Product.pluck(:id)
+    review.delivery_time = Populator.sentences(2)
+    review.quality = Populator.sentences(2)
+    review.suggestions = Populator.sentences(2)
+  end
 end

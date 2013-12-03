@@ -30,6 +30,6 @@ class OptionalPagesController < ApplicationController
   end
 
   def reviews
-    # Need to add some behavior
+    @reviews = Review.all
   end
 end

@@ -1,0 +1,20 @@
+<div class="review_item">
+	<ul>
+		<li><a href= <%= url_to_product(review.url_id) %> class="link_color"><%= title_of_product(review.url_id) %></a></li>
+	</ul>
+	<div class="clear"></div>
+	<%= image_tag small_image_by_id(review.url_id), class: 'cart_image' %>
+	<p>
+		<span>Сроки доставки:</span>
+		<%= review.delivery_time %>
+	</p>
+	<p>
+		<span>Качество и соответствие заказу:</span>
+		<%= review.quality %>
+	</p>
+	<p>
+		<span>Пожелания:</span>
+		<%= review.suggestions %>
+	</p>
+	<div class='critic'>- <%= review.full_name %>, <%= review.address %></div>
+</div>
