@@ -28,8 +28,4 @@ class OptionalPagesController < ApplicationController
 
   def another
   end
-
-  def reviews
-    @reviews = Review.all
-  end
 end

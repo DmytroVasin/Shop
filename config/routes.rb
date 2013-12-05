@@ -31,6 +31,7 @@ Shop::Application.routes.draw do
   end
 
   resources :products
+  resources :reviews
 
   match 'about_us' => 'optional_pages#about_us'
   match 'to_order' => 'optional_pages#to_order'
@@ -42,7 +43,6 @@ Shop::Application.routes.draw do
   match 'delay_prodcuts' => 'optional_pages#delay_prodcuts'
   match 'delivery' => 'optional_pages#delivery'
   match 'another' => 'optional_pages#another'
-  match 'reviews' => 'optional_pages#reviews'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

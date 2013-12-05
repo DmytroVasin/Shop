@@ -1,0 +1,45 @@
+<div class='rights_column'>
+	<h3>Отзывы:</h3>
+
+	<div class="review_bar">
+		<%= render partial: 'review', collection: @reviews, spacer_template: "separator" %>
+	</div>
+
+	<div class="separator"></div>
+	<div class="write_review_wrapper">
+		<div class="add_review">Добавить отзыв:</div>
+    <%= form_for @review, html: { class: "from" } do |f| %>
+
+			<p class="name">
+				<%= f.text_field :full_name, placeholder: 'Юлия Гришковец' %>
+				<%= f.label :full_name, 'Имя, Фамилия*' %>
+			</p>
+
+			<p class="place_of_leaving">
+				<%= f.text_field :address, placeholder: 'г. Владимир-Волынский, Волынская обл.' %>
+				<%= f.label :address, 'Город, Область*' %>
+			</p>
+
+			<p class="url">
+				<%= f.text_field :url_id, placeholder: "http://shop-dn-ua.heroku.com/products/12" %>
+				<%= f.label :url_id, 'Ссылка на товар*' %>
+			</p>
+
+			<p class="text">
+      	<%= f.text_area :delivery_time, cols: 40, rows: 4, placeholder: 'Сроки доставки:' %>
+			</p>
+
+			<p class="text">
+      	<%= f.text_area :quality, cols: 40, rows: 4, placeholder: 'Качество и соответствие заказу:' %>
+			</p>
+			
+			<p class="text">
+      	<%= f.text_area :suggestions, cols: 40, rows: 4, placeholder: 'Пожелания и замечания:' %>
+			</p>
+
+			<p class="submit">
+				<%= f.submit 'Send' %>
+			</p>
+    <% end %>
+	</div>
+</div>

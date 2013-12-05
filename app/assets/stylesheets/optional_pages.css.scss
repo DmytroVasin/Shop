@@ -120,6 +120,18 @@
   }
 
   .write_review_wrapper {
+    .field_with_errors {
+      display: inline-block;
+      float: left;
+      margin-bottom: 15px;
+      
+      label {
+        margin-left: 5px;
+        line-height: 40px;
+        color: #F00;
+      }
+    }
+
     // By tutorial:
     input, textarea {
       padding: 9px;

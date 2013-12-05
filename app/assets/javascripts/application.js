@@ -73,7 +73,7 @@ $(function () {
             .andSelf()
             .find('.sdt_wrap')
             .stop(true)
-            .animate({'top': '5px'}, 500)
+            .animate({'top': '0px'}, 500)
             .find('.sdt_descr')
             .css('display', 'none');
       });

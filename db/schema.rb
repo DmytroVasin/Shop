@@ -126,7 +126,7 @@ ActiveRecord::Schema.define(:version => 20131203214514) do
   create_table "reviews", :force => true do |t|
     t.string   "full_name"
     t.string   "address"
-    t.integer  "url_id"
+    t.string   "url_id"
     t.text     "delivery_time"
     t.text     "quality"
     t.text     "suggestions"
