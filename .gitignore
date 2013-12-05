@@ -16,6 +16,9 @@
 .idea/*
 /public/uploads
 .DS_Store
+database.yml
+
+config/database.yml
 # config/database.yml
 # /coverage
 # brakeman.html
