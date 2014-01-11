@@ -4,7 +4,7 @@
 @import "shared/orders.css.scss";
 
 .menu .section h3 {
-  text-shadow : 0 0 1px #777;
+  text-shadow: 1px 1px 3px #E183A0;
   font-size   : 15px;
   line-height : 17px;
   font-weight : bold;
@@ -15,7 +15,7 @@
 .menu .section ul li {
   font-size   : 13px;
   line-height : 17px;
-  color       : #777;
+  color       : #444;
 }
 
 .menu .section ul li label {
@@ -38,7 +38,7 @@
 #items_bar .class_name {
   float       : left;
   font-family : Georgia, Times, serif;
-  text-shadow : 0 0 1px #777;
+  text-shadow: 1px 1px 3px #E183A0;
   font-size   : 26px;
   line-height : 17px;
   color       : #333;
@@ -61,7 +61,7 @@
 #items_bar #sort_bar .underline {
   height        : 1px;
   margin-top    : 11px;
-  border-bottom : 1px solid #aaa;
+  border-bottom : 1px solid #97002e;
   width         : 753px;
 }
 
@@ -120,7 +120,7 @@
 /*  ----   ENDLESS PAGINATION START   ----  */
 
 #ednless_paginator {
-  color            : #535353;
+  color            : #97002e;
   text-shadow      : 1px 1px 1px #aaa;
   font-family      : Georgia, Times, serif;
   font-size        : 15px;
@@ -142,7 +142,6 @@
   background   : -o-linear-gradient(top, #F8F8F8, #ddd);
   background   : -ms-linear-gradient(top, #F8F8F8, #ddd);
   background   : linear-gradient(top, #F8F8F8, #ddd);
-  border-color : #c6c6c6;
   border       : 1px solid #a2a2a2;
 }
 

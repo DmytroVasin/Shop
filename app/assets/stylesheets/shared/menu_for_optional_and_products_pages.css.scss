@@ -15,10 +15,11 @@
 #breadcrumb ul li {
   float        : left;
   margin-right : 5px;
+  color : #97002E;
 }
 
 #breadcrumb ul li a {
-  color : #333;
+  color: #333;
 }
 
 #breadcrumb ul li a:hover {
@@ -34,14 +35,15 @@
 
 .menu .header {
   height         : 40px;
-  background     : #c5c7c7;
 
-  background     : -moz-linear-gradient(top, #c5c7c7, #8f9190);
-  background     : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c5c7c7), color-stop(100%, #8f9190));
-  background     : -webkit-linear-gradient(top, #c5c7c7, #8f9190);
-  background     : -o-linear-gradient(top, #c5c7c7, #8f9190);
-  background     : -ms-linear-gradient(top, #c5c7c7, #8f9190);
-  background     : linear-gradient(top, #c5c7c7, #8f9190);
+  background : #e183a0;
+
+  background : -moz-linear-gradient(top, #e183a0, #97002e);
+  background : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e183a0), color-stop(100%, #97002e));
+  background : -webkit-linear-gradient(top, #e183a0, #97002e);
+  background : -o-linear-gradient(top, #e183a0, #97002e);
+  background : -ms-linear-gradient(top, #e183a0, #97002e);
+  background : linear-gradient(top, #e183a0, #97002e);
 
   box-shadow     : 0 0 1px #333333 inset;
 
@@ -56,9 +58,9 @@
 
 .menu .section {
   padding       : 1px;
-  border-bottom : 1px solid #c5c7c7;
-  border-left   : 1px solid #c5c7c7;
-  border-right  : 1px solid #c5c7c7;
+  border-bottom : 1px solid #e183a0;
+  border-left   : 1px solid #e183a0;
+  border-right  : 1px solid #e183a0;
   font-family   : Georgia, Times, serif;
 }
 

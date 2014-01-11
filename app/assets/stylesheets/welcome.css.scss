@@ -123,7 +123,7 @@
           .price {
             margin-left : 3px;
             width       : 110px;
-            color       : #CC0000;
+            color       : #97002E;
             font-size   : 14px;
             font-weight : bold;
 
@@ -133,7 +133,7 @@
           }
 
           img {
-            border : 1px solid #CCCCCC;
+            border : 1px solid #E183A0;
           }
         }
       }
@@ -157,7 +157,7 @@
         font-weight : bold;
         font-family : Georgia, Times, serif;
         color       : #444;
-        text-shadow : 1px 1px 3px #F04C52;
+        text-shadow : 1px 1px 3px #E183A0;
         text-align  : center;
       }
 
@@ -325,13 +325,12 @@
 
     .aboveline_blog {
       margin-top : 10px;
-      box-shadow : 0 1px 1px #CCCCCC;
-      border-top : 1.6px solid #CCCCCC;
+      box-shadow : 0 1px 1px #E183A0;
+      border-top : 1.6px solid #97002E;
     }
-
     .underline_blog {
-      box-shadow    : 0 1px 1px #CCCCCC;
-      border-bottom : 1.6px solid #CCCCCC;
+      box-shadow    : 0 1px 1px #E183A0;
+      border-bottom : 1.6px solid #97002E;
     }
 
   }

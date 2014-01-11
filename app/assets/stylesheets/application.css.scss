@@ -33,6 +33,10 @@ body {
 
 }
 
+*:focus {
+    outline: 0;
+}
+
 #sitewrapper {
   margin         : 0 auto;
   width          : 1020px;
@@ -56,29 +60,34 @@ body {
 /* --- Button order START --- */
 
 .btn_order {
-  -moz-box-shadow       : inset 0 1px 0 0 #ddd;
-  -webkit-box-shadow    : inset 0 1px 0 0 #ddd;
-  box-shadow            : inset 1px 1px 0 0 #ddd;
-  background            : -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fff), color-stop(1, #bbb));
-  background            : -moz-linear-gradient(center top, #fff 5%, #bbb 100%);
-  filter                : progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#bbb');
-  background-color      : #fff;
+
+
+  letter-spacing: 1px;
+  font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
+  text-shadow: 2px 2px 2px #777;
+
+  -moz-box-shadow       : inset 0 1px 0 0 #e183a0;
+  -webkit-box-shadow    : inset 0 1px 0 0 #e183a0;
+  box-shadow            : inset 1px 1px 0 0 #e183a0;
+  background            : -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e183a0), color-stop(1, #97002e));
+  background            : -moz-linear-gradient(center top, #e183a0 5%, #bbb 100%);
+  filter                : progid:DXImageTransform.Microsoft.gradient(startColorstr='#e183a0', endColorstr='#bbb');
+  background-color      : #e183a0;
   -moz-border-radius    : 6px;
   -webkit-border-radius : 6px;
   border-radius         : 6px;
-  border                : 1px solid #aaa;
-  color                 : #555;
+  border                : 1px solid #97002e;
+  color                 : #fff;
   font-size             : 13px;
   padding               : 4px 8px;
   text-decoration       : none;
-  text-shadow           : 1px 1px 0 #ffffff;
 }
 
 .btn_order:hover {
-  background       : -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bbb), color-stop(1, #fff));
-  background       : -moz-linear-gradient(center top, #bbb 5%, #fff 100%);
-  filter           : progid:DXImageTransform.Microsoft.gradient(startColorstr='#bbb', endColorstr='#fff');
-  background-color : #bbb;
+  background       : -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #97002e), color-stop(1, #e183a0));
+  background       : -moz-linear-gradient(center top, #97002e 5%, #e183a0 100%);
+  filter           : progid:DXImageTransform.Microsoft.gradient(startColorstr='#97002e', endColorstr='#e183a0');
+  background-color : #97002e;
 }
 
 .btn_order:active {
@@ -113,4 +122,9 @@ body {
   border-color     : #EED3D7;
   color            : #B94A48;
   font-weight      : bold;
+}
+.paddings {
+  padding-top: 7px;
+  padding-bottom: 7px;
+
 }
