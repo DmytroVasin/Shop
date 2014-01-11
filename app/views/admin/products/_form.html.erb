@@ -47,11 +47,11 @@
 </div>
 
 <div class="control-group">
-  <%= f.label :color, 'Color: ', class: 'control-label' %>
+  <%= f.label :color, 'Цвет: ', class: 'control-label' %>
   <div class="controls">
-    <% Color.all.each do |color| %>
+    <% Colour.all.each do |color| %>
       <label class="checkbox inline">
-        <%= check_box_tag 'product[color_ids][]', color.id, @product.color_ids.include?(color.id) %>
+        <%= check_box_tag 'product[colour_ids][]', color.id, @product.colour_ids.include?(color.id) %>
         <%= color.name %>
       </label>
     <% end %>
@@ -59,7 +59,7 @@
 </div>
 
 <div class="control-group">
-  <%= f.label :description, 'Descr. of perfume: ', class: 'control-label' %>
+  <%= f.label :description, 'Описание продукта: ', class: 'control-label' %>
   <div class="controls">
     <div class="input-prepend">
       <%= f.text_area :description, id: 'text_area', placeholder: 'Description of perfume' %>
@@ -68,7 +68,7 @@
 </div>
 
 <div class="control-group">
-  <%= f.label :category, 'Category: ', class: 'control-label' %>
+  <%= f.label :category, 'Категория: ', class: 'control-label' %>
   <div class="controls">
     <% Category.all.each do |category| %>
       <label class="checkbox inline">
@@ -80,9 +80,9 @@
 </div>
 
 <div class="control-group">
-  <%= f.label :brand_id, 'Brand: ', class: 'control-label' %>
+  <%= f.label :brand_id, 'Бренд: ', class: 'control-label' %>
   <div class="controls">
-    <%= collection_select(:product, :brand_id, Brand.all, :id, :name, :prompt => 'Выбери бренд') %>
+    <%= collection_select(:product, :brand_id, Brand.all, :id, :name, prompt: 'Выбери бренд') %>
   </div>
 </div>
 

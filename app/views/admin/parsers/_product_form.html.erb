@@ -23,7 +23,7 @@
 
 			Color:
 			<ul>
-				<% product.colors.each do |color| %>
+				<% @visible_colors.each do |color| %>
 				<li><i class="icon-user"></i><%= link_to color.name, '#' %></li>
 				<% end %>
 			</ul>

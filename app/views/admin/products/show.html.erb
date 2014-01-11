@@ -10,21 +10,21 @@
       Category of product:
       <ul>
         <% @product.categories.each do |category| %>
-          <li><i class="icon-tag"></i><%= link_to category.name, '#' %></li>
+        <li><i class="icon-tag"></i><%= link_to category.name, '#' %></li>
         <% end %>
       </ul>
 
       Gender:
       <ul>
         <% @product.genders.each do |gender| %>
-          <li><i class="icon-user"></i><%= link_to gender.gender, '#' %></li>
+        <li><i class="icon-user"></i><%= link_to gender.gender, '#' %></li>
         <% end %>
       </ul>
 
       Color:
       <ul>
-        <% @product.colors.each do |color| %>
-          <li><i class="icon-user"></i><%= link_to color.name, '#' %></li>
+      <% @colors.each do |color| %>
+        <li><i class="icon-user"></i><%= link_to color, '#' %></li>
         <% end %>
       </ul>
     </div>

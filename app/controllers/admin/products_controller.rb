@@ -8,6 +8,7 @@ class Admin::ProductsController < Admin::BaseController
 
   def show
     @product = Product.find(params[:id])
+    @colors  = @product.colours.group_by(&:name).keys
   end
 
   def new

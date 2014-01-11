@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  attr_accessible :description, :price, :title, :category_ids, :brand_id, :rank, :gender_ids, :video_href, :link_href, :old_price, :bestseller
+  attr_accessible :description, :price, :title, :category_ids, :brand_id, :rank, :gender_ids, :video_href, :link_href, :old_price, :bestseller, :colour_ids
 
   validates :title, :price, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }
@@ -59,8 +59,6 @@ class Product < ActiveRecord::Base
   end
 
 # Scope's:
-
-# ['Black'], colors
 
   def self.selecting_by(params_arr, type, ing = '', name = 'name')
     if params_arr
