@@ -60,6 +60,8 @@ class Product < ActiveRecord::Base
 
 # Scope's:
 
+# ['Black'], colors
+
   def self.selecting_by(params_arr, type, ing = '', name = 'name')
     if params_arr
       where_query = "#{type}#{ing}.#{name} = ?"

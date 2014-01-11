@@ -1,6 +1,8 @@
+<% @colors.each do |color| %>
 <li>
   <label>
-    <%= check_box_tag 'color_type', color.key %>
-    <%= color.key %>
+    <%= check_box_tag 'color_type', color[0] %>
+    <%= color[0] %>
   </label>
 </li>
+<% end %>
