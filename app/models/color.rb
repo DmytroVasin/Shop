@@ -1,4 +1,7 @@
 class Color < ActiveRecord::Base
-  attr_accessible :name
-  has_and_belongs_to_many :products
+  attr_accessible :image_id, :colour_id
+
+  belongs_to :product
+  belongs_to :image
+  belongs_to :colour
 end

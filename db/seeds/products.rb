@@ -2,7 +2,7 @@ def products_and_dependencies
   brands_ids   = Brand.pluck(:id)
   genders_ids  = Gender.pluck(:id)
   category_ids = Category.pluck(:id)
-  colors_ids   = Color.pluck(:id)
+  colors_ids   = Colour.pluck(:id)
 
   Product.populate 100 do |product|
     product.title       = Populator.words(2..3).titleize
@@ -18,8 +18,7 @@ def products_and_dependencies
   Product.all.each do |product|
     product.categories << Category.find(category_ids.sample)
     product.genders << Gender.find(genders_ids.sample)
-    product.colors << Color.find(colors_ids.sample)
-    product.images << Image.first
+    product.colors.create( colour_id: colors_ids.sample, image_id: Image.first.id)
   end
 
   Review.populate 3 do |review|

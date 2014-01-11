@@ -9,7 +9,8 @@ class ProductsController < ApplicationController
     @categories = Category.all
     @brands  = Brand.joins(:products).group('brands.id').order('name ASC')
     @genders = Gender.joins(:products).group('genders.id').order('gender ASC')
-    @colors  = Color.joins(:products).group('colors.id').order('name ASC')
+    # @colors  = Colour.joins(:products).group('name').order('name ASC')
+    @colors  = Colour.joins(:colors).order('name').group('name').count
 
     @products = Product.selecting_by(params[:categories_params], 'categories').selecting_by(params[:brands_params], 'brand', 's').selecting_by(params[:gender_params], 'genders', '', 'gender').selecting_by(params[:color_params], 'colors').price_between(params[:price_between]).sort_direction(params[:sort_direction], @sort_hash)
 

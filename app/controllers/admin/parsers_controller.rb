@@ -12,6 +12,16 @@ class Admin::ParsersController < Admin::BaseController
     source = params['remote_url']
     page = Nokogiri::HTML(open(source.to_s))
 
+
+    source_file_text = page.search("script")[19].text
+    source_file_text.gsub!(/(^pImgs.*)/, '@\1')
+
+    pImgsArray = source_file_text.scan(/^@pImgs.*/)
+    pImgsArray.each {|x| instance_eval(x) }
+
+    @pImgs
+
+
     @product = Product.new()
     @product.price = page.css('#priceSlot .price').first.content[1..-1] unless page.css('#priceSlot .price').blank?
     @product.title = page.css('.fn').first.content unless page.css('.fn').blank?
@@ -41,8 +51,9 @@ class Admin::ParsersController < Admin::BaseController
                                         large: source.search('a').first['href'].sub("MULTIVIEW", "4x") })
     end
 
+    @success = @product.save
+
     respond_to do |format|
-      @product.save!
       format.html { redirect_to admin_parsers_path, notice: 'Item was successfully created' }
       format.js
     end

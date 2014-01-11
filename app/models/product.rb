@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  attr_accessible :description, :price, :title, :category_ids, :brand_id, :rank, :gender_ids, :color_ids, :video_href, :link_href, :old_price, :bestseller
+  attr_accessible :description, :price, :title, :category_ids, :brand_id, :rank, :gender_ids, :video_href, :link_href, :old_price, :bestseller
 
   validates :title, :price, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }
@@ -21,10 +21,14 @@ class Product < ActiveRecord::Base
 
 
   has_many :line_items
-  has_and_belongs_to_many :images
   has_and_belongs_to_many :categories
   has_and_belongs_to_many :genders
-  has_and_belongs_to_many :colors
+
+  has_many :colors
+  has_many :images, through: :colors
+  has_many :colours, through: :colors
+
+
   belongs_to :brand
 
   accepts_nested_attributes_for :categories
