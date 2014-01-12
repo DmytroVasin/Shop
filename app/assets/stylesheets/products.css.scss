@@ -244,6 +244,12 @@
           border-radius: 2px;
           border : 1px solid #CCCCCC;
         }
+
+        &.hidden_element {
+          visibility: hidden;
+          width: 0px;
+          margin: 0px;
+        }
       }
     }
   }

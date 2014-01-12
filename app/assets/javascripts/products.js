@@ -96,6 +96,18 @@ $(function () {
 
 
 	$('#images_color').on('change', function(){
-		alert('!!!');
+		var selected_val = $('#images_color').val(),
+				num;
+
+		$('#slider a').each(function(index) {
+			if ( selected_val == $(this).data('color') ) {
+				num = $(this).index();
+
+				for(var i = 1; i <= num; i++) {
+					Navigate.leaf_over( 85 );
+      	};
+				return false;
+			}
+		});
 	});
 });

@@ -47,6 +47,16 @@ Navigate = {
 			.css({ left: '+='+size });
 			that.isAnimated = false;
 		});
+	},
+
+	leaf_over: function (size) {
+		var that = this;
+		list
+		.animate({ left: '-='+size }, 100, 'linear', function () {
+			list
+			.append( list.children().first() )
+			.css({ left: '+='+size });
+		});
 	}
 };
 
