@@ -1,6 +1,8 @@
 <% if @success && @product.valid? %>
 	$('#remote_url').val('');
+	$('.alert').remove();
   $('#product_form').html("<%=j render partial: 'product_form', locals: { product: @product } %>");
 <% else %>
-	  $('#product_form').html("<%=j render partial: 'went_wrong' %>");
+	$(".row").before("<%=j render partial: 'shared/parser_messages' %>");
+	$('#product_form').html("<%=j render partial: 'went_wrong' %>");
 <% end %>
