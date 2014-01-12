@@ -93,4 +93,9 @@ $(function () {
 	  })
 	};
 	$('body').on('change', ".sortdropdown, input:checkbox, #leftValue, #rightValue", throttle(changeMeter, 2000, {leading: false}));
+
+
+	$('#images_color').on('change', function(){
+		alert('!!!');
+	});
 });

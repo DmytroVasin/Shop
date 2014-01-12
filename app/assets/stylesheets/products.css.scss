@@ -193,8 +193,16 @@
   opacity: 0.3;
 }
 
+.color_select {
+  text-align: center;
+
+  span {
+    color: #97002E;
+  }
+}
+
 #all_images_wrapper {
-  margin-top: 8px;
+  margin: 2px 0 0 2px;
   height: 60px;
 
   .prev_img, .next_img {

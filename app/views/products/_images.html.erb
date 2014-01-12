@@ -1,1 +1,1 @@
-<%= link_to image_tag(image.small, class: 'img-circle'), '#', data: { :'image' => image.middle, :'zoom-image'=> image.large } %>
+<%= link_to image_tag(image.small, class: 'img-circle'), '#', data: { :'image' => image.middle, :'zoom-image'=> image.large, :'color'=> image.colours.try(:first).try(:name) } %>

@@ -27,7 +27,6 @@
   font-family : Georgia, Times, serif;
   line-height : 17px;
   cursor      : pointer;
-  margin-left : 10px;
   width       : 360px;
   display     : inline-block;
 }
@@ -72,18 +71,16 @@
       float : left;
     }
 
-    .right {
-      float  : right;
+    .adding_to_cart {
       height : 34px;
       cursor: pointer;
     }
 
     .price {
-      float          : left;
+      float          : right;
       margin         : 5px 0 0 0px;
       font-weight    : bold;
       vertical-align : middle;
-      width          : 360px;
 
       .old_price_stock {
         margin     : 5px 0 0 10px;

@@ -14,6 +14,11 @@
         <%= image_tag middle_image(@product), id: 'zooming', data: { :"zoom-image" =>   @product.images.first.large } %>
       </div>
 
+      <div class='color_select'>
+        <span>Расцветка:</span>
+        <%= select('images', 'color', @colors_name, include_blank: true) %>
+      </div>
+
       <div id="all_images_wrapper">
         <% if @images_count %>
           <div class="prev_img"></div>
@@ -54,6 +59,7 @@
 
       <div class='actions_for_product'>
 
+        <%= button_to 'Добавить в корзину', line_items_path(product_id: @product.id), class: 'btn_order adding_to_cart' %>
         <div class="price">
           <span class="price_count">цена:</span>
           <span class="price_inscription"><%= number_to_currency(@product.price, unit: 'грн.', format: '%n %u') %></span>
@@ -61,7 +67,6 @@
             <span class="old_price_stock"><del><%= number_to_currency(@product.old_price, unit: 'грн.', format: '%n %u') %></del></span>
           <% end %>
         </div>
-        <%= button_to 'Добавить в корзину', line_items_path(product_id: @product.id), class: 'btn_order right' %>
       </div>
     </div>
   </div>
