@@ -25,8 +25,8 @@ class Product < ActiveRecord::Base
   has_and_belongs_to_many :genders
 
   has_many :colors
-  has_many :images, through: :colors
-  has_many :colours, through: :colors
+  has_many :images, through: :colors, dependent: :nullify
+  has_many :colours, through: :colors, dependent: :nullify
 
 
   belongs_to :brand

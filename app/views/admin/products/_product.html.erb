@@ -1,6 +1,6 @@
 <tr>
   <td style='text-align: center;'><%= product.id %></td>
-  <td><%= image_tag product.images.first.small, alt: "Small img" %></td>
+  <td><%= image_tag small_image_by_product(product), alt: "Small img" %></td>
   <td><%= link_to truncate(product.title, length: 35), admin_product_path(product.id) %></td>
   <td><%= truncate(product.description, length: 140) %></td>
   <td style='padding-left: 22px;'><%= product.price %> грн</td>

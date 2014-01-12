@@ -1,6 +1,7 @@
 <% if current_admin %>
   <div id='sign_out'>
-    <%= link_to 'выйти из администратора', destroy_admin_session_path, method: :delete %>,
-    <%= link_to 'Admin', admin_root_path %>
+    <%= link_to 'Войти в админ. зону', admin_root_path %>
+    /
+    <%= link_to 'Выйти', destroy_admin_session_path, method: :delete %>
   </div>
 <% end %>

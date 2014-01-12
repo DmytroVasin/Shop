@@ -39,7 +39,11 @@ module ApplicationHelper
 
   def small_image_by_id(id)
     product = Product.find(id)
-    product ? product.images.first.small : '/assets/no_image_yet.jpg'
+    small_image_by_product(product) if product
+  end
+
+  def small_image_by_product(product)
+    product.images.try(:first).try(:small) || '/assets/no_image_yet.jpg'
   end
 
   def best_sellers_tag(id, value, count)

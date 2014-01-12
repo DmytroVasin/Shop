@@ -1,7 +1,7 @@
 class Admin::ImagesController < Admin::BaseController
 	def destroy
     @image = Image.find(params[:id])
-    product = @image.product.first
+    product = @image.products.first
     @image.destroy
     @images = product.images
 

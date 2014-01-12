@@ -16,11 +16,7 @@ class Admin::ParsersController < Admin::BaseController
     source_file_text = page.search("script")[19].text
     source_file_text.gsub!(/(^pImgs.*)/, '@\1')
 
-    pImgsArray = source_file_text.scan(/^@pImgs.*/)
-    pImgsArray.each {|x| instance_eval(x) }
-
-    @pImgs
-
+    source_file_text.scan(/^@pImgs.*/).each {|x| instance_eval(x) }
 
     @product = Product.new()
     @product.price = page.css('#priceSlot .price').first.content[1..-1] unless page.css('#priceSlot .price').blank?
