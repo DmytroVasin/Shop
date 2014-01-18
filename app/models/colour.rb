@@ -3,12 +3,4 @@ class Colour < ActiveRecord::Base
 
   has_many :colors
   has_many :products, through: :colors
-
-  def r_name
-  	if self.name_rus
-  		self.name_rus
-  	else
-  		'----'
-  	end
-  end
 end

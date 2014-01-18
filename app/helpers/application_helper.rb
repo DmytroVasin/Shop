@@ -64,4 +64,8 @@ module ApplicationHelper
     product = Product.find(id)
     product ? product.title : 'incorrect url'
   end
+
+  def rus_name(obj)
+    obj.name_rus ? obj.name_rus : content_tag(:div, obj.name, class: 'text-error')
+  end
 end

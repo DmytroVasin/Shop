@@ -162,15 +162,18 @@ table th, table td {
   color       : #333;
   font-family : Georgia, Times, serif;
   text-shadow : 0 0 1px #777777;
-}
 
-#perfume_category ul {
-  margin    : 3px 0 3px 10px;
-  font-size : 14px;
-}
-
-#perfume_category ul li {
-  line-height : 18px;
+  ul {
+    margin    : 3px 0 3px 10px;
+    font-size : 14px;
+    li {
+      line-height : 18px;
+      i.icon-th {
+        margin-top: 3px;
+        float: left;
+      }
+    }
+  }
 }
 
 #product_image {

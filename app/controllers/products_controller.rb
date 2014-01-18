@@ -35,7 +35,7 @@ class ProductsController < ApplicationController
   def show
     @product      = Product.find(params[:id])
     @images_count = @product.images.count > 4
-    @colors_name  = @product.colours.pluck(:name_rus)
+    @colors_name  = @product.colours.group_by(&:name_rus).keys
   end
 
 
