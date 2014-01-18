@@ -3,7 +3,7 @@
 <% else %>
   <li>
 <% end %>
-<%= link_to image_tag( middle_image(product), class: 'productimg'), product_path(product.id) %>
+<%= link_to image_tag( show_list_image(product), class: 'productimg'), product_path(product.id) %>
 
 <div class="productinfo">
   <div class="paddingwrapper">

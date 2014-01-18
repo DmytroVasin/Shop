@@ -2,7 +2,7 @@
   <div id="breadcrumb">
     <ul>
       <li><a href="/">Home</a></li>
-      <li>&raquo; <%= back_to_products('Perfumes') %></li>
+      <li>&raquo; <%= back_to_products('Products') %></li>
       <li>&raquo; <%= @product.title %></li>
     </ul>
     <div class="clear"></div>
@@ -11,7 +11,7 @@
   <div>
     <div class='product_image'>
       <div class='image_polaroid'>
-        <%= image_tag middle_image(@product), id: 'zooming', data: { :"zoom-image" =>   @product.images.first.large } %>
+        <%= image_tag show_list_image(@product), id: 'zooming', data: { :"zoom-image" => show_list_image_large(@product) } %>
       </div>
 
       <div class='color_select'>

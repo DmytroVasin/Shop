@@ -25,8 +25,8 @@ class Product < ActiveRecord::Base
   has_and_belongs_to_many :genders
 
   has_many :colors
-  has_many :images, through: :colors, dependent: :nullify
-  has_many :colours, through: :colors, dependent: :nullify
+  has_many :images, through: :colors, dependent: :nullify, uniq: true
+  has_many :colours, through: :colors, dependent: :nullify, uniq: true
 
 
   belongs_to :brand
@@ -72,7 +72,7 @@ class Product < ActiveRecord::Base
 
       params_arr.each { |x| query_full.push(x) }
 
-      joins(:"#{type}").where(query_full)
+      joins(:"#{type}").where(query_full).uniq(&:id)
     else
       scoped
     end

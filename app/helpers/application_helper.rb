@@ -33,7 +33,31 @@ module ApplicationHelper
     if product.images.empty?
       '/assets/no_image_yet.jpg'
     else
-      product.images.first.middle
+      product.images.last.middle
+    end
+  end
+
+  def large_image(product)
+    if product.images.empty?
+      '/assets/no_image_yet.jpg'
+    else
+      product.images.last.large
+    end
+  end
+
+  def show_list_image(product)
+    if product.images.empty?
+      '/assets/no_image_yet.jpg'
+    else
+      product.images.last.middle.split('-')[0] + '-1-MULTIVIEW.jpg'
+    end
+  end
+
+  def show_list_image_large(product)
+    if product.images.empty?
+      '/assets/no_image_yet.jpg'
+    else
+      product.images.last.middle.split('-')[0] + '-1-2x.jpg'
     end
   end
 
