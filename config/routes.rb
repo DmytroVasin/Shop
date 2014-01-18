@@ -23,6 +23,7 @@ Shop::Application.routes.draw do
     end
     resources :categories
     resources :brands
+    resources :colours
     resources :orders
     resources :images,  only: [:destroy]
     resources :parsers, only: [:index] do

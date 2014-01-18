@@ -1,0 +1,2 @@
+$('#colours_body').html('<%= escape_javascript render(@colours) %>');
+$('#paginator').html('<%= escape_javascript(paginate(@colours, window: 2, remote: true)) %>');

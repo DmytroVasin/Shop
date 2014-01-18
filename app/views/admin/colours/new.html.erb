@@ -1,0 +1,25 @@
+<legend><h3>Create new color:</h3></legend>
+
+<div id="category_new_perfume">
+  <%= form_for [:admin, @colour] do |f| %>
+
+    <div class="control-group">
+      <%= f.label :name, class: 'control-label' %>
+      <div class="controls">
+        <div class="input-prepend">
+          <span class="add-on"><i class="icon-th-list"></i></span>
+          <%= f.text_field :name, id: 'inputColor', placeholder: 'Color', autofocus: true %>
+        </div>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <div class="controls">
+        <%= f.submit 'Add', class: 'btn btn-success' %>
+      </div>
+    </div>
+
+  <% end %>
+</div>
+
+<%= link_to 'All colors', admin_colours_path, class: 'btn btn-inverse btn_back' %>
