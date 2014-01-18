@@ -13,7 +13,7 @@ class Admin::ParsersController < Admin::BaseController
     page = Nokogiri::HTML(open(source.to_s))
 
 
-    source_file_text = page.search("script")[19].text
+    source_file_text_gender = source_file_text = page.search("script")[19].text
     source_file_text.gsub!(/(^pImgs.*)/, '@\1')
 
     source_file_text.scan(/^@pImgs.*/).each {|x| instance_eval(x) }
@@ -41,6 +41,10 @@ class Admin::ParsersController < Admin::BaseController
     video_href = page.css('#video a')
     @product.video_href = video_href.first['href'].gsub("&autoPlays=true", "") unless video_href.blank?
     @colors  = @product.colours.group_by(&:name).keys
+
+
+    gender = source_file_text_gender.scan(/productGender.*/)[0].split('"')[-2]
+    @product.genders << Gender.where( gender: gender ).first_or_create
 
     @success = @product.save
 
