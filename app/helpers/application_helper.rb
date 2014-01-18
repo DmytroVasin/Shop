@@ -29,27 +29,12 @@ module ApplicationHelper
     link_to title, params.merge(sort: column, direction: direction, page: nil), style: "color: red;"
   end
 
-  def middle_image(product)
-    if product.images.empty?
-      '/assets/no_image_yet.jpg'
-    else
-      product.images.last.middle
-    end
-  end
-
-  def large_image(product)
-    if product.images.empty?
-      '/assets/no_image_yet.jpg'
-    else
-      product.images.last.large
-    end
-  end
 
   def show_list_image(product)
     if product.images.empty?
       '/assets/no_image_yet.jpg'
     else
-      product.images.last.middle.split('-')[0] + '-1-MULTIVIEW.jpg'
+      product.images.last.middle.split('-')[0] + '-p-MULTIVIEW.jpg'
     end
   end
 
@@ -57,7 +42,7 @@ module ApplicationHelper
     if product.images.empty?
       '/assets/no_image_yet.jpg'
     else
-      product.images.last.middle.split('-')[0] + '-1-2x.jpg'
+      product.images.last.middle.split('-')[0] + '-p-2x.jpg'
     end
   end
 
@@ -90,6 +75,6 @@ module ApplicationHelper
   end
 
   def rus_name(obj)
-    obj.name_rus ? obj.name_rus : content_tag(:div, obj.name, class: 'text-error')
+    obj.name_rus ? obj.name_rus : content_tag(:span, obj.name, class: 'text-error')
   end
 end
