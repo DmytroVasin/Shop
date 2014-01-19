@@ -24,7 +24,7 @@
 			Color:
 			<ul>
 				<% @visible_colors.each do |color| %>
-					<li><i class="icon-th"></i> <%= rus_name(color) %> </li>
+				<li><i class="icon-th"></i> <%= rus_name(color) %> </li>
 				<% end %>
 			</ul>
 		</div>
@@ -35,26 +35,42 @@
 			<%= link_to product.title, product.link_href %>
 		</div>
 
-		<div id='perfume_description'>
+		<div class='perfume_description'>
 			<%= form_for [:admin, @product], url: admin_product_path(@product), html: { class: 'form-horizontal' }, method: :put, remote: true do |f| %>
 			<div class="control-group">
 				<div class="description_margin">
 					<div class="input-prepend">
 						<%= f.text_area :description, id: 'text_area', placeholder: 'Добавить описание товара!' %>
 					</div>
+					<div class="clear"></div>
+					Старая цена должна быть БОЛЬШЕ чем новая!!!
 				</div>
 			</div>
+
+			<div class='price_inputs'>
+				<div class='description_margin'>
+					<%= f.text_field :price, class: 'admin_product_price', placeholder: 'Новая цена!' %>
+				</div>
+				<div class="description_margin">
+					<%= f.text_field :old_price, class: 'admin_product_price', placeholder: '26.80' %>
+				</div>
+			</div>
+
+			<div class="clear"></div>
+
 			<div class="description_margin">
 				<%= f.submit "Save!", class: "btn btn-primary" %>
 			</div>
 			<% end %>
 		</div>
 
-		<div id="perfume_price">
-			Цена: <span><%= product.price %></span> грн.
+		<div class="clear"></div>
+
+		<div class='price_description'>
+			<%= render 'price_displaing', product: product %>
 		</div>
+
 	</div>
-	<div class='perfume_instock rank'><%= product.rank %></div>
 
 	<table class="table table-hover">
 		<thead>

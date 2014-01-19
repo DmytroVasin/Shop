@@ -1,1 +1,3 @@
-$('#perfume_description').html("<%=j @product.description %>");
+$('.perfume_description').html("<%=j @product.description %>");
+$('.price_description').html("<%= j render(partial: 'admin/parsers/price_displaing', locals: { product: @product }) %>").css({ 'margin-top': '0px' });
+

@@ -9,7 +9,7 @@ class Product < ActiveRecord::Base
   validates :rank, numericality: { only_integer: true }
   validates :brand, :categories, presence: true
   validates :title, uniqueness: { case_sensitive: false }
-  validate :price_must_be_lower_than_old_price
+  validate :price_must_be_gr_than_old_price
 
 
   scope :newest, -> { order('updated_at DESC') }
@@ -35,8 +35,10 @@ class Product < ActiveRecord::Base
 
   before_destroy :not_referenced_by_any_line_items
 
-  def price_must_be_lower_than_old_price
-    errors.add(:price, "must be greater then old price") if self.old_price.to_i <= self.price.to_i  && self.old_price
+  def price_must_be_gr_than_old_price
+    if self.old_price
+      errors.add(:price, "must be greater then old price") if self.old_price.to_f <= self.price.to_f
+    end
   end
 
   private

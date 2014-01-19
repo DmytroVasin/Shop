@@ -34,7 +34,7 @@ class Admin::ProductsController < Admin::BaseController
     @product = Product.find(params[:id])
 
     respond_to do |format|
-      if @product.update_attributes(params[:product])
+      if @product.update_attributes!(params[:product])
         flash[:notice] = 'Product updated'
         format.html { redirect_to admin_product_path(@product.id) }
         format.js

@@ -102,18 +102,27 @@ table th, table td {
   }
 }
 
-#perfume_description {
+.perfume_description {
   font-size   : 16px;
   margin-left : 20px;
 }
 
-#perfume_price{
+.price_description {
+  margin-top: -120px;
+  margin-left: 20px;
+}
+
+.perfume_price{
   margin: 5px 0 0 40px;
   font-size   : 16px;
   color       : #F00;
   float       : left;
   span {
     font-size : 25px;
+    &.line-through {
+      font-size : 16px;
+      text-decoration: line-through;
+    }
   }
 }
 
@@ -240,8 +249,17 @@ table th, table td {
 
 .description_margin {
   margin-left: 40px;
+  float: left;
+  .btn {
+    margin-top: 20px;
+  }
 }
-
+.price_inputs {
+  margin-top: 40px;
+}
+.admin_product_price {
+  width: 132px;
+}
 .small_icon_img {
   width: 70px;
 }
