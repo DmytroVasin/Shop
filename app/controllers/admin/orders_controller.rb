@@ -2,7 +2,7 @@ class Admin::OrdersController < Admin::BaseController
   before_filter :authenticate_admin!
 
   def index
-    @orders = Order.preload(:line_items)
+    @orders = Order.includes(:line_items)
     @orders = @orders.order(sort_column('Order') + ' ' + sort_direction).page(params[:page]).per(10)
   end
 
