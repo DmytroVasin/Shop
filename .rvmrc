@@ -1,1 +1,1 @@
-rvm use --create ruby-1.9.3-p327@shop 
+rvm use --create ruby-2.0.0-p451@shop

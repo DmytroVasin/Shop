@@ -337,7 +337,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   brakeman
-  capistrano
+  capistrano (~> 2.15)
   capybara
   coffee-rails (~> 3.2.1)
   database_cleaner
