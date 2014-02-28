@@ -39,29 +39,29 @@ group :development do
 
   gem 'roodi'
 
-  gem 'rails_best_practices'
+  # gem 'rails_best_practices'
   # rails_best_practices -f html --with-textmate
 
-  gem 'metrical', :require => false
+  # gem 'metrical', :require => false
   # metrical
-    gem 'fattr'
-    gem 'arrayfields'
-    gem 'map'
-    gem 'ripl-ripper'
+    # gem 'fattr'
+    # gem 'arrayfields'
+    # gem 'map'
+    # gem 'ripl-ripper'
 end
 
 group :test do
-  gem 'simplecov', require: false
+  # gem 'simplecov', require: false
   #COVERAGE=true rspec spec/
 
-  gem 'database_cleaner', require: false
-  gem 'factory_girl_rails', require: false
-  gem 'ffaker', require: false
-  gem 'launchy', require: false
+  # gem 'database_cleaner', require: false
+  # gem 'factory_girl_rails', require: false
+  # gem 'ffaker', require: false
+  # gem 'launchy', require: false
 
-  gem 'spork', require: false
-  gem 'guard-rspec', require: false
-  gem 'guard-spork'
+  # gem 'spork', require: false
+  # gem 'guard-rspec', require: false
+  # gem 'guard-spork'
 end
 
 group :test, :development do
