@@ -1,5 +1,5 @@
 require "bundler/capistrano"
-require "rvm/capistrano"
+#require "rvm/capistrano"
 
 server "188.226.157.249", :web, :app, :db, primary: true
 
@@ -13,7 +13,8 @@ set :use_sudo, false
 set :scm, "git"
 set :repository, "git@github.com:DemitriyDN/Shop.git"
 set :branch, "master"
-set :rvm_ruby_string, 'ruby-2.0.0-p451'
+#set :rvm_ruby_string, 'ruby-2.0.0-p451'
+set :default_environment, 'PATH' => '$HOME/.rbenv/shims:$PATH'
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
