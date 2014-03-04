@@ -87,6 +87,7 @@ gem 'newrelic_rpm'
 # To use debugger
 # gem 'debugger'
 
+gem 'unicorn'
 gem 'capistrano', '~> 2.15'
 gem 'rvm-capistrano'
 
