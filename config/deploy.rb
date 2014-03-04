@@ -6,7 +6,7 @@ server "188.226.157.249", :web, :app, :db, primary: true
 set :application, "shop"
 set :user, "dv"
 set :port, 22
-set :deploy_to, "/home/#{user}/apps/#{application}"
+set :deploy_to, "/var/www/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
