@@ -89,3 +89,7 @@ gem 'newrelic_rpm'
 
 gem 'capistrano', '~> 2.15'
 gem 'rvm-capistrano'
+
+# ???
+gem 'therubyracer'
+gem 'execjs'
