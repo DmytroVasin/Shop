@@ -13,6 +13,7 @@ set :use_sudo, false
 set :scm, "git"
 set :repository, "git@github.com:DemitriyDN/Shop.git"
 set :branch, "master"
+set :rvm_ruby_string, 'ruby-2.0.0-p451'
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
