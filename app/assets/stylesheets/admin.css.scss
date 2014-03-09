@@ -177,9 +177,12 @@ table th, table td {
     font-size : 14px;
     li {
       line-height : 18px;
-      i.icon-th {
-        margin-top: 3px;
-        float: left;
+      i {
+        margin-right: 5px;
+        &.icon-th {
+          margin-top: 3px;
+          float: left;
+        }
       }
     }
   }
