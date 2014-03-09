@@ -8,7 +8,8 @@
     <div class="clear"></div>
   </div>
 
-  <div>
+  <div class='FormWrapper'>
+  <%= form_for "line_item", url: line_items_path do |f| %>
     <div class='product_image'>
       <div class='image_polaroid'>
         <%= image_tag show_list_image(@product), id: 'zooming', data: { :"zoom-image" => show_list_image_large(@product) } %>
@@ -16,7 +17,7 @@
 
       <div class='color_select'>
         <span>Расцветка:</span>
-        <%= select('images', 'color', @colors_name, include_blank: true) %>
+        <%= f.select 'color', options_from_collection_for_select(@colors_name, "name", "name_rus") %>
       </div>
 
       <div id="all_images_wrapper">
@@ -58,8 +59,8 @@
       <a href='/delivery' class='get_back link_color'>Просмотреть возможные способы доставки</a>
 
       <div class='actions_for_product'>
-
-        <%= button_to 'Добавить в корзину', line_items_path(product_id: @product.id), class: 'btn_order adding_to_cart' %>
+        <%= f.hidden_field 'current_product', value: @product.id %>
+        <%= f.submit 'Добавить в корзину', class: 'btn_order adding_to_cart' %>
         <div class="price">
           <span class="price_count">цена:</span>
           <span class="price_inscription"><%= number_to_currency(@product.price, unit: 'грн.', format: '%n %u') %></span>
@@ -69,6 +70,7 @@
         </div>
       </div>
     </div>
+  <% end %>
   </div>
 </div>
 <div class="clear"></div>

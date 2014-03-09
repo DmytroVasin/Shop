@@ -12,15 +12,17 @@
 
   <table class='table_cart'>
     <thead class='table_head'>
-    <th>Product</th>
-    <th>Price</th>
-    <th colspan="2">Quantity</th>
-    <th>Add/Sub</th>
-    <th>Remove</th>
+      <th>Товар</th>
+      <th>Название</th>
+      <th>Цвет</th>
+      <th>Цена</th>
+      <th>Количество</th>
+      <th> + / - </th>
+      <th>Удалить</th>
     </thead>
 
     <tbody id='cart'>
-    <%= render partial: 'carts/items', locals: { items: @items } %>
+      <%= render partial: 'carts/items', locals: { items: @items } %>
     </tbody>
   </table>
 

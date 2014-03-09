@@ -6,6 +6,9 @@
     <td class="namesize">
       <%= link_to item.product.title, product_path(item.product.id) %>
     </td>
+    <td class="item_price">
+      Чёрный
+    </td>
     <td class='item_price'>
       <%= number_to_currency(item.price, unit: 'грн.', format: '%n %u') %>
     </td>

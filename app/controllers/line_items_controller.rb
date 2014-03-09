@@ -1,7 +1,9 @@
 class LineItemsController < ApplicationController
   def create
+    param      = params[:line_item]
+    # param[:color] => "Black"
     @cart      = current_cart
-    product    = Product.find(params[:product_id])
+    product    = Product.find(param[:current_product])
     @line_item = @cart.add_product(product, @cart.id)
 
     respond_to do |format|

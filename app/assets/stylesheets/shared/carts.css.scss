@@ -24,8 +24,9 @@
 }
 
 .cart_image {
+  margin-top: 10px;
   width  : 75px;
-  height : 75px;
+  height : 60px;
 }
 
 .table_head {
@@ -84,13 +85,13 @@
 }
 
 #cart tr td {
-  padding    : 10px;
+  padding    : 0px 10px;
   text-align : center;
+  vertical-align: middle;
 }
 
 .namesize a {
-  line-height : 75px;
-  color       : #333;
+  color       : #3734E3;
   float       : left;
   font-family : Georgia, Times, serif;
   font-size   : 13px;
@@ -112,7 +113,14 @@
 
   .actions_with_quantity {
     width  : 40px;
-    height : 78px;
+    height : 72px;
+    a {
+      height: 33px;
+      display: block;
+      &:first-child {
+        margin-bottom: 5px;
+      }
+    }
   }
 }
 
