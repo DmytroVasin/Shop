@@ -1,4 +1,3 @@
 def add_admin
-  Admin.create(email:    'dracon779@gmail.com',
-               password: 'password')
+  Admin.create(email: 'nick-supernick@gmail.com', password: 'epyfnm')
 end
