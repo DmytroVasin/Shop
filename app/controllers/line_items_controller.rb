@@ -4,7 +4,7 @@ class LineItemsController < ApplicationController
     # param[:color] => "Black"
     @cart      = current_cart
     product    = Product.find(param[:current_product])
-    @line_item = @cart.add_product(product, @cart.id)
+    @line_item = @cart.add_product(product, @cart.id, param[:color])
 
     respond_to do |format|
       if @line_item.save

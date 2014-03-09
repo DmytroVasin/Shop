@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140118075909) do
+ActiveRecord::Schema.define(:version => 20140309150831) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",              :default => "", :null => false
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20140118075909) do
     t.integer  "quantity",                                 :default => 1
     t.decimal  "price",      :precision => 8, :scale => 2
     t.integer  "order_id"
+    t.string   "color"
   end
 
   create_table "orders", :force => true do |t|

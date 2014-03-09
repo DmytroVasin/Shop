@@ -77,4 +77,12 @@ module ApplicationHelper
   def rus_name(obj)
     obj.name_rus ? obj.name_rus : content_tag(:span, obj.name, class: 'text-error')
   end
+
+  def rus_name_by color
+    Colour.find_by_name(color).name_rus
+  end
+
+  def find_correct_image_for line_item
+    line_item.product.images.includes(:colours).where(colours: {name: line_item.color}).all.first.small
+  end
 end

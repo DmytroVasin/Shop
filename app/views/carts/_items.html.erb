@@ -1,13 +1,13 @@
 <% items.each do |item| %>
   <tr>
     <td>
-      <%= image_tag item.product.images.first.small, class: 'cart_image' %>
+      <%= image_tag find_correct_image_for(item), class: 'cart_image' %>
     </td>
     <td class="namesize">
       <%= link_to item.product.title, product_path(item.product.id) %>
     </td>
     <td class="item_price">
-      Чёрный
+      <%= rus_name_by item.color %>
     </td>
     <td class='item_price'>
       <%= number_to_currency(item.price, unit: 'грн.', format: '%n %u') %>
