@@ -1,21 +1,23 @@
 $(function () {
-	$("#zooming").elevateZoom({ zoomWindowPosition: 2, zoomWindowOffetx: 35 });
-
 	$('.video_slider').on('click', function(){
 		$('.iframe_video_wrapper').stop(true).slideToggle('show');
 		$(this).toggleClass('border_bottom');
 	});
 
-	$(".image_polaroid img").elevateZoom({gallery:'wrap_image_rotator', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: '/assets/progres.gif'});
 
-	$(".image_polaroid img").bind("click", function(e) {
-		var ez =   $('.image_polaroid img').data('elevateZoom');
-		$.fancybox(ez.getGalleryList());
-		return false;
-	});
+	// ZOOM paginator      --------------------------------------------------------------
+  var main_image = $('.image_polaroid img');
+  main_image.elevateZoom({gallery:'wrap_image_rotator', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: '/assets/progres.gif', zoomWindowPosition: 2, zoomWindowOffetx: 35 });
+
+  main_image.bind("click", function(e) {
+    var ez = main_image.data('elevateZoom');
+    $.fancybox(ez.getGalleryList());
+    return false;
+  });
+  // ZOOM paginator  END  --------------------------------------------------------------
 
 
-	// ENDLESS paginator     -------------------------------------------------------------
+  // ENDLESS paginator     -------------------------------------------------------------
 	  $('body').on('click', '#ednless_paginator', function () {
 
 	    url = $('.pagination .next_page').attr('href').replace("flag=true","flag=false");;
@@ -24,7 +26,7 @@ $(function () {
 	      $('.pagination ul').replaceWith('<div id="endless_message"></div>');
 	    }
 	  });
-	// ENDLESS pagination END  ----------------------------------------------------------
+	// ENDLESS pagination END  -----------------------------------------------------------
 
 	// Throttle method from underscore.js
 	throttle = function(func, wait, options) {
