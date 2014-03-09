@@ -18,14 +18,14 @@ $(function () {
 
 
   // ENDLESS paginator     -------------------------------------------------------------
-	  $('body').on('click', '#ednless_paginator', function () {
+  $('body').on('click', '#ednless_paginator', function () {
 
-	    url = $('.pagination .next_page').attr('href').replace("flag=true","flag=false");;
-	    if (url) {
-	      $.getScript(url);
-	      $('.pagination ul').replaceWith('<div id="endless_message"></div>');
-	    }
-	  });
+   url = $('.pagination .next_page').attr('href').replace("flag=true","flag=false");;
+   if (url) {
+     $.getScript(url);
+     $('.pagination ul').replaceWith('<div id="endless_message"></div>');
+   }
+ });
 	// ENDLESS pagination END  -----------------------------------------------------------
 
 	// Throttle method from underscore.js
@@ -81,35 +81,48 @@ $(function () {
 		};
 
     $.ajax({
-	    type: "GET",
-	    url: '/products.js',
-	    data: {
-	      categories_params: getValues(categories),
-	      brands_params: getValues(brands),
-	      gender_params: getValues(gender),
-	      color_params: getValues(color),
-	      price_between: getPrice,
-	      sort_direction: select_val,
-	      flag: true
+     type: "GET",
+     url: '/products.js',
+     data: {
+       categories_params: getValues(categories),
+       brands_params: getValues(brands),
+       gender_params: getValues(gender),
+       color_params: getValues(color),
+       price_between: getPrice,
+       sort_direction: select_val,
+       flag: true
+     }
+   })
+  };
+  $('body').on('change', ".sortdropdown, input:checkbox, #leftValue, #rightValue", throttle(changeMeter, 2000, {leading: false}));
+
+
+  function startSlider(value){
+    var num;
+
+    $('#slider a').each(function(index) {
+      if ( value == $(this).data('color') ) {
+        num = $(this).index();
+
+        for(var i = 1; i <= num; i++) {
+          Navigate.leaf_over( 85 );
+        };
+        return false;
       }
-	  })
-	};
-	$('body').on('change', ".sortdropdown, input:checkbox, #leftValue, #rightValue", throttle(changeMeter, 2000, {leading: false}));
+    });
+  }
 
+  $('.color_select #line_item_color').on('change', function(){
+    var selected_val = $(this).val();
+    $('.main_color_select #line_item_color').val(selected_val);
 
-	$('#images_color').on('change', function(){
-		var selected_val = $('#images_color').val(),
-				num;
+    startSlider(selected_val);
+  });
 
-		$('#slider a').each(function(index) {
-			if ( selected_val == $(this).data('color') ) {
-				num = $(this).index();
+  $('.main_color_select #line_item_color').on('change', function(){
+    var mainColorSelectTag = $(this).val();
+    $('.color_select #line_item_color').val(mainColorSelectTag);
 
-				for(var i = 1; i <= num; i++) {
-					Navigate.leaf_over( 85 );
-      	};
-				return false;
-			}
-		});
-	});
+    startSlider(mainColorSelectTag);
+  });
 });

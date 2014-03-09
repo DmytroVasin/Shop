@@ -61,6 +61,7 @@
       <div class='actions_for_product'>
         <%= f.hidden_field 'current_product', value: @product.id %>
         <%= f.submit 'Добавить в корзину', class: 'btn_order adding_to_cart' %>
+
         <div class="price">
           <span class="price_count">цена:</span>
           <span class="price_inscription"><%= number_to_currency(@product.price, unit: 'грн.', format: '%n %u') %></span>
@@ -68,7 +69,15 @@
             <span class="old_price_stock"><del><%= number_to_currency(@product.old_price, unit: 'грн.', format: '%n %u') %></del></span>
           <% end %>
         </div>
+
+        <div class="clear"></div>
       </div>
+
+      <div class='main_color_select'>
+        <span>Цвет:</span>
+        <%= f.select 'color', options_from_collection_for_select(@colors_name, 'name', 'name_rus') %>
+      </div>
+
     </div>
   <% end %>
   </div>

@@ -2,14 +2,16 @@
   <tbody>
   <tr>
     <th>Название</th>
+    <th>Цвет</th>
     <th>Количество</th>
     <th>Цена</th>
   </tr>
   <% @line_items.each do |item|  %>
     <tr>
-      <td class="order_title normal"><%= item.product.title %></td>
-      <td style="text-align:center" class="normal"><%= item.quantity %>шт.</td>
-      <td align="right" class="normal"><%= number_to_currency(item.price, unit: 'грн.', format: '%n %u') %></td>
+      <td class='order_title normal'><%= item.product.title %></td>
+      <td align='center' class='normal'><%= rus_name_by item.color %></td>
+      <td align='center' class='normal'><%= item.quantity %>шт.</td>
+      <td align='right' class='normal'><%= number_to_currency(item.price, unit: 'грн.', format: '%n %u') %></td>
     </tr>
   <% end %>
   <tr>
