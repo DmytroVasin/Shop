@@ -33,12 +33,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product      = Product.find(params[:id])
-    @images_count = @product.images.count > 4
+    @product        = Product.find(params[:id])
+    @product_colors = @product.colors.preload(:image)
+    @images_count   = @product_colors.count > 4
     # Why we use ".group_by(&:name_rus).keys" but not a "pluck"?
     # @colors_name  = @product.colours.group_by(&:name_rus).keys
     # @colors_name  = @product.colours.pluck(:name_rus)
-    @colors_name  = @product.colours.uniq
+    @colors_name    = @product.colours.uniq
   end
 
 
