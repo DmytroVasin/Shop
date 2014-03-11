@@ -7,6 +7,7 @@
     // tric to load progres.gif
     background          : url(/assets/progres.gif) no-repeat;
     background-position : left center;
+    margin-top          : 20px;
 
     a {
       display    : block;
@@ -19,7 +20,7 @@
     margin-top : 10px;
 
     .topnav {
-      margin: 26px 45px 0 0;
+      margin: 30px 45px 0 0;
       float: left;
       width: 360px;
       font-size: 19px;
@@ -34,23 +35,12 @@
     }
   }
 
-  img.giftLabel {
-    float    : left;
-    z-index  : 100;
-    position : relative;
-  }
-
   .basket {
     float      : left;
     margin-top : 15px;
 
     .basketimg {
-      background  : url(/assets/delivery.jpg) no-repeat 0 4px transparent;
-      width       : 70px;
-      height      : 82px;
-      display     : block;
       float       : left;
-      text-indent : -5000px;
     }
 
     .basketcontent {

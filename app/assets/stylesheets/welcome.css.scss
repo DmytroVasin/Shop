@@ -237,7 +237,7 @@
     .votes_logo {
       width      : 190px;
       height     : 180px;
-      background : url("Vote.png") no-repeat;
+      background : url("vote_vk.png") no-repeat;
       margin     : 10px 0 0 40px;
     }
 
@@ -304,35 +304,41 @@
     font-family : Georgia, Times, serif;
     line-height : 17px;
 
-    .wrapper_of_remote_site {
-      height   : 133px;
-      overflow : hidden;
+    // .wrapper_of_remote_site {
+    //   height   : 133px;
+    //   overflow : hidden;
 
-      .blog {
-        margin : 10px 0 7px 0;
-        a {
-          text-shadow : 0 0 1px #777;
-          color       : #333;
-          font-size   : 17px;
-        }
-      }
-      .description_blog {
+    //   .blog {
+    //     margin : 10px 0 7px 0;
+    //     a {
+    //       text-shadow : 0 0 1px #777;
+    //       color       : #333;
+    //       font-size   : 17px;
+    //     }
+    //   }
+    //   .description_blog {
 
-        margin-bottom : 10px;
-        overflow      : hidden;
-        height        : 70px;
-      }
+    //     margin-bottom : 10px;
+    //     overflow      : hidden;
+    //     height        : 70px;
+    //   }
+    // }
+    .banner {
+      height: 125px;
+      width: 243px;
     }
 
     .aboveline_blog {
       margin-top : 10px;
+      margin-bottom: 2px;
       box-shadow : 0 1px 1px #E183A0;
       border-top : 1.6px solid #97002E;
     }
+
     .underline_blog {
+      margin-top: 2px;
       box-shadow    : 0 1px 1px #E183A0;
       border-bottom : 1.6px solid #97002E;
     }
-
   }
 }

@@ -1,6 +1,6 @@
 <div id="header">
   <div class="left">
-    <a href="/"><img src="/assets/prudence_paris_logo.jpg" alt="lorem"></a>
+    <a href="/"><%= image_tag('vk_logo.jpg') %></a>
   </div>
   <div class="right">
     <div class="topnav">
@@ -9,15 +9,13 @@
       <div class="clear"></div>
     </div>
 
-    <img src="/assets/GiftLabel.png" alt="free standard Ucraine delivery" class="giftLabel">
-
     <% if session[:cart_id] %>
       <div class="basket">
         <%= render 'shared/header_cart' %>
       </div>
     <% else %>
       <div class="basket">
-        <a href="/" class="basketimg">Basket</a>
+        <%= image_tag('red_cart.jpg', class: 'basketimg') %>
         <div class="no_basketcontent">
           <img src="/assets/empty_cart.jpg" alt="empty">
         </div>
