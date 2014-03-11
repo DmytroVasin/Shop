@@ -82,6 +82,16 @@
 
 .table_cart {
   width : 100%;
+  tbody {
+    tr {
+      border-top: 1px dashed #DCDCDC;
+      height : 42px;
+
+      &:first-child {
+        border-top: none;
+      }
+    }
+  }
 }
 
 #cart tr td {

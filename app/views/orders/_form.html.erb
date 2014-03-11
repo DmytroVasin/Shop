@@ -33,13 +33,13 @@
         <%= f.label :address, "Адрес <span class=\"orange\">*</span>".html_safe %>
         <%= f.text_field :address, placeholder: 'ул. Антропова дом 52 кв 15' %>
       </li>
-      <li class='error_msg_for_li'>
-        <%= f.label :city, "Город <span class=\"orange\">*</span>".html_safe %>
-        <%= f.text_field :city %>
-      </li>
       <li>
         <%= f.label :region, "Область <span class=\"orange\">*</span>".html_safe %>
         <%= f.select :region, Order::REGIONS, { include_blank: true }, required: true %>
+      </li>
+      <li class='error_msg_for_li'>
+        <%= f.label :city, "Город <span class=\"orange\">*</span>".html_safe %>
+        <%= f.text_field :city %>
       </li>
       <li>
         <%= f.label :pay_type, "Оплата <span class=\"orange\">*</span>".html_safe %>
