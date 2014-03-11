@@ -7,7 +7,7 @@
     // tric to load progres.gif
     background          : url(/assets/progres.gif) no-repeat;
     background-position : left center;
-    margin-top          : 20px;
+    margin              : 20px 0 25px 0;
 
     a {
       display    : block;
@@ -40,6 +40,11 @@
     margin-top : 15px;
 
     .basketimg {
+      background  : url(/assets/red_cart.jpg) no-repeat 0 4px transparent;
+      width       : 70px;
+      height      : 82px;
+      display     : block;
+
       float       : left;
     }
 
@@ -74,9 +79,10 @@
         line-height   : 20px;
         margin-left   : 10px;
         margin-bottom : 24px;
+        padding-right : 5px;
 
         span {
-          text-align : center;
+          text-align : right;
           width      : 100%;
         }
       }

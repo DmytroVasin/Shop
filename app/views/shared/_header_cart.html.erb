@@ -1,4 +1,4 @@
-<%= link_to 'Basket', cart_path(session[:cart_id]), class: 'basketimg' %>
+<%= link_to '', cart_path(session[:cart_id]), class: 'basketimg' %>
 <div class="basketcontent">
   <div class="cartItems">
     <span class="basketnum"><%= pluralize_ru(current_cart.line_items.sum(:quantity), 'Товар') %>:</span>
