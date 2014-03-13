@@ -46,6 +46,8 @@ Shop::Application.routes.draw do
   match 'another' => 'optional_pages#another'
   match 'action' => 'optional_pages#action'
   match 'the_history' => 'optional_pages#the_history'
+  match 'materials' => 'optional_pages#materials'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

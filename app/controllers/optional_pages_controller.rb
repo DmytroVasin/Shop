@@ -34,4 +34,7 @@ class OptionalPagesController < ApplicationController
 
   def the_history
   end
+
+  def materials
+  end
 end
