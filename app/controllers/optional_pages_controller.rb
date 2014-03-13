@@ -8,9 +8,6 @@ class OptionalPagesController < ApplicationController
   def warranties
   end
 
-  def service
-  end
-
   def faqs
   end
 
@@ -20,13 +17,7 @@ class OptionalPagesController < ApplicationController
   def policy
   end
 
-  def delay_prodcuts
-  end
-
   def delivery
-  end
-
-  def another
   end
 
   def action
