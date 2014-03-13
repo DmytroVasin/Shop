@@ -31,4 +31,7 @@ class OptionalPagesController < ApplicationController
 
   def action
   end
+
+  def the_history
+  end
 end
