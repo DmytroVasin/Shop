@@ -60,15 +60,10 @@ body {
 /* --- Button order START --- */
 
 .btn_order {
-
-
   letter-spacing: 1px;
   font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
   text-shadow: 2px 2px 2px #777;
 
-  -moz-box-shadow       : inset 0 1px 0 0 #e183a0;
-  -webkit-box-shadow    : inset 0 1px 0 0 #e183a0;
-  box-shadow            : inset 1px 1px 0 0 #e183a0;
   background            : -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e183a0), color-stop(1, #97002e));
   background            : -moz-linear-gradient(center top, #e183a0 5%, #bbb 100%);
   filter                : progid:DXImageTransform.Microsoft.gradient(startColorstr='#e183a0', endColorstr='#bbb');
