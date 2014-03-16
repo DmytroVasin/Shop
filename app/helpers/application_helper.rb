@@ -56,7 +56,7 @@ module ApplicationHelper
   end
 
   def best_sellers_tag(id, value, count)
-    disabling = ( count >= 4 && value == false )
+    disabling = ( count >= 8 && value == false )
     check_box_tag 'best_sellers', value, value, disabled: disabling, data: { product_id: id }
   end
 

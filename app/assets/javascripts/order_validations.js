@@ -12,10 +12,8 @@ $(function() {
   $("#order_email, #order_phone").on('blur', function() {
     if ( $(this).data('value') == 'phone' ) {
       RegExp = phone;
-      console.log(RegExp);
     } else {
       RegExp = email;
-      console.log(RegExp);
     }
 
     condition = RegExp.test(this.value);

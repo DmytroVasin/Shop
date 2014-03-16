@@ -1,12 +1,12 @@
 .underline_index {
   border-bottom: 1.6px solid #97002E;
   width: 620px;
-  margin-left: 62px;
+  margin: 5px 0 0 62px;
   box-shadow: 0 1px 1px #E183A0;
 }
 
 .second {
-  margin-top : 10px;
+  margin-top : 15px;
 }
 
 #rotator {
@@ -105,14 +105,15 @@
           }
 
           .title {
-            margin-left : 3px;
-            width       : 110px;
-            line-height : 15px;
-            overflow    : hidden;
-            font-family : Georgia;
-            font-size   : 12px;
-            max-height  : 28px;
-            color       : #333;
+            /* margin-left: 3px; */
+            /* width: 110px; */
+            /* max-height: 28px; */
+            /* color: #333; */
+            line-height: 15px;
+            overflow: hidden;
+            font-family: Georgia;
+            font-size: 12px;
+            text-align: center;
           }
 
           .best_seller_image {
@@ -149,15 +150,14 @@
       width      : 300px;
       height     : 181px;
       float      : left;
-      margin     : 10px 10px 0 10px;
+      margin     : 18px 10px 0 10px;
 
       .new_product_title {
         margin-top  : 10px;
         font-size   : 17px;
         font-weight : bold;
         font-family : Georgia, Times, serif;
-        color       : #444;
-        text-shadow : 1px 1px 3px #E183A0;
+        color       : #000;
         text-align  : center;
       }
 
@@ -244,10 +244,9 @@
     .question {
       color       : #444444;
       font-family : Arial, serif;
-      text-shadow : 2px 2px 3px #777777;
       line-height : 20px;
       font-size   : 16px;
-      color       : #333;
+      color       : #000;
       text-align  : center;
     }
 

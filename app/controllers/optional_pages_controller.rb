@@ -11,9 +11,6 @@ class OptionalPagesController < ApplicationController
   def faqs
   end
 
-  def security
-  end
-
   def policy
   end
 

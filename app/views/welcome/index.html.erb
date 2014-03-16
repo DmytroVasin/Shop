@@ -34,8 +34,11 @@
   <%= render 'ratings/voting_menu' %>
 
   <div id="remote_site">
-    <div class="aboveline_blog"></div>
-    <%= image_tag('banner_'+rand(1..4).to_s+'.png', class: 'banner') %>
+    <!-- <div class="aboveline_blog"></div> -->
+    <% (1..16).to_a.sample(4).each do |number|  %>
+      <div class="aboveline_blog"></div>
+      <%= image_tag('banner_'+number.to_s+'.png', class: 'banner') %>
+    <% end %>
     <div class="underline_blog"></div>
   </div>
 </div>
