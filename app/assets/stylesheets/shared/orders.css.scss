@@ -8,7 +8,7 @@ table.sale_order_full {
   background-color : #F9FAFB;
   line-height      : 22px;
   margin-left      : 118px;
-  width            : 600px;
+  width            : 747px;
 
   th, td {
     border         : 1px solid #ADC3D5;
@@ -33,6 +33,9 @@ table.sale_order_full {
 
   td.bold {
     font-weight : bold;
+  }
+  td.price_to_pay {
+    background-color: #D8FF87;
   }
 }
 

@@ -1,36 +1,36 @@
 <div class="questions">
   <div class="votes_logo"></div>
   <div class="question">
-    Какую цену вы готовы заплатить за сумку? ( грн )
+    Каким способом Вам удобно оплачивать заказ?
   </div>
   <%= form_for @ratings, url: ratings_path do |f| %>
     <div class="list_of_price">
       <%= f.radio_button('point', '1') %>
-      <%= f.label :point, 'до 150' %>
+      <%= f.label :point, 'Наложенный платеж' %>
     </div>
     <div class="list_of_price">
       <%= f.radio_button('point', '2') %>
-      <%= f.label :point, '150 < 200' %>
+      <%= f.label :point, 'Приват банка (терминал)' %>
     </div>
     <div class="list_of_price">
       <%= f.radio_button('point', '3') %>
-      <%= f.label :point, '200 < 350' %>
+      <%= f.label :point, 'Webmoney' %>
     </div>
     <div class="list_of_price">
       <%= f.radio_button('point', '4') %>
-      <%= f.label :point, '350 < 400' %>
+      <%= f.label :point, 'Яндекс-деньги' %>
     </div>
     <div class="list_of_price">
       <%= f.radio_button('point', '5') %>
-      <%= f.label :point, '400 < 500' %>
+      <%= f.label :point, 'Оплата картой (visa, mastercard)' %>
     </div>
     <div class="list_of_price">
       <%= f.radio_button('point', '6') %>
-      <%= f.label :point, '500+' %>
+      <%= f.label :point, 'Другой вариант' %>
     </div>
     <div class="list_of_price">
       <%= f.radio_button('point', '7') %>
-      <%= f.label :point, 'Цена не важна' %>
+      <%= f.label :point, 'Способ оплаты не важен' %>
     </div>
 
     <%= f.submit 'Отправить', id: 'subm_vote' %>
