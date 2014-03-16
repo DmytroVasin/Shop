@@ -3,12 +3,12 @@
     <legend>Заполните личные данные</legend>
     <ul>
       <li class='error_msg_for_li'>
-        <%= f.label :name, "Имя и oтчeствo <span class=\"orange\">*</span>".html_safe %>
-        <%= f.text_field :name %>
-      </li>
-      <li class='error_msg_for_li'>
         <%= f.label :surname, "Фамилия <span class=\"orange\">*</span>".html_safe %>
         <%= f.text_field :surname %>
+      </li>
+      <li class='error_msg_for_li'>
+        <%= f.label :name, "Имя и oтчeствo <span class=\"orange\">*</span>".html_safe %>
+        <%= f.text_field :name %>
       </li>
       <li class='error_msg_for_li'>
         <%= f.label :email, "Email <span class=\"orange\">*</span>".html_safe %>
@@ -29,8 +29,8 @@
         <%= f.label :additional_phone, 'Дом. телефон' %>
         <%= f.text_field :additional_phone %>
       </li>
-      <li class='error_msg_for_li'>
-        <%= f.label :address, "Адрес <span class=\"orange\">*</span>".html_safe %>
+      <li>
+        <%= f.label :address, 'Адрес' %>
         <%= f.text_field :address, placeholder: 'ул. Антропова дом 52 кв 15' %>
       </li>
       <li>
@@ -42,12 +42,12 @@
         <%= f.text_field :city %>
       </li>
       <li>
-        <%= f.label :pay_type, "Оплата <span class=\"orange\">*</span>".html_safe %>
-        <%= f.select :pay_type, Order::PAYMENT_TYPES, { include_blank: true }, required: true %>
+        <%= f.label :delivery, 'Доставка (Новая Почта)' %>
+        <%= f.text_field :delivery, placeholder: 'Горловка №3 ул.Пушкинская' %>
       </li>
       <li>
         <%= f.label :info, 'Доп. информация по доставке:' %>
-        <%= f.text_area :info, size: '43x5' %>
+        <%= f.text_area :info, size: '43x5', placeholder: 'Дополнительные пожелания по доставке...' %>
       </li>
     </ul>
   </fieldset>

@@ -4,7 +4,7 @@ $(function() {
   var phone = /^([0-9\(\)\/\+ \-]*)$/;
   var RegExp;
 
-  $("#order_name, #order_surname, #order_city, #order_address").on('blur', function() {
+  $("#order_name, #order_surname, #order_city").on('blur', function() {
     condition = $(this).val().length > 2;
     classChanger.call(this, condition);
   });
@@ -21,7 +21,7 @@ $(function() {
   });
 
   $('#new_order').on('submit', function() {
-    $("#order_name, #order_surname, #order_city, #order_address, #order_phone, #order_email").blur();
+    $("#order_name, #order_surname, #order_city, #order_phone, #order_email").blur();
 
     if ( $('.errors_false').length !== 0 ) {
       $("body,html").animate({"scrollTop": 470}, "slow");

@@ -9,7 +9,7 @@ class CreateOrders < ActiveRecord::Migration
       t.string :region
       t.string :city
       t.string :email
-      t.string :pay_type
+      t.string :delivery
       t.text :info
 
       t.timestamps
