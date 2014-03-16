@@ -1,6 +1,9 @@
 class OrderNotifier < ActionMailer::Base
   default from: 'from@example.com'
 
+  # includer ApplicationHelper
+  helper :application
+
   def received(order)
     @order = order
 
@@ -8,6 +11,7 @@ class OrderNotifier < ActionMailer::Base
   end
 
   def shipped(order)
+
     @order = order
     @line_items = @order.line_items
 
