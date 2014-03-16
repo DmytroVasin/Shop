@@ -2,6 +2,23 @@
   <fieldset>
     <legend>Заполните личные данные</legend>
     <ul>
+      <div class="popover prepayment">
+        <div class="popover-content">
+          <p>Предоплата влияет на конечную стоимость товара! ( <%= link_to 'доставка товаров', delivery_path %> )</p>
+        </div>
+      </div>
+
+      <div class="popover email_hint">
+        <div class="popover-content">
+          <p>Указывайте реальный e-mail на него будет выслано подтверждение покупки</p>
+        </div>
+      </div>
+
+      <li>
+        <%= f.label :region, "Предоплата <span class=\"orange\">*</span>".html_safe %>
+        <%= f.select :region, "<option>Полная (100%)</option><option>Частичная (30%)</option>".html_safe, { include_blank: true }, required: true %>
+      </li>
+
       <li class='error_msg_for_li'>
         <%= f.label :surname, "Фамилия <span class=\"orange\">*</span>".html_safe %>
         <%= f.text_field :surname %>

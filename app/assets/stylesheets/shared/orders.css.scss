@@ -40,6 +40,9 @@ table.sale_order_full {
 }
 
 #new_order fieldset {
+  // for popovers
+  position: relative;
+
   font-size  : 12px;
   background : #F9FAFB;
   border     : 1px solid #ADC3D5;
@@ -136,4 +139,48 @@ ul.terms {
 
 .errors_false {
   background-image : url(/assets/errors_no.png);
+}
+
+// Popover
+.popover {
+  position: absolute;
+  right: 6px;
+  width: 250px;
+  z-index: 1010;
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  opacity: 0.6;
+
+  .popover-content {
+    padding: 9px 14px;
+
+    p {
+      line-height: 15px;
+      color: #000;
+      font-size: 13px;
+
+      a {
+        color: #00F;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &.prepayment {
+    top: 20px;
+  }
+
+  &.email_hint {
+    top: 133px;
+  }
 }
