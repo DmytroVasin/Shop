@@ -11,10 +11,12 @@ class Order < ActiveRecord::Base
                   :city,
                   :info,
                   :terms_of_service,
+                  :payment_method,
                   :status,
                   :adm_info
 
   STATUSES      = ['Заказано', 'Отправленно']
+  PAYMENT_METHOD= [['Полная (100%)', 0.9], ['Частичная (30%)', 1]]
   REGIONS       = [
       "Винницкая область",
       "Волынская область",
@@ -52,16 +54,13 @@ class Order < ActiveRecord::Base
   validates :terms_of_service, acceptance: true
   validates :region, inclusion: REGIONS
   validates :status, inclusion: STATUSES
-  validates :email, :name, :surname, :phone, :region, :city, presence: true
+  validates :email, :name, :surname, :phone, :region, :city, :payment_method, presence: true
   validates :email, length: { minimum: 7, maximum: 254 },
             format:         { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,
                               message: "must be a valid email address" }
   validates :name, :surname, length: { minimum: 2, maximum: 254 }
 
   validates :phone, numericality: true
-
-# , length: { minimum: 9, maximum: 10 }
-
 
   def input_line_items_to_order(cart)
     cart.line_items.each do |item|

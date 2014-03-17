@@ -17,11 +17,12 @@
   <% end %>
   <tr>
     <td align="right" class="normal bold">Сумма:</td>
-    <td align="right" colspan="3" class="normal  bold"><b>
+    <td align="right" colspan="3" class="normal bold">
+    <b class='ordered_price'>
       <% if @cart.nil? %>
-      <%= number_to_currency(@order.total_price, unit: 'грн.', format: '%n %u') %>
+        <%= number_to_currency(@order.total_price, unit: 'грн.', format: '%n %u') %>
       <% else %>
-      <%= number_to_currency(@cart.total_price, unit: 'грн.', format: '%n %u') %>
+        <%= number_to_currency(@cart.total_price, unit: 'грн.', format: '%n %u') %>
       <% end %>
     </b>
     </td>

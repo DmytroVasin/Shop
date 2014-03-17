@@ -28,7 +28,25 @@ $(function() {
       return false;
     }
   });
+
+  // call once to set default value in 'Composition of the order' table
+  changePriceToPay();
+  $('#order_payment_method').on('change', function(){
+    if (this.value === '0.9'){
+      changePriceToPay(0.9);
+    } else {
+      changePriceToPay();
+    }
+  });
+
 });
+function changePriceToPay(degree){
+  degree = degree || 1;
+  var price_to_pay, ordered_price = parseFloat( $('.ordered_price').text() );
+  price_to_pay = (ordered_price * degree).toFixed(2) + ' грн.';
+
+  $('.price_to_pay').text(price_to_pay);
+}
 
 function classChanger(condition){
   $(this)

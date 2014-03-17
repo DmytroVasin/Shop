@@ -4,7 +4,7 @@
     <ul>
       <div class="popover prepayment">
         <div class="popover-content">
-          <p>Предоплата влияет на конечную стоимость товара! ( <%= link_to 'доставка товаров', delivery_path %> )</p>
+          <p>Предоплата влияет на конечную стоимость товара! ( <%= link_to 'доставка товаров', delivery_path, target: '_blank' %> )</p>
         </div>
       </div>
 
@@ -15,8 +15,8 @@
       </div>
 
       <li>
-        <%= f.label :region, "Предоплата <span class=\"orange\">*</span>".html_safe %>
-        <%= f.select :region, "<option>Полная (100%)</option><option>Частичная (30%)</option>".html_safe, { include_blank: true }, required: true %>
+        <%= f.label :payment_method, "Предоплата <span class=\"orange\">*</span>".html_safe %>
+        <%= f.select(:payment_method, options_for_select(Order::PAYMENT_METHOD), { include_blank: true }, required: true ) %>
       </li>
 
       <li class='error_msg_for_li'>

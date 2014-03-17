@@ -1,6 +1,7 @@
 <tr>
   <td><%= order.id %></td>
   <td class='<%= order.status == 'Заказано' ? 'status_not_delivery' : 'status_delivery' %>'><%= order.status %></td>
+  <td><%= order.payment_method %></td>
   <td><%= order.region %></td>
   <td><%= order.delivery %></td>
   <td><%= number_to_currency(order.total_price, unit: 'грн.', format: '%n %u') %></td>
