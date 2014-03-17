@@ -1,5 +1,5 @@
 <dt>Предоплата:</dt>
-<dd><%= @order.payment_method %></dd>
+<dd><%= prepayment(@order.payment_method) %></dd>
 <dt>Фамилия Имя Отчество</dt>
 <dd><%= @order.surname %>, <%= @order.name %></dd>
 <dt>Телефон</dt>

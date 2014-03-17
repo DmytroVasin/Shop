@@ -7,6 +7,7 @@
         <th>Название</th>
         <th>Количество</th>
         <th>Цена</th>
+        <th rowspan=<%= @order.line_items.count + 1 %>>Цена к оплате</th>
       </tr>
       <% @order.line_items.each do |item| %>
         <tr>
@@ -17,10 +18,10 @@
       <% end %>
       <tr>
         <td align="right" class="normal bold">Сумма:</td>
-        <td align="right" colspan="2" class="normal bold"><b>
-          <%= number_to_currency(@order.total_price, unit: 'грн.', format: '%n %u') %>
-        </b>
+        <td align="right" colspan="2" class="normal bold">
+          <b><%= number_to_currency(@order.total_price, unit: 'грн.', format: '%n %u') %></b>
         </td>
+        <td align="right" class="normal bold price_to_pay"><%= number_to_currency(real_price(@order), unit: 'грн.', format: '%n %u') %></td>
       </tr>
       </tbody>
     </table>

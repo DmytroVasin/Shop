@@ -85,4 +85,16 @@ module ApplicationHelper
   def find_correct_image_for line_item
     line_item.product.images.includes(:colours).where(colours: {name: line_item.color}).all.first.small
   end
+
+  def prepayment(payment_method)
+    if payment_method == 0.9
+      'Полная (100%) - скидка 10%'
+    else
+      'Частичная (30%) - без скидок'
+    end
+  end
+
+  def real_price(order)
+    order.total_price.to_f * order.payment_method.to_f
+  end
 end

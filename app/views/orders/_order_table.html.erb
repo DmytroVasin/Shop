@@ -5,7 +5,7 @@
     <th>Цвет</th>
     <th>Количество</th>
     <th>Обьщая цена</th>
-    <th rowspan='4'>Цена к оплате</th>
+    <th rowspan=<%= @line_items.count + 1 %>>Цена к оплате</th>
   </tr>
   <% @line_items.each do |item|  %>
     <tr>
@@ -26,7 +26,7 @@
       <% end %>
     </b>
     </td>
-    <td align="right" class="normal bold price_to_pay">144.44</td>
+    <td align="right" class="normal bold price_to_pay"></td>
   </tr>
   </tbody>
 </table>
