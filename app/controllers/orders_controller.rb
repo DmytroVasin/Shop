@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
     @line_items = @cart.line_items
 
     if @cart.line_items.empty?
-      redirect_to products_path, alert: 'Can"t create order without perfumes'
+      redirect_to products_path, alert: 'Невозможно создать Заказ без товаров...'
       return
     end
 
@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
         # email send to user witch create order
         OrderNotifier.shipped(@order).deliver
 
-        format.html { redirect_to root_path, notice: 'Order was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Ваш заказ принят!' }
 			else
         @cart = current_cart
         @line_items = @cart.line_items

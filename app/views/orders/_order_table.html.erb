@@ -1,32 +1,45 @@
 <table class="sale_order_full">
   <tbody>
-  <tr>
-    <th>Название</th>
-    <th>Цвет</th>
-    <th>Количество</th>
-    <th>Обьщая цена</th>
-    <th rowspan=<%= @line_items.count + 1 %>>Цена к оплате</th>
-  </tr>
-  <% @line_items.each do |item|  %>
+    <tr>
+      <th>Название</th>
+      <th>Цвет</th>
+      <th>Количество</th>
+      <th>Обьщая цена</th>
+      <th rowspan=<%= @line_items.count + 1 %>>Цена к оплате</th>
+    </tr>
+    <% @line_items.each do |item|  %>
     <tr>
       <td class='order_title normal'><%= item.product.title %></td>
       <td align='center' class='normal'><%= rus_name_by item.color %></td>
       <td align='center' class='normal'><%= item.quantity %>шт.</td>
       <td align='right' class='normal'><%= number_to_currency(item.price, unit: 'грн.', format: '%n %u') %></td>
     </tr>
-  <% end %>
-  <tr>
-    <td align="right" class="normal bold">Сумма:</td>
-    <td align="right" colspan="3" class="normal bold">
-    <b class='ordered_price'>
-      <% if @cart.nil? %>
-        <%= number_to_currency(@order.total_price, unit: 'грн.', format: '%n %u') %>
-      <% else %>
-        <%= number_to_currency(@cart.total_price, unit: 'грн.', format: '%n %u') %>
-      <% end %>
-    </b>
-    </td>
-    <td align="right" class="normal bold price_to_pay"></td>
-  </tr>
+    <% end %>
+
+    <% if @cart.nil? %>
+      <tr>
+        <td align="right" class="normal bold">Сумма:</td>
+        <td align="right" colspan="3" class="normal bold">
+          <b class='ordered_price'>
+            <%= number_to_currency(@order.total_price, unit: 'грн.', format: '%n %u') %>
+          </b>
+        </td>
+        <td align="right" class="normal bold price_to_pay">
+          <b><%= number_to_currency(@order.total_price.to_f * @order.payment_method.to_f, unit: 'грн.', format: '%n %u') %></b>
+        </td>
+      </tr>
+    <% else %>
+      <tr>
+        <td align="right" class="normal bold">Сумма:</td>
+        <td align="right" colspan="3" class="normal bold">
+          <b class='ordered_price'>
+            <%= number_to_currency(@cart.total_price, unit: 'грн.', format: '%n %u') %>
+          </b>
+        </td>
+        <td align="right" class="normal bold price_to_pay">
+          <%= number_to_currency(@cart.total_price, unit: 'грн.', format: '%n %u') %>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>

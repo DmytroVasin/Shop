@@ -42,7 +42,7 @@ $(function() {
 });
 function changePriceToPay(degree){
   degree = degree || 1;
-  var price_to_pay, ordered_price = parseFloat( $('.ordered_price').text() );
+  var price_to_pay, ordered_price = parseFloat( $('.ordered_price').text().replace(/\,/g, '') );
   price_to_pay = (ordered_price * degree).toFixed(2) + ' грн.';
 
   $('.price_to_pay').text(price_to_pay);

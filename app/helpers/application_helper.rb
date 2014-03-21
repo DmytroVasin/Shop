@@ -60,21 +60,21 @@ module ApplicationHelper
     check_box_tag 'best_sellers', value, value, disabled: disabling, data: { product_id: id }
   end
 
-  def set_value_by_params(gender)
+  def set_value_by_params gender
     return gender.in? params[:gender_params] if params[:gender_params]
     false
   end
 
-  def url_to_product(id)
+  def url_to_product id
     "products/#{id}"
   end
 
-  def title_of_product(id)
+  def title_of_product id
     product = Product.find(id)
     product ? product.title : 'incorrect url'
   end
 
-  def rus_name(obj)
+  def rus_name obj
     obj.name_rus ? obj.name_rus : content_tag(:span, obj.name, class: 'text-error')
   end
 
@@ -86,8 +86,8 @@ module ApplicationHelper
     line_item.product.images.includes(:colours).where(colours: {name: line_item.color}).all.first.small
   end
 
-  def prepayment(payment_method)
-    if payment_method == 0.9
+  def prepayment payment_method
+    if payment_method == '0.9'
       'Полная (100%) - скидка 10%'
     else
       'Частичная (30%) - без скидок'
