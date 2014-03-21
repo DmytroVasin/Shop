@@ -40,6 +40,7 @@ table.sale_order_full {
   }
 }
 
+.wrapper_for_orders fieldset,
 #new_order fieldset {
   // for popovers
   position: relative;
@@ -85,6 +86,45 @@ table.sale_order_full {
     }
 
   }
+}
+
+.wrapper_for_orders fieldset {
+  position: relative;
+
+  ul {
+    margin-left: 50px;
+  }
+  .popover {
+    right: 13px;
+    width: 215px;
+    .popover-content {
+      padding-bottom:  4px;
+
+      p {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        b {
+          font-size: 25px;
+          color: #F00;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}
+
+dt, dd {
+  line-height: 20px;
+  font-size: 15px;
+}
+
+dd {
+  margin-left : 25px;
+}
+
+dt {
+  font-weight: bold;
 }
 
 ul.terms {

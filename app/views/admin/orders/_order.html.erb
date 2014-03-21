@@ -1,5 +1,5 @@
 <tr>
-  <td><%= order.id %></td>
+  <td><%= order.id + Order::START_ID %></td>
   <td class='<%= order.status == 'Заказано' ? 'status_not_delivery' : 'status_delivery' %>'><%= order.status %></td>
   <td><%= order.region %></td>
   <td><%= order.delivery %></td>

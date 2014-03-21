@@ -1,4 +1,8 @@
 class OrdersController < ApplicationController
+  def index
+    @order = Order.find(session[:order_id])
+  end
+
   def new
     @cart = current_cart
     @line_items = @cart.line_items
@@ -24,13 +28,14 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
+        session[:order_id] = @order.id
 
         # email send to admin verification letter
         OrderNotifier.received(@order).deliver
         # email send to user witch create order
         OrderNotifier.shipped(@order).deliver
 
-        format.html { redirect_to root_path, notice: 'Ваш заказ принят!' }
+        format.html { redirect_to orders_path, notice: 'Ваш заказ принят!' }
 			else
         @cart = current_cart
         @line_items = @cart.line_items

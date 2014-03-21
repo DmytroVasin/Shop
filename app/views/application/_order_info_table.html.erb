@@ -1,0 +1,60 @@
+<ul>
+  <li>
+    <dt>Предоплата:</dt>
+    <dd><%= prepayment(@order.payment_method) %></dd>
+  </li>
+
+  <li>
+    <dt>Фамилия Имя Отчество</dt>
+    <dd><%= @order.surname %>, <%= @order.name %></dd>
+  </li>
+
+  <li>
+    <dt>Телефон</dt>
+    <dd><%= @order.phone %></dd>
+  </li>
+
+  <li>
+    <dt>Область</dt>
+    <dd><%= @order.region %></dd>
+  </li>
+
+  <li>
+    <dt>Город</dt>
+    <dd><%= @order.city %></dd>
+  </li>
+
+  <li>
+    <dt>Адрес</dt>
+    <dd><%= @order.address %></dd>
+  </li>
+
+  <li>
+    <dt>Email</dt>
+    <dd><%= @order.email %></dd>
+  </li>
+
+  <li>
+    <dt>Доставка на адрес</dt>
+    <dd><%= @order.delivery %></dd>
+  </li>
+
+  <% if @order.additional_phone.present? %>
+    <li>
+      <dt>Доп. телефон</dt>
+      <dd><%= @order.additional_phone %></dd>
+    </li>
+  <% end %>
+
+  <% if @order.info.present? %>
+    <li>
+      <dt>Доп. информация о заказе</dt>
+      <dd><%= @order.info %></dd>
+    </li>
+  <% end %>
+
+  <li>
+    <dt>Время заказа</dt>
+    <dd class="successfully"><%= @order.updated_at.localtime.strftime("%b %d '%Y, %H:%M") %></dd>
+  </li>
+</ul>

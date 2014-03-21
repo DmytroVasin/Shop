@@ -5,9 +5,9 @@
       <th>Цвет</th>
       <th>Количество</th>
       <th>Обьщая цена</th>
-      <th rowspan=<%= @line_items.count + 1 %>>Цена к оплате</th>
+      <th rowspan=<%= line_items.count + 1 %>>Цена к оплате</th>
     </tr>
-    <% @line_items.each do |item|  %>
+    <% line_items.each do |item|  %>
     <tr>
       <td class='order_title normal'><%= item.product.title %></td>
       <td align='center' class='normal'><%= rus_name_by item.color %></td>
@@ -16,16 +16,16 @@
     </tr>
     <% end %>
 
-    <% if @cart.nil? %>
+    <% if cart.nil? %>
       <tr>
         <td align="right" class="normal bold">Сумма:</td>
         <td align="right" colspan="3" class="normal bold">
           <b class='ordered_price'>
-            <%= number_to_currency(@order.total_price, unit: 'грн.', format: '%n %u') %>
+            <%= number_to_currency(order.total_price, unit: 'грн.', format: '%n %u') %>
           </b>
         </td>
         <td align="right" class="normal bold price_to_pay">
-          <b><%= number_to_currency(@order.total_price.to_f * @order.payment_method.to_f, unit: 'грн.', format: '%n %u') %></b>
+          <b><%= number_to_currency(order.total_price.to_f * order.payment_method.to_f, unit: 'грн.', format: '%n %u') %></b>
         </td>
       </tr>
     <% else %>
@@ -33,11 +33,11 @@
         <td align="right" class="normal bold">Сумма:</td>
         <td align="right" colspan="3" class="normal bold">
           <b class='ordered_price'>
-            <%= number_to_currency(@cart.total_price, unit: 'грн.', format: '%n %u') %>
+            <%= number_to_currency(cart.total_price, unit: 'грн.', format: '%n %u') %>
           </b>
         </td>
         <td align="right" class="normal bold price_to_pay">
-          <%= number_to_currency(@cart.total_price, unit: 'грн.', format: '%n %u') %>
+          <%= number_to_currency(cart.total_price, unit: 'грн.', format: '%n %u') %>
         </td>
       </tr>
     <% end %>

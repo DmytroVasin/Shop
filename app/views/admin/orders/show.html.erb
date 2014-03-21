@@ -1,49 +1,41 @@
 <div class='wrapper_for_orders'>
   <div class='adm_info'>
-
     <table class="sale_order_full">
       <tbody>
-      <tr>
-        <th>Название</th>
-        <th>Количество</th>
-        <th>Цена</th>
-        <th rowspan=<%= @order.line_items.count + 1 %>>Цена к оплате</th>
-      </tr>
-      <% @order.line_items.each do |item| %>
+        <tr>
+          <th>Название</th>
+          <th>Количество</th>
+          <th>Цена</th>
+          <th rowspan=<%= @order.line_items.count + 1 %>>Цена к оплате</th>
+        </tr>
+        <% @order.line_items.each do |item| %>
         <tr>
           <td class="order_title normal"><%= item.product.title %></td>
           <td style="text-align:center" class="normal"><%= item.quantity %>шт.</td>
           <td align="right" class="normal"><%= number_to_currency(item.price, unit: 'грн.', format: '%n %u') %></td>
         </tr>
-      <% end %>
-      <tr>
-        <td align="right" class="normal bold">Сумма:</td>
-        <td align="right" colspan="2" class="normal bold">
+        <% end %>
+        <tr>
+          <td align="right" class="normal bold">Сумма:</td>
+          <td align="right" colspan="2" class="normal bold">
           <b><%= number_to_currency(@order.total_price, unit: 'грн.', format: '%n %u') %></b>
-        </td>
-        <td align="right" class="normal bold price_to_pay"><%= number_to_currency(real_price(@order), unit: 'грн.', format: '%n %u') %></td>
-      </tr>
+          </td>
+          <td align="right" class="normal bold price_to_pay"><%= number_to_currency(real_price(@order), unit: 'грн.', format: '%n %u') %></td>
+        </tr>
       </tbody>
     </table>
-
-    <%= form_for([:admin, @order], method: :put) do |f| %>
-      <%= f.text_area :adm_info, rows: '5', placeholder: 'Put some information for note' %>
-      <div class="clear"></div>
-      <%= f.select :status, Order::STATUSES %>
-    <% end %>
   </div>
-
   <dl>
-    <dt>Статус заказа:</dt>
+    <dt>Статус заказа: <i>№ <%= @order.id + Order::START_ID %></i></dt>
     <dd class="<%= 'un_' if @order.status == 'Заказано' %>successfully"><%= @order.status %></dd>
     <% if @order.adm_info.present? %>
-      <dt>Информация для администратора</dt>
-      <dd class="successfully"><%= @order.adm_info %></dd>
+    <dt>Информация для администратора</dt>
+    <dd class="successfully"><%= @order.adm_info %></dd>
     <% end %>
     <hr>
     <%= render 'order_info_table' %>
   </dl>
 
-  <%= link_to '« All orders', orders_path, class: 'btn btn-inverse' %>
-  <%= link_to 'Update', '#', class: 'btn btn-primary', onclick: "$('form').submit()" %>
+  <%= link_to '« Назад к продуктам', orders_path, class: 'btn btn-inverse' %>
+  <%= link_to 'Обновить', '#', class: 'btn btn-primary', onclick: "$('form').submit()" %>
 </div>

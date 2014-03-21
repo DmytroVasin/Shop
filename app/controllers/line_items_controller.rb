@@ -24,9 +24,9 @@ class LineItemsController < ApplicationController
       if current_cart.line_items.empty?
         @cart.destroy
         session[:cart_id] = nil
-        format.html { redirect_to(products_path, notice: 'Your cart is empty') }
+        format.html { redirect_to(products_path, notice: 'Ваша корзина пуста!') }
       else
-        format.html { redirect_to(@line_item.cart, notice: 'Item has been removed from your cart.') }
+        format.html { redirect_to(@line_item.cart, notice: 'Товар был убран из корзины.') }
       end
     end
   end

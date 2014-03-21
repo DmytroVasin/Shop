@@ -1,15 +1,9 @@
-<div id="breadcrumb">
-  <ul>
-    <li><a href="/">На главную</a></li>
-    <li>&raquo; Отчёт</li>
-  </ul>
-  <div class="clear"></div>
-</div>
+<%= render 'bread_crumbs' %>
 
 <div class="title_of_cart">Оформление заказа:</div>
 <div class='orders_composition'>Состав заказа:</div>
 
-<%= render 'order_table' %>
+<%= render 'order_table', order: @order, line_items: @line_items, cart: @cart  %>
 <%= render 'form' %>
 
 <div class="clear"></div>

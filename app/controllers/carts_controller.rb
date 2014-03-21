@@ -23,7 +23,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to products_path, notice: 'Your cart is empty!' }
+      format.html { redirect_to products_path, notice: 'Ваша корзина пуста!' }
     end
   end
 end

@@ -1,7 +1,8 @@
 Shop::Application.routes.draw do
-  resources :ratings, only: [:create]
+  root to: 'welcome#index'
 
   resources :orders
+  resources :ratings, only: [:create]
   resources :carts, only: [:show, :destroy]
 
   resources :line_items do
@@ -9,11 +10,7 @@ Shop::Application.routes.draw do
     put 'increase', on: :member
   end
 
-
-  root to: 'welcome#index'
-
   devise_for :admins, path: 'auth', path_names: { sign_in: 'login', sign_out: 'logout' }, controllers: { sessions: 'sessions' }
-
 
   namespace :admin do
     root :to => 'base#index'

@@ -4,14 +4,14 @@
   Это уведомительное сообщение. Мы приняли ваш заказ. Он будет рассмотрен в ближайшее время.
 </p>
 
-<%= render 'orders/order_table' %>
+<%= render 'orders/order_table', order: @order, line_items: @line_items, cart: nil %>
 
 <br />
 <br />
 
 <strong>Информация о заказе:</strong>
 <dl>
-<%= render 'admin/orders/order_info_table' %>
+<%= render 'application/order_info_table' %>
 </dl>
 
 <i>Если возникнут какие-то проблемы мы свяжемся с вами по телефону или по этому email-у.</i>
