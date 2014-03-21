@@ -24,9 +24,14 @@
         </tr>
       </tbody>
     </table>
+    <%= form_for([:admin, @order], method: :put) do |f| %>
+      <%= f.text_area :adm_info, rows: '5', placeholder: 'Заметки для Администрации...' %>
+      <div class="clear"></div>
+      <%= f.select :status, Order::STATUSES %>
+    <% end %>
   </div>
   <dl>
-    <dt>Статус заказа: <i>№ <%= @order.id + Order::START_ID %></i></dt>
+    <dt>Статус заказа:</dt>
     <dd class="<%= 'un_' if @order.status == 'Заказано' %>successfully"><%= @order.status %></dd>
     <% if @order.adm_info.present? %>
     <dt>Информация для администратора</dt>

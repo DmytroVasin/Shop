@@ -1,5 +1,9 @@
 <ul>
   <li>
+    <dt>Номер заказа:</dt>
+    <dd>№ <%= @order.id + Order::START_ID %></dd>
+  </li>
+  <li>
     <dt>Предоплата:</dt>
     <dd><%= prepayment(@order.payment_method) %></dd>
   </li>
