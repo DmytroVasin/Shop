@@ -52,8 +52,8 @@
         <span class='brand_of_product'><%= @product.brand.name %>:</span><%= @product.title %>
       </div>
 
-      <div class="description_of_product">
-        <%= @product.description %>
+      <div class="description_of_product undoreset">
+        <%= @product.description.html_safe %>
       </div>
 
       <!-- <a href='/delivery' class='get_back link_color'>Просмотреть возможные способы доставки</a> -->

@@ -22,6 +22,8 @@
 .redactor_box .redactor_redactor {
   height: 200px;
   width: 700px;
+  color: #000 !important;
+  text-shadow: none;
 }
 // Redactror Rails END
 
@@ -96,9 +98,8 @@ table th, table td {
   margin-left : 10px;
 
   line-height : 24px;
-  color       : #333;
+  color       : #000;
   font-family : Georgia, Times, serif;
-  text-shadow : 0 0 1px #777777;
 }
 
 #perfume_title {
@@ -124,15 +125,15 @@ table th, table td {
 }
 
 .perfume_price{
-  margin: 5px 0 0 40px;
+  margin      : 5px 0 0 40px;
   font-size   : 16px;
   color       : #F00;
   float       : left;
+  font-weight : bold;
   span {
     font-size : 25px;
     &.line-through {
       font-size : 16px;
-      text-decoration: line-through;
     }
   }
 }
@@ -140,8 +141,9 @@ table th, table td {
 #old_price {
   margin: 5px 0 0 20px;
   font-size   : 16px;
-  color       : #807D7D;
+  color       : #4E4E4E;
   float       : left;
+  font-weight : bold;
   span {
     font-size : 25px;
   }

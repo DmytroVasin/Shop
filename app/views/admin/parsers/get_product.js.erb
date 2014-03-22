@@ -2,7 +2,8 @@
 	$('#remote_url').val('');
 	$('.alert').remove();
   $('#product_form').html("<%=j render partial: 'product_form', locals: { product: @product } %>");
+  $('.price_description').hide();
 <% else %>
-	$(".row").before("<%=j render partial: 'shared/parser_messages' %>");
+	$('.row').before("<%=j render partial: 'shared/parser_messages' %>");
 	$('#product_form').html("<%=j render partial: 'went_wrong' %>");
 <% end %>
