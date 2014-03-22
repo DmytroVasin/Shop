@@ -11,6 +11,7 @@ gem 'kaminari'
 gem 'randumb'
 gem 'twitter-bootstrap-rails'
 gem 'phony_rails'
+gem 'redactor-rails'
 
 gem 'populator'
 gem 'faker'

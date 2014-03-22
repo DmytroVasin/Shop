@@ -40,7 +40,7 @@
 			<div class="control-group">
 				<div class="description_margin">
 					<div class="input-prepend">
-						<%= f.text_area :description, id: 'text_area', placeholder: 'Добавить описание товара!' %>
+						<%= f.text_area :description, id: 'text_area', class: 'redactor', placeholder: 'Добавить описание товара!' %>
 					</div>
 					<div class="clear"></div>
 					Старая цена должна быть БОЛЬШЕ чем новая!!!
@@ -91,3 +91,18 @@
 		<%= link_to 'Показать', admin_product_path(product.id), class: 'btn btn-warning' %>
 	</div>
 </div>
+<script>
+	var csrf_token = $('meta[name=csrf-token]').attr('content');
+  var csrf_param = $('meta[name=csrf-param]').attr('content');
+  var params;
+  if (csrf_param !== undefined && csrf_token !== undefined) {
+    params = csrf_param + "=" + encodeURIComponent(csrf_token);
+  }
+  $('.redactor').redactor(
+    { "path":"/assets/redactor-rails",
+      "css":"style.css",
+      'buttons': ['html', 'formatting',  'bold', 'italic', 'deleted',
+                  'unorderedlist', 'orderedlist', 'outdent', 'indent', 'table',
+                  'link', 'underline', 'alignleft', 'aligncenter', 'alignright', 'justify']}
+  );
+</script>

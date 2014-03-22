@@ -177,6 +177,10 @@ GEM
       rake
     rdoc (3.12.2)
       json (~> 1.4)
+    redactor-rails (0.4.3)
+      devise
+      mime-types
+      orm_adapter
     roodi (3.3.1)
       ruby_parser (~> 3.2, >= 3.2.2)
     rspec-core (2.14.8)
@@ -265,6 +269,7 @@ DEPENDENCIES
   pry-rails
   rails (= 3.2.13)
   randumb
+  redactor-rails
   roodi
   rspec-rails (>= 2.0.1)
   rvm-capistrano

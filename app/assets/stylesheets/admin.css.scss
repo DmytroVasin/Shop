@@ -8,15 +8,26 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require 'reset'
  *= require 'error'
 
  *= require 'bootstrap_and_overrides'
 
  *= require_self
- *= require 'brands'
- *= require 'shared/orders_for_admin'
+ *= require brands
+ *= require shared/orders_for_admin
+ *= require redactor-rails
   */
+
+// Redactror Rails START
+.redactor_box .redactor_redactor {
+  height: 200px;
+  width: 700px;
+}
+// Redactror Rails END
+
+.clear {
+  clear: both;
+}
 
 body {
   background-color : #FAFAFA;
@@ -199,9 +210,13 @@ table th, table td {
 //    ADMIN INDEX PAGE START
 
 .progress_table {
-  width       : 650px;
-  float       : left;
-  margin-left : 30px;
+  width  : 400px;
+  float  : left;
+  margin : 28px 0 0 30px;
+  .progress {
+    margin-bottom: 5px;
+    height: 25px;
+  }
 }
 
 .description_admin_index {
@@ -258,7 +273,7 @@ table th, table td {
   }
 }
 .price_inputs {
-  margin-top: 40px;
+  // margin-top: 40px;
 }
 .admin_product_price {
   width: 132px;
