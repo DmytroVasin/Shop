@@ -27,9 +27,9 @@
   </table>
 
   <div id="cart_bottom">
-    <%= link_to 'Empty Cart', cart_path(@cart.id),
+    <%= link_to 'Очистить корзину', cart_path(@cart.id),
                 method:  :delete,
-                confirm: 'Are you sure?',
+                confirm: 'Вы уверены?',
                 class:   'empty_cart' %>
 
     <div id="cart_total_price">

@@ -40,7 +40,7 @@ class LineItemsController < ApplicationController
       if @items.empty?
         @cart.destroy
         session[:cart_id] = nil
-        format.html { redirect_to products_path, notice: 'Empty cart' }
+        format.html { redirect_to products_path, notice: 'Корзина очищена' }
       elsif @line_item.save
         rendering(format)
       end
@@ -61,7 +61,7 @@ class LineItemsController < ApplicationController
   private
 
   def rendering(format)
-    format.html { redirect_to @line_item.cart, notice: 'Item was successfully removed' }
+    format.html { redirect_to @line_item.cart, notice: 'Товар успешно удалён!' }
     format.js { @current_item = @line_item, @items }
   end
 end

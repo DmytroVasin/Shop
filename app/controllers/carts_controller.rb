@@ -4,7 +4,7 @@ class CartsController < ApplicationController
 
     if params[:id].to_i != session_id
       logger.error '----> Try access to invalid cart'
-      redirect_to products_path, alert: 'Invalid cart'
+      redirect_to products_path, alert: 'Ваша корзина пуста!'
     else
       @cart  = Cart.find(session_id)
       @items = @cart.line_items

@@ -2,5 +2,5 @@
 	<td><%= link_to image_tag(image.small, class: "small_icon_img"), image.small %></td>
 	<td><%= link_to image_tag(image.middle, class: "middle_icon_img"), image.middle %></td>
 	<td><%= link_to image_tag(image.large, class: "large_icon_img"), image.large %></td>
-	<td><%= link_to 'X', admin_image_path(image.id), method: :delete, remote: true, confirm: 'Are you sure?', class: 'btn btn-danger' %></td>
+	<td><%= link_to 'X', admin_image_path(image.id), method: :delete, remote: true, confirm: 'Вы уверены?', class: 'btn btn-danger' %></td>
 </tr>

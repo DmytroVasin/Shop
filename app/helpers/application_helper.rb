@@ -90,7 +90,7 @@ module ApplicationHelper
     if payment_method == '0.9'
       'Полная (100%) - скидка 10%'
     else
-      'Частичная (30%) - без скидок'
+      'Частичная (30%) - скидка 0%'
     end
   end
 

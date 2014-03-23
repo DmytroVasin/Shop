@@ -1,6 +1,10 @@
 class OrdersController < ApplicationController
   def index
-    @order = Order.find(session[:order_id])
+    if session[:order_id]
+      @order = Order.find(session[:order_id])
+    else
+      redirect_to root_path, alert: 'У вас нет возможности помотреть данную страницу'
+    end
   end
 
   def new

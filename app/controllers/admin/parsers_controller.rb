@@ -64,7 +64,7 @@ class Admin::ParsersController < Admin::BaseController
     end
 
     respond_to do |format|
-      format.html { redirect_to admin_parsers_path, notice: 'Item was successfully created' }
+      format.html { redirect_to admin_parsers_path, notice: 'Товар успешно удалён!' }
       format.js
     end
   end

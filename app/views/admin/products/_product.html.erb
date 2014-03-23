@@ -6,7 +6,7 @@
   <td style='padding-left: 22px;'><%= product.price %> грн</td>
   <td style='text-align: center;'>
     <%= link_to 'edit', edit_admin_product_path(product.id), class: 'btn' %>
-    <%= link_to 'delete', admin_product_path(product.id), method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger' %>
+    <%= link_to 'delete', admin_product_path(product.id), method: :delete, confirm: 'Вы уверены?', class: 'btn btn-danger' %>
   </td>
   <td style='text-align: center;'>
   	<%= best_sellers_tag(product.id, product.bestseller, @best_count) %>
