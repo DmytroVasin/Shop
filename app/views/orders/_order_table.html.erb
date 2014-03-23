@@ -4,8 +4,8 @@
       <th>Название</th>
       <th>Цвет</th>
       <th>Количество</th>
-      <th>Обьщая цена</th>
-      <th rowspan=<%= line_items.count + 1 %>>Цена к оплате</th>
+      <th>Общая цена</th>
+      <th rowspan=<%= line_items.count + 1 %>>Сумма к предоплате</th>
     </tr>
     <% line_items.each do |item|  %>
     <tr>
@@ -18,7 +18,7 @@
 
     <% if cart.nil? %>
       <tr>
-        <td align="right" class="normal bold">Сумма:</td>
+        <td align="right" class="normal bold">Полная стоимость:</td>
         <td align="right" colspan="3" class="normal bold">
           <b class='ordered_price'>
             <%= number_to_currency(order.total_price, unit: 'грн.', format: '%n %u') %>
@@ -30,7 +30,7 @@
       </tr>
     <% else %>
       <tr>
-        <td align="right" class="normal bold">Сумма:</td>
+        <td align="right" class="normal bold">Полная стоимость:</td>
         <td align="right" colspan="3" class="normal bold">
           <b class='ordered_price'>
             <%= number_to_currency(cart.total_price, unit: 'грн.', format: '%n %u') %>

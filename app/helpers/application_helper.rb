@@ -8,7 +8,7 @@ module ApplicationHelper
     if count == 1
       "#{count} #{string}"
     elsif (2..4).member?(count)
-      "#{count} #{string}ара"
+      "#{count} #{string}а"
     else
       "#{count} #{string}ов"
     end
