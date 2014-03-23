@@ -17,4 +17,12 @@ class Admin::OrdersController < Admin::BaseController
     flash[:notice] = 'Success updated this order note'
     redirect_to admin_order_path(@order.id)
   end
+
+
+  def destroy
+    @order = Order.find(params[:id])
+    @order.destroy
+
+    redirect_to admin_orders_path, notice: 'Заказ удалён!'
+  end
 end

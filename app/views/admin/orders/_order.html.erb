@@ -7,5 +7,6 @@
   <td><%= order.updated_at.localtime.strftime("%b %d '%Y, %H:%M") %></td>
   <td>
     <%= link_to 'Show', admin_order_path(order.id), class: 'btn btn-small btn-primary' %>
+    <%= link_to 'Delete', admin_order_path(order.id), method: :delete, confirm: 'Вы уверены что хотите удалить заказ?', class: 'btn btn-small btn-danger' %>
   </td>
 </tr>
