@@ -3,7 +3,7 @@
   <td class='<%= order.status == 'Заказано' ? 'status_not_delivery' : 'status_delivery' %>'><%= order.status %></td>
   <td><%= order.region %></td>
   <td><%= order.delivery %></td>
-  <td><%= number_to_currency(real_price(order), unit: 'грн.', format: '%n %u') %></td>
+  <td><%= number_to_currency( order.total_price, unit: 'грн.', format: '%n %u') %></td>
   <td><%= order.updated_at.localtime.strftime("%b %d '%Y, %H:%M") %></td>
   <td>
     <%= link_to 'Show', admin_order_path(order.id), class: 'btn btn-small btn-primary' %>

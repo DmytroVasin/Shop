@@ -7,7 +7,7 @@ class OrderNotifier < ActionMailer::Base
   def received(order)
     @order = order
 
-    mail to: 'dracon779@gmail.com', subject: 'Got new order!'
+    mail to: 'dracon779@gmail.com', subject: "Новый заказ! №#{@order.id}"
   end
 
   def shipped(order)
@@ -15,6 +15,6 @@ class OrderNotifier < ActionMailer::Base
     @order = order
     @line_items = @order.line_items
 
-    mail to: @order.email, subject: 'You orderd in our shop:'
+    mail to: @order.email, subject: 'Ваш заказ на Vako.dn.ua'
   end
 end

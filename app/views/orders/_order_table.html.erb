@@ -15,12 +15,6 @@
     </tr>
     <% end %>
 
-    <% if cart.nil? %>
-      <!-- ?????? -->
-
-
-    <% else %>
-      <%= render 'sum_of_order', line_items_count: line_items_count, total_price: total_price, payment_method: payment_method %>
-    <% end %>
+    <%= render 'orders/sum_of_order', line_items_count: line_items_count, total_price: total_price, payment_method: payment_method %>
   </tbody>
 </table>

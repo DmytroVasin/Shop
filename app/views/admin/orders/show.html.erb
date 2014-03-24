@@ -1,29 +1,13 @@
 <div class='wrapper_for_orders'>
   <div class='adm_info'>
-    <table class="sale_order_full">
-      <tbody>
-        <tr>
-          <th>Название</th>
-          <th>Количество</th>
-          <th>Цена</th>
-          <th rowspan=<%= @order.line_items.count + 1 %>>Сумма к предоплате</th>
-        </tr>
-        <% @order.line_items.each do |item| %>
-        <tr>
-          <td class="order_title normal"><%= item.product.title %></td>
-          <td style="text-align:center" class="normal"><%= item.quantity %>шт.</td>
-          <td align="right" class="normal"><%= number_to_currency(item.price, unit: 'грн.', format: '%n %u') %></td>
-        </tr>
-        <% end %>
-        <tr>
-          <td align="right" class="normal bold">Полная стоимость:</td>
-          <td align="right" colspan="2" class="normal bold">
-          <b><%= number_to_currency(@order.total_price, unit: 'грн.', format: '%n %u') %></b>
-          </td>
-          <td align="right" class="normal bold price_to_pay"><%= number_to_currency(real_price(@order), unit: 'грн.', format: '%n %u') %></td>
-        </tr>
-      </tbody>
-    </table>
+
+    <%= render 'orders/order_table',  order: @order,
+                                      line_items: @order.line_items,
+                                      cart: @order,
+                                      line_items_count: @order.line_items.sum(:quantity),
+                                      total_price: @order.total_price,
+                                      payment_method: @order.payment_method %>
+
     <%= form_for([:admin, @order], method: :put) do |f| %>
       <%= f.text_area :adm_info, rows: '5', placeholder: 'Заметки для Администрации...' %>
       <div class="clear"></div>
