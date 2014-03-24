@@ -36,9 +36,9 @@ class OrdersController < ApplicationController
         session[:order_id] = @order.id
 
         # email send to admin verification letter
-        # OrderNotifier.received(@order).deliver
+        OrderNotifier.received(@order).deliver
         # email send to user witch create order
-        # OrderNotifier.shipped(@order).deliver
+        OrderNotifier.shipped(@order).deliver
 
         format.html { redirect_to orders_path, notice: 'Ваш заказ принят!' }
 			else

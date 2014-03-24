@@ -7,24 +7,29 @@
         text-decoration: underline;
       }
     }
-    p {
-      font-size: 15px;
-      line-height: 15px;
-      &.distinguish {
-        color: red;
-        font-weight: bold;
-      }
-    }
-    ul {
-      margin-top: 5px;
-      list-style-type: circle;
+  }
+}
+.additional_information {
+  margin: 10px 0 0 50px;
 
-      li {
-        padding-left: 0px;
-        font-size: 14px;
-        font-weight: bold;
-        line-height: 14px;
-      }
+  p {
+    padding: 6px;
+    font-size: 15px;
+    line-height: 15px;
+    &.distinguish {
+      color: red;
+      font-weight: bold;
+    }
+  }
+  ul.distinguish_ask {
+    margin-top: 5px;
+    list-style-type: circle;
+
+    li {
+      padding-left: 0px;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 14px;
     }
   }
 }
