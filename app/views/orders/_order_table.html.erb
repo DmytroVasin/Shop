@@ -5,7 +5,6 @@
       <th>Цвет</th>
       <th>Количество</th>
       <th>Общая цена</th>
-      <th rowspan=<%= line_items.count + 1 %>>Сумма к предоплате</th>
     </tr>
     <% line_items.each do |item|  %>
     <tr>
@@ -30,14 +29,40 @@
       </tr>
     <% else %>
       <tr>
-        <td align="right" class="normal bold">Полная стоимость:</td>
-        <td align="right" colspan="3" class="normal bold">
+        <td align="right" colspan="2" class="normal bold">Общая цена товара(ов):</td>
+        <td align="right" colspan="2" class="normal bold">
           <b class='ordered_price'>
             <%= number_to_currency(cart.total_price, unit: 'грн.', format: '%n %u') %>
           </b>
         </td>
-        <td align="right" class="normal bold price_to_pay">
-          <%= number_to_currency(cart.total_price, unit: 'грн.', format: '%n %u') %>
+      </tr>
+      <tr>
+        <td align='right' colspan='2' class='normal bold'>Сумма с учетом скидки:</td>
+        <td align='center' class="normal bold">
+          <b class='ordered_price'>
+            <%= discount(order.payment_method) %>
+          </b>
+        </td>
+        <td align="right" class="normal bold">
+          <b class='ordered_price'>
+            <%= number_to_currency(total_price_with_discount(cart.total_price, order.payment_method ), unit: 'грн.', format: '%n %u') %>
+          </b>
+        </td>
+      </tr>
+      <tr>
+        <td align="right" colspan='2' class='normal bold'>Сумма к предоплате:</td>
+        <td align="right" colspan='2' class='normal bold price_to_pay prepay'>
+          <b class='ordered_price'>
+            <%= number_to_currency(prepay(cart.total_price, order.payment_method) , unit: 'грн.', format: '%n %u') %>
+          </b>
+        </td>
+      </tr>
+      <tr>
+        <td align="right" colspan='2' class='normal bold'>Итоговая стоимость:</td>
+        <td align="right" colspan='2' class='normal bold price_to_pay'>
+          <b class='ordered_price'>
+            <%= number_to_currency(total_price_with_discount(cart.total_price, order.payment_method ), unit: 'грн.', format: '%n %u') %>
+          </b>
         </td>
       </tr>
     <% end %>

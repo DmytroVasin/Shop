@@ -36,7 +36,10 @@ table.sale_order_full {
   }
   td.price_to_pay {
     background-color: #D8FF87;
-    color: #F00;
+    color: #0A00FF;;
+    &.prepay {
+      background-color: #8CCA7D;
+    }
   }
 }
 

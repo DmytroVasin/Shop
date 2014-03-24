@@ -94,11 +94,11 @@ ActiveRecord::Schema.define(:version => 20140317053513) do
     t.string   "email"
     t.string   "delivery"
     t.text     "info"
-    t.datetime "created_at",                                    :null => false
-    t.datetime "updated_at",                                    :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
     t.string   "status",           :default => "Заказано"
     t.text     "adm_info"
-    t.string   "payment_method",   :default => "Полная (100%)"
+    t.string   "payment_method",   :default => "0.1"
   end
 
   create_table "products", :force => true do |t|
