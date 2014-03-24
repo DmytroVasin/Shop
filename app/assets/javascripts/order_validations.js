@@ -29,24 +29,26 @@ $(function() {
     }
   });
 
-  // call once to set default value in 'Composition of the order' table
-  // changePriceToPay();
-  // $('#order_payment_method').on('change', function(){
-  //   if (this.value === '0.9'){
-  //     changePriceToPay(0.9);
-  //   } else {
-  //     changePriceToPay();
-  //   }
-  // });
+  $('#order_payment_method').on('change', function(){
+    if (this.value === '0.9'){
+      changePriceToPay(0.1, 0.9, 0.9);
+    } else {
+      changePriceToPay(0, 1, 0.3);
+    }
+  });
 
 });
-// function changePriceToPay(degree){
-//   degree = degree || 1;
-//   var price_to_pay, ordered_price = parseFloat( $('.ordered_price').text().replace(/\,/g, '') );
-//   price_to_pay = (ordered_price * degree).toFixed(2) + ' грн.';
+function changePriceToPay(persentOfDiscount, multipleValOfDiscount, prepayPricePersent ){
+  var price_with_discount, price_to_prepay, ordered_price;
 
-//   $('.price_to_pay').text(price_to_pay);
-// }
+  ordered_price       = parseFloat( $('.common_price').text().replace(/\,/g, '') );
+  price_with_discount = (ordered_price * multipleValOfDiscount).toFixed(2) + ' грн.';
+  price_to_prepay     = (ordered_price * prepayPricePersent).toFixed(2) + ' грн.';
+
+  $('.common_price_with_prepay').text(price_to_prepay)
+  $('.common_price_with_discount, .common_price_final').text(price_with_discount);
+  $('.common_price_discount').text(persentOfDiscount*100 + '%')
+}
 
 function classChanger(condition){
   $(this)

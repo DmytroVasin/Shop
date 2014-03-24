@@ -4,13 +4,19 @@ module ApplicationHelper
     'current_page' if current_page?(path)
   end
 
-  def pluralize_ru(count, string)
-    if count == 1
+  def pluralize_ru(count, string, without_number=true)
+    line_begining_from = if without_number
       "#{count} #{string}"
-    elsif (2..4).member?(count)
-      "#{count} #{string}а"
     else
-      "#{count} #{string}ов"
+      "#{string}"
+    end
+
+    if count == 1
+      line_begining_from
+    elsif (2..4).member?(count)
+      line_begining_from << "а"
+    else
+      line_begining_from << "ов"
     end
   end
 

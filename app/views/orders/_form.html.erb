@@ -16,7 +16,7 @@
 
       <li>
         <%= f.label :payment_method, "Предоплата <span class=\"orange\">*</span>".html_safe %>
-        <%= f.select(:payment_method, options_for_select(Order::PAYMENT_METHOD), { include_blank: true }, required: true ) %>
+        <%= f.select(:payment_method, options_for_select(Order::PAYMENT_METHOD), required: true ) %>
       </li>
 
       <li class='error_msg_for_li'>

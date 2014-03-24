@@ -16,7 +16,7 @@ class Order < ActiveRecord::Base
                   :adm_info
 
   STATUSES      = ['Заказано', 'Отправленно']
-  PAYMENT_METHOD= [['Полная (100%)', 0.9], ['Частичная (30%)', 1]]
+  PAYMENT_METHOD= [['Полная (100%)', 0.9], ['Частичная (30%)', 0.3]]
   START_ID      = 127
   REGIONS       = [
       "Винницкая область",

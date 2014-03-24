@@ -11,57 +11,58 @@
       <td class='order_title normal'><%= item.product.title %></td>
       <td align='center' class='normal'><%= rus_name_by item.color %></td>
       <td align='center' class='normal'><%= item.quantity %>шт.</td>
-      <td align='right' class='normal'><%= number_to_currency(item.price, unit: 'грн.', format: '%n %u') %></td>
+      <td align='right' class='normal'><%= number_to_currency(item.price, unit: 'грн.', format: '%n %u', delimiter: "") %></td>
     </tr>
     <% end %>
 
     <% if cart.nil? %>
+      <!-- ?????? -->
       <tr>
         <td align="right" class="normal bold">Полная стоимость:</td>
         <td align="right" colspan="3" class="normal bold">
           <b class='ordered_price'>
-            <%= number_to_currency(order.total_price, unit: 'грн.', format: '%n %u') %>
+            <%= number_to_currency(order.total_price, unit: 'грн.', format: '%n %u', delimiter: "") %>
           </b>
         </td>
         <td align="right" class="normal bold price_to_pay">
-          <b><%= number_to_currency(order.total_price.to_f * order.payment_method.to_f, unit: 'грн.', format: '%n %u') %></b>
+          <b><%= number_to_currency(order.total_price.to_f * order.payment_method.to_f, unit: 'грн.', format: '%n %u', delimiter: "") %></b>
         </td>
       </tr>
     <% else %>
-      <tr>
-        <td align="right" colspan="2" class="normal bold">Общая цена товара(ов):</td>
+      <tr class='table_devider'>
+        <td align="right" colspan="2" class="normal bold">Общая цена <%= pluralize_ru(current_cart.line_items.sum(:quantity), 'товар', false) %>:</td>
         <td align="right" colspan="2" class="normal bold">
-          <b class='ordered_price'>
-            <%= number_to_currency(cart.total_price, unit: 'грн.', format: '%n %u') %>
+          <b class='common_price'>
+            <%= number_to_currency(cart.total_price, unit: 'грн.', format: '%n %u', delimiter: "") %>
           </b>
         </td>
       </tr>
       <tr>
         <td align='right' colspan='2' class='normal bold'>Сумма с учетом скидки:</td>
         <td align='center' class="normal bold">
-          <b class='ordered_price'>
+          <b class='common_price_discount'>
             <%= discount(order.payment_method) %>
           </b>
         </td>
         <td align="right" class="normal bold">
-          <b class='ordered_price'>
-            <%= number_to_currency(total_price_with_discount(cart.total_price, order.payment_method ), unit: 'грн.', format: '%n %u') %>
+          <b class='common_price_with_discount'>
+            <%= number_to_currency(total_price_with_discount(cart.total_price, order.payment_method ), unit: 'грн.', format: '%n %u', delimiter: "") %>
           </b>
         </td>
       </tr>
       <tr>
         <td align="right" colspan='2' class='normal bold'>Сумма к предоплате:</td>
         <td align="right" colspan='2' class='normal bold price_to_pay prepay'>
-          <b class='ordered_price'>
-            <%= number_to_currency(prepay(cart.total_price, order.payment_method) , unit: 'грн.', format: '%n %u') %>
+          <b class='common_price_with_prepay'>
+            <%= number_to_currency(prepay(cart.total_price, order.payment_method) , unit: 'грн.', format: '%n %u', delimiter: "") %>
           </b>
         </td>
       </tr>
       <tr>
         <td align="right" colspan='2' class='normal bold'>Итоговая стоимость:</td>
         <td align="right" colspan='2' class='normal bold price_to_pay'>
-          <b class='ordered_price'>
-            <%= number_to_currency(total_price_with_discount(cart.total_price, order.payment_method ), unit: 'грн.', format: '%n %u') %>
+          <b class='common_price_final'>
+            <%= number_to_currency(total_price_with_discount(cart.total_price, order.payment_method ), unit: 'грн.', format: '%n %u', delimiter: "") %>
           </b>
         </td>
       </tr>
