@@ -1,5 +1,9 @@
 class RemoveInStockFromProduct < ActiveRecord::Migration
-	def change
+  def self.up
 		remove_column :products, :in_stock
-	end
+  end
+
+  def self.down
+    add_column :products, :in_stock, :boolean, default: false
+  end
 end
