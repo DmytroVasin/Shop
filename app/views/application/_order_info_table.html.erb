@@ -19,30 +19,40 @@
     <dd><%= @order.phone %></dd>
   </li>
 
+  <% if @order.region.present? %>
   <li>
     <dt>Область</dt>
     <dd><%= @order.region %></dd>
   </li>
+  <% end %>
 
+  <% if @order.city.present? %>
   <li>
     <dt>Город</dt>
     <dd><%= @order.city %></dd>
   </li>
+  <% end %>
 
+  <% if @order.address.present? %>
   <li>
     <dt>Адрес</dt>
     <dd><%= @order.address %></dd>
   </li>
+  <% end %>
 
+  <% if @order.email.present? %>
   <li>
     <dt>Email</dt>
     <dd><%= @order.email %></dd>
   </li>
+  <% end %>
 
+  <% if @order.delivery.present? %>
   <li>
     <dt>Доставка на адрес</dt>
     <dd><%= @order.delivery %></dd>
   </li>
+  <% end %>
 
   <% if @order.additional_phone.present? %>
     <li>

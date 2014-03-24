@@ -1,4 +1,9 @@
 <div class="title_of_cart">Ваш заказ:</div>
 <div class='orders_composition'>Состав заказа:</div>
 
-<%= render 'orders/order_table', order: order, line_items: order.line_items, cart: order %>
+<%= render 'orders/order_table',  order: order,
+                                  line_items: order.line_items,
+                                  cart: order,
+                                  line_items_count: order.line_items.sum(:quantity),
+                                  total_price: order.total_price,
+                                  payment_method: order.payment_method %>

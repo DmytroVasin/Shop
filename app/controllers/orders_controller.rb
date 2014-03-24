@@ -28,6 +28,7 @@ class OrdersController < ApplicationController
     @order = Order.new(params[:order])
     @order.input_line_items_to_order(current_cart)
 
+
     respond_to do |format|
       if @order.save
         Cart.destroy(session[:cart_id])

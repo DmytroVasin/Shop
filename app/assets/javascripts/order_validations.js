@@ -30,7 +30,7 @@ $(function() {
   });
 
   $('#order_payment_method').on('change', function(){
-    if (this.value === '0.9'){
+    if (this.value === '0.1'){
       changePriceToPay(0.1, 0.9, 0.9);
     } else {
       changePriceToPay(0, 1, 0.3);

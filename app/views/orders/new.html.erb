@@ -3,7 +3,12 @@
 <div class="title_of_cart">Оформление заказа:</div>
 <div class='orders_composition'>Состав заказа:</div>
 
-<%= render 'order_table', order: @order, line_items: @line_items, cart: @cart  %>
+<%= render 'order_table', order: @order,
+                          line_items: @line_items,
+                          cart: @cart,
+                          line_items_count: @line_items.sum(:quantity),
+                          total_price: @cart.total_price,
+                          payment_method: @order.payment_method  %>
 <%= render 'form' %>
 
 <div class="clear"></div>

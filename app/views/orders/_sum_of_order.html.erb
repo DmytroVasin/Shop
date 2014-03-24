@@ -1,0 +1,37 @@
+<tr class='table_devider'>
+  <td align="right" colspan="2" class="normal bold">Общая цена <%= pluralize_ru(line_items_count, 'товар', false) %>:</td>
+  <td align="right" colspan="2" class="normal bold">
+    <b class='common_price'>
+      <%= number_to_currency(total_price, unit: 'грн.', format: '%n %u', delimiter: "") %>
+    </b>
+  </td>
+</tr>
+<tr>
+  <td align='right' colspan='2' class='normal bold'>Сумма с учетом скидки:</td>
+  <td align='center' class="normal bold">
+    <b class='common_price_discount'>
+      <%= discount(payment_method) %>
+    </b>
+  </td>
+  <td align="right" class="normal bold">
+    <b class='common_price_with_discount'>
+      <%= number_to_currency(total_price_with_discount(total_price, payment_method ), unit: 'грн.', format: '%n %u', delimiter: "") %>
+    </b>
+  </td>
+</tr>
+<tr>
+  <td align="right" colspan='2' class='normal bold'>Сумма к предоплате:</td>
+  <td align="right" colspan='2' class='normal bold price_to_pay prepay'>
+    <b class='common_price_with_prepay'>
+      <%= number_to_currency(prepay(total_price, payment_method) , unit: 'грн.', format: '%n %u', delimiter: "") %>
+    </b>
+  </td>
+</tr>
+<tr>
+  <td align="right" colspan='2' class='normal bold'>Итоговая стоимость:</td>
+  <td align="right" colspan='2' class='normal bold price_to_pay'>
+    <b class='common_price_final'>
+      <%= number_to_currency(total_price_with_discount(total_price, payment_method ), unit: 'грн.', format: '%n %u', delimiter: "") %>
+    </b>
+  </td>
+</tr>

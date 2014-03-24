@@ -4,7 +4,12 @@
   Это уведомительное сообщение. Мы приняли ваш заказ. Он будет рассмотрен в ближайшее время.
 </p>
 
-<%= render 'orders/order_table', order: @order, line_items: @line_items, cart: nil %>
+<%= render 'orders/order_table',  order: @order,
+                                  line_items: @line_items,
+                                  cart: nil,
+                                  line_items_count: @line_items.sum(:quantity),
+                                  total_price: @order.total_price,
+                                  payment_method: @order.payment_method %>
 
 <br />
 <br />
