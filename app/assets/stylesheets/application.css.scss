@@ -10,10 +10,11 @@
  *
  *= require reset/reset
  *= require_self
- *= require 'header'
- *= require 'footer'
- *= require 'welcome'
- *= require 'trackbar'
+ *= require header
+ *= require footer
+ *= require welcome
+ *= require trackbar
+ *= require orders
  */
 
 html, body {

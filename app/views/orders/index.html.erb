@@ -21,20 +21,11 @@
   </fieldset>
 
   <fieldset>
-    <legend>Реквизиты карты:</legend>
-
-    <div class="popover">
-      <div class="popover-content">
-        <p>Номер вашего заказа:</p>
-        <p>
-          <b> №<%= @order.id + Order::START_ID %></b>
-        </p>
-      </div>
-    </div>
-
-    <%= render 'order_info_table' %>
+    <legend>Реквизиты:</legend>
+    <%= render 'details' %>
   </fieldset>
 
-<div class="back_from_cart">
-  <%= link_to '« На главную', root_path %>
+  <div class="back_from_cart">
+    <%= link_to '« На главную', root_path %>
+  </div>
 </div>

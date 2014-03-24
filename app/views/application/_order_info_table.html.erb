@@ -5,8 +5,7 @@
   </li>
   <li>
     <dt>Предоплата:</dt>
-    <dd>???</dd>
-    <!-- <dd><%= prepayment(@order.payment_method) %></dd> -->
+    <dd><%= prepayment(@order.payment_method) %></dd>
   </li>
 
   <li>
@@ -40,12 +39,10 @@
   </li>
   <% end %>
 
-  <% if @order.email.present? %>
   <li>
     <dt>Email</dt>
     <dd><%= @order.email %></dd>
   </li>
-  <% end %>
 
   <% if @order.delivery.present? %>
   <li>

@@ -1,0 +1,30 @@
+.wrapper_for_orders fieldset {
+
+  ul {
+    dd {
+      a {
+        color: #00F;
+        text-decoration: underline;
+      }
+    }
+    p {
+      font-size: 15px;
+      line-height: 15px;
+      &.distinguish {
+        color: red;
+        font-weight: bold;
+      }
+    }
+    ul {
+      margin-top: 5px;
+      list-style-type: circle;
+
+      li {
+        padding-left: 0px;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 14px;
+      }
+    }
+  }
+}
