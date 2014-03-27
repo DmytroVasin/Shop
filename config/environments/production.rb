@@ -59,7 +59,7 @@ Shop::Application.configure do
 
   # ----------------------------------------------------------------------
 
-  config.action_mailer.default_url_options = { :host => 'shop-dn-ua.herokuapp.com/' }
+  config.action_mailer.default_url_options = { :host => 'vako.dn.ua/' }
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
