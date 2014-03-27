@@ -5,9 +5,9 @@ namespace :db do
     # load "#{Rails.root}/db/seeds/categories.rb"
     load "#{Rails.root}/db/seeds/gender.rb"
 
-    include Seeds
+    # include Seeds
     add_admin
-    create_categories
+    # create_categories
     add_gender
   end
 end
