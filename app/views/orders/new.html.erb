@@ -8,7 +8,7 @@
                           cart: @cart,
                           line_items_count: @line_items.sum(:quantity),
                           total_price: @cart.total_price,
-                          payment_method: @order.payment_method  %>
+                          payment_method: '0.1'  %>
 <%= render 'form' %>
 
 <div class="clear"></div>
