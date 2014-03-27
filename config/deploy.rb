@@ -1,3 +1,4 @@
+# sudo su - deploy
 require "bundler/capistrano"
 #require "rvm/capistrano"
 
