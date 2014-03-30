@@ -47,18 +47,6 @@
 </div>
 
 <div class="control-group">
-  <%= f.label :color, 'Цвет: ', class: 'control-label' %>
-  <div class="controls">
-    <% Colour.all.each do |color| %>
-      <label class="checkbox inline">
-        <%= check_box_tag 'product[colour_ids][]', color.id, @product.colour_ids.include?(color.id) %>
-        <%= color.name %>
-      </label>
-    <% end %>
-  </div>
-</div>
-
-<div class="control-group">
   <%= f.label :description, 'Описание продукта: ', class: 'control-label' %>
   <div class="controls">
     <div class="input-prepend">
@@ -97,6 +85,6 @@
 
 <div class="control-group">
   <div class="controls">
-    <%= f.submit 'Create', class: 'btn btn-success' %>
+    <%= f.submit submit, class: 'btn btn-success' %>
   </div>
 </div>

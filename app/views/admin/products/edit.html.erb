@@ -1,9 +1,9 @@
-<blockquote><h2>Edit perfume:</h2></blockquote>
+<blockquote><h2>Редактировать товар:</h2></blockquote>
 
 <%= form_for [:admin, @product], url: admin_product_path(@product), html: { class: 'form-horizontal' }, method: :put do |f| %>
   <%= render partial: 'error', locals: { product: @product } %>
-  <%= render partial: 'form', locals: { f: f } %>
+  <%= render partial: 'form', locals: { f: f, submit: 'Обновить' } %>
 <% end %>
 
-<%= link_to 'All', admin_products_path, class: 'btn btn-large custom_black_btn' %>
-<%= link_to 'back to post', admin_product_path(@product.id), class: 'btn btn-inverse btn-large custom_black_btn' %>
+<%= link_to 'К списку', admin_products_path, class: 'btn btn-large custom_black_btn' %>
+<%= link_to 'К товару', admin_product_path(@product.id), class: 'btn btn-inverse btn-large custom_black_btn' %>

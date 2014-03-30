@@ -1,5 +1,5 @@
 <blockquote>
-  <h3>Бренды:</h3>
+  <h3>Расцветки:</h3>
 </blockquote>
 <% if @colours.any? %>
   <div id="paginator">
@@ -10,7 +10,7 @@
     <tr>
       <th>Color name</th>
       <th>Russian - Color name</th>
-      <th style='width: 122px'>Actions</th>
+      <th style='width: 50px'>Actions</th>
     </tr>
     <tbody id="colours_body">
       <%= render @colours %>
@@ -18,4 +18,3 @@
   </table>
 <% end %>
 <%= link_to 'Add color', new_admin_colour_path, class: 'btn btn-primary custom_black_btn' %>
-

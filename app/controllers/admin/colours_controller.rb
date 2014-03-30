@@ -31,10 +31,10 @@ class Admin::ColoursController < Admin::BaseController
     redirect_to admin_colours_path
   end
 
-  def destroy
-    @colour = Colour.find(params[:id])
-    @colour.destroy
+  # def destroy
+  #   @colour = Colour.find(params[:id])
+  #   @colour.destroy
 
-    redirect_to admin_colours_path, notice: 'Color deleted'
-  end
+  #   redirect_to admin_colours_path, notice: 'Color deleted'
+  # end
 end

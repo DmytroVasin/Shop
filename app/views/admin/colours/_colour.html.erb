@@ -1,8 +1,5 @@
   <tr>
     <td><%= colour.name %></td>
    	<td><%= rus_name colour %></td>
-    <td>
-      <%= link_to 'Edit', edit_admin_colour_path(colour.id), class: 'btn btn-info' %>
-      <%= link_to 'Delete', admin_colour_path(colour.id), method: :delete, confirm: 'Вы уверены?', class: 'btn btn-danger' %>
-    </td>
+    <td><%= link_to 'Edit', edit_admin_colour_path(colour.id), class: 'btn btn-info' %></td>
   </tr>
