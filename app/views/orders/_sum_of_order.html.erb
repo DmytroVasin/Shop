@@ -28,10 +28,10 @@
   </td>
 </tr>
 <tr>
-  <td align="right" colspan='2' class='normal bold'>Итоговая стоимость:</td>
+  <td align="right" colspan='2' class='normal bold'>Остаток:</td>
   <td align="right" colspan='2' class='normal bold price_to_pay'>
     <b class='common_price_final'>
-      <%= number_to_currency(total_price_with_discount(total_price, payment_method ), unit: 'грн.', format: '%n %u', delimiter: "") %>
+      <%= number_to_currency(balance(total_price, payment_method ), unit: 'грн.', format: '%n %u', delimiter: "") %>
     </b>
   </td>
 </tr>

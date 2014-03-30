@@ -113,14 +113,14 @@ module ApplicationHelper
     1 - payment_method.to_f
   end
 
-  def prepay total, payment_method
+  def prepay total_price, payment_method
     prepay_ = case payment_method
     when '0.1'
       0.9
     when '0'
       0.3
     end
-    prepay_ * total
+    prepay_ * total_price
   end
 
   def real_price order
@@ -129,5 +129,11 @@ module ApplicationHelper
 
   def total_price_with_discount total_price, payment_method
     total_price * real_discount(payment_method)
+  end
+
+  def balance total_price, payment_method
+    full_price = total_price_with_discount(total_price, payment_method )
+    prepay = prepay(total_price, payment_method)
+    (full_price - prepay).round(2).to_i
   end
 end

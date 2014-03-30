@@ -1,0 +1,65 @@
+<div class='rights_column'>
+  <h3>Контакты:</h3>
+
+  <p>
+    Ваше письмо получит служба поддержки. И мы постараемся решить вопрос максимально быстро.
+  </p>
+
+  Контактная информация:
+  <ul>
+    <li>(066)-375-78-97 МТС</li>
+    <li>(096)-515-72-98 Киевстар</li>
+    <li>(063)-426-80-78 Life :)</li>
+  </ul>
+  Обслуживание телефонных звонков:
+  <ul>
+    <li>Пн-Пт: с 10:00 до 18:00</li>
+    <li>Суббота: с 10:00 до 15:00</li>
+    <li>Воскресенье: выходной</li>
+  </ul>
+
+  <p><span class='bold'>Услуга "Обратный звонок"</span>
+  <br>
+  Если у Вас не было возможности нам позвонить либо Вы не дозвонились – НЕ СТРАШНО!
+  <br>
+  Просто нажмите ниже на ссылку и мы ПЕРЕЗВОНИМ ВАМ в ближайшее рабочее время!</p>
+  <input type='submit' class='btn_order call_order' id='launch-modal' value='Заказать звонок'>
+
+  <p>Все вопросы, жалобы, предложения и комментарии шлите нам на e-mail: <a href="mailto:info@vako.dn.ua">info@vako.dn.ua</a></p>
+</div>
+
+
+<div id="modal-background" class="vertical-align">
+  <div id="modal">
+    <a href="#" title="Закрыть" id="close-modal">X</a>
+
+    <h3>
+      Заказать звонок
+    </h3>
+
+    <%= form_tag({ action: 'contacts_call'}, { class: 'call_form', remote: true  }) do %>
+      <p>
+        <%= text_field_tag 'call[full_name]', '', placeholder: 'Юлия Гришковец', required: true %>
+        <%= label_tag 'Имя, Фамилия*' %>
+      </p>
+
+      <p>
+        <%= email_field_tag 'call[email]', '', placeholder: "Email", required: true %>
+        <%= label_tag 'Email*' %>
+      </p>
+
+      <p>
+        <%= text_field_tag 'call[phone_number]', '', placeholder: '095-47-89-33', required: true %>
+        <%= label_tag 'Телефон*' %>
+      </p>
+
+      <p>
+        <%= text_area_tag 'call[comments]', '', placeholder: 'Коментарий' %>
+      </p>
+
+      <p class="submit">
+        <%= submit_tag 'Заказать' %>
+      </p>
+    <% end %>
+  </div>
+</div>

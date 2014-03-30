@@ -7,4 +7,25 @@ $(function () {
     }, 'slow', 'linear');
     $('strong.' + clicked_class_name).addClass('red');
   });
+
+
+  // Query the DOM
+  var launchModalButton = $('#launch-modal'),
+      modalBackground   = $('#modal-background'),
+      modal             = $('#modal'),
+      closeButton       = $('#close-modal');
+
+  // Show Modal
+  launchModalButton.on('click', function(){
+    modalBackground.show();
+    modal.show();
+  })
+
+  // Hide Modal
+  closeButton.on('click', function(){
+    modalBackground.hide();
+    modal.hide();
+    return false;
+  })
+
 });

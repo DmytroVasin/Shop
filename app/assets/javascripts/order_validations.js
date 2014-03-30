@@ -42,12 +42,14 @@ function changePriceToPay(persentOfDiscount, multipleValOfDiscount, prepayPriceP
   var price_with_discount, price_to_prepay, ordered_price;
 
   ordered_price       = parseFloat( $('.common_price').text().replace(/\,/g, '') );
-  price_with_discount = (ordered_price * multipleValOfDiscount).toFixed(2) + ' грн.';
-  price_to_prepay     = (ordered_price * prepayPricePersent).toFixed(2) + ' грн.';
+  price_with_discount = (ordered_price * multipleValOfDiscount).toFixed(2);
+  price_to_prepay     = (ordered_price * prepayPricePersent).toFixed(2);
+  final_price         =
 
-  $('.common_price_with_prepay').text(price_to_prepay)
-  $('.common_price_with_discount, .common_price_final').text(price_with_discount);
   $('.common_price_discount').text(persentOfDiscount*100 + '%')
+  $('.common_price_with_discount').text(price_with_discount + ' грн.');
+  $('.common_price_with_prepay').text(price_to_prepay + ' грн.')
+  $('.common_price_final').text(price_with_discount - price_to_prepay + ' грн.');
 }
 
 function classChanger(condition){
