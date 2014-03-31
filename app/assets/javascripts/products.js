@@ -103,6 +103,7 @@ $(function () {
     $('#slider a').each(function(index) {
       if ( value == $(this).data('color') ) {
         num = $(this).index();
+        $(this).click();
 
         for(var i = 1; i <= num; i++) {
           Navigate.leaf_over( 85 );
