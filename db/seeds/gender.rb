@@ -1,5 +1,5 @@
 def add_gender
-  ['Unisex', 'Womens', 'Mens'].each do |type|
-    Gender.first_or_create(gender: type)
+  {:'Unisex'=> 'Унисекс', :'Womens' => 'Женское', :'Mens'=> 'Мужское'}.each do |type, rus|
+    Gender.first_or_create({ gender: type, gender_rus: rus })
   end
 end
