@@ -35,6 +35,20 @@
       z-index : 1;
     }
   }
+  #rotator_arrow {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 20;
+    li {
+      float: left;
+      width: 20px;
+      height: 40px;
+      margin: 0px 5px;
+      border: 1px solid #97002E;
+      padding: 2px;
+    }
+  }
 }
 
 #leftarea {
@@ -44,7 +58,7 @@
 
   #top_list {
     width      : 750px;
-    background : url(/assets/top_list_rus.png) 40% 0 no-repeat;
+    background : url(/assets/top_list_rus.jpg) 40% 0 no-repeat;
     margin     : 25px 0 0 10px;
 
     #top_icon {

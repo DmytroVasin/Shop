@@ -4,65 +4,90 @@ $(function (){
 // ------------------------------------------ Top Product slider
 
 
-var nextButton = $('.nextproduct'),
-prevButton = $('.previousproduct'),
-nextImg = $('.next_img'),
-prevImg = $('.prev_img'),
-list = $('#slider');
+	var nextButton = $('.nextproduct'),
+	prevButton = $('.previousproduct'),
+	nextImg = $('.next_img'),
+	prevImg = $('.prev_img'),
+	list = $('#slider');
 
-Navigate = {
-	isAnimated: false,
+	Navigate = {
+		isAnimated: false,
 
-	forwarding: function (size) {
-		var that = this;
+		forwarding: function (size) {
+			var that = this;
 
-		if (this.isAnimated) {
-			return;
-		}
+			if (this.isAnimated) {
+				return;
+			}
 
-		this.isAnimated = true;
+			this.isAnimated = true;
 
-		list
-		.prepend( list.children().last() )
-		.css({ left: '-='+size })
-		.animate({ left: '+='+size }, 'fast', 'linear', function () {
-			that.isAnimated = false;
-		});
-	},
-
-	backward: function (size) {
-		var that = this;
-
-		if (this.isAnimated) {
-			return;
-		}
-
-		this.isAnimated = true;
-
-		list
-		.animate({ left: '-='+size }, 'fast', 'linear', function () {
 			list
-			.append( list.children().first() )
-			.css({ left: '+='+size });
-			that.isAnimated = false;
-		});
-	},
+			.prepend( list.children().last() )
+			.css({ left: '-='+size })
+			.animate({ left: '+='+size }, 'fast', 'linear', function () {
+				that.isAnimated = false;
+			});
+		},
 
-	leaf_over: function (size) {
-		var that = this;
-		list
-		.animate({ left: '-='+size }, 100, 'linear', function () {
+		backward: function (size) {
+			var that = this;
+
+			if (this.isAnimated) {
+				return;
+			}
+
+			this.isAnimated = true;
+
 			list
-			.append( list.children().first() )
-			.css({ left: '+='+size });
-		});
-	}
-};
+			.animate({ left: '-='+size }, 'fast', 'linear', function () {
+				list
+				.append( list.children().first() )
+				.css({ left: '+='+size });
+				that.isAnimated = false;
+			});
+		},
 
-nextButton.on('click', Navigate.forwarding.bind(Navigate, 125));
-prevButton.on('click', Navigate.backward.bind(Navigate, 125));
-nextImg.on('click', Navigate.forwarding.bind(Navigate, 85));
-prevImg.on('click', Navigate.backward.bind(Navigate, 85));
+		leaf_over: function (size) {
+			var that = this;
+			list
+			.animate({ left: '-='+size }, 100, 'linear', function () {
+				list
+				.append( list.children().first() )
+				.css({ left: '+='+size });
+			});
+		}
+	};
+
+	nextButton.on('click', Navigate.forwarding.bind(Navigate, 125));
+	prevButton.on('click', Navigate.backward.bind(Navigate, 125));
+	nextImg.on('click', Navigate.forwarding.bind(Navigate, 85));
+	prevImg.on('click', Navigate.backward.bind(Navigate, 85));
+
+
+
+
+	var prevBigImg = $('.prevBigImg'),
+			nextBigImg = $('.nextBigImg');
+
+	BigRotator = {
+		forwarding: function () {
+			var current = $('div#rotator ul li.show');
+			var prev = ((current.prev().length) ? current.prev() : $('div#rotator ul li:last'));
+			prev.addClass('show').animate({opacity: 1.0}, 200);
+			current.animate({opacity: 0.0}, 200).removeClass('show');
+		},
+
+		backward: function () {
+			var current = $('div#rotator ul li.show');
+			var next = ((current.next().length) ? current.next() : $('div#rotator ul li:first'));
+			next.addClass('show').animate({opacity: 1.0}, 200);
+			current.animate({opacity: 0.0}, 200).removeClass('show');
+		}
+	};
+
+	nextBigImg.on('click', BigRotator.forwarding.bind(BigRotator));
+	prevBigImg.on('click', BigRotator.backward.bind(BigRotator));
 
 });
 
