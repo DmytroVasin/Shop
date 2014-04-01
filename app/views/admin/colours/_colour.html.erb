@@ -5,12 +5,12 @@
     <td>
       <div>
         <select data-placeholder="Pick a color..." class="chosen-select" multiple style="width:350px;" tabindex="4">
-          <%= options_for_select(Colour::COMMON_COLORS, colour.common_colors.keys) %>
+          <%= options_for_select(Colour::COMMON_COLORS_RUS, colour.common_colors.keys) %>
         </select>
       </div>
     </td>
     <td>
-      <%= link_to 'Accept', '#', class: 'btn btn-warning accept_color' %>
+      <%= link_to 'Accept', '#', class: 'btn btn-warning accept_color', data: { id: colour.id } %>
       <%= link_to 'Edit', edit_admin_colour_path(colour.id), class: 'btn btn-info' %>
     </td>
   </tr>

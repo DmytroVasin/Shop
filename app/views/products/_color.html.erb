@@ -1,8 +1,8 @@
-<% @colors.each do |color| %>
+<% Colour::COMMON_COLORS_RUS.each do |color| %>
 	<li>
 	  <label>
-	    <%= check_box_tag 'color_type', color.name %>
-	    <%= rus_name(color) %>
+	    <%= check_box_tag 'color_type', color[1] %>
+	    <%= color[0] %>
 	  </label>
 	</li>
 <% end %>

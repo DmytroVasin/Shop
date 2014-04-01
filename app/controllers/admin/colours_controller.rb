@@ -37,7 +37,7 @@ class Admin::ColoursController < Admin::BaseController
     colour = Colour.find(params[:id])
     acceptedColorArray = params[:acceptedColorArray]
 
-    common_colors = Hash[acceptedColorArray.map { |x| [x, x] }]
+    common_colors = Hash[acceptedColorArray.map { |rus_color| [Colour::COMMON_COLORS_RUS.assoc(rus_color).last, rus_color ] }]
 
     colour.update_attributes({common_colors: common_colors})
 
