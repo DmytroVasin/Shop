@@ -1,39 +1,11 @@
   <tr>
+    <td><%= colour.id %></td>
     <td><%= colour.name %></td>
     <td><%= rus_name colour %></td>
     <td>
       <div>
         <select data-placeholder="Pick a color..." class="chosen-select" multiple style="width:350px;" tabindex="4">
-          <option value="Black">Black</option>
-          <option value="Blue">Blue</option>
-          <option value="Multi">Multi</option>
-          <option value="Brown">Brown</option>
-          <option value="Red">Red</option>
-          <option value="Gray">Gray</option>
-          <option value="Green">Green</option>
-          <option value="Pink">Pink</option>
-          <option value="Beige">Beige</option>
-          <option value="Tan">Tan</option>
-          <option value="Purple">Purple</option>
-          <option value="White">White</option>
-          <option value="Gold">Gold</option>
-          <option value="Yellow">Yellow</option>
-          <option value="Orange">Orange</option>
-          <option value="Burgundy">Burgundy</option>
-          <option value="Silver">Silver</option>
-          <option value="Navy">Navy</option>
-          <option value="Pewter">Pewter</option>
-          <option value="Olive">Olive</option>
-          <option value="Bone">Bone</option>
-          <option value="Bronze">Bronze</option>
-          <option value="Animal Print">Animal Print</option>
-          <option value="Khaki">Khaki</option>
-          <option value="Taupe">Taupe</option>
-          <option value="Metallic">Metallic</option>
-          <option value="Coral">Coral</option>
-          <option value="Mahogany">Mahogany</option>
-          <option value="Neutral">Neutral</option>
-          <option value="Clear">Clear</option>
+          <%= options_for_select(Colour::COMMON_COLORS, colour.common_colors.keys) %>
         </select>
       </div>
     </td>

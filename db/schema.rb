@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140331182826) do
+ActiveRecord::Schema.define(:version => 20140401163845) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",              :default => "", :null => false
@@ -54,7 +54,10 @@ ActiveRecord::Schema.define(:version => 20140331182826) do
   create_table "colours", :force => true do |t|
     t.string "name"
     t.string "name_rus"
+    t.hstore "common_colors"
   end
+
+  add_index "colours", ["common_colors"], :name => "index_colours_on_common_colors"
 
   create_table "genders", :force => true do |t|
     t.string   "gender"

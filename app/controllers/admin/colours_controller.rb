@@ -31,6 +31,23 @@ class Admin::ColoursController < Admin::BaseController
     redirect_to admin_colours_path
   end
 
+  def update_common_colour
+    @colours = Colour.order('name').page(params[:page]).per(10)
+
+    colour = Colour.find(params[:id])
+    acceptedColorArray = params[:acceptedColorArray]
+
+    common_colors = Hash[acceptedColorArray.map { |x| [x, x] }]
+
+    colour.update_attributes({common_colors: common_colors})
+
+
+    flash[:notice] = 'Общий цвет - обновлен!'
+    flash.keep(:notice) # Keep flash notice around for the redirect.
+
+    render js: "window.location = '/admin/colours'"
+  end
+
   # def destroy
   #   @colour = Colour.find(params[:id])
   #   @colour.destroy

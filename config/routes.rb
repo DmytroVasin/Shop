@@ -20,7 +20,9 @@ Shop::Application.routes.draw do
     end
     resources :categories
     resources :brands
-    resources :colours
+    resources :colours do
+      post 'update_common_colour', on: :collection
+    end
     resources :orders
     resources :images,  only: [:destroy]
     resources :parsers, only: [:index] do

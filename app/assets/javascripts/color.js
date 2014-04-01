@@ -25,5 +25,12 @@ $(function() {
     });
 
     console.log(acceptedColorArray);
+
+    $.ajax({
+      type: "POST",
+      url: "/admin/colours/update_common_colour",
+      data: { id: $(this).data('id'), acceptedColorArray: acceptedColorArray }
+    })
+
   });
 });
