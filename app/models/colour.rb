@@ -39,4 +39,7 @@ class Colour < ActiveRecord::Base
     ['Чистый', 'Clear'],
   ]
 
+  def self.create_hash_by(array)
+    Hash[array.map { |rus_color| [COMMON_COLORS_RUS.assoc(rus_color).last, rus_color ] }]
+  end
 end

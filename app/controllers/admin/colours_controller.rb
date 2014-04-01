@@ -1,5 +1,6 @@
 class Admin::ColoursController < Admin::BaseController
   before_filter :authenticate_admin!
+  before_filter :find_colour, only: [:edit, :update, :update_common_colour]
 
   def index
     @colours = Colour.order('name').page(params[:page]).per(10)
@@ -10,7 +11,6 @@ class Admin::ColoursController < Admin::BaseController
   end
 
   def edit
-    @colour = Colour.find(params[:id])
   end
 
   def create
@@ -24,7 +24,6 @@ class Admin::ColoursController < Admin::BaseController
   end
 
   def update
-    @colour = Colour.find(params[:id])
     @colour.update_attributes(params[:colour])
 
     flash[:notice] = 'Success updated this order note'
@@ -34,17 +33,14 @@ class Admin::ColoursController < Admin::BaseController
   def update_common_colour
     @colours = Colour.order('name').page(params[:page]).per(10)
 
-    colour = Colour.find(params[:id])
     acceptedColorArray = params[:acceptedColorArray]
 
-    common_colors = Hash[acceptedColorArray.map { |rus_color| [Colour::COMMON_COLORS_RUS.assoc(rus_color).last, rus_color ] }]
+    common_colors = Colour.create_hash_by(acceptedColorArray)
 
-    colour.update_attributes({common_colors: common_colors})
+    @colour.update_attributes({common_colors: common_colors})
 
 
     flash[:notice] = 'Общий цвет - обновлен!'
-    flash.keep(:notice) # Keep flash notice around for the redirect.
-
     render js: "window.location = '/admin/colours'"
   end
 
@@ -54,4 +50,10 @@ class Admin::ColoursController < Admin::BaseController
 
   #   redirect_to admin_colours_path, notice: 'Color deleted'
   # end
+
+  private
+
+  def find_colour
+    @colour = Colour.find(params[:id])
+  end
 end
