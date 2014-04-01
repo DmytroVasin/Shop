@@ -11,9 +11,19 @@ $(function() {
   }
 
   $('.chosen-container').on('click', function(){
-    siblings = $(this).parents('td').parents('tr').height('200px').siblings();
+    siblings = $(this).parents('td').parents('tr').height('285px').siblings();
     $.each(siblings, function() {
       $(this).css('height','20px');
     });
+  });
+
+  $('.accept_color').on('click', function(){
+    var acceptedColorArray = []
+    selectedColors = $(this).parents('tr').find('.chosen-choices .search-choice');
+    $.each(selectedColors, function(){
+      acceptedColorArray.push($(this).find('span').text());
+    });
+
+    console.log(acceptedColorArray);
   });
 });
