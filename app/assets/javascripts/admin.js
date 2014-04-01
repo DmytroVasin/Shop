@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree ./redactor-rails
+//= require color
 //= require_self
 
 $(function() {
