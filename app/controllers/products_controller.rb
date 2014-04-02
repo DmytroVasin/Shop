@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
     @genders = Gender.joins(:products).group('genders.id').order('gender ASC')
     @colors  = Colour.joins(:colors).order('name ASC').uniq(&:id)
 
-    @products = Product.selecting_by(params[:categories_params], 'categories').selecting_by(params[:brands_params], 'brand', 's').selecting_by(params[:gender_params], 'genders', '', 'gender').selecting_by(params[:color_params], 'colours').price_between(params[:price_between]).sort_direction(params[:sort_direction], @sort_hash)
+    @products = Product.selecting_by(params[:categories_params], 'categories').selecting_by(params[:brands_params], 'brand', 's').selecting_by(params[:gender_params], 'genders', '', 'gender').selecting_by_color(params[:color_params]).price_between(params[:price_between]).sort_direction(params[:sort_direction], @sort_hash)
 
     # !!!!
     # Product.find_by_sql("SELECT * FROM products INNER JOIN colors_products ON colors_products.product_id = products.id INNER JOIN colors ON colors.id = colors_products.color_id WHERE (name = 'Red' or name = 'Black') AND (price between 10 and 12 or price between 90 and 100)").count

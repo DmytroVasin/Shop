@@ -96,4 +96,12 @@ class Product < ActiveRecord::Base
       scoped
     end
   end
+
+  def self.selecting_by_color(colors)
+    if colors
+      joins(:colours).where("common_colors ?| ARRAY[:value]", value: colors).uniq(&:id)
+    else
+      scoped
+    end
+  end
 end

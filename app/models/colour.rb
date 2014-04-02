@@ -7,13 +7,13 @@ class Colour < ActiveRecord::Base
   has_many :products, through: :colors, uniq: true
 
   COMMON_COLORS_RUS = [
-    ['Черный', 'Black'],
+    ['Чёрный', 'Black'],
     ['Синий', 'Blue'],
     ['Мульти', 'Multi'],
     ['Коричневый', 'Brown'],
     ['Красный', 'Red'],
     ['Серый', 'Gray'],
-    ['Зеленый', 'Green'],
+    ['Зелёный', 'Green'],
     ['Розовый', 'Pink'],
     ['Бежевый', 'Beige'],
     ['Кожа', 'Tan'],
