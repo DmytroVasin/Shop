@@ -59,7 +59,7 @@ Shop::Application.configure do
 
   # ----------------------------------------------------------------------
 
-  config.action_mailer.default_url_options = { :host => 'vako.dn.ua/' }
+  config.action_mailer.default_url_options = { host: 'vako.dn.ua/' }
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
@@ -67,8 +67,8 @@ Shop::Application.configure do
       :port                 => 587,
       :domain               => 'dn.ua',
       :authentication       => 'plain',
-      :user_name            => 'vasindima779@gmail.com',
-      :password             => 'D80939256658Dima',
+      :user_name            => 'order.vako@gmail.com',
+      :password             => 'KolyaVadik2014',
       :enable_starttls_auto => true
   }
 

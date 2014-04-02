@@ -6,7 +6,7 @@ class OrderNotifier < ActionMailer::Base
   def received(order)
     @order = order
 
-    mail to: 'dracon779@gmail.com', subject: "Новый заказ! №#{@order.id}"
+    mail to: 'order.vako@gmail.com', subject: "Новый заказ! №#{@order.id}"
   end
 
   def shipped(order)
@@ -19,6 +19,6 @@ class OrderNotifier < ActionMailer::Base
   def recall(info)
     @info = info
 
-    mail to: 'vasindima779@gmail.com', subject: 'Запрос на перезванивание'
+    mail to: 'order.vako@gmail.com', subject: 'Запрос на перезванивание'
   end
 end

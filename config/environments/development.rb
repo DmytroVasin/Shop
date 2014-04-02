@@ -29,8 +29,8 @@ Shop::Application.configure do
       :port                 => 587,
       :domain               => 'myapp.com',
       :authentication       => 'plain',
-      :user_name            => 'vasinvaleriy779@gmail.com',
-      :password             => 'D80939256658',
+      :user_name            => 'order.vako@gmail.com',
+      :password             => 'KolyaVadik2014',
       :enable_starttls_auto => true
   }
 
