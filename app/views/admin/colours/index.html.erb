@@ -3,7 +3,7 @@
 </blockquote>
 <% if @colours.any? %>
   <div id="paginator">
-    <%= paginate @colours, window: 2, remote: true %>
+    <%= paginate @colours, window: 2 %>
   </div>
   <%= render 'colour_table', colours: @colours %>
 <% end %>
