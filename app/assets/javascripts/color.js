@@ -24,8 +24,6 @@ $(function() {
       acceptedColorArray.push($(this).find('span').text());
     });
 
-    console.log(acceptedColorArray);
-
     $.ajax({
       type: "POST",
       url: "/admin/colours/update_common_colour",

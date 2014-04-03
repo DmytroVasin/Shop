@@ -41,7 +41,7 @@ class Admin::ColoursController < Admin::BaseController
 
 
     flash[:notice] = 'Общий цвет - обновлен!'
-    render js: "window.location = '/admin/colours'"
+    render js: 'window.location.reload()'
   end
 
   # def destroy
