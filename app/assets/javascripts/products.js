@@ -74,7 +74,11 @@ $(function () {
 		var categories = $('.categories_bar input[type=checkbox]:checked');
 		var brands     = $('.brand_bar input[type=checkbox]:checked');
 		var gender     = $('.gender_bar input[type=checkbox]:checked');
-		var color      = $('.color_bar input[type=checkbox]:checked');
+    var color      = $('.color_bar input[type=checkbox]:checked');
+
+    var material   = $('.material_bar input[type=checkbox]:checked');
+		var zipper     = $('.zipper_bar input[type=checkbox]:checked');
+
 		var select_val = $('.sortdropdown').val();
 
 		function getValues(checkboxes) {
@@ -95,6 +99,10 @@ $(function () {
        brands_params: getValues(brands),
        gender_params: getValues(gender),
        color_params: getValues(color),
+
+       material_params: getValues(material),
+       zipper_params: getValues(zipper),
+
        price_between: getPrice,
        sort_direction: select_val,
        flag: true
