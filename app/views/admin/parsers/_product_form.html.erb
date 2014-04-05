@@ -72,20 +72,6 @@
 
 	</div>
 
-	<table class="table table-hover">
-		<thead>
-			<tr>
-				<th>Small</th>
-				<th>Middle</th>
-				<th>Large</th>
-				<th>Actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			<%= render partial: 'table_body', collection: @product.images, as: :image %>
-		</tbody>
-	</table>
-
 	<div class="clear"></div>
 	<div id="perfume_actions">
 		<%= link_to 'Показать', admin_product_path(product.id), class: 'btn btn-warning' %>

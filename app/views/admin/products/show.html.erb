@@ -35,7 +35,7 @@
       <%= link_to @product.title, @product.link_href %>
     </div>
     <div class="perfume_description">
-      <%= @product.description.html_safe %>
+      <%= @product.description.try(:html_safe) %>
     </div>
     <div class="perfume_price">
       Цена: <span><%= @product.price %></span> грн.

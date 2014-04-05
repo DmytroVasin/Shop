@@ -40,7 +40,7 @@
     <div class="product_info">
       <% if @product.video_href %>
         <div id="video_space">
-          <div class="video_slider btn_order">Show video</div>
+          <div class="video_slider btn_order">Показать Видео</div>
           <div class="iframe_video_wrapper">
             <iframe class='iframe_video' src="<%= @product.video_href %>"></iframe>
           </div>
@@ -53,7 +53,7 @@
       </div>
 
       <div class="description_of_product undoreset">
-        <%= @product.description.html_safe %>
+        <%= @product.description.try(:html_safe) %>
       </div>
 
       <!-- <a href='/delivery' class='get_back link_color'>Просмотреть возможные способы доставки</a> -->
