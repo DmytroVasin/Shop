@@ -75,9 +75,11 @@
 /*#items ul*/
 #items ul li {
   float            : left;
-  margin           : 0 24px 20px 0;
   width            : 235px;
-  background-color : #ffeff4;
+  background-color : #F4F4F4;;
+
+  margin: 0 22px 20px 0;
+  border: 1px solid #E183A0;
 }
 
 #items ul li.last {
