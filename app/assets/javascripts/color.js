@@ -18,17 +18,30 @@ $(function() {
   });
 
   $('.accept_color').on('click', function(){
-    var acceptedColorArray = []
-    selectedColors = $(this).parents('tr').find('.chosen-choices .search-choice');
+    that = $(this)
+    var acceptedColorArray = [];
+    var acceptedMaterialArray = [];
+    var acceptedZipperArray = [];
+
+    selectedColors   = that.parents('tr').find('td#color    .chosen-choices .search-choice');
+    selectedMaterial = that.parents('tr').find('td#material .chosen-choices .search-choice');
+    selectedZipper   = that.parents('tr').find('td#zipper   .chosen-choices .search-choice');
+
     $.each(selectedColors, function(){
       acceptedColorArray.push($(this).find('span').text());
+    });
+    $.each(selectedMaterial, function(){
+      acceptedMaterialArray.push($(this).find('span').text());
+    });
+    $.each(selectedZipper, function(){
+      acceptedZipperArray.push($(this).find('span').text());
     });
 
     $.ajax({
       type: "POST",
       url: "/admin/colours/update_common_colour",
-      data: { id: $(this).data('id'), acceptedColorArray: acceptedColorArray }
-    })
+      data: { id: $(this).data('id'), acceptedColorArray: acceptedColorArray, acceptedMaterialArray: acceptedMaterialArray, acceptedZipperArray: acceptedZipperArray  }
+    });
 
   });
 });

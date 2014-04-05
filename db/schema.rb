@@ -55,9 +55,13 @@ ActiveRecord::Schema.define(:version => 20140401163845) do
     t.string "name"
     t.string "name_rus"
     t.hstore "common_colors"
+    t.hstore "materials"
+    t.hstore "zippers"
   end
 
   add_index "colours", ["common_colors"], :name => "index_colours_on_common_colors"
+  add_index "colours", ["materials"], :name => "index_colours_on_materials"
+  add_index "colours", ["zippers"], :name => "index_colours_on_zippers"
 
   create_table "genders", :force => true do |t|
     t.string   "gender"

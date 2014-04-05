@@ -1,7 +1,9 @@
 class Colour < ActiveRecord::Base
-  attr_accessible :name, :name_rus, :common_colors
+  attr_accessible :name, :name_rus, :common_colors, :materials, :zippers
 
   serialize :common_colors, ActiveRecord::Coders::Hstore
+  serialize :materials, ActiveRecord::Coders::Hstore
+  serialize :zippers, ActiveRecord::Coders::Hstore
 
   has_many :colors
   has_many :products, through: :colors, uniq: true
@@ -101,7 +103,7 @@ class Colour < ActiveRecord::Base
     ['Кнопка', 'button']
   ]
 
-  def self.create_hash_by(array)
-    Hash[array.map { |rus_color| [COMMON_COLORS_RUS.assoc(rus_color).last, rus_color ] }]
+  def self.create_hash_by(const, array)
+    Hash[array.map { |rus_color| [const.assoc(rus_color).last, rus_color ] }]
   end
 end

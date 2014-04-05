@@ -2,24 +2,24 @@
     <td><%= colour.id %></td>
     <td><%= colour.name %></td>
     <td><%= rus_name colour %></td>
-    <td>
+    <td id='color'>
       <div>
         <select data-placeholder="Выберите цвет..." class="chosen-select" multiple tabindex="4">
           <%= options_for_select(Colour::COMMON_COLORS_RUS, colour.common_colors.keys) %>
         </select>
       </div>
     </td>
-    <td>
+    <td  id='material'>
       <div>
         <select data-placeholder="Выберите материал..." class="chosen-select" multiple tabindex="4">
-          <%= options_for_select(Colour::MATERIAL, colour.common_colors.keys) %>
+          <%= options_for_select(Colour::MATERIAL, colour.materials.keys) %>
         </select>
       </div>
     </td>
-    <td>
+    <td id='zipper'>
       <div>
         <select data-placeholder="Способ закрытия..." class="chosen-select" multiple tabindex="4">
-          <%= options_for_select(Colour::CLOSING_TYPE, colour.common_colors.keys) %>
+          <%= options_for_select(Colour::CLOSING_TYPE, colour.zippers.keys) %>
         </select>
       </div>
     </td>
