@@ -3,7 +3,7 @@ class Admin::ColoursController < Admin::BaseController
   before_filter :find_colour, only: [:edit, :update, :update_common_colour]
 
   def index
-    @colours = Colour.order('name').page(params[:page]).per(10)
+    @colours = Colour.order('id DESC').page(params[:page]).per(10)
   end
 
   def new
