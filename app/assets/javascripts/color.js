@@ -17,25 +17,17 @@ $(function() {
     });
   });
 
-  $('.accept_color').on('click', function(){
-    that = $(this)
-    var acceptedColorArray = [];
-    var acceptedMaterialArray = [];
-    var acceptedZipperArray = [];
+  function getSelected(root) {
+    return root.find('.chosen-choices .search-choice span').map(function () {
+      return $(this).text();
+    }).toArray();
+  }
 
-    selectedColors   = that.parents('tr').find('td#color    .chosen-choices .search-choice');
-    selectedMaterial = that.parents('tr').find('td#material .chosen-choices .search-choice');
-    selectedZipper   = that.parents('tr').find('td#zipper   .chosen-choices .search-choice');
-
-    $.each(selectedColors, function(){
-      acceptedColorArray.push($(this).find('span').text());
-    });
-    $.each(selectedMaterial, function(){
-      acceptedMaterialArray.push($(this).find('span').text());
-    });
-    $.each(selectedZipper, function(){
-      acceptedZipperArray.push($(this).find('span').text());
-    });
+  $('.accept_color').on('click', function () {
+     var $tr = $(this).closest('tr');
+     var acceptedColorArray    = getSelected( $tr.find('td#color') );
+     var acceptedMaterialArray = getSelected( $tr.find('td#color') );
+     var acceptedZipperArray   = getSelected( $tr.find('td#color') );
 
     $.ajax({
       type: "POST",
