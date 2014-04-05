@@ -4,8 +4,22 @@
     <td><%= rus_name colour %></td>
     <td>
       <div>
-        <select data-placeholder="Pick a color..." class="chosen-select" multiple style="width:350px;" tabindex="4">
+        <select data-placeholder="Выберите цвет..." class="chosen-select" multiple tabindex="4">
           <%= options_for_select(Colour::COMMON_COLORS_RUS, colour.common_colors.keys) %>
+        </select>
+      </div>
+    </td>
+    <td>
+      <div>
+        <select data-placeholder="Выберите материал..." class="chosen-select" multiple tabindex="4">
+          <%= options_for_select(Colour::MATERIAL, colour.common_colors.keys) %>
+        </select>
+      </div>
+    </td>
+    <td>
+      <div>
+        <select data-placeholder="Способ закрытия..." class="chosen-select" multiple tabindex="4">
+          <%= options_for_select(Colour::CLOSING_TYPE, colour.common_colors.keys) %>
         </select>
       </div>
     </td>

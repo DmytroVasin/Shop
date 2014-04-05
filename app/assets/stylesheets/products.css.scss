@@ -162,7 +162,7 @@
 
 /*  ----   ENDLESS PAGINATION END   ----  */
 
-#brands_section, #categories_section {
+.brands_section, #categories_section {
   width    : 175px;
   overflow : auto;
 }
@@ -171,8 +171,8 @@
   height   : 190px;
 }
 
-#brands_section {
-  max-height: 250px;
+.brands_section {
+  max-height: 194px;
 }
 
 #no_match_criteria {

@@ -13,7 +13,7 @@
 
   <div class="section brand_bar">
     <h3>Бренды:</h3>
-    <ul id="brands_section">
+    <ul class="brands_section">
       <%= render partial: 'products/brand', collection: @brands %>
     </ul>
   </div>
@@ -27,8 +27,22 @@
 
   <div class="section color_bar">
     <h3>Цвет:</h3>
-    <ul id="brands_section">
-      <%= render partial: 'products/color' %>
+    <ul class="brands_section">
+      <%= render partial: 'products/hstore_tags', locals: { current_array: Colour::COMMON_COLORS_RUS } %>
+    </ul>
+  </div>
+
+  <div class="section material_bar">
+    <h3>Материал:</h3>
+    <ul class="brands_section">
+      <%= render partial: 'products/hstore_tags', locals: { current_array: Colour::MATERIAL } %>
+    </ul>
+  </div>
+
+  <div class="section zipper_bar">
+    <h3>Закрытие:</h3>
+    <ul class="brands_section">
+      <%= render partial: 'products/hstore_tags', locals: { current_array: Colour::CLOSING_TYPE } %>
     </ul>
   </div>
 
@@ -52,6 +66,5 @@
       roundUp : 5, // unit of value
     });
     </script>
-
   </div>
 </div>

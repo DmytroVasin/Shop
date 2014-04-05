@@ -1,0 +1,8 @@
+<% current_array.each do |object| %>
+  <li>
+    <label>
+      <%= check_box_tag 'object_type', object[1] %>
+      <%= object[0] %>
+    </label>
+  </li>
+<% end %>
