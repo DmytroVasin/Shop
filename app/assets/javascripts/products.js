@@ -7,7 +7,14 @@ $(function () {
 
 	// ZOOM paginator      --------------------------------------------------------------
   var main_image = $('.image_polaroid img');
-  main_image.elevateZoom({gallery:'wrap_image_rotator', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: '/assets/progres.gif', zoomWindowPosition: 2, zoomWindowOffetx: 35 });
+  main_image.elevateZoom({ gallery:'wrap_image_rotator',
+                           cursor: 'pointer',
+                           galleryActiveClass: 'active',
+                           imageCrossfade: true,
+                           loadingIcon: '/assets/progres.gif',
+                           scrollZoom : true,
+                           zoomWindowPosition: 2,
+                           zoomWindowOffetx: 35 });
 
   main_image.bind("click", function(e) {
     var ez = main_image.data('elevateZoom');
