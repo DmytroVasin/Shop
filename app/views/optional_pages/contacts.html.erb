@@ -40,12 +40,7 @@
     <%= form_tag({ action: 'contacts_call'}, { class: 'call_form', remote: true  }) do %>
       <p>
         <%= text_field_tag 'call[full_name]', '', placeholder: 'Юлия Гришковец', required: true %>
-        <%= label_tag 'Имя, Фамилия*' %>
-      </p>
-
-      <p>
-        <%= email_field_tag 'call[email]', '', placeholder: "Email", required: true %>
-        <%= label_tag 'Email*' %>
+        <%= label_tag 'Имя*' %>
       </p>
 
       <p>
