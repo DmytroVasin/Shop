@@ -93,7 +93,7 @@ module ApplicationHelper
   end
 
   def prepayment payment_method
-    if payment_method == '0.9'
+    if payment_method == '0.1'
       'Полная (100%) - скидка 10%'
     else
       'Частичная (30%) - скидка 0%'
