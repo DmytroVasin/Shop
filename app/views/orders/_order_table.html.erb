@@ -1,17 +1,18 @@
-<table class="sale_order_full">
+<table class="sale_order_full" style="background-color: #F9FAFB;line-height: 22px;margin-left: 118px;width: 747px;th, td {
+    border: 1px solid #ADC3D5;padding: 3px 5px;vertical-align: middle;">
   <tbody>
     <tr>
-      <th>Название</th>
-      <th>Цвет</th>
-      <th>Количество</th>
-      <th>Общая цена</th>
+      <th style="color: #25639A;text-align: center;font-size: 13px;font-weight: bold;">Название</th>
+      <th style="color: #25639A;text-align: center;font-size: 13px;font-weight: bold;">Цвет</th>
+      <th style="color: #25639A;text-align: center;font-size: 13px;font-weight: bold;">Количество</th>
+      <th style="color: #25639A;text-align: center;font-size: 13px;font-weight: bold;">Общая цена</th>
     </tr>
     <% line_items.each do |item|  %>
     <tr>
-      <td class='order_title normal'><%= item.product.title %></td>
-      <td align='center' class='normal'><%= rus_name_by item.color %></td>
-      <td align='center' class='normal'><%= item.quantity %>шт.</td>
-      <td align='right' class='normal'><%= number_to_currency(item.price, unit: 'грн.', format: '%n %u', delimiter: "") %></td>
+      <td class="order_title normal" style="font-size: 14px;padding-left: 15px;"><%= item.product.title %></td>
+      <td align="center" class="normal" style="font-size: 14px;"><%= rus_name_by item.color %></td>
+      <td align="center" class="normal" style="font-size: 14px;"><%= item.quantity %>шт.</td>
+      <td align="right" class="normal" style="font-size: 14px;"><%= number_to_currency(item.price, unit: 'грн.', format: '%n %u', delimiter: "") %></td>
     </tr>
     <% end %>
 
