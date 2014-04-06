@@ -97,25 +97,25 @@ class Product < ActiveRecord::Base
     end
   end
 
-
-# Need to complex this three methods:
   def self.selecting_by_color(colors)
     if colors
-      joins(:colours).where("common_colors ?| ARRAY[:value]", value: colors).uniq(&:id)
+      where("common_colors ?| ARRAY[:value]", value: colors).uniq(&:id)
     else
       scoped
     end
   end
-  def self.selecting_by_zipper(colors)
-    if colors
-      joins(:colours).where("common_colors ?| ARRAY[:value]", value: colors).uniq(&:id)
+
+  def self.selecting_by_zipper(zippers)
+    if zippers
+      where("zippers ?| ARRAY[:value]", value: zippers).uniq(&:id)
     else
       scoped
     end
   end
-  def self.selecting_by_material(colors)
-    if colors
-      joins(:colours).where("common_colors ?| ARRAY[:value]", value: colors).uniq(&:id)
+
+  def self.selecting_by_material(materials)
+    if materials
+      where("materials ?| ARRAY[:value]", value: materials).uniq(&:id)
     else
       scoped
     end

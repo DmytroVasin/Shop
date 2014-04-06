@@ -26,8 +26,8 @@ $(function() {
   $('.accept_color').on('click', function () {
      var $tr = $(this).closest('tr');
      var acceptedColorArray    = getSelected( $tr.find('td#color') );
-     var acceptedMaterialArray = getSelected( $tr.find('td#color') );
-     var acceptedZipperArray   = getSelected( $tr.find('td#color') );
+     var acceptedMaterialArray = getSelected( $tr.find('td#material') );
+     var acceptedZipperArray   = getSelected( $tr.find('td#zipper') );
 
     $.ajax({
       type: "POST",

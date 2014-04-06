@@ -91,7 +91,6 @@ class Colour < ActiveRecord::Base
 
   CLOSING_TYPE = [
     ['Молния', 'zipper'],
-    ['Защелка', 'latch'],
     ['Магнит', 'magnet'],
     ['Пряжка', 'buckle'],
     ['Поворотный замок', 'cam_lock'],
@@ -104,6 +103,7 @@ class Colour < ActiveRecord::Base
   ]
 
   def self.create_hash_by(const, array)
+    return nil if array.nil?
     Hash[array.map { |rus_color| [const.assoc(rus_color).last, rus_color ] }]
   end
 end

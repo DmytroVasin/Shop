@@ -41,7 +41,6 @@ class Admin::ColoursController < Admin::BaseController
 
     @colour.update_attributes({ common_colors: common_colors, zippers: zippers, materials: materials })
 
-
     flash[:notice] = 'Общий цвет - обновлен!'
     render js: 'window.location.reload()'
   end
