@@ -33,7 +33,7 @@ $(function() {
     $.ajax({
       type: "POST",
       url: "/admin/colours/update_common_colour",
-      data: { id: $(this).data('id'), acceptedColorArray: acceptedColorArray, acceptedMaterialArray: acceptedMaterialArray, acceptedZipperArray: acceptedZipperArray  }
+      data: { id: $(this).data('id'), acceptedColorArray: acceptedColorArray, acceptedMaterialArray: acceptedMaterialArray, acceptedZipperArray: acceptedZipperArray, acceptedFeatureArray: acceptedFeatureArray }
     });
 
   });

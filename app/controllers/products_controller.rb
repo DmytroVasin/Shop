@@ -27,9 +27,9 @@ class ProductsController < ApplicationController
     # !!!!
 
     unless @products.kind_of?(Array)
-      @products = @products.page(params[:page]).per(15)
+      @products = @products.page(params[:page]).per(18)
     else
-      @products = Kaminari.paginate_array(@products).page(params[:page]).per(15)
+      @products = Kaminari.paginate_array(@products).page(params[:page]).per(18)
     end
 
     session[:products_params] = params
