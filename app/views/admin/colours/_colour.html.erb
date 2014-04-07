@@ -8,10 +8,7 @@
       </select>
     </div>
   </td>
-  <%= Rails.logger.info '>>>' %>
-  <%= Rails.logger.info colour.materials %>
-  <%= Rails.logger.info '>>>' %>
-  <td  id='material'>
+  <td id='material'>
     <div>
       <select data-placeholder="Выберите материал..." class="chosen-select" multiple tabindex="4" style="width:200px;">
         <%= options_for_select(Colour::MATERIAL, colour.materials.keys) %>

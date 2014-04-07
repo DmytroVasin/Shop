@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
                        .selecting_by_zipper(params[:zipper_params])
                        .selecting_by_material(params[:material_params])
                        .price_between(params[:price_between])
-                       .sort_direction(params[:sort_direction], @sort_hash)
+                       .sort_direction(params[:sort_direction], @sort_hash).uniq
 
     # !!!!
     # Product.find_by_sql("SELECT * FROM products INNER JOIN colors_products ON colors_products.product_id = products.id INNER JOIN colors ON colors.id = colors_products.color_id WHERE (name = 'Red' or name = 'Black') AND (price between 10 and 12 or price between 90 and 100)").count

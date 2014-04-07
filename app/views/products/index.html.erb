@@ -48,3 +48,9 @@
 
 <div id="ednless_paginator">Показать еще...</div>
 <div class="clear"></div>
+
+<script type="text/javascript">
+  if ( $('.pagination ul li').length === 0 || $('.pagination ul li').last().hasClass('disabled') ) {
+    $('#ednless_paginator').remove();
+  }
+</script>
