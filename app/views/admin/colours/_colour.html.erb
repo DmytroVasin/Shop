@@ -4,29 +4,31 @@
   <td id='color'>
     <div>
       <select data-placeholder="Выберите цвет..." class="chosen-select" multiple tabindex="4" style="width:200px;">
-        <%= options_for_select(Colour::COMMON_COLORS_RUS, @common_colors.keys) %>
+        <%= options_for_select(Colour::COMMON_COLORS_RUS, colour.common_colors.keys) %>
       </select>
     </div>
   </td>
+  <%= Rails.logger.info '>>>' %>
   <%= Rails.logger.info colour.materials %>
+  <%= Rails.logger.info '>>>' %>
   <td  id='material'>
     <div>
       <select data-placeholder="Выберите материал..." class="chosen-select" multiple tabindex="4" style="width:200px;">
-        <%= options_for_select(Colour::MATERIAL, @materials.keys) %>
+        <%= options_for_select(Colour::MATERIAL, colour.materials.keys) %>
       </select>
     </div>
   </td>
   <td id='zipper'>
     <div>
       <select data-placeholder="Способ закрытия..." class="chosen-select" multiple tabindex="4" style="width:200px;">
-        <%= options_for_select(Colour::CLOSING_TYPE, @zippers.keys) %>
+        <%= options_for_select(Colour::CLOSING_TYPE, colour.zippers.keys) %>
       </select>
     </div>
   </td>
   <td id='feature'>
     <div>
       <select data-placeholder="Особенности..." class="chosen-select" multiple tabindex="4" style="width:200px;">
-        <%= options_for_select(Colour::FEATURES, @features.keys) %>
+        <%= options_for_select(Colour::FEATURES, colour.features.keys) %>
       </select>
     </div>
   </td>

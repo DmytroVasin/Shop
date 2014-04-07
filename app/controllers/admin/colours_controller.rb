@@ -4,9 +4,6 @@ class Admin::ColoursController < Admin::BaseController
 
   def index
     @colours = Colour.order('id DESC').page(params[:page]).per(10)
-    @materials = @colour.materials
-    @zippers = @colour.zippers
-    @features = @colour.features
   end
 
   def new
