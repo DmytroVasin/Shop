@@ -46,6 +46,13 @@
     </ul>
   </div>
 
+  <div class="section feature_bar">
+    <h3>Особенности:</h3>
+    <ul class="brands_section">
+      <%= render partial: 'products/hstore_tags', locals: { current_array: Colour::FEATURES } %>
+    </ul>
+  </div>
+
   <div class="section price_bar">
     <h3>Цена (грн):</h3>
     <%= hidden_field_tag 'leftValue' %>

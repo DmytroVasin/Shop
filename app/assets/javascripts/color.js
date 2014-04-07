@@ -28,6 +28,7 @@ $(function() {
      var acceptedColorArray    = getSelected( $tr.find('td#color') );
      var acceptedMaterialArray = getSelected( $tr.find('td#material') );
      var acceptedZipperArray   = getSelected( $tr.find('td#zipper') );
+     var acceptedFeatureArray  = getSelected( $tr.find('td#feature') );
 
     $.ajax({
       type: "POST",

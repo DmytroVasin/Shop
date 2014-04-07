@@ -3,5 +3,6 @@ class AddHstoreCommonColorToColours < ActiveRecord::Migration
     add_column :colours, :common_colors, :hstore
     add_column :colours, :materials, :hstore
     add_column :colours, :zippers, :hstore
+    add_column :colours, :features, :hstore
   end
 end

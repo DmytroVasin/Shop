@@ -57,9 +57,11 @@ ActiveRecord::Schema.define(:version => 20140401163845) do
     t.hstore "common_colors"
     t.hstore "materials"
     t.hstore "zippers"
+    t.hstore "features"
   end
 
   add_index "colours", ["common_colors"], :name => "index_colours_on_common_colors"
+  add_index "colours", ["features"], :name => "index_colours_on_features"
   add_index "colours", ["materials"], :name => "index_colours_on_materials"
   add_index "colours", ["zippers"], :name => "index_colours_on_zippers"
 

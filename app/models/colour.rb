@@ -1,9 +1,10 @@
 class Colour < ActiveRecord::Base
-  attr_accessible :name, :name_rus, :common_colors, :materials, :zippers
+  attr_accessible :name, :name_rus, :common_colors, :materials, :zippers, :features
 
   serialize :common_colors, ActiveRecord::Coders::Hstore
   serialize :materials, ActiveRecord::Coders::Hstore
   serialize :zippers, ActiveRecord::Coders::Hstore
+  serialize :features, ActiveRecord::Coders::Hstore
 
   has_many :colors
   has_many :products, through: :colors, uniq: true
@@ -100,6 +101,28 @@ class Colour < ActiveRecord::Base
     ['Липучка', 'velcro'],
     ['Защелка', 'latch'],
     ['Кнопка', 'button']
+  ]
+
+  FEATURES = [
+    ['Карман для ноутбука', 'for_laptop'],
+    ['Легкая', 'easy'],
+    ['На колесиках', 'on_wheels'],
+    ['С карабином', 'with_carabiner'],
+    ['Увеличивающаяся сумка', 'increasing_bag'],
+    ['Карман для воды', 'for_water'],
+    ['Карман для плеера', 'for_player'],
+    ['Замок TSA', 'tsa_lock'],
+    ['Одобрено TSA ', 'tsa_approved'],
+    ['Переработанный материал', 'recycled_material'],
+    ['Жесткая поверхность', 'rigid_surface'],
+    ['Светоотражающий', 'reflective'],
+    ['Водоотталкивающий', 'water_repellent'],
+    ['Изоляция', 'insulation'],
+    ['Водостойкий', 'water_resistant'],
+    ['Термо-карманы', 'thermo_pockets'],
+    ['Для стирки', 'laundry'],
+    ['Двухсторонние', 'bilateral'],
+    ['Веган', 'vegan']
   ]
 
   def self.create_hash_by(const, array)

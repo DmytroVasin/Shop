@@ -23,6 +23,13 @@
         </select>
       </div>
     </td>
+    <td id='feature'>
+      <div>
+        <select data-placeholder="Особенности..." class="chosen-select" multiple tabindex="4">
+          <%= options_for_select(Colour::FEATURES, colour.features.keys) %>
+        </select>
+      </div>
+    </td>
     <td>
       <%= link_to 'Accept', '#', class: 'btn btn-warning accept_color', data: { id: colour.id } %>
       <%= link_to 'Edit', edit_admin_colour_path(colour.id), class: 'btn btn-info' %>
