@@ -15,7 +15,7 @@
             <span class="price_inscription"><%= number_to_currency(new_product.price, unit: 'грн.', format: '%n %u') %></span>
           </li>
           <li class="button">
-            <%= link_to 'Просмотр', product_path(new_product.id), class: 'btn_order' %>
+            <%= link_to 'Просмотр', product_path(new_product), class: 'btn_order' %>
           </li>
         </ul>
       </div>

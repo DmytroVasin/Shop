@@ -41,6 +41,10 @@ class Product < ActiveRecord::Base
     end
   end
 
+  def to_param
+    "#{id}-#{title}".parameterize
+  end
+
   private
 
   def not_referenced_by_any_line_items

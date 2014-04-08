@@ -4,7 +4,7 @@
       <%= image_tag find_correct_image_for(item), class: 'cart_image' %>
     </td>
     <td class="namesize">
-      <%= link_to item.product.title, product_path(item.product.id) %>
+      <%= link_to item.product.title, product_path(item.product) %>
     </td>
     <td class="item_price">
       <%= rus_name_by item.color %>
