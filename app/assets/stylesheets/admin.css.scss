@@ -20,11 +20,17 @@
   */
 
 // Redactror Rails START
-.redactor_box .redactor_redactor {
-  height: 200px;
-  width: 700px;
-  color: #000 !important;
-  text-shadow: none;
+.redactor_box {
+  .redactor_redactor, #text_area {
+    height: 200px;
+    width: 700px;
+    padding: 10px;
+  }
+
+  .redactor_redactor {
+    color: #000 !important;
+    text-shadow: none;
+  }
 }
 // Redactror Rails END
 
