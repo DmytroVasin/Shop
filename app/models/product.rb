@@ -1,5 +1,19 @@
 class Product < ActiveRecord::Base
-  attr_accessible :description, :price, :title, :category_ids, :brand_id, :rank, :gender_ids, :video_href, :link_href, :old_price, :bestseller, :colour_ids, :materials, :zippers, :features
+  attr_accessible :description,
+                  :price,
+                  :title,
+                  :category_ids,
+                  :brand_id,
+                  :rank,
+                  :gender_ids,
+                  :video_href,
+                  :link_href,
+                  :old_price,
+                  :bestseller,
+                  :colour_ids,
+                  :materials,
+                  :zippers,
+                  :features
 
   validates :title, :price, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }

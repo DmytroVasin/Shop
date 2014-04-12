@@ -30,24 +30,24 @@
     </div>
     <div id="features_category">
       Материал:
-      <div class="features_list">
+      <div class="features_list material">
         <select data-placeholder="Выберите цвет..." class="chosen-select" multiple tabindex="4">
-          <%= options_for_select(Product::MATERIAL) %>
+          <%= options_for_select(Product::MATERIAL, @product.materials.keys) %>
         </select>
       </div>
       Тип закрытия:
-      <div class="features_list">
-        <select data-placeholder="Выберите цвет..." class="chosen-select" multiple tabindex="4">
-          <%= options_for_select(Product::CLOSING_TYPE) %>
+      <div class="features_list zipper">
+        <select data-placeholder="Выберите тип закрытия..." class="chosen-select" multiple tabindex="4">
+          <%= options_for_select(Product::CLOSING_TYPE, @product.zippers.keys) %>
         </select>
       </div>
       Особенности:
-      <div class="features_list">
-        <select data-placeholder="Выберите цвет..." class="chosen-select" multiple tabindex="4">
-          <%= options_for_select(Product::FEATURES) %>
+      <div class="features_list feature">
+        <select data-placeholder="Выберите особенности..." class="chosen-select" multiple tabindex="4">
+          <%= options_for_select(Product::FEATURES, @product.features.keys) %>
         </select>
       </div>
-      <button id='accept_features' class="btn">Применить особенности</button>
+      <%= button_tag "Применить особенности", data: { id: @product.id }, id: 'accept_features', class: 'btn' %>
     </div>
   </div>
 

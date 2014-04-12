@@ -17,6 +17,7 @@ Shop::Application.routes.draw do
 
     resources :products do
       post 'best_sell', on: :collection
+      post 'update_features', on: :collection
     end
     resources :categories
     resources :brands
