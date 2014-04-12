@@ -24,17 +24,26 @@ $(function() {
   }
 
   $('.accept_color').on('click', function () {
-     var $tr = $(this).closest('tr');
-     var acceptedColorArray    = getSelected( $tr.find('td#color') );
-     var acceptedMaterialArray = getSelected( $tr.find('td#material') );
-     var acceptedZipperArray   = getSelected( $tr.find('td#zipper') );
-     var acceptedFeatureArray  = getSelected( $tr.find('td#feature') );
+     var tr = $(this).closest('tr');
+     var acceptedColorArray = getSelected( tr.find('td.color') );
 
     $.ajax({
       type: "POST",
       url: "/admin/colours/update_common_colour",
-      data: { id: $(this).data('id'), acceptedColorArray: acceptedColorArray, acceptedMaterialArray: acceptedMaterialArray, acceptedZipperArray: acceptedZipperArray, acceptedFeatureArray: acceptedFeatureArray }
+      data: { id: $(this).data('id'), acceptedColorArray: acceptedColorArray }
     });
+  });
 
+  $('#accept_features').on('click', function () {
+     var currentField = $('#features_category');
+     var acceptedMaterialArray = getSelected( currentField.find('.material') );
+     var acceptedZipperArray   = getSelected( currentField.find('.zipper') );
+     var acceptedFeatureArray  = getSelected( currentField.find('.feature') );
+
+    $.ajax({
+      type: "POST",
+      url: "/admin/products/update_features",
+      data: { id: $(this).data('id'), acceptedMaterialArray: acceptedMaterialArray, acceptedZipperArray: acceptedZipperArray, acceptedFeatureArray: acceptedFeatureArray }
+    });
   });
 });

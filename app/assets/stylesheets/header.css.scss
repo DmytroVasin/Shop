@@ -156,7 +156,7 @@
 
       span.sdt_descr {
         text-align     : center;
-        text-shadow    : 2px 2px 2px #777777;
+        text-shadow    : 2px 2px 2px #333;
         color          : #fff;
         float          : left;
         clear          : both;
@@ -169,7 +169,7 @@
 
       span.sdt_link {
         text-align     : center;
-        text-shadow    : 2px 2px 2px #777777;
+        text-shadow    : 2px 2px 2px #333;
         color          : #fff;
         font-size      : 15px;
         float          : left;
@@ -180,6 +180,7 @@
       }
     }
 
+    #all_products,
     #search {
       width      : 260px;
 
@@ -196,10 +197,22 @@
       background : -ms-linear-gradient(top, #e183a0, #97002e);
       background : linear-gradient(top, #e183a0, #97002e);
 
-      box-shadow : 0 0 1px #333333 inset;
+      box-shadow : 0 0 1px #333 inset;
 
       input:focus {
         outline:none;
+      }
+
+      a {
+        text-align     : center;
+        text-shadow    : 2px 2px 2px #333;
+        color          : #fff;
+        font-size      : 15px;
+        float          : left;
+        clear          : both;
+        letter-spacing : 1px;
+        width          : 260px;
+        line-height    : 40px;
       }
     }
   }

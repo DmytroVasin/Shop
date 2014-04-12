@@ -55,15 +55,9 @@ ActiveRecord::Schema.define(:version => 20140401163845) do
     t.string "name"
     t.string "name_rus"
     t.hstore "common_colors"
-    t.hstore "materials"
-    t.hstore "zippers"
-    t.hstore "features"
   end
 
   add_index "colours", ["common_colors"], :name => "index_colours_on_common_colors"
-  add_index "colours", ["features"], :name => "index_colours_on_features"
-  add_index "colours", ["materials"], :name => "index_colours_on_materials"
-  add_index "colours", ["zippers"], :name => "index_colours_on_zippers"
 
   create_table "genders", :force => true do |t|
     t.string   "gender"
@@ -124,7 +118,14 @@ ActiveRecord::Schema.define(:version => 20140401163845) do
     t.text     "link_href"
     t.decimal  "old_price",   :precision => 8, :scale => 2
     t.boolean  "bestseller",                                :default => false
+    t.hstore   "materials"
+    t.hstore   "zippers"
+    t.hstore   "features"
   end
+
+  add_index "products", ["features"], :name => "index_products_on_features"
+  add_index "products", ["materials"], :name => "index_products_on_materials"
+  add_index "products", ["zippers"], :name => "index_products_on_zippers"
 
   create_table "ratings", :force => true do |t|
     t.string   "point"

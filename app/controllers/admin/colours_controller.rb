@@ -33,14 +33,11 @@ class Admin::ColoursController < Admin::BaseController
   def update_common_colour
     @colours = Colour.order('name').page(params[:page]).per(10)
 
-    acceptedColorArray, acceptedMaterialArray, acceptedZipperArray, acceptedFeatureArray  = params[:acceptedColorArray], params[:acceptedMaterialArray], params[:acceptedZipperArray], params[:acceptedFeatureArray]
+    acceptedColorArray = params[:acceptedColorArray]
 
-    common_colors = Colour.create_hash_by( Colour::COMMON_COLORS_RUS, acceptedColorArray)
-    materials = Colour.create_hash_by( Colour::MATERIAL, acceptedMaterialArray)
-    zippers = Colour.create_hash_by( Colour::CLOSING_TYPE, acceptedZipperArray)
-    features = Colour.create_hash_by( Colour::FEATURES, acceptedFeatureArray)
+    common_colors = create_hash_by( Colour::COMMON_COLORS_RUS, acceptedColorArray)
 
-    @colour.update_attributes({ common_colors: common_colors, zippers: zippers, materials: materials, features: features })
+    @colour.update_attributes({ common_colors: common_colors })
 
     flash[:notice] = 'Общий цвет - обновлен!'
     render js: 'window.location.reload()'

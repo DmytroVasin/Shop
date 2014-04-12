@@ -1,5 +1,6 @@
 class Admin::ProductsController < Admin::BaseController
   before_filter :authenticate_admin!
+  before_filter :find_product, only: [:show, :edit, :update, :destroy, :update_features]
 
   def index
     @best_count = Product.count_of_best_sellers.count
@@ -7,7 +8,6 @@ class Admin::ProductsController < Admin::BaseController
   end
 
   def show
-    @product = Product.find(params[:id])
     @colors  = @product.colours.group_by(&:name_rus).keys
   end
 
@@ -27,12 +27,9 @@ class Admin::ProductsController < Admin::BaseController
   end
 
   def edit
-    @product = Product.find(params[:id])
   end
 
   def update
-    @product = Product.find(params[:id])
-
     respond_to do |format|
       if @product.update_attributes!(params[:product])
         flash[:notice] = 'Product updated'
@@ -45,8 +42,6 @@ class Admin::ProductsController < Admin::BaseController
   end
 
   def destroy
-    @product = Product.find(params[:id])
-
     @product.destroy
     redirect_to admin_products_path
   end
@@ -59,5 +54,25 @@ class Admin::ProductsController < Admin::BaseController
     @best_count = Product.count_of_best_sellers.count
     @products = Product.search(params[:search]).order(sort_column + ' ' + sort_direction).page(params[:page]).per(10)
     render :index
+  end
+
+  def update_features
+    acceptedMaterialArray, acceptedZipperArray, acceptedFeatureArray  = params[:acceptedMaterialArray], params[:acceptedZipperArray], params[:acceptedFeatureArray]
+
+    materials = create_hash_by( Product::MATERIAL,     acceptedMaterialArray)
+    zippers   = create_hash_by( Product::CLOSING_TYPE, acceptedZipperArray)
+    features  = create_hash_by( Product::FEATURES,     acceptedFeatureArray)
+
+    @product.update_attributes({ zippers: zippers, materials: materials, features: features })
+
+    flash[:notice] = 'Товар успешно обновлён!'
+    render js: 'window.location.reload()'
+  end
+
+
+  private
+
+  def find_product
+    @product = Product.find(params[:id])
   end
 end
