@@ -67,20 +67,6 @@
   </div>
   <div class='perfume_instock rank'><%= @product.rank %></div>
 
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Small</th>
-        <th>Middle</th>
-        <th>Large</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render partial: 'admin/parsers/table_body', collection: @product.images, as: :image %>
-    </tbody>
-  </table>
-
   <div class="clear"></div>
   <div id="perfume_actions">
     <%= link_to 'All', admin_products_path, class: 'btn' %>
