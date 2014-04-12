@@ -35,10 +35,10 @@ class Admin::ColoursController < Admin::BaseController
 
     acceptedColorArray, acceptedMaterialArray, acceptedZipperArray, acceptedFeatureArray  = params[:acceptedColorArray], params[:acceptedMaterialArray], params[:acceptedZipperArray], params[:acceptedFeatureArray]
 
-    common_colors = Colour.create_hash_by( Colour::COMMON_COLORS_RUS, acceptedColorArray)
-    materials = Colour.create_hash_by( Colour::MATERIAL, acceptedMaterialArray)
-    zippers = Colour.create_hash_by( Colour::CLOSING_TYPE, acceptedZipperArray)
-    features = Colour.create_hash_by( Colour::FEATURES, acceptedFeatureArray)
+    common_colors = create_hash_by( Colour::COMMON_COLORS_RUS, acceptedColorArray)
+    materials     = create_hash_by( Colour::MATERIAL, acceptedMaterialArray)
+    zippers       = create_hash_by( Colour::CLOSING_TYPE, acceptedZipperArray)
+    features      = create_hash_by( Colour::FEATURES, acceptedFeatureArray)
 
     @colour.update_attributes({ common_colors: common_colors, zippers: zippers, materials: materials, features: features })
 
