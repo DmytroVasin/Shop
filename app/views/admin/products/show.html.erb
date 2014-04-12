@@ -28,6 +28,27 @@
         <% end %>
       </ul>
     </div>
+    <div id="features_category">
+      Материал:
+      <div class="features_list">
+        <select data-placeholder="Выберите цвет..." class="chosen-select" multiple tabindex="4">
+          <%= options_for_select(Product::MATERIAL) %>
+        </select>
+      </div>
+      Тип закрытия:
+      <div class="features_list">
+        <select data-placeholder="Выберите цвет..." class="chosen-select" multiple tabindex="4">
+          <%= options_for_select(Product::CLOSING_TYPE) %>
+        </select>
+      </div>
+      Особенности:
+      <div class="features_list">
+        <select data-placeholder="Выберите цвет..." class="chosen-select" multiple tabindex="4">
+          <%= options_for_select(Product::FEATURES) %>
+        </select>
+      </div>
+      <button id='accept_features' class="btn">Применить особенности</button>
+    </div>
   </div>
 
   <div id="description">

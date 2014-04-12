@@ -185,17 +185,32 @@ table th, table td {
   margin-left : 30px;
 }
 
+#features_category,
 #perfume_category {
-  margin      : 5px 0 0 20px;
+  margin      : 5px 0 20px 20px;
   font-size   : 16px;
   color       : #333;
   font-family : Georgia, Times, serif;
   text-shadow : 0 0 1px #777777;
+}
 
+#features_category {
+  .features_list {
+    margin: 5px 0;
+    text-shadow : none;
+  }
+
+  #accept_features {
+    width: 220px;
+  }
+}
+
+#perfume_category {
   ul {
     margin    : 3px 0 3px 10px;
     font-size : 14px;
     li {
+      list-style-type: none;
       line-height : 18px;
       i {
         margin-right: 5px;
@@ -207,6 +222,7 @@ table th, table td {
     }
   }
 }
+
 
 #product_image {
   margin-top : 15px;

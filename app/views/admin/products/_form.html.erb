@@ -1,5 +1,5 @@
 <div class="control-group">
-  <%= f.label :title, 'Title: ', class: 'control-label' %>
+  <%= f.label :title, 'Название: ', class: 'control-label' %>
   <div class="controls">
     <div class="input-prepend">
       <%= f.text_field :title, id: 'inputTitle', placeholder: 'Title of perfume' %>
@@ -8,7 +8,7 @@
 </div>
 
 <div class="control-group">
-  <%= f.label :price, 'Price: ', class: 'control-label' %>
+  <%= f.label :price, 'Цена: ', class: 'control-label' %>
   <div class="controls">
     <div class="input-prepend">
       <%= f.text_field :price, id: 'inputPrice', placeholder: '26.80' %>
@@ -17,7 +17,7 @@
 </div>
 
 <div class="control-group">
-  <%= f.label :old_price, 'Old Price: ', class: 'control-label' %>
+  <%= f.label :old_price, 'Старая цена: ', class: 'control-label' %>
   <div class="controls">
     <div class="input-prepend">
       <%= f.text_field :old_price, id: 'inputOldPrice', placeholder: '26.80' %>
@@ -26,7 +26,7 @@
 </div>
 
 <div class="control-group">
-  <%= f.label :rank, 'Rank: ', class: 'control-label' %>
+  <%= f.label :rank, 'Ранг: ', class: 'control-label' %>
   <div class="controls">
     <div class="input-prepend">
       <%= f.text_field :rank, id: 'inputRank', placeholder: '0' %>
@@ -76,7 +76,7 @@
 
 <% if @product.video_href %>
   <div class="control-group">
-    <%= f.label :video, 'Video: ', class: 'control-label' %>
+    <%= f.label :video, 'Видео: ', class: 'control-label' %>
     <div class="controls">
       <iframe class='iframe_video' src="<%= @product.video_href %>"></iframe>
     </div>
