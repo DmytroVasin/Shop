@@ -1,5 +1,8 @@
 <div id='main_menu'>
   <ul id="sdt_menu" class="sdt_menu">
+    <div id='all_products'>
+      <a href="/products">Все товары</a>
+    </div>
     <li>
       <a href="/products?gender_params%5B%5D=Mens&gender_params%5B%5D=Unisex">
         <%= image_tag('1.jpg') %>
@@ -50,12 +53,12 @@
 				</span>
       </a>
     </li>
-    <li id='search'>
-      <!-- <form method="get" action="/search"> -->
+<!--     <li id='search'>
+      <form method="get" action="/search">
       <form method="get" action="/">
         <input name="q" type="text" size="40" placeholder="Поиск..." autocomplete="off" class="clickTip" />
       </form>
-    </li>
+    </li> -->
   </ul>
 </div>
 <div class="clear"></div>
