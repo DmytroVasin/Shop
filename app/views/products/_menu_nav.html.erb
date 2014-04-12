@@ -35,21 +35,21 @@
   <div class="section material_bar">
     <h3>Материал:</h3>
     <ul class="brands_section">
-      <%= render partial: 'products/hstore_tags', locals: { current_array: Colour::MATERIAL } %>
+      <%= render partial: 'products/hstore_tags', locals: { current_array: Product::MATERIAL } %>
     </ul>
   </div>
 
   <div class="section zipper_bar">
     <h3>Закрытие:</h3>
     <ul class="brands_section">
-      <%= render partial: 'products/hstore_tags', locals: { current_array: Colour::CLOSING_TYPE } %>
+      <%= render partial: 'products/hstore_tags', locals: { current_array: Product::CLOSING_TYPE } %>
     </ul>
   </div>
 
   <div class="section feature_bar">
     <h3>Особенности:</h3>
     <ul class="brands_section">
-      <%= render partial: 'products/hstore_tags', locals: { current_array: Colour::FEATURES } %>
+      <%= render partial: 'products/hstore_tags', locals: { current_array: Product::FEATURES } %>
     </ul>
   </div>
 
