@@ -1,11 +1,11 @@
 $(function () {
-	$('.video_slider').on('click', function(){
-		$('.iframe_video_wrapper').stop(true).slideToggle('show');
-		$(this).toggleClass('border_bottom');
-	});
+  $('.video_slider').on('click', function(){
+    $('.iframe_video_wrapper').stop(true).slideToggle('show');
+    $(this).toggleClass('border_bottom');
+  });
 
 
-	// ZOOM paginator      --------------------------------------------------------------
+  // ZOOM paginator      --------------------------------------------------------------
   var main_image = $('.image_polaroid img');
   main_image.elevateZoom({ gallery:'wrap_image_rotator',
                            cursor: 'pointer',
@@ -33,10 +33,10 @@ $(function () {
      $('.pagination ul').replaceWith('<div id="endless_message"></div>');
    }
  });
-	// ENDLESS pagination END  -----------------------------------------------------------
+  // ENDLESS pagination END  -----------------------------------------------------------
 
-	// Throttle method from underscore.js
-	throttle = function(func, wait, options) {
+  // Throttle method from underscore.js
+  throttle = function(func, wait, options) {
     var context, args, result;
     var timeout = null;
     var previous = 0;
@@ -61,35 +61,36 @@ $(function () {
         previous = now;
         result = func.apply(context, args);
       } else if (!timeout && options.trailing !== false) {
-      	// console.log('Show loading');
-      	$('#items_bar').addClass('hidden_loading').after("<div id='hidden_loading'></div>");
+        // console.log('Show loading');
+        $('#items_bar').addClass('hidden_loading').after("<div id='hidden_loading'></div>");
         timeout = setTimeout(later, remaining);
       }
       return result;
     };
   };
 
-	// Submit form in every change:
-	changeMeter = function () {
-		var categories = $('.categories_bar input[type=checkbox]:checked');
-		var brands     = $('.brand_bar input[type=checkbox]:checked');
-		var gender     = $('.gender_bar input[type=checkbox]:checked');
+  // Submit form in every change:
+  changeMeter = function () {
+    var categories = $('.categories_bar input[type=checkbox]:checked');
+    var brands     = $('.brand_bar input[type=checkbox]:checked');
+    var gender     = $('.gender_bar input[type=checkbox]:checked');
     var color      = $('.color_bar input[type=checkbox]:checked');
 
     var material   = $('.material_bar input[type=checkbox]:checked');
-		var zipper     = $('.zipper_bar input[type=checkbox]:checked');
+    var zipper     = $('.zipper_bar input[type=checkbox]:checked');
+    var feature     = $('.feature_bar input[type=checkbox]:checked');
 
-		var select_val = $('.sortdropdown').val();
+    var select_val = $('.sortdropdown').val();
 
-		function getValues(checkboxes) {
-			return checkboxes.map(function (index, element) {
-				return $(element).val();
-			}).toArray();
-		};
+    function getValues(checkboxes) {
+      return checkboxes.map(function (index, element) {
+        return $(element).val();
+      }).toArray();
+    };
 
-		function getPrice() {
-			return Array($('#leftValue').val(), $('#rightValue').val());
-		};
+    function getPrice() {
+      return Array($('#leftValue').val(), $('#rightValue').val());
+    };
 
     $.ajax({
      type: "GET",
@@ -102,6 +103,7 @@ $(function () {
 
        material_params: getValues(material),
        zipper_params: getValues(zipper),
+       feature_params: getValues(feature),
 
        price_between: getPrice,
        sort_direction: select_val,

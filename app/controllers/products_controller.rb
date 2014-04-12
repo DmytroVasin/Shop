@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
                        .selecting_by_color(params[:color_params])
                        .selecting_by_zipper(params[:zipper_params])
                        .selecting_by_material(params[:material_params])
+                       .selecting_by_features(params[:feature_params])
                        .price_between(params[:price_between])
                        .sort_direction(params[:sort_direction], @sort_hash).uniq
 

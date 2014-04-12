@@ -229,4 +229,12 @@ class Product < ActiveRecord::Base
       scoped
     end
   end
+
+  def self.selecting_by_features(features)
+    if features
+      where("features ?| ARRAY[:value]", value: features).uniq(&:id)
+    else
+      scoped
+    end
+  end
 end
