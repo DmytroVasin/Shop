@@ -118,26 +118,104 @@ class Product < ActiveRecord::Base
   ]
 
   FEATURES = [
-    ['Карман для ноутбука', 'for_laptop'],
-    ['Легкая', 'easy'],
-    ['На колесиках', 'on_wheels'],
-    ['С карабином', 'with_carabiner'],
-    ['Увеличивающаяся сумка', 'increasing_bag'],
-    ['Карман для воды', 'for_water'],
-    ['Карман для плеера', 'for_player'],
-    ['Замок TSA', 'tsa_lock'],
-    ['Одобрено TSA ', 'tsa_approved'],
-    ['Переработанный материал', 'recycled_material'],
-    ['Жесткая поверхность', 'rigid_surface'],
-    ['Светоотражающий', 'reflective'],
-    ['Водоотталкивающий', 'water_repellent'],
-    ['Изоляция', 'insulation'],
-    ['Водостойкий', 'water_resistant'],
-    ['Термо-карманы', 'thermo_pockets'],
-    ['Для стирки', 'laundry'],
-    ['Двухсторонние', 'bilateral'],
-    ['Веган', 'vegan']
+    ['Молния', 'zipper'],
+    ['Защелка', 'snap'],
+    ['Магнит', 'magnetic'],
+    ['Бакля', 'buckle'],
+    ['Поворотный замок', 'twist_lock'],
+    ['Шнурок', 'drawstring'],
+    ['Кнопка с фиксацией', 'push_lock'],
+    ['Пружинный замок', 'clasp_lock'],
+    ['Липучка', 'hook_and_loop'],
+    ['Резинка', 'bungee'],
+    ['Кнопка', 'button'],
+    ['Кожа', 'leather'],
+    ['Полиэстер', 'polyester'],
+    ['Искусственная кожа', 'faux_leather'],
+    ['Нейлон', 'nylon'],
+    ['Синтетика', 'synthetic'],
+    ['Хлопок', 'cotton'],
+    ['Брезент', 'canvas'],
+    ['Полиуретан', 'polyurethane'],
+    ['Сетка', 'mesh'],
+    ['Рипстоп', 'ripstop'],
+    ['Винил', 'vinyl'],
+    ['Атласный', 'satin'],
+    ['Замша', 'suede'],
+    ['Лакированная кожа', 'patent_leather'],
+    ['Жаккард', 'jacquard'],
+    ['Пластиковая', 'plastic'],
+    ['Флис', 'fleece'],
+    ['Саржа', 'twill'],
+    ['Лен', 'linen'],
+    ['Соломенный', 'straw'],
+    ['Конопляный', 'hemp'],
+    ['Искусственная замша', 'faux_suede'],
+    ['Трикотажный', 'tricot'],
+    ['Шелк', 'silk'],
+    ['Шерсть', 'wool'],
+    ['Деним', 'denim'],
+    ['Зернистая кожа','full_grain_leather'],
+    ['Резиновый','rubber'],
+    ['Рафия','raffia'],
+    ['Искусственный шелк','rayon'],
+    ['Змеиная кожа','snakeskin'],
+    ['Джут','jute'],
+    ['Микрофирба','microfiber'],
+    ['Неопрен','neoprene'],
+    ['Нубук','nubuk'],
+    ['Твид','tweed'],
+    ['Вельвет','velvet'],
+    ['Вышивка','crochet'],
+    ['Кружева','lace'],
+    ['Латунный','brass'],
+    ['Фланелевый','flannel'],
+    ['Наппа','nappa'],
+    ['Винтажная кожа','distressed_leather'],
+    ['Овечья шерсть','shearling'],
+    ['Ящерица','lizard'],
+    ['Полиэтилен','polyethylene'],
+    ['Волос животных','hair_calf'],
+    ['Кордура','cordura'],
+    ['Шагреневая кожа','pebbled_leather']
   ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   def price_must_be_gr_than_old_price
