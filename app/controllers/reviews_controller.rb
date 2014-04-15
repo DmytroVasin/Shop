@@ -13,7 +13,8 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to reviews_path, notice: 'Ваш отзыв принят!'
     else
-      render 'index', alert: 'Ошибка...'
+      @reviews = Review.all
+      render 'index', notice: 'Ваш !!!'
     end
 	end
 end

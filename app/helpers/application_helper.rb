@@ -38,7 +38,7 @@ module ApplicationHelper
 
   def show_list_image(product)
     if product.images.empty?
-      '/assets/no_image_yet.jpg'
+      no_image
     else
       product.images.last.middle.split('-')[0] + '-p-MULTIVIEW.jpg'
     end
@@ -46,19 +46,19 @@ module ApplicationHelper
 
   def show_list_image_large(product)
     if product.images.empty?
-      '/assets/no_image_yet.jpg'
+      no_image
     else
       product.images.last.middle.split('-')[0] + '-p-2x.jpg'
     end
   end
 
   def small_image_by_id(id)
-    product = Product.find(id)
-    small_image_by_product(product) if product
+    product = Product.where(id: id).first
+    product ? small_image_by_product(product) : no_image
   end
 
   def small_image_by_product(product)
-    product.images.try(:first).try(:small) || '/assets/no_image_yet.jpg'
+    product.images.try(:first).try(:small) || no_image
   end
 
   def best_sellers_tag(id, value, count)
@@ -76,8 +76,11 @@ module ApplicationHelper
   end
 
   def title_of_product id
-    product = Product.find(id)
-    product ? product.title : 'incorrect url'
+    Product.where(id: id).first.try(:title)
+  end
+
+  def no_image
+    '/assets/no_image_yet.jpg'
   end
 
   def rus_name obj

@@ -8,13 +8,18 @@
 		<span>Сроки доставки:</span>
 		<%= review.delivery_time %>
 	</p>
-	<p>
-		<span>Качество и соответствие заказу:</span>
-		<%= review.quality %>
-	</p>
-	<p>
-		<span>Пожелания:</span>
-		<%= review.suggestions %>
-	</p>
+	<% if review.quality.present? %>
+		<p>
+			<span>Качество и соответствие заказу:</span>
+			<%= review.quality %>
+		</p>
+	<% end %>
+
+	<% if review.suggestions.present? %>
+		<p>
+			<span>Пожелания:</span>
+			<%= review.suggestions %>
+		</p>
+	<% end %>
 	<div class='critic'>- <%= review.full_name %>, <%= review.address %></div>
 </div>
