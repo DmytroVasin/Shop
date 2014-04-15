@@ -118,17 +118,6 @@ class Product < ActiveRecord::Base
   ]
 
   FEATURES = [
-    ['Молния', 'zipper'],
-    ['Защелка', 'snap'],
-    ['Магнит', 'magnetic'],
-    ['Бакля', 'buckle'],
-    ['Поворотный замок', 'twist_lock'],
-    ['Шнурок', 'drawstring'],
-    ['Кнопка с фиксацией', 'push_lock'],
-    ['Пружинный замок', 'clasp_lock'],
-    ['Липучка', 'hook_and_loop'],
-    ['Резинка', 'bungee'],
-    ['Кнопка', 'button'],
     ['Кожа', 'leather'],
     ['Полиэстер', 'polyester'],
     ['Искусственная кожа', 'faux_leather'],
@@ -179,44 +168,6 @@ class Product < ActiveRecord::Base
     ['Кордура','cordura'],
     ['Шагреневая кожа','pebbled_leather']
   ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   def price_must_be_gr_than_old_price
     if self.old_price
