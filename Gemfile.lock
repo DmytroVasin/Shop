@@ -98,6 +98,7 @@ GEM
     faker (1.2.0)
       i18n (~> 0.5)
     fastercsv (1.5.5)
+    google-analytics-rails (0.0.5)
     haml (4.0.5)
       tilt
     highline (1.6.20)
@@ -269,6 +270,7 @@ DEPENDENCIES
   devise
   execjs
   faker
+  google-analytics-rails
   hirb
   jquery-rails
   kaminari

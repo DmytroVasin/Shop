@@ -18,6 +18,7 @@ gem 'faker'
 
 gem 'nokogiri'
 gem 'activerecord-postgres-hstore'
+gem 'google-analytics-rails'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'
