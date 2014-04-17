@@ -66,8 +66,8 @@ module ApplicationHelper
     check_box_tag 'best_sellers', value, value, disabled: disabling, data: { product_id: id }
   end
 
-  def set_value_by_params gender
-    return gender.in? params[:gender_params] if params[:gender_params]
+  def set_value_by_params item, params
+    return item.in? params if params
     false
   end
 

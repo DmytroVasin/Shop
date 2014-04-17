@@ -28,28 +28,28 @@
   <div class="section color_bar">
     <h3>Цвет:</h3>
     <ul class="brands_section">
-      <%= render partial: 'products/hstore_tags', locals: { current_array: Colour::COMMON_COLORS_RUS } %>
+      <%= render partial: 'products/hstore_tags', locals: { params_array: params[:color_params] , current_array: Colour::COMMON_COLORS_RUS } %>
     </ul>
   </div>
 
   <div class="section material_bar">
     <h3>Материал:</h3>
     <ul class="brands_section">
-      <%= render partial: 'products/hstore_tags', locals: { current_array: Product::MATERIAL } %>
+      <%= render partial: 'products/hstore_tags', locals: { params_array: params[:material_params] , current_array: Product::MATERIAL } %>
     </ul>
   </div>
 
   <div class="section zipper_bar">
     <h3>Закрытие:</h3>
     <ul class="brands_section">
-      <%= render partial: 'products/hstore_tags', locals: { current_array: Product::CLOSING_TYPE } %>
+      <%= render partial: 'products/hstore_tags', locals: { params_array: params[:zipper_params] , current_array: Product::CLOSING_TYPE } %>
     </ul>
   </div>
 
   <div class="section feature_bar">
     <h3>Особенности:</h3>
     <ul class="brands_section">
-      <%= render partial: 'products/hstore_tags', locals: { current_array: Product::FEATURES } %>
+      <%= render partial: 'products/hstore_tags', locals: { params_array: params[:feature_params] , current_array: Product::FEATURES } %>
     </ul>
   </div>
 
