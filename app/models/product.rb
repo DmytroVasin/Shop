@@ -19,9 +19,7 @@ class Product < ActiveRecord::Base
 
   validates :title, :price, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }
-
   validates :old_price, numericality: { greater_than_or_equal_to: 0.01 }, allow_blank: true
-
   validates :rank, numericality: { only_integer: true }
   validates :brand, :categories, presence: true
   validates :title, uniqueness: { case_sensitive: false }
@@ -211,7 +209,7 @@ class Product < ActiveRecord::Base
 
   def self.selecting_by_color(colors)
     if colors
-      where("common_colors ?| ARRAY[:value]", value: colors).uniq(&:id)
+      where("colours.common_colors ?| ARRAY[:value]", value: colors)
     else
       scoped
     end
@@ -219,7 +217,7 @@ class Product < ActiveRecord::Base
 
   def self.selecting_by_zipper(zippers)
     if zippers
-      where("zippers ?| ARRAY[:value]", value: zippers).uniq(&:id)
+      where("zippers ?| ARRAY[:value]", value: zippers)
     else
       scoped
     end
@@ -227,7 +225,7 @@ class Product < ActiveRecord::Base
 
   def self.selecting_by_material(materials)
     if materials
-      where("materials ?| ARRAY[:value]", value: materials).uniq(&:id)
+      where("materials ?| ARRAY[:value]", value: materials)
     else
       scoped
     end
@@ -235,7 +233,7 @@ class Product < ActiveRecord::Base
 
   def self.selecting_by_features(features)
     if features
-      where("features ?| ARRAY[:value]", value: features).uniq(&:id)
+      where("features ?| ARRAY[:value]", value: features)
     else
       scoped
     end

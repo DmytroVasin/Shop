@@ -141,6 +141,33 @@
   }
 }
 
+#items ul li {
+  position: relative;
+  .special_colors {
+    position: absolute;
+    right: 0px;
+    top: 28px;
+    .color_field {
+      width:  15px;
+      height: 15px;
+      margin: 2px;
+
+      &.Red {
+        background-color: red;
+      }
+      &.Multi {
+        background-color: green;
+      }
+      &.Black {
+        background-color: black;
+      }
+      &.Brown {
+        background-color: brown;
+      }
+    }
+  }
+}
+
 /*  ----   ITEMS END   ----  */
 
 /*  ----   ENDLESS PAGINATION START   ----  */
