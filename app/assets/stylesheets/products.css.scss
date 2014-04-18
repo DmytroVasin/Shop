@@ -133,6 +133,14 @@
   }
 }
 
+#items ul li .productbrand {
+  text-align: center;
+  .title {
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
+
 /*  ----   ITEMS END   ----  */
 
 /*  ----   ENDLESS PAGINATION START   ----  */
@@ -187,7 +195,7 @@
 }
 
 .brands_section {
-  max-height: 204px;
+  max-height: 242px;
 }
 
 #no_match_criteria {

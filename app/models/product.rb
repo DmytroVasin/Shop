@@ -15,6 +15,8 @@ class Product < ActiveRecord::Base
                   :zippers,
                   :features
 
+  delegate :name, to: :brand, prefix: :brand
+
   validates :title, :price, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }
 
@@ -56,7 +58,7 @@ class Product < ActiveRecord::Base
   MATERIAL = [
     ['Кожа','leather'],
     ['Полиэстер','polyester'],
-    ['Искусственная кожа','faux_leather'],
+    ['Искусств. кожа','faux_leather'],
     ['Нейлон','nylon'],
     ['Синтетика','synthetic'],
     ['Хлопок','cotton'],
@@ -75,7 +77,7 @@ class Product < ActiveRecord::Base
     ['Лен','linen'],
     ['Соломенный','straw'],
     ['Конопляный','hemp'],
-    ['Искусственная замша','faux_suede'],
+    ['Искусств. замша','faux_suede'],
     ['Трикотажный','tricot'],
     ['Шелк','silk'],
     ['Шерсть','wool'],
@@ -83,7 +85,7 @@ class Product < ActiveRecord::Base
     ['Зернистая кожа','full_grain_leather'],
     ['Резиновый','rubber'],
     ['Рафия','raffia'],
-    ['Искусственный шелк','rayon'],
+    ['Искусств. шелк','rayon'],
     ['Змеиная кожа','snakeskin'],
     ['Джут','jute'],
     ['Микрофирба','microfiber'],
@@ -121,19 +123,19 @@ class Product < ActiveRecord::Base
 
 
   FEATURES = [
-    ['Карман для ноутбука','laptop_sleeve'],
+    ['Карман для ноут-а','laptop_sleeve'],
     ['Легкая','lightweight'],
     ['На колесиках','wheeled_bags'],
     ['С карабином','key_clip'],
-    ['Увеличивающаяся сумка','expandable_bags'],
+    ['Увеличив. сумка','expandable_bags'],
     ['Карман для воды','hydration_pockets'],
     ['Карман для плеера','audio_pockets'],
     ['Замок TSA','tsa_locks'],
     ['Одобрено TSA ','tsa_approved'],
-    ['Переработанный материал','recycled_materials'],
-    ['Жесткая поверхность','hardside'],
+    ['Переработ. матер-л','recycled_materials'],
+    ['Жестк. поверхность','hardside'],
     ['Светоотражающий','reflective'],
-    ['Водоотталкивающий','waterproof'],
+    ['Водоотталк-ющий','waterproof'],
     ['Изоляция','insulated'],
     ['Водостойкий','water_resistant'],
     ['Термо-карманы','cooler_pocket'],
