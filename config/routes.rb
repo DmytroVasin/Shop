@@ -31,7 +31,10 @@ Shop::Application.routes.draw do
     end
   end
 
-  resources :products
+  resources :products do
+    get 'color_picker', on: :collection
+  end
+
   resources :reviews
 
   match 'about_us', to: 'optional_pages#about_us', via: :get

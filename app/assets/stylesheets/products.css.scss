@@ -135,6 +135,7 @@
 
 #items ul li .productbrand {
   text-align: center;
+
   .title {
     font-size: 15px;
     font-weight: bold;
@@ -143,27 +144,45 @@
 
 #items ul li {
   position: relative;
+
   .special_colors {
     position: absolute;
     right: 0px;
     top: 28px;
-    .color_field {
-      width:  15px;
-      height: 15px;
-      margin: 2px;
 
-      &.Red {
-        background-color: red;
-      }
-      &.Multi {
-        background-color: green;
-      }
-      &.Black {
-        background-color: black;
-      }
-      &.Brown {
-        background-color: brown;
-      }
+    .color_field {
+      width:  18px;
+      height: 18px;
+      margin: 2px;
+      cursor: pointer;
+
+      &.Black { background-image: url(/assets/small_colours/black.jpg); }
+      &.Multi { background-image: url(/assets/small_colours/multi.jpg); }
+      &.Blue { background-image: url(/assets/small_colours/blue.jpg); }
+      &.Brown { background-image: url(/assets/small_colours/brown.jpg); }
+      &.Red { background-image: url(/assets/small_colours/red.jpg); }
+      &.Pink { background-image: url(/assets/small_colours/pink.jpg); }
+      &.Gray { background-image: url(/assets/small_colours/gray.jpg); }
+      &.Green { background-image: url(/assets/small_colours/green.jpg); }
+      &.Tan { background-image: url(/assets/small_colours/tan.jpg); }
+      &.White { background-image: url(/assets/small_colours/white.jpg); }
+      &.Beige { background-image: url(/assets/small_colours/beige.jpg); }
+      &.Orange { background-image: url(/assets/small_colours/orange.jpg); }
+      &.Purple { background-image: url(/assets/small_colours/purple.jpg); }
+      &.Yellow { background-image: url(/assets/small_colours/yellow.jpg); }
+      &.Gold { background-image: url(/assets/small_colours/gold.jpg); }
+      &.Burgundy { background-image: url(/assets/small_colours/burgundy.jpg); }
+      &.Silver { background-image: url(/assets/small_colours/silver.jpg); }
+      &.Bronze { background-image: url(/assets/small_colours/bronze.jpg); }
+      &.DarkGray { background-image: url(/assets/small_colours/darkgray.jpg); }
+      &.Olive { background-image: url(/assets/small_colours/olive.jpg); }
+      &.Khaki { background-image: url(/assets/small_colours/khaki.jpg); }
+      &.Pewter { background-image: url(/assets/small_colours/pewter.jpg); }
+      &.Coral { background-image: url(/assets/small_colours/coral.jpg); }
+      &.Metallic { background-image: url(/assets/small_colours/metallic.jpg); }
+      &.Animal { background-image: url(/assets/small_colours/animal.jpg); }
+      &.Clear { background-image: url(/assets/small_colours/clear.jpg); }
+      &.BlueGay { background-image: url(/assets/small_colours/bluegay.jpg); }
     }
   }
 }

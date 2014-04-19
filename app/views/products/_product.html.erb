@@ -10,12 +10,12 @@
     </h2>
   </div>
 </div>
-<div class="special_colors">
+<div class="special_colors" data-item-id="<%= product.id %>" >
   <% product.colours.pluck(:common_colors).reduce({}, :merge).each do |en_color, _| %>
     <div class="color_field <%= en_color %>"></div>
   <% end %>
 </div>
-<%= link_to image_tag( show_list_image(product), class: 'productimg'), product_path(product) %>
+<%= link_to image_tag( show_list_image(product), class: 'productimg'), product_path(product), class: 'productlinkimg' %>
 
 <div class="productinfo">
   <div class="paddingwrapper">

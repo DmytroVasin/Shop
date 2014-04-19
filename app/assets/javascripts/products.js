@@ -8,13 +8,13 @@ $(function () {
   // ZOOM paginator      --------------------------------------------------------------
   var main_image = $('.image_polaroid img');
   main_image.elevateZoom({ gallery:'wrap_image_rotator',
-                           cursor: 'pointer',
-                           galleryActiveClass: 'active',
-                           imageCrossfade: true,
-                           loadingIcon: '/assets/progres.gif',
-                           scrollZoom : true,
-                           zoomWindowPosition: 2,
-                           zoomWindowOffetx: 35 });
+    cursor: 'pointer',
+    galleryActiveClass: 'active',
+    imageCrossfade: true,
+    loadingIcon: '/assets/progres.gif',
+    scrollZoom : true,
+    zoomWindowPosition: 2,
+    zoomWindowOffetx: 35 });
 
   main_image.bind("click", function(e) {
     var ez = main_image.data('elevateZoom');
@@ -93,23 +93,23 @@ $(function () {
     };
 
     $.ajax({
-     type: "GET",
-     url: '/products.js',
-     data: {
-       categories_params: getValues(categories),
-       brands_params: getValues(brands),
-       gender_params: getValues(gender),
-       color_params: getValues(color),
+      type: "GET",
+      url: '/products.js',
+      data: {
+        categories_params: getValues(categories),
+        brands_params: getValues(brands),
+        gender_params: getValues(gender),
+        color_params: getValues(color),
 
-       material_params: getValues(material),
-       zipper_params: getValues(zipper),
-       feature_params: getValues(feature),
+        material_params: getValues(material),
+        zipper_params: getValues(zipper),
+        feature_params: getValues(feature),
 
-       price_between: getPrice,
-       sort_direction: select_val,
-       flag: true
-     }
-   })
+        price_between: getPrice,
+        sort_direction: select_val,
+        flag: true
+      }
+    })
   };
   $('body').on('change', ".sortdropdown, input:checkbox, #leftValue, #rightValue", throttle(changeMeter, 2000, {leading: false}));
 
@@ -142,5 +142,30 @@ $(function () {
     $('.color_select #line_item_color').val(mainColorSelectTag);
 
     startSlider(mainColorSelectTag);
+  });
+
+  // Change small colour:
+  $('body').on('click', '.color_field', function () {
+    var itemId, color, that, specialColorBlock, currentProduct;
+
+    that   = $(this);
+    specialColorBlock = that.parent('.special_colors');
+    itemId = specialColorBlock.data('item-id');
+    color  = that.attr('class').split('color_field ')[1];
+    currentProduct = specialColorBlock.siblings('.productlinkimg').find('.productimg')
+
+    $.ajax({
+      type: 'GET',
+      dataType: 'json',
+      url: '/products/color_picker',
+      data: {
+        itemId: itemId,
+        color: color
+      },
+      success: function(data) {
+        currentProduct.attr('src', data.imgUrl);
+      }
+    });
+
   });
 });

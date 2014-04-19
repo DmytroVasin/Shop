@@ -5,6 +5,7 @@ class Colour < ActiveRecord::Base
 
   has_many :colors
   has_many :products, through: :colors, uniq: true
+  has_many :images, through: :colors, uniq: true
 
   COMMON_COLORS_RUS = [
     ['Чёрный', 'Black'],
@@ -33,7 +34,7 @@ class Colour < ActiveRecord::Base
     ['Металик', 'Metallic'],
     ['Животный рисунок', 'Animal'],
     ['Нейтральный', 'Clear'],
-    ['Голубой', 'BlueGay'],
+    ['Голубой', 'BlueGay']
   ]
 
 end

@@ -49,6 +49,18 @@ class ProductsController < ApplicationController
     @colors_name    = @product.colours.uniq
   end
 
+  def color_picker
+    product = Product.find(params[:itemId])
+    product.colours.where("common_colors ? :key", key: params[:color] )
+
+
+    @image_link = product.images.joins(:colours).where("common_colors ? :key", key: params[:color] ).last.middle.split('-')[0] + '-p-MULTIVIEW.jpg'
+
+
+    respond_to do |format|
+      format.json { render json: { imgUrl: @image_link }}
+    end
+  end
 
   private
 
