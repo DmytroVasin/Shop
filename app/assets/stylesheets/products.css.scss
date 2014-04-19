@@ -155,6 +155,7 @@
       height: 18px;
       margin: 2px;
       cursor: pointer;
+      border: 1px solid #777;
 
       &.Black { background-image: url(/assets/small_colours/black.jpg); }
       &.Multi { background-image: url(/assets/small_colours/multi.jpg); }
@@ -166,23 +167,23 @@
       &.Green { background-image: url(/assets/small_colours/green.jpg); }
       &.Tan { background-image: url(/assets/small_colours/tan.jpg); }
       &.White { background-image: url(/assets/small_colours/white.jpg); }
-      &.Beige { background-image: url(/assets/small_colours/beige.jpg); }
-      &.Orange { background-image: url(/assets/small_colours/orange.jpg); }
-      &.Purple { background-image: url(/assets/small_colours/purple.jpg); }
-      &.Yellow { background-image: url(/assets/small_colours/yellow.jpg); }
-      &.Gold { background-image: url(/assets/small_colours/gold.jpg); }
-      &.Burgundy { background-image: url(/assets/small_colours/burgundy.jpg); }
-      &.Silver { background-image: url(/assets/small_colours/silver.jpg); }
-      &.Bronze { background-image: url(/assets/small_colours/bronze.jpg); }
-      &.DarkGray { background-image: url(/assets/small_colours/darkgray.jpg); }
-      &.Olive { background-image: url(/assets/small_colours/olive.jpg); }
-      &.Khaki { background-image: url(/assets/small_colours/khaki.jpg); }
-      &.Pewter { background-image: url(/assets/small_colours/pewter.jpg); }
-      &.Coral { background-image: url(/assets/small_colours/coral.jpg); }
-      &.Metallic { background-image: url(/assets/small_colours/metallic.jpg); }
-      &.Animal { background-image: url(/assets/small_colours/animal.jpg); }
-      &.Clear { background-image: url(/assets/small_colours/clear.jpg); }
-      &.BlueGay { background-image: url(/assets/small_colours/bluegay.jpg); }
+      &.Beige { background-color: #66CC99; }
+      &.Orange { background-color: #66CC99; }
+      &.Purple { background-color: #66CC99; }
+      &.Yellow { background-color: #66CC99; }
+      &.Gold { background-color: #66CC99; }
+      &.Burgundy { background-color: #66CC99; }
+      &.Silver { background-color: #66CC99; }
+      &.Bronze { background-color: #66CC99; }
+      &.DarkGray { background-color: #66CC99; }
+      &.Olive { background-color: #66CC99; }
+      &.Khaki { background-color: #66CC99; }
+      &.Pewter { background-color: #66CC99; }
+      &.Coral { background-color: #66CC99; }
+      &.Metallic { background-color: #66CC99; }
+      &.Animal { background-color: #66CC99; }
+      &.Clear { background-color: #66CC99; }
+      &.BlueGay { background-color: #66CC99; }
     }
   }
 }
