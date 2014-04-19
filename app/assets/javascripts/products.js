@@ -78,7 +78,7 @@ $(function () {
 
     var material   = $('.material_bar input[type=checkbox]:checked');
     var zipper     = $('.zipper_bar input[type=checkbox]:checked');
-    var feature     = $('.feature_bar input[type=checkbox]:checked');
+    var feature    = $('.feature_bar input[type=checkbox]:checked');
 
     var select_val = $('.sortdropdown').val();
 
@@ -109,7 +109,7 @@ $(function () {
         sort_direction: select_val,
         flag: true
       }
-    })
+    });
   };
   $('body').on('change', ".sortdropdown, input:checkbox, #leftValue, #rightValue", throttle(changeMeter, 2000, {leading: false}));
 
@@ -169,8 +169,5 @@ $(function () {
 
   });
 
-  $('#custom-find').on('click', function(){
-    console.log('!!!');
-    return false;
-  })
+  $('#custom-find').on('click', throttle(changeMeter, 2000, {leading: false}));
 });

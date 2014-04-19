@@ -75,6 +75,12 @@
     </script>
   </div>
   <div class='section search_bar'>
-    <button id='custom-find' class='btn_order'>Начать поиск</button>
+    <button id='custom-find' class='btn_order' onclick="handler(event)" >Начать поиск</button>
   </div>
 </div>
+
+<script>
+  function handler(event) {
+    event.preventDefault ? event.preventDefault() : (event.returnValue=false);
+  }
+</script>
