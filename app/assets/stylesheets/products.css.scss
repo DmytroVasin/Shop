@@ -89,7 +89,7 @@
 /*#items ul li a*/
 #items ul li a img {
   width  : 235px;
-  height : 200px;
+  height : 208px;
 }
 
 /*#items ul li .productinfo*/
@@ -325,5 +325,13 @@
         }
       }
     }
+  }
+}
+.section.search_bar {
+  text-align: center;
+
+  #custom-find {
+    padding: 6px 34px;
+    margin: 7px 0px;
   }
 }
