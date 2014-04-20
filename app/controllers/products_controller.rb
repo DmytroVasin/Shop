@@ -4,21 +4,21 @@ class ProductsController < ApplicationController
   def index
     @flag = params[:flag] == "true" ? true : false;
 
-    @sort_hash = hash_of_sort
+    @sort_hash = Product::SORT_HASH
 
     @categories = Category.all
     @brands  = Brand.joins(:products).group('brands.id').order('name ASC')
     @genders = Gender.joins(:products).group('genders.id').order('gender ASC')
-    # @colors  = Colour.joins(:colors).order('name ASC').uniq(&:id)
+
 
     @products = Product.selecting_by(params[:categories_params], 'categories')
                        .includes(:colours)
-                       .selecting_by_color(params[:color_params])
+                       .selecting_by_keys(params[:color_params], 'colours.common_colors')
                        .selecting_by(params[:brands_params], 'brand', 's')
                        .selecting_by(params[:gender_params], 'genders', '', 'gender')
-                       .selecting_by_zipper(params[:zipper_params])
-                       .selecting_by_material(params[:material_params])
-                       .selecting_by_features(params[:feature_params])
+                       .selecting_by_keys(params[:zipper_params], 'zippers')
+                       .selecting_by_keys(params[:material_params], 'materials')
+                       .selecting_by_keys(params[:feature_params], 'features')
                        .price_between(params[:price_between])
                        .sort_direction(params[:sort_direction], @sort_hash)
                        # .uniq
@@ -62,12 +62,4 @@ class ProductsController < ApplicationController
     end
   end
 
-  private
-
-  def hash_of_sort
-    { 'Лучшее'    => 'best',
-      'Цена low'  => 'low',
-      'Цена high' => 'high',
-      'Новое'     => 'newest' }
-  end
 end
