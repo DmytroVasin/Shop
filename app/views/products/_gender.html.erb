@@ -1,6 +1,8 @@
-<li>
-  <label>
-    <%= check_box_tag 'gender_type', gender.gender, set_value_by_params(gender.gender, params[:gender_params]) %>
-    <%= gender.gender_rus %>
-  </label>
-</li>
+<% genders.each do |key, value| %>
+  <li>
+    <label>
+      <%= check_box_tag 'gender_type', key, set_value_by_params(key, params[:gender_params]) %>
+      <%= value %>
+    </label>
+  </li>
+<% end %>

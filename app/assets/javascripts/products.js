@@ -159,7 +159,7 @@ $(function () {
       dataType: 'json',
       url: '/products/color_picker',
       data: {
-        itemId: itemId,
+        id: itemId,
         color: color
       },
       success: function(data) {

@@ -7,6 +7,6 @@ class Colour < ActiveRecord::Base
   has_many :products, through: :colors, uniq: true
   has_many :images, through: :colors, uniq: true
 
-  include Product::ProductConstants
+  include Colour::ColourConstants
 
 end

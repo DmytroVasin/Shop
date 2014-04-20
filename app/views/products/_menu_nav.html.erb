@@ -21,7 +21,7 @@
   <div class="section gender_bar">
     <h3>Пол:</h3>
     <ul>
-      <%= render partial: 'products/gender', collection: @genders %>
+      <%= render partial: 'products/gender', locals: { genders: @genders } %>
     </ul>
   </div>
 
