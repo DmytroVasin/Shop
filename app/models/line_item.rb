@@ -5,7 +5,7 @@ class LineItem < ActiveRecord::Base
   belongs_to :cart
   belongs_to :order
 
-  default_scope { order('created_at ASC') }
-
   validates :color, presence: true
+
+  default_scope { order('created_at ASC') }
 end
