@@ -19,8 +19,8 @@ class Order < ActiveRecord::Base
 
   phony_normalize :phone, default_country_code: 'UA'
 
-  include Order::OrderValidations
   include Order::OrderConstants
+  include Order::OrderValidations
 
   def input_line_items_to_order(cart)
     cart.line_items.each do |item|

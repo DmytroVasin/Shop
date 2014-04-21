@@ -32,10 +32,10 @@ class Product < ActiveRecord::Base
   serialize :zippers, ActiveRecord::Coders::Hstore
   serialize :features, ActiveRecord::Coders::Hstore
 
+  include Product::ProductConstants
   include Product::ProductScopes
   include Product::ProductValidations
   include Product::ProductCallbacks
-  include Product::ProductConstants
 
   def to_param
     "#{id}-#{title}".parameterize
