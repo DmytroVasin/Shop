@@ -30,12 +30,12 @@ body {
   /*background: #f1f1f1 repeat top left;*/
 
   /*height: 3000px;*/
-  background-color: #eee;
-
+  background-color: #ececec;
+  background: #ececec url(http://lea.verou.me/css3patterns/noise.png) 0 0 repeat;
 }
 
 *:focus {
-    outline: 0;
+  outline: 0;
 }
 
 #sitewrapper {
