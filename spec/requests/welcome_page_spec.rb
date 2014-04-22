@@ -21,12 +21,25 @@ describe 'Welcome page', js: true do
   it 'show bestseller/newest in new fields' do
     within('#slider') do
       page.all("li").count.should eql(3)
+      page.should have_content product_1.title
+      page.should_not have_content product_4.title
     end
 
     within('#new_products') do
       page.all(".new_product").count.should eql(6)
-      page.should have_content product_1.title.truncate(20)
-      page.should_not have_content product_4.title.truncate(20)
+    end
+  end
+
+  it 'way to pay order ( checking )' do
+    page.find('#rating_point_6').click
+    click_on('Отправить')
+
+    within('.progress_table') do
+      page.should have_content('(100.0)')
+    end
+
+    within('.count_of_vote') do
+      page.should have_content('1')
     end
   end
 end

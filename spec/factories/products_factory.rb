@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :product do
-    sequence(:title) { Populator.words(2..3).titleize }
+    sequence(:title) { |n| "Title_#{n}" }
     sequence(:description) { Populator.sentences(5) }
     price 140.80
     sequence(:old_price) { price + 100.10 }

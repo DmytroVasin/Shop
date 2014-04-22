@@ -26,21 +26,32 @@ RSpec.configure do |config|
   config.include Capybara::DSL
 
   config.run_all_when_everything_filtered = true
+  config.use_transactional_fixtures = false
 
   config.order = 'random'
 
+
+
   config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
   end
 
-  config.after(:each) do
+  config.before(:each) do
+    DatabaseCleaner.strategy = :transaction
+  end
+
+  config.before(:each, :js => true) do
+    DatabaseCleaner.strategy = :truncation
+  end
+
+  config.before(:each) do
     DatabaseCleaner.start
   end
 
   config.after(:each) do
     DatabaseCleaner.clean
   end
+
 
   require 'capybara/poltergeist'
   Capybara.javascript_driver = :poltergeist
