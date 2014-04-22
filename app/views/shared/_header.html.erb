@@ -1,27 +1,27 @@
-<div id="header">
-  <div class="left">
-    <a href="/"></a>
+<div id='header'>
+  <div class='left'>
+    <a href='/'></a>
   </div>
-  <div class="right">
-    <div class="topnav">
+  <div class='right'>
+    <div class='topnav'>
       Оригинальные брендовые сумки из США
-      <div class="hint">доставка по всей Украине</div>
-      <div class="clear"></div>
+      <div class='hint'>доставка по всей Украине</div>
+      <div class='clear'></div>
     </div>
 
     <% if session[:cart_id] %>
-      <div class="basket">
+      <div class='basket'>
         <%= render 'shared/header_cart' %>
       </div>
     <% else %>
       <div class="basket">
-        <a href="/" class="basketimg"></a>
-        <div class="no_basketcontent">
-          <img src="/assets/empty_cart.jpg" alt="empty">
+        <a href='#' class='basketimg'></a>
+        <div class='no_basketcontent'>
+          <img src='/assets/empty_cart.jpg' alt='empty'>
         </div>
-        <div class="clear"></div>
+        <div class='clear'></div>
       </div>
     <% end %>
   </div>
 </div>
-<div class="clear"></div>
+<div class='clear'></div>

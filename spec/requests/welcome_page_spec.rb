@@ -30,7 +30,7 @@ describe 'Welcome page', js: true do
     end
   end
 
-  it 'way to pay order ( checking )' do
+  it 'pay for an order chooser' do
     page.find('#rating_point_6').click
     click_on('Отправить')
 
@@ -40,6 +40,12 @@ describe 'Welcome page', js: true do
 
     within('.count_of_vote') do
       page.should have_content('1')
+    end
+  end
+
+  it 'counts of banners' do
+    within('#remote_site') do
+      page.all("img").count.should eql(4)
     end
   end
 end
