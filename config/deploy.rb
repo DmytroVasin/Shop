@@ -1,5 +1,4 @@
 # sudo su - deploy
-# rake db:migrate VERSION=20140331182826
 
 require 'bundler/capistrano'
 require 'delayed/recipes'
