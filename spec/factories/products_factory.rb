@@ -23,8 +23,14 @@ FactoryGirl.define do
     end
 
     trait :with_bag_on_wheels do
+      video_href 'http://www.6pm.com/media/video/flvplayer/flvpl'
+
       after(:create) do |product|
         product.colors << FactoryGirl.create(:granit_bag_on_wheels)
+        product.colors << FactoryGirl.create(:blue_bag_on_wheels)
+        product.colors << FactoryGirl.create(:blue_bag_on_wheels)
+        product.colors << FactoryGirl.create(:blue_bag_on_wheels)
+        product.colors << FactoryGirl.create(:blue_bag_on_wheels)
       end
     end
 
@@ -80,6 +86,11 @@ FactoryGirl.define do
     association :image, factory: :bag_on_wheels
   end
 
+  factory :blue_bag_on_wheels, class: Color do
+    association :colour, factory: :blue
+    association :image, factory: :blu_bag_on_wheels
+  end
+
   factory :grey_bag_sport, class: Color do
     association :colour, factory: :grey
     association :image, factory: :bag_sport
@@ -110,6 +121,11 @@ FactoryGirl.define do
   factory :granit, class: Colour do
     name 'Granite'
     name_rus 'Гранит'
+  end
+
+  factory :blue, class: Colour do
+    name 'Blue'
+    name_rus 'Синий'
   end
 
   factory :grey, class: Colour do
@@ -143,6 +159,12 @@ FactoryGirl.define do
     small  'http://www.zappos.com/images/z/2/6/2/4/8/6/2624867-p-MULTIVIEW_THUMBNAILS.jpg'
     middle 'http://www.zappos.com/images/z/2/6/2/4/8/6/2624867-p-MULTIVIEW.jpg'
     large  'http://www.zappos.com/images/z/2/6/2/4/8/6/2624867-p-2x.jpg'
+  end
+
+  factory :blu_bag_on_wheels, class: Image do
+    small  'http://www.zappos.com/images/z/2/6/2/4/8/7/2624870-p-MULTIVIEW_THUMBNAILS.jpg'
+    middle 'http://www.zappos.com/images/z/2/6/2/4/8/7/2624870-p-MULTIVIEW.jpg'
+    large  'http://www.zappos.com/images/z/2/6/2/4/8/7/2624870-p-2x.jpg'
   end
 
   factory :bag_sport, class: Image do
