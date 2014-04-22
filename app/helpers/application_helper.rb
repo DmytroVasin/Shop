@@ -1,6 +1,10 @@
 # coding: utf-8
 module ApplicationHelper
-  def current_page(path)
+  def is_last_on_page product_counter
+    (product_counter-2)%3 == 0 ? 'last' : ''
+  end
+
+  def current_page path
     'current_page' if current_page?(path)
   end
 

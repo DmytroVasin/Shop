@@ -1,33 +1,31 @@
-<% if (product_counter-2)%3 == 0 %>
-  <li class='last'>
-<% else %>
-  <li>
-<% end %>
-<div class="productbrand">
-  <div class="title">
-    <h2>
-      <%= product.brand_name %>
-    </h2>
-  </div>
-</div>
-<div class="special_colors" data-item-id="<%= product.id %>" >
-  <% product.colours.pluck(:common_colors).reduce({}, :merge).each do |en_color, _| %>
-    <div class="color_field <%= en_color %>"></div>
-  <% end %>
-</div>
-<%= link_to image_tag( show_list_image(product), class: 'productimg'), product_path(product), class: 'productlinkimg' %>
-
-<div class="productinfo">
-  <div class="paddingwrapper">
+<li class="<%= is_last_on_page(product_counter) %>">
+  <div class="productbrand">
     <div class="title">
       <h2>
-        <%= link_to product.title, product_path(product) %>
+        <%= product.brand_name %>
       </h2>
     </div>
-    <div class="price">
-      Цена: <%= product.price %>грн.
-      <span class="old_price"><%= product.old_price %>грн.</span>
+  </div>
+
+  <div class="special_colors" data-item-id="<%= product.id %>" >
+    <% product.get_uniq_colors_hash.each do |en_color, _| %>
+      <div class="color_field <%= en_color %>"></div>
+    <% end %>
+  </div>
+
+  <%= link_to image_tag( show_list_image(product), class: 'productimg'), product_path(product), class: 'productlinkimg' %>
+
+  <div class="productinfo">
+    <div class="paddingwrapper">
+      <div class="title">
+        <h2>
+          <%= link_to product.title, product_path(product) %>
+        </h2>
+      </div>
+      <div class="price">
+        Цена: <%= product.price %>грн.
+        <span class="old_price"><%= product.old_price %>грн.</span>
+      </div>
     </div>
   </div>
-</div>
 </li>

@@ -8,6 +8,10 @@ module Product::ProductScopes
       scope :by_gender, ->(g) { joins(:genders).where('genders.gender = ?', g ) }
       scope :count_of_best_sellers, -> { where(bestseller: true) }
 
+      def get_uniq_colors_hash
+        colours.get_uniq_common_colors
+      end
+
       def self.search(search)
         if search
           where('title like ?', "%#{search}%")

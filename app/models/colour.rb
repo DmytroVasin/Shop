@@ -8,5 +8,6 @@ class Colour < ActiveRecord::Base
   has_many :images, through: :colors, uniq: true
 
   include Colour::ColourConstants
+  include Colour::ColourScopes
 
 end
