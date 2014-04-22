@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
   def index
     session[:products_params] = nil
     # Rating menu ( Vote menu )
-    @ratings      = Rating.new
+    @ratings         = Rating.new
 
     ratings          = Rating.select(:point)
     @count           = ratings.count
@@ -10,9 +10,8 @@ class WelcomeController < ApplicationController
 
     @hash_with_counts, @hash_with_percentege = vote_rank(hash_with_points, @count)
 
-
     products = Product.scoped
-    @newest = products.where(bestseller: true)
+    @newest = products.best_sellers
     @best_sellers = products.order('rank DESC').limit(6)
   end
 end

@@ -3,7 +3,7 @@ class Admin::ProductsController < Admin::BaseController
   before_filter :find_product, only: [:show, :edit, :update, :destroy, :update_features]
 
   def index
-    @best_count = Product.count_of_best_sellers.count
+    @best_count = Product.best_sellers.count
     @products = Product.search(params[:search]).order(sort_column + ' ' + sort_direction).page(params[:page]).per(10)
   end
 
@@ -51,7 +51,7 @@ class Admin::ProductsController < Admin::BaseController
       Product.find(params[:product_id]).update_attributes({ bestseller: params[:checked] })
     end
 
-    @best_count = Product.count_of_best_sellers.count
+    @best_count = Product.best_sellers.count
     @products = Product.search(params[:search]).order(sort_column + ' ' + sort_direction).page(params[:page]).per(10)
     render :index
   end
