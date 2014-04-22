@@ -43,8 +43,8 @@ namespace :deploy do
   after "deploy:setup", "deploy:setup_config"
 
   # Delay Job:
-  after "deploy:stop", "delayed_job:stop"
-  after "deploy:start", "delayed_job:start"
+  # after "deploy:stop", "delayed_job:stop"
+  # after "deploy:start", "delayed_job:start"
   after "deploy:restart", "delayed_job:restart"
 
   task :symlink_config, roles: :app do
