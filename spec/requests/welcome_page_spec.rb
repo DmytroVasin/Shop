@@ -14,7 +14,6 @@ describe 'Welcome page', js: true do
 
     it 'openes correctly' do
       page.should have_content 'Оригинальные брендовые сумки из США'
-      screenshot_and_open_image
     end
   # end
 end
