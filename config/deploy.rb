@@ -1,7 +1,8 @@
 # sudo su - deploy
 # rake db:migrate VERSION=20140331182826
 
-require "bundler/capistrano"
+require 'bundler/capistrano'
+require 'delayed/recipes'
 #require "rvm/capistrano"
 
 server "188.226.157.249", :web, :app, :db, primary: true
@@ -40,6 +41,11 @@ namespace :deploy do
     puts "Now edit the config files in #{shared_path}."
   end
   after "deploy:setup", "deploy:setup_config"
+
+  # Delay Job:
+  # after "deploy:stop", "delayed_job:stop"
+  # after "deploy:start", "delayed_job:start"
+  after "deploy:restart", "delayed_job:restart"
 
   task :symlink_config, roles: :app do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"

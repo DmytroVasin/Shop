@@ -89,6 +89,9 @@ end
 # gem 'debugger'
 
 gem 'newrelic_rpm'
+gem 'delayed_job_active_record'
+gem 'daemons'
+
 
 gem 'unicorn'
 gem 'capistrano', '~> 2.15'
