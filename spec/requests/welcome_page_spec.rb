@@ -16,6 +16,8 @@ describe 'Welcome page', js: true do
     page.should have_content 'Оригинальные брендовые сумки из США'
     page.should have_content 'Все товары'
     page.should have_content 'Акции/Новости'
+    page.should have_content 'Пн-Пт: с 10:00 до 18:00'
+    page.should have_content 'Суб: с 10:00 до 15:00'
   end
 
   it 'show bestseller/newest in new fields' do
