@@ -10,4 +10,14 @@ namespace :db do
     # create_categories
     add_gender
   end
+
+  desc "Fully reloading of development environment"
+  task :up_ do
+    raise "Not allowed to run on production" unless Rails.env.development?
+    system("rake db:drop")
+    system("rake db:create")
+    system("rake db:migrate")
+    sleep 2
+    system("rake db:seed")
+  end
 end
