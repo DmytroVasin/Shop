@@ -327,6 +327,45 @@
     }
   }
 }
+
+
+#categories_of_product {
+  margin      : 5px 0 20px 20px;
+  font-size   : 16px;
+  color       : #333;
+  font-family : Georgia, Times, serif;
+  text-shadow : 0 0 1px #777777;
+
+
+  ul {
+    margin-left: 17px;
+    font-size : 14px;
+    li {
+      list-style-type: none;
+      line-height: 29px;
+      text-shadow: none;
+
+      i {
+        margin-right: 5px;
+
+        &.icon-th {
+          margin-top: 3px;
+          float: left;
+        }
+
+        &.icon-star {
+          float: left;
+          width: 16px;
+          height: 25px;
+          background: url(/assets/glyphicons-halflings.png) -24px -41px no-repeat;
+        }
+      }
+    }
+  }
+}
+
+
+
 .section.search_bar {
   text-align: center;
 

@@ -23,7 +23,8 @@ class ProductsController < ApplicationController
                        .sort_direction(params[:sort_direction], @sort_hash)
 
 
-    @products = unless products.kind_of?(Array)
+    @products = if products.kind_of?(Array)
+                  # Never call?
                   products.page(params[:page]).per(18)
                 else
                   Kaminari.paginate_array(products).page(params[:page]).per(18)

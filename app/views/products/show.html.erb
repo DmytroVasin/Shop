@@ -34,6 +34,35 @@
         <% end %>
       </div>
 
+      <div id='categories_of_product'>
+        <% if @product.materials.any? %>
+          Материал:
+          <ul>
+            <% @product.materials.each do |_, rus| %>
+              <li><i class="icon-star"></i><%= rus %></li>
+            <% end %>
+          </ul>
+        <% end %>
+
+        <% if @product.zippers.any? %>
+          Тип закрытия:
+          <ul>
+            <% @product.zippers.each do |_, rus| %>
+              <li><i class="icon-star"></i><%= rus %></li>
+            <% end %>
+          </ul>
+        <% end %>
+
+        <% if @product.features.any? %>
+          Особенности:
+          <ul>
+            <% @product.features.each do |_, rus| %>
+              <li><i class="icon-star"></i><%= rus %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+
       <%= back_to_products('« Back to Results', 'get_back') %>
     </div>
 
