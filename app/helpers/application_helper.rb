@@ -91,6 +91,10 @@ module ApplicationHelper
     obj.name_rus ? obj.name_rus : content_tag(:span, obj.name, class: 'text-error')
   end
 
+  def rus_main en_color
+    Colour::COMMON_COLORS_HASH[en_color]
+  end
+
   def rus_name_by color
     Colour.find_by_name(color).name_rus
   end

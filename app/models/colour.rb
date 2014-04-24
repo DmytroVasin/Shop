@@ -1,5 +1,5 @@
 class Colour < ActiveRecord::Base
-  attr_accessible :name, :name_rus, :common_colors
+  attr_accessible :name, :name_rus, :common_colors, :main
 
   serialize :common_colors, ActiveRecord::Coders::Hstore
 

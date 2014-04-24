@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140421033759) do
+ActiveRecord::Schema.define(:version => 20140424184208) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",              :default => "", :null => false
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20140421033759) do
     t.string "name"
     t.string "name_rus"
     t.hstore "common_colors"
+    t.string "main"
   end
 
   add_index "colours", ["common_colors"], :name => "index_colours_on_common_colors"
