@@ -147,4 +147,8 @@ module ApplicationHelper
     prepay = prepay(total_price, payment_method)
     (full_price - prepay).round(2).to_i
   end
+
+  def percentage_discount old_price, new_price
+    (100 - (100 * new_price) / old_price).to_i
+  end
 end
