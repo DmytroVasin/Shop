@@ -29,7 +29,7 @@ module ApplicationHelper
       session[:products_params][:format] = 'html'
       link_to title, session[:products_params], class: class_name
     else
-      link_to title, products_path, class: class_name
+      link_to title, '#', class: class_name, onclick: "history.back(); return false;"
     end
   end
 
