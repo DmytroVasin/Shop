@@ -42,6 +42,8 @@ class ProductsController < ApplicationController
     @product_colors = @product.colors.preload(:image)
     @images_count   = @product_colors.count > 4
     @colors_name    = @product.colours.uniq
+
+    @also_like = Product.limit(3)
   end
 
   def color_picker

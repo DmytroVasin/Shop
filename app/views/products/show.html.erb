@@ -110,5 +110,13 @@
     </div>
   <% end %>
   </div>
+  <div class='clear'></div>
+  <div class='also_like_field'>
+    <div class='you_may_also_like'></div>
+    <div id="new_products">
+      <%= render partial: 'welcome/new_product', locals: { new_products: @also_like } %>
+    </div>
+  </div>
+  <div class='underline_product_row'></div>
 </div>
 <div class="clear"></div>
