@@ -9,7 +9,6 @@ module Colour::ColourConstants
     ['Розовый', 'Pink'],
     ['Серый', 'Gray'],
     ['Зелёный', 'Green'],
-    ['Коричневый', 'Tan'],
     ['Белый', 'White'],
     ['Бежевый', 'Beige'],
     ['Оранжевый', 'Orange'],
@@ -27,7 +26,8 @@ module Colour::ColourConstants
     ['Металик', 'Metallic'],
     ['Животный рисунок', 'Animal'],
     ['Нейтральный', 'Clear'],
-    ['Голубой', 'BlueGay']
+    ['Голубой', 'BlueGay'],
+    ['Фиолетовый', 'Violet']
   ]
 
   COMMON_COLORS_HASH = {
@@ -39,7 +39,6 @@ module Colour::ColourConstants
     'Pink' => 'Розовый',
     'Gray' => 'Серый',
     'Green' => 'Зелёный',
-    'Tan' => 'Коричневый',
     'White' => 'Белый',
     'Beige' => 'Бежевый',
     'Orange' => 'Оранжевый',
@@ -57,7 +56,8 @@ module Colour::ColourConstants
     'Metallic' => 'Металик',
     'Animal' => 'Животный рисунок',
     'Clear' => 'Нейтральный',
-    'BlueGay' => 'Голубой'
+    'BlueGay' => 'Голубой',
+    'Фиолетовый' => 'Violet'
   }
 
 end
