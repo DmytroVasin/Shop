@@ -25,7 +25,6 @@ module Colour::ColourConstants
     ['Коралловый', 'Coral'],
     ['Металик', 'Metallic'],
     ['Животный рисунок', 'Animal'],
-    ['Нейтральный', 'Clear'],
     ['Голубой', 'BlueGay'],
     ['Фиолетовый', 'Violet']
   ]
@@ -55,7 +54,6 @@ module Colour::ColourConstants
     'Coral' => 'Коралловый',
     'Metallic' => 'Металик',
     'Animal' => 'Животный рисунок',
-    'Clear' => 'Нейтральный',
     'BlueGay' => 'Голубой',
     'Фиолетовый' => 'Violet'
   }

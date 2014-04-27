@@ -103,7 +103,7 @@
 }
 
 #items ul li .productinfo .paddingwrapper .title h2 {
-  max-height : 20px;
+  line-height : 20px;
   overflow   : hidden;
 }
 
@@ -184,7 +184,6 @@
       &.Yellow {   background-color: url(/assets/small_colours/yellow.jpg); }
 
       &.Violet {    background-color: url(/assets/small_colours/purple.jpg); }
-      &.Clear {    background-color: url(/assets/small_colours/white.jpg); }
     }
   }
 }
