@@ -1,25 +1,7 @@
 <% new_products.each do |new_product| %>
-  <div class="new_product">
-    <div class="new_product_title"><%= truncate(new_product.brand.name, length: 15) %></div>
-    <div class="new_product_content">
-      <div class="picture_new">
-        <%= image_tag show_list_image(new_product) %>
-      </div>
-      <div class="description">
-        <ul>
-          <li class="title">
-            <%= new_product.title %>
-          </li>
-          <li class="price">
-            <span class="price_count">цена:</span>
-            <span class="price_inscription"><%= number_to_currency(new_product.price, unit: 'грн.', format: '%n %u') %></span>
-          </li>
-          <li class="button">
-            <%= link_to 'Просмотр', product_path(new_product), class: 'btn_order' %>
-          </li>
-        </ul>
-      </div>
-      <div class="clear"></div>
-    </div>
-  </div>
+  <li>
+    <%= link_to image_tag( show_list_image(new_product), class: 'best_seller_image'), product_path(new_product) %>
+    <div class="title"><%= truncate(new_product.title, length: 15) %></div>
+    <div class="price"><span class="small">цена: </span><%= number_to_currency(new_product.price, unit: 'грн.', format: '%n %u') %></div>
+  </li>
 <% end %>

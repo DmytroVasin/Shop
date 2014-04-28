@@ -41,7 +41,6 @@ Shop::Application.routes.draw do
   match 'to_order', to: 'optional_pages#to_order', via: :get
   match 'warranties', to: 'optional_pages#warranties', via: :get
   match 'faqs', to: 'optional_pages#faqs', via: :get
-  match 'security', to: 'optional_pages#security', via: :get
   match 'policy', to: 'optional_pages#policy', via: :get
   match 'delivery', to: 'optional_pages#delivery', via: :get
   match 'action', to: 'optional_pages#action', via: :get

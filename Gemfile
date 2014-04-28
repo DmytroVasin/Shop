@@ -53,23 +53,25 @@ group :development do
     # gem 'ripl-ripper'
 end
 
+group :test, :development do
+  gem 'rspec-rails', '>= 2.0.1'
+  gem 'capybara'
+end
+
 group :test do
-  # gem 'simplecov', require: false
+  gem 'simplecov'
   #COVERAGE=true rspec spec/
 
-  # gem 'database_cleaner', require: false
-  # gem 'factory_girl_rails', require: false
-  # gem 'ffaker', require: false
-  # gem 'launchy', require: false
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'ffaker', require: false
+  gem 'launchy'
+  gem 'poltergeist'
+  gem 'capybara-screenshot'
 
   # gem 'spork', require: false
   # gem 'guard-rspec', require: false
   # gem 'guard-spork'
-end
-
-group :test, :development do
-  gem 'rspec-rails', '>= 2.0.1'
-  gem 'capybara'
 end
 
 
