@@ -32,8 +32,6 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
   config.use_transactional_fixtures = false
 
-  config.order = 'random'
-
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
   end
