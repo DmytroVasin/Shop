@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 describe 'Welcome page', js: true do
-  let!(:product_1) { create :bestseller_with_bag_sport }
-  let!(:product_2) { create :bestseller_with_bag_on_wheels }
-  let!(:product_3) { create :bestseller_with_zebra_wallet_kate }
-  let!(:product_4) { create :bestseller_with_wallet_bleecker }
-  let!(:product_5) { create :bestseller_with_laptop_vivienne }
-  let!(:product_6) { create :bestseller_with_laptop_slim }
+  let!(:product_1) { create :product_bestseller_with_bag_sport }
+  let!(:product_2) { create :product_bestseller_with_bag_on_wheels }
+  let!(:product_3) { create :product_bestseller_with_zebra_wallet_kate }
+  let!(:product_4) { create :product_with_laptop_vivienne }
+  let!(:product_5) { create :product_with_laptop_slim }
+  let!(:product_6) { create :product_with_wallet_bleecker }
 
   before :each do
     visit root_path
@@ -22,13 +22,11 @@ describe 'Welcome page', js: true do
 
   it 'show bestseller/newest in new fields' do
     within('#slider') do
-      page.all("li").count.should eql(3)
-      page.should have_content product_1.title
-      page.should_not have_content product_4.title
+      page.all("li").count.should eql(6)
     end
 
     within('#new_products') do
-      page.all(".new_product").count.should eql(6)
+      page.all('.new_product').count.should eql(3)
     end
   end
 

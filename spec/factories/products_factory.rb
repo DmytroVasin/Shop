@@ -6,14 +6,23 @@ FactoryGirl.define do
     sequence(:description) { Populator.sentences(5) }
     price 140.80
     sequence(:old_price) { price + 100.10 }
-    rank 10
 
     association :brand
 
-    categories {[FactoryGirl.create(:category)]}
+    materials {{ leather: 'Кожа' }}
+    zippers {{ zipper: 'Молния' }}
+    features {{ laptop_sleeve: 'Карман для ноут-а' }}
 
     trait :bestseller do
       bestseller true
+    end
+
+    trait :with_handbag_category do
+      categories {[FactoryGirl.create(:category)]}
+    end
+
+    trait :with_backpack_category do
+      categories {[FactoryGirl.create(:backpack)]}
     end
 
     trait :with_bag_sport do
@@ -58,12 +67,12 @@ FactoryGirl.define do
       end
     end
 
-    factory :bestseller_with_bag_sport,         traits: [:bestseller, :with_bag_sport]
-    factory :bestseller_with_bag_on_wheels,     traits: [:bestseller, :with_bag_on_wheels]
-    factory :bestseller_with_zebra_wallet_kate, traits: [:bestseller, :with_zebra_wallet_kate]
-    factory :bestseller_with_wallet_bleecker,   traits: [:with_wallet_bleecker]
-    factory :bestseller_with_laptop_vivienne,   traits: [:with_laptop_vivienne]
-    factory :bestseller_with_laptop_slim,       traits: [:with_laptop_slim]
+    factory :product_bestseller_with_bag_sport,         traits: [:with_handbag_category, :bestseller, :with_bag_sport]
+    factory :product_bestseller_with_bag_on_wheels,     traits: [:with_handbag_category, :bestseller, :with_bag_on_wheels]
+    factory :product_bestseller_with_zebra_wallet_kate, traits: [:with_handbag_category, :bestseller, :with_zebra_wallet_kate]
+    factory :product_with_laptop_vivienne,              traits: [:with_handbag_category, :with_laptop_vivienne]
+    factory :product_with_laptop_slim,                  traits: [:with_handbag_category, :with_laptop_slim]
+    factory :product_with_wallet_bleecker,              traits: [:with_backpack_category, :with_wallet_bleecker]
   end
 
 
@@ -73,6 +82,10 @@ FactoryGirl.define do
     category_rus 'Ручная кладь'
   end
 
+  factory :backpack, class: Category do
+    name 'backpack'
+    category_rus 'Рюкзак'
+  end
 
   # Brands:
   factory :brand do

@@ -11,7 +11,7 @@ class WelcomeController < ApplicationController
     @hash_with_counts, @hash_with_percentege = vote_rank(hash_with_points, @count)
 
     products      = Product.scoped
-    @best_sellers = products.best_sellers
-    @newest       = products.order('rank DESC').limit(8)
+    @best_sellers = products.best_sellers.limit(8)
+    @newest       = products.order('rank DESC').limit(15)
   end
 end

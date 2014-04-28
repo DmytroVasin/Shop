@@ -45,7 +45,7 @@ class ProductsController < ApplicationController
 
     category = @product.first_category
 
-    @also_like = Category.get_three_also_viewed_products_with(category)
+    @also_like = Category.get_three_also_viewed_products_with(category, @product)
   end
 
   def color_picker

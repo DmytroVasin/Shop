@@ -1,8 +1,9 @@
 require 'spec_helper'
 
 describe 'Product show page', js: true do
-  let!(:product_1) { create :bestseller_with_bag_on_wheels }
-  let!(:product_2) { create :bestseller_with_zebra_wallet_kate }
+  let!(:product_1) { create :product_bestseller_with_bag_on_wheels, title: 'Title of main product' }
+  let!(:product_2) { create :product_with_laptop_vivienne }
+  let!(:product_see_also_not_included) { create :product_with_wallet_bleecker, title: 'Not the same' }
 
   before :each do
     visit root_path
@@ -46,8 +47,44 @@ describe 'Product show page', js: true do
     page.should_not have_css('.next_img')
   end
 
-  it 'displayes three more product in the same category' do
+  it 'displayes features for product' do
     visit product_path(product_1)
-    screenshot_and_open_image
+
+    within('#categories_of_product') do
+      page.should have_content 'Материал'
+      page.should have_content 'Кожа'
+      page.should have_content 'Тип закрытия'
+      page.should have_content 'Молния'
+      page.should have_content 'Особенности'
+      page.should have_content 'Карман для ноут-а'
+    end
+  end
+
+  it 'displayes three more product in the also viewed' do
+    FactoryGirl.create(:product_with_laptop_slim, title: 'Same product 1', categories: [Category.first])
+    FactoryGirl.create(:product_with_laptop_slim, title: 'Same product 2', categories: [Category.first])
+    FactoryGirl.create(:product_with_laptop_slim, title: 'Same product 3', categories: [Category.first])
+
+    visit product_path(product_1)
+
+    within('.also_like_field') do
+      page.should_not have_content('Title of main product')
+      page.all('.new_product').count.should eql(3)
+      page.should have_content('Same product 1')
+      page.should have_content('Same product 2')
+      page.should have_content('Same product 3')
+    end
+  end
+
+  it 'displayes only same category in the also viewed' do
+    product_see_also_1 = FactoryGirl.create(:product_with_laptop_slim, title: 'Current title is same', categories: [Category.first])
+
+    visit product_path(product_1)
+
+    within('.also_like_field') do
+      page.should_not have_content(product_see_also_not_included.title)
+      page.should_not have_content(product_1.title)
+      page.should have_content(product_see_also_1.title)
+    end
   end
 end

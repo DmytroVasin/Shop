@@ -7,6 +7,7 @@ module Product::ProductScopes
       scope :best, -> { order('rank DESC') }
       scope :by_gender, ->(g) { joins(:genders).where('genders.gender = ?', g ) }
       scope :best_sellers, -> { where(bestseller: true) }
+      scope :except_product, ->(product) { where('id <> ?', product) }
 
       def get_uniq_colors_hash
         colours.get_uniq_common_colors
