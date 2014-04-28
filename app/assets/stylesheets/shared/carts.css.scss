@@ -108,7 +108,8 @@
   text-shadow : 0 0 1px #777;
 }
 
-.item_price {
+.item_price,
+.item_color {
   @extend .extended_class;
 }
 
