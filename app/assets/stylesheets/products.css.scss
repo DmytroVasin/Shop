@@ -157,33 +157,33 @@
       cursor: pointer;
       border: 1px solid #777;
 
-      &.Animal {   background-color: url(/assets/small_colours/animal.jpg); }
-      &.Beige {    background-color: url(/assets/small_colours/beige.jpg); }
+      &.Animal {   background-image: url(/assets/small_colours/animal.jpg); }
+      &.Beige {    background-image: url(/assets/small_colours/beige.jpg); }
       &.Black {    background-image: url(/assets/small_colours/black.jpg); }
       &.Blue {     background-image: url(/assets/small_colours/blue.jpg); }
-      &.BlueGay {  background-color: url(/assets/small_colours/bluegay.jpg); }
-      &.Bronze {   background-color: url(/assets/small_colours/bronze.jpg); }
+      &.BlueGay {  background-image: url(/assets/small_colours/bluegay.jpg); }
+      &.Bronze {   background-image: url(/assets/small_colours/bronze.jpg); }
       &.Brown {    background-image: url(/assets/small_colours/brown.jpg); }
-      &.Burgundy { background-color: url(/assets/small_colours/burgundy.jpg); }
-      &.Coral {    background-color: url(/assets/small_colours/coral.jpg); }
-      &.DarkGray { background-color: url(/assets/small_colours/darkgray.jpg); }
-      &.Gold {     background-color: url(/assets/small_colours/gold.jpg); }
+      &.Burgundy { background-image: url(/assets/small_colours/burgundy.jpg); }
+      &.Coral {    background-image: url(/assets/small_colours/coral.jpg); }
+      &.DarkGray { background-image: url(/assets/small_colours/darkgray.jpg); }
+      &.Gold {     background-image: url(/assets/small_colours/gold.jpg); }
       &.Gray {     background-image: url(/assets/small_colours/gray.jpg); }
       &.Green {    background-image: url(/assets/small_colours/green.jpg); }
-      &.Khaki {    background-color: url(/assets/small_colours/khaki.jpg); }
-      &.Metallic { background-color: url(/assets/small_colours/metallic.jpg); }
+      &.Khaki {    background-image: url(/assets/small_colours/khaki.jpg); }
+      &.Metallic { background-image: url(/assets/small_colours/metallic.jpg); }
       &.Multi {    background-image: url(/assets/small_colours/multi.jpg); }
-      &.Olive {    background-color: url(/assets/small_colours/olive.jpg); }
-      &.Orange {   background-color: url(/assets/small_colours/orange.jpg); }
-      &.Pewter {   background-color: url(/assets/small_colours/pewter.jpg); }
+      &.Olive {    background-image: url(/assets/small_colours/olive.jpg); }
+      &.Orange {   background-image: url(/assets/small_colours/orange.jpg); }
+      &.Pewter {   background-image: url(/assets/small_colours/pewter.jpg); }
       &.Pink {     background-image: url(/assets/small_colours/pink.jpg); }
-      &.Purple {   background-color: url(/assets/small_colours/purple.jpg); }
+      &.Purple {   background-image: url(/assets/small_colours/purple.jpg); }
       &.Red {      background-image: url(/assets/small_colours/red.jpg); }
-      &.Silver {   background-color: url(/assets/small_colours/silver.jpg); }
+      &.Silver {   background-image: url(/assets/small_colours/silver.jpg); }
       &.White {    background-image: url(/assets/small_colours/white.jpg); }
-      &.Yellow {   background-color: url(/assets/small_colours/yellow.jpg); }
+      &.Yellow {   background-image: url(/assets/small_colours/yellow.jpg); }
 
-      &.Violet {    background-color: url(/assets/small_colours/purple.jpg); }
+      &.Violet {    background-image: url(/assets/small_colours/purple.jpg); }
     }
   }
 }
