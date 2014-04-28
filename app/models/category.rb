@@ -6,4 +6,6 @@ class Category < ActiveRecord::Base
   before_destroy {|category| category.products.clear}
 
   has_and_belongs_to_many :products
+
+  include Category::CategoryScopes
 end

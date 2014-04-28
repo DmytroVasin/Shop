@@ -12,6 +12,10 @@ module Product::ProductScopes
         colours.get_uniq_common_colors
       end
 
+      def first_category
+        categories.first
+      end
+
       def self.search(search)
         if search
           where('title like ?', "%#{search}%")

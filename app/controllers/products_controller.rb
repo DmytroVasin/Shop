@@ -43,7 +43,9 @@ class ProductsController < ApplicationController
     @images_count   = @product_colors.count > 4
     @colors_name    = @product.colours.uniq
 
-    @also_like = Product.limit(3)
+    category = @product.first_category
+
+    @also_like = Category.get_three_also_viewed_products_with(category)
   end
 
   def color_picker
