@@ -69,6 +69,9 @@ group :test do
   gem 'poltergeist'
   gem 'capybara-screenshot'
 
+  gem 'email_spec'
+  gem 'capybara-email'
+
   # gem 'spork', require: false
   # gem 'guard-rspec', require: false
   # gem 'guard-spork'
