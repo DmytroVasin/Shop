@@ -1,5 +1,9 @@
 # coding: utf-8
 module ApplicationHelper
+  def page_title title_text
+    content_for :title, "Vako - #{title_text}"
+  end
+
   def is_last_on_page product_counter
     (product_counter-2)%3 == 0 ? 'last' : ''
   end

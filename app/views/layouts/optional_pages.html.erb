@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Vako!</title>
+  <title><%= content_for?(:title) ? yield(:title) : 'Vako!' %></title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= stylesheet_link_tag 'optional_pages', media: 'all' %>
 
@@ -12,7 +12,8 @@
 
   <%= csrf_meta_tags %>
 </head>
-<body>
+
+<body class = "<%= controller.controller_name %> <%= controller.action_name %>" >
   <div id='sitewrapper'>
     <div id="content">
       <%= render 'shared/admin' %>
@@ -28,4 +29,3 @@
   <%= render 'shared/footer' %>
 </body>
 </html>
-
