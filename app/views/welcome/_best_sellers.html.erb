@@ -1,5 +1,23 @@
-<li>
-	<%= link_to image_tag( show_list_image(best_sellers), class: 'best_seller_image'), product_path(best_sellers) %>
-	<div class="title"><%= truncate(best_sellers.title, length: 15) %></div>
-	<div class="price"><span class="small">цена: </span><%= number_to_currency(best_sellers.price, unit: 'грн.', format: '%n %u') %></div>
-</li>
+  <div class="new_product">
+    <div class="new_product_title"><%= truncate(best_sellers.brand.name, length: 15) %></div>
+    <div class="new_product_content">
+      <div class="picture_new">
+        <%= image_tag show_list_image(best_sellers) %>
+      </div>
+      <div class="description">
+        <ul>
+          <li class="title">
+            <%= best_sellers.title %>
+          </li>
+          <li class="price">
+            <span class="price_count">цена:</span>
+            <span class="price_inscription"><%= number_to_currency(best_sellers.price, unit: 'грн.', format: '%n %u') %></span>
+          </li>
+          <li class="button">
+            <%= link_to 'Просмотр', product_path(best_sellers), class: 'btn_order' %>
+          </li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>

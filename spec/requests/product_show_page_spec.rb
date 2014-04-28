@@ -45,4 +45,9 @@ describe 'Product show page', js: true do
     visit product_path(product_2)
     page.should_not have_css('.next_img')
   end
+
+  it 'displayes three more product in the same category' do
+    visit product_path(product_1)
+    screenshot_and_open_image
+  end
 end

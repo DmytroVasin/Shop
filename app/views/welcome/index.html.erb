@@ -19,7 +19,7 @@
     <a href="javascript:void(0);" class="previousproduct"></a>
     <div id='wrap'>
       <ul id="slider" style="left: 0px;">
-        <%= render partial: 'best_sellers', collection: @best_sellers %>
+        <%= render partial: 'new_product', locals: { new_products: @newest } %>
       </ul>
     </div>
     <a href="javascript:void(0);" class="nextproduct"></a>
@@ -28,7 +28,7 @@
   <div class="underline_index"></div>
 
   <div id="new_products">
-    <%= render partial: 'new_product', locals: { new_products: @newest } %>
+    <%= render partial: 'best_sellers', collection: @best_sellers %>
   </div>
 
   <div class="clear"></div>
