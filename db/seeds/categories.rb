@@ -1,25 +1,20 @@
 module Seeds
-	def create_categories
-		[
-			'Handbags',
-			'Backpacks',
-			'Luggage',
-			'Wallets & Accessories',
-			'Duffle Bags',
-			'Messenger Bags',
-			'Laptop Bags',
-			'Diaper Bags',
-			'Briefcases',
-			'Lumbar Packs',
-			'Tech Accessories',
-			'Hydration Packs',
-			'Bags & Packs',
-			'Lunch Bags',
-			'Makeup'
-		].each do |name|
-			Category.create(name: name)
-		end
-	end
+  def create_categories
+    {
+      'Handbags' => 'Ручная кладь',
+      'Backpacks' => 'Сумка через плечо',
+      'Luggage' => 'Багаж',
+      'Wallets & Accessories' => 'Кошельки',
+      'Duffle Bags' => 'Спортивная',
+      'Laptop Bags' => 'Сумка для ноут-а',
+      'Briefcases' => 'Портфель',
+      'Lumbar Packs' => 'Поясничная сумка',
+      'Bags & Packs' => 'Пакеты',
+      'Makeup' => 'Косметичка'
+    }.each do |en, rus|
+      Category.create(name: en, category_rus: rus)
+    end
+  end
 
-	module_function :create_categories
+  module_function :create_categories
 end

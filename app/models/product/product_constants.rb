@@ -88,10 +88,10 @@ module Product::ProductConstants
   ]
 
   SORT_HASH = {
-    'Лучшее'    => 'best',
-    'Цена по убыванию'  => 'low',
+    'Лучшее' => 'best',
+    'Цена по убыванию' => 'low',
     'цена по возрастанию' => 'high',
-    'Новое'     => 'newest'
+    'Новое' => 'newest'
   }
 
 end
