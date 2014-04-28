@@ -17,8 +17,10 @@ development:
   encoding: unicode
   database: shop_development
   pool: 5
-  username: now_shop
-  password: password
+  # username: now_shop
+  # password: password
+  username: dv
+  password:
 
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -45,21 +47,7 @@ test:
   encoding: unicode
   database: shop_test
   pool: 5
-  username: now_shop
-  password: password
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: shop_production
-  pool: 5
+  # username: now_shop
+  # password: password
   username: dv
-  password: password
-
-staging:
-  adapter: postgresql
-  encoding: unicode
-  database: shop_staging
-  pool: 5
-  username: now_shop
-  password: password
+  password:
