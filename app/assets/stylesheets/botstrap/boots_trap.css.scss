@@ -1,3 +1,35 @@
+.btn_order {
+  letter-spacing: 1px;
+  font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
+  text-shadow: 2px 2px 2px #777;
+
+  background-color: #B44668;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e183a0), color-stop(1, #97002e));
+  background: -moz-linear-gradient(center top, #e183a0 5%, #97002e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e183a0', endColorstr='#bbb');
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #97002e;
+  color: #fff;
+  font-size: 13px;
+  padding: 4px 8px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #97002e), color-stop(1, #e183a0));
+    background: -moz-linear-gradient(center top, #97002e 5%, #e183a0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#97002e', endColorstr='#e183a0');
+    background-color: #97002e;
+  }
+
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}
+
 .bootstrap_btn {
   display: inline-block;
   padding: 4px 12px;
@@ -39,11 +71,13 @@
     -o-transition: background-position 0.1s linear;
     transition: background-position 0.1s linear;
   }
+
   &:focus {
     outline: thin dotted #333;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
   }
+
   &:active {
     background-image: none;
     outline: 0;

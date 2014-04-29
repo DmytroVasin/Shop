@@ -1,13 +1,4 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
  *= require reset/reset
  *= require_self
  *= require header
@@ -18,6 +9,7 @@
  *= require botstrap/boots_trap
  *= require products
  *= require registration_form
+ *= require shared/flash_messages
  */
 
 html, body {
@@ -28,96 +20,29 @@ html, body {
 body {
   background-color: #ececec;
   background: #ececec url(http://lea.verou.me/css3patterns/noise.png) 0 0 repeat;
-}
 
-*:focus {
-  outline: 0;
-}
+  #sitewrapper {
+    margin: 0 auto;
+    width: 1020px;
+    background: #fff;
+    line-height: 1.8em;
+    color: #333;
+    box-shadow: 0 0 20px #FFF;
+    min-height: 100%;
 
-#sitewrapper {
-  margin         : 0 auto;
-  width          : 1020px;
-  background     : #fff;
-  line-height    : 1.8em;
-  color          : #333;
-  box-shadow     : 0 0 20px #FFF;
-  min-height     : 100%;
-}
+    #content {
+      position: relative;
+      width: 980px;
+      margin: 0 20px 15px;
+    }
 
-.footer_to_bottom {
-  height: 95px;
-}
+    .footer_to_bottom {
+      height: 95px;
+    }
+  }
 
-#content {
-  position: relative;
-  width  : 980px;
-  margin : 0 20px 15px 20px;
-}
-
-/* --- Button order START --- */
-
-.btn_order {
-  letter-spacing: 1px;
-  font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
-  text-shadow: 2px 2px 2px #777;
-
-  background-color      : #B44668;
-  background            : -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e183a0), color-stop(1, #97002e));
-  background            : -moz-linear-gradient(center top, #e183a0 5%, #97002e 100%);
-  filter                : progid:DXImageTransform.Microsoft.gradient(startColorstr='#e183a0', endColorstr='#bbb');
-  -moz-border-radius    : 6px;
-  -webkit-border-radius : 6px;
-  border-radius         : 6px;
-  border                : 1px solid #97002e;
-  color                 : #fff;
-  font-size             : 13px;
-  padding               : 4px 8px;
-  text-decoration       : none;
-  cursor: pointer;
-}
-
-.btn_order:hover {
-  background       : -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #97002e), color-stop(1, #e183a0));
-  background       : -moz-linear-gradient(center top, #97002e 5%, #e183a0 100%);
-  filter           : progid:DXImageTransform.Microsoft.gradient(startColorstr='#97002e', endColorstr='#e183a0');
-  background-color : #97002e;
-}
-
-.btn_order:active {
-  position : relative;
-  top      : 1px;
-}
-
-#sign_out, .alert-notice, .alert-alert {
-  text-align       : center;
-  border           : 1px solid #FBEED5;
-  background-color : #FCF8E3;
-  border-radius    : 4px 4px 4px 4px;
-  padding          : 2px 20px 0 21px;
-  text-shadow      : 0 1px 0 rgba(255, 255, 255, 0.5);
-  font-size        : 14px;
-}
-
-#sign_out a {
-  font-weight : bold;
-  color       : #C09853;
-}
-
-.alert-notice {
-  background-color : #DFF0D8;
-  border-color     : #D6E9C6;
-  font-weight      : bold;
-  color            : #468847;
-}
-
-.alert-alert {
-  background-color : #F2DEDE;
-  border-color     : #EED3D7;
-  color            : #B94A48;
-  font-weight      : bold;
-}
-.paddings {
-  padding-top: 7px;
-  padding-bottom: 7px;
-
+  .paddings {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
 }
