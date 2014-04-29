@@ -16,11 +16,13 @@
     padding: 6px;
     font-size: 15px;
     line-height: 15px;
+
     &.distinguish {
       color: red;
       font-weight: bold;
     }
   }
+
   ul.distinguish_ask {
     margin-top: 5px;
     list-style-type: circle;

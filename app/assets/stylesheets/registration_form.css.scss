@@ -1,57 +1,51 @@
 #sign_in {
-    margin: 55px 0 20px 180px;
-}
+  margin: 55px 0 20px 180px;
 
-#form{
+  #form{
     padding-top:10px;
     background:url(/assets/form/form_top.gif) no-repeat 0 0;
-}
-#form fieldset{
-    float:left;
-    display:inline;
-    width:260px;
-    margin-left:25px;
-}
 
-#form input {
-    width:252px;
-    border:1px solid #ddd;
-    -moz-border-radius:.3em;
-    -webkit-border-radius:.3em;
-    border-radius:.3em;
-    background:#fff url(/assets/form/form_input.gif) repeat-x;
-    padding:3px;
-}
-#form .fields {
-  margin-bottom: 7px;
-  line-height: 23px;
-}
+    fieldset{
+      float: left;
+      width: 260px;
+      margin-left: 25px;
 
-#form .fields label {
-    font-size: 18px;
-    font-family: Georgia, Times, serif;
-    text-shadow: 0 0 1px #777;
-}
+      .fields {
+        margin-bottom: 7px;
+        line-height: 23px;
 
-#form div.bottom{
-    clear:both;
-    background:url(/assets/form/form_bottom.gif) no-repeat 0 100%;
-    padding:0 25px 25px;
-    margin:0;
-    text-align:right;
-}
-#form button{
-    width:150px;
-    height:37px;
-    line-height:37px;
-    border:none;
-    background:url(/assets/form/form_button.gif) no-repeat 0 0;
-    color:#fff;
-    cursor:pointer;
-    text-align:center;
-}
-#form .submit {
-    display: inline-block;
-    float: left;
-    margin: 44px 0 0 80px;
+        input {
+          width:252px;
+          padding:3px;
+        }
+
+        label {
+          font-size: 18px;
+          font-family: Georgia, Times, serif;
+        }
+      }
+    }
+
+    .submit {
+      float: left;
+      margin: 44px 0 0 80px;
+      display: inline-block;
+
+      button {
+        width: 150px;
+        color: #fff;
+        font-size: 15px;
+        line-height: 33px;
+        border: none;
+        background: url(/assets/form/form_button.gif) no-repeat 0 0;
+        cursor: pointer;
+      }
+    }
+
+    .bottom {
+      clear: both;
+      background: url(/assets/form/form_bottom.gif) no-repeat 0 100%;
+      padding: 0 25px 25px;
+    }
+  }
 }
