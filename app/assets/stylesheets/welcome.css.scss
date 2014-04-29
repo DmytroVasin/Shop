@@ -1,52 +1,133 @@
-.underline_index {
-  border-bottom: 1.6px solid #97002E;
-  width: 620px;
-  margin: 5px 0 0 62px;
-  box-shadow: 0 1px 1px #E183A0;
-}
-
-.second {
-  margin-top : 15px;
-}
-
 #rotator {
-  box-shadow : 0 0 2px #97002E;
-  width      : 960px;
-  height     : 327px;
-  overflow   : hidden;
-  margin     : 15px auto 0;
-  position   : relative;
-
-  img {
-    width  : 100%;
-    height : 100%;
-  }
+  box-shadow: 0 0 2px #97002E;
+  width: 960px;
+  height: 327px;
+  overflow: hidden;
+  margin: 15px auto 0;
+  position: relative;
 
   ul {
     li {
-      float      : left;
-      position   : absolute;
-      list-style : none;
-      width      : 100%;
-      height     : 100%;
-    }
+      float: left;
+      position: absolute;
+      list-style: none;
+      width: 100%;
+      height: 100%;
 
-    li.show {
-      z-index : 1;
+      &.show {
+        z-index: 1;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
+
   #rotator_arrow {
     position: absolute;
     right: 10px;
     bottom: 10px;
     z-index: 20;
+
     li {
       float: left;
       width: 20px;
       height: 40px;
-      margin: 0px 5px;
       border: 1px solid #97002E;
+      margin: 0px 5px;
       padding: 2px;
+    }
+  }
+}
+
+#rightarea {
+  float  : left;
+  margin : 35px 0 0 10px;
+
+  .questions {
+    width: 240px;
+    background-color: #f7f6f2;
+    border: 1px solid #333;
+
+    .votes_logo {
+      width: 190px;
+      height: 180px;
+      background: url("vote_vk.png") no-repeat;
+      margin: 10px 0 0 25px;
+    }
+
+    .question {
+      color: #444;
+      font-family: Arial, serif;
+      line-height: 20px;
+      font-size: 16px;
+      color: #000;
+      text-align: center;
+    }
+
+    form {
+      margin : 7px 0 0 30px;
+
+      .list_of_price {
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 25px;
+        margin-left: 20px;
+        text-shadow: 0 1px 1px #AAAAAA;
+      }
+
+      #subm_vote {
+        margin : 2px 0 10px 35px;
+      }
+    }
+
+    .progress_table {
+      margin-left: 20px;
+      color: #333;
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 22px;
+
+      .progress_bar {
+        background-color: #ddd;
+        height: 4px;
+        width: 195px;
+
+        .bar {
+          background-color: #149BDF;
+          height: 100%;
+        }
+      }
+
+      .count_of_vote {
+        margin: 6px 0;
+
+        span {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  #remote_site {
+    line-height: 17px;
+
+    .banner {
+      height: 125px;
+      width: 243px;
+    }
+
+    .aboveline_blog,
+    .underline_blog {
+      margin-bottom: 2px;
+      box-shadow: 0 1px 1px #E183A0;
+      border-top: 1.6px solid #97002E;
+    }
+
+    .aboveline_blog {
+      margin-top : 10px;
     }
   }
 }
@@ -57,20 +138,20 @@
   margin-left : -10px;
 
   #top_list {
-    width      : 750px;
-    background : url(/assets/top_list_rus.jpg) 40% 0 no-repeat;
-    margin     : 25px 0 0 10px;
+    width: 750px;
+    background: url(/assets/top_list_rus.jpg) 40% 0 no-repeat;
+    margin: 25px 0 0 10px;
 
     #top_icon {
-      width  : 750px;
-      height : 40px;
+      width: 750px;
+      height: 40px;
     }
 
     #top_icon_img {
-      margin : 0 5px 0 10px;
-      float  : left;
-      width  : 150px;
-      height : 140px;
+      float: left;
+      margin: 0 5px 0 10px;
+      width: 150px;
+      height: 140px;
     }
 
     // FIXTO: how to refactor ?
@@ -97,32 +178,34 @@
     }
 
     #wrap {
-      float    : left;
-      position : relative;
-      height   : 170px;
-      overflow : hidden;
-      width    : 500px;
+      float: left;
+      position: relative;
+      height: 170px;
+      overflow: hidden;
+      width: 500px;
 
       #slider {
-        position : relative;
-        width    : 4000px;
+        position: relative;
+        width: 4000px;
 
         li {
-          float     : left;
-          width     : 115px;
-          margin    : 0 5px 0 5px;
-          font-size : 1.2em;
-          display   : block;
+          float: left;
+          width: 115px;
+          margin: 0 5px;
+          font-size: 1.2em;
+          display: block;
 
           a {
-            color : #333;
+            color: #333;
+
+            .best_seller_image {
+              width: 115px;
+              height: 100px;
+              border: 1px solid #E183A0;
+            }
           }
 
           .title {
-            /* margin-left: 3px; */
-            /* width: 110px; */
-            /* max-height: 28px; */
-            /* color: #333; */
             line-height: 15px;
             overflow: hidden;
             font-family: Georgia;
@@ -130,25 +213,16 @@
             text-align: center;
           }
 
-          .best_seller_image {
-            width: 115px;
-            height: 100px;
-          }
-
           .price {
-            margin-left : 3px;
-            width       : 110px;
-            color       : #97002E;
-            font-size   : 14px;
-            font-weight : bold;
+            margin-left: 3px;
+            width: 110px;
+            color: #97002E;
+            font-size: 14px;
+            font-weight: bold;
 
             span {
               font-size : 11px;
             }
-          }
-
-          img {
-            border : 1px solid #E183A0;
           }
         }
       }
@@ -157,35 +231,34 @@
 
   #new_products {
     .new_product {
-      display    : block;
-      background : url(/assets/must-haves-box.png) no-repeat;
-      width      : 301px;
-      height     : 181px;
-      float      : left;
-      margin     : 18px 10px 0 10px;
+      display: block;
+      background: url(/assets/must-haves-box.png) no-repeat;
+      width: 301px;
+      height: 181px;
+      float: left;
+      margin: 18px 10px 0 10px;
 
       .new_product_title {
-        margin-top  : 10px;
-        font-size   : 17px;
-        font-weight : bold;
-        font-family : Georgia, Times, serif;
-        color       : #000;
-        text-align  : center;
+        margin-top: 10px;
+        font-size: 17px;
+        font-weight: bold;
+        font-family: Georgia, Times, serif;
+        color: #000;
+        text-align: center;
       }
 
       .new_product_content {
         margin : 5px 0 0 15px;
 
         .picture_new {
-          float        : left;
-          margin-right : 12px;
+          float: left;
+          margin-right: 12px;
 
           img {
-            height       : 100px;
-            width        : 120px;
-            margin-top   : 9px;
-            border-width : 0px;
-            border       : 1px solid #CCCCCC;
+            height: 100px;
+            width: 120px;
+            margin-top: 9px;
+            border: 1px solid #CCCCCC;
           }
         }
 
@@ -193,160 +266,69 @@
           margin : 5px 0 0 0;
           float  : left;
 
-          .price {
-            vertical-align : middle;
-            line-height    : 40px;
-            margin-top     : 5px;
-          }
-
           ul {
             .price {
+              vertical-align : middle;
+              line-height    : 40px;
+              margin-top     : 5px;
+
               .price_count {
                 font-weight    : bold;
                 font-size      : 12px;
-                vertical-align : middle;
               }
 
               .price_inscription {
-                vertical-align : middle;
-                color          : #CC2222;
-                font-size      : 17px;
-                font-weight    : bold;
-                margin-top     : 4px;
+                vertical-align: middle;
+                color: #C22;
+                font-size: 17px;
+                font-weight: bold;
               }
             }
 
-            li.title {
-              width       : 130px;
-              font-size   : 15px;
-              color       : #333;
-              line-height : 18px;
-              height      : 35px;
-              color       : #333333;
-              overflow    : hidden;
+            .title {
+              width: 130px;
+              height: 35px;
+              color: #333;
+              font-size: 15px;
+              line-height: 18px;
+              overflow: hidden;
             }
 
-            li.button .btn_order {
-              margin-left : 32px;
+            .button {
+              text-align: center;
             }
           }
         }
       }
-    }
-  }
-}
-
-#rightarea {
-  float  : left;
-  margin : 35px 0 0 10px;
-
-  .questions {
-    width            : 240px;
-
-    background-color : #f7f6f2;
-    border           : 1px solid #333;
-
-    .votes_logo {
-      width      : 190px;
-      height     : 180px;
-      background : url("vote_vk.png") no-repeat;
-      margin     : 10px 0 0 25px;
-    }
-
-    .question {
-      color       : #444444;
-      font-family : Arial, serif;
-      line-height : 20px;
-      font-size   : 16px;
-      color       : #000;
-      text-align  : center;
-    }
-
-    form {
-      margin : 7px 0 0 30px;
-
-      #subm_vote {
-        margin : 2px 0 10px 35px;
-      }
-    }
-
-    .list_of_price {
-      font-size   : 13px;
-      font-weight : bold;
-      line-height : 25px;
-      margin-left : 20px;
-      text-shadow : 0 1px 1px #AAAAAA;
-    }
-
-    .progress_table {
-      margin-left : 20px;
-      color       : #333;
-      font-size   : 13px;
-      font-weight : bold;
-      font-weight : bold;
-      line-height : 22px;
-
-      .progress_bar {
-        background-color : #DDDDDD;
-        height           : 4px;
-        width            : 195px;
-
-        .bar {
-          background-color : #149BDF;
-          height           : 100%;
-        }
-      }
-
-      .count_of_vote {
-        margin : 6px 0
-      }
-
-      .count_of_vote  span {
-        font-size : 15px;
-      }
-    }
-  }
-
-  #remote_site {
-    width       : 243px;
-    color       : #959796;
-
-    font-size   : 13px;
-    font-family : Georgia, Times, serif;
-    line-height : 17px;
-
-    .banner {
-      height: 125px;
-      width: 243px;
-    }
-
-    .aboveline_blog {
-      margin-top : 10px;
-      margin-bottom: 2px;
-      box-shadow : 0 1px 1px #E183A0;
-      border-top : 1.6px solid #97002E;
-    }
-
-    .underline_blog {
-      margin-top: 2px;
-      box-shadow    : 0 1px 1px #E183A0;
-      border-bottom : 1.6px solid #97002E;
     }
   }
 }
 
 #leftarea {
   width: 730px;
+
   #new_products {
     margin-left : 52px;
   }
+
+  .underline_index {
+    border-bottom: 1.6px solid #97002E;
+    width: 620px;
+    margin: 5px 0 0 62px;
+    box-shadow: 0 1px 1px #E183A0;
+
+    &.second {
+      margin-top: 15px;
+    }
+  }
 }
+
 .also_like_field {
   margin-top: 50px;
 
   #new_products {
-    // width: 970px;
     margin-left: 20px;
+
     .new_product {
       margin-top: 5px;
       background : url(/assets/must-haves-box-without-new.png) no-repeat;
