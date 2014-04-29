@@ -28,8 +28,8 @@ module ApplicationHelper
     end
   end
 
-  def back_to_products(title, class_name = nil, add_bootstrap = true)
-    class_name = class_name.to_s + ' bootstrap_btn' if add_bootstrap
+  def back_to_products(title, add_bootstrap = true)
+    class_name = add_bootstrap ? 'bootstrap_btn' : ''
 
     if session[:products_params]
       session[:products_params][:format] = 'html'

@@ -2,7 +2,7 @@
   <div id="breadcrumb">
     <ul>
       <li><a href="/">На главную</a></li>
-      <li>&raquo; <%= back_to_products('Товары', nil, false) %></li>
+      <li>&raquo; <%= back_to_products('Товары', false) %></li>
       <li>&raquo; <%= @product.title %></li>
     </ul>
     <div class="clear"></div>
@@ -63,7 +63,7 @@
         <% end %>
       </div>
 
-      <%= back_to_products('« Back to Results', 'get_back') %>
+      <%= back_to_products('« Back to Results') %>
     </div>
 
     <div class="product_info">
@@ -84,8 +84,6 @@
       <div class="description_of_product undoreset">
         <%= @product.description.try(:html_safe) %>
       </div>
-
-      <!-- <a href='/delivery' class='get_back link_color'>Просмотреть возможные способы доставки</a> -->
 
       <div class='actions_for_product'>
         <%= f.hidden_field 'current_product', value: @product.id %>
