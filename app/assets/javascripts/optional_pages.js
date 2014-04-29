@@ -1,11 +1,12 @@
 $(function () {
-  $('ul.faq li a').on('click', function () {
+  var faqListItem = $('ul.faq li a');
+  faqListItem.on('click', function () {
     $('strong').removeClass('red');
-    var clicked_class_name = this.href.split("#")[1];
+    var clickedClassName = this.href.split("#")[1];
     $('html, body').animate({
-      scrollTop: $("." + clicked_class_name).offset().top
+      scrollTop: $("." + clickedClassName).offset().top
     }, 'slow', 'linear');
-    $('strong.' + clicked_class_name).addClass('red');
+    $('strong.' + clickedClassName).addClass('red');
   });
 
 

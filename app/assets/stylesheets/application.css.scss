@@ -15,6 +15,9 @@
  *= require welcome
  *= require trackbar
  *= require orders
+ *= require botstrap/boots_trap
+ *= require products
+ *= require registration_form
  */
 
 html, body {
@@ -23,13 +26,6 @@ html, body {
 }
 
 body {
-  // background            : url(/assets/backgroud_image_1.jpg) 20% 80% no-repeat;
-  /*background: url(background_image.jpg) 0 15% no-repeat;*/
-
-  // background-attachment : fixed;
-  /*background: #f1f1f1 repeat top left;*/
-
-  /*height: 3000px;*/
   background-color: #ececec;
   background: #ececec url(http://lea.verou.me/css3patterns/noise.png) 0 0 repeat;
 }

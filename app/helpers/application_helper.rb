@@ -28,7 +28,9 @@ module ApplicationHelper
     end
   end
 
-  def back_to_products(title, class_name = nil)
+  def back_to_products(title, class_name = nil, add_bootstrap = true)
+    class_name = class_name.to_s + ' bootstrap_btn' if add_bootstrap
+
     if session[:products_params]
       session[:products_params][:format] = 'html'
       link_to title, session[:products_params], class: class_name

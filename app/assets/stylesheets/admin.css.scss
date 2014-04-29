@@ -8,15 +8,13 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require 'error'
-
- *= require 'bootstrap_and_overrides'
+ *= require 'admin/error'
+ *= require 'admin/bootstrap_and_overrides'
 
  *= require_self
- *= require brands
- *= require shared/orders_for_admin
+ *= require admin/orders_for_admin
+ *= require admin/chosen
  *= require redactor-rails
- *= require chosen
   */
 
 // Redactror Rails START
@@ -326,4 +324,12 @@ table th, table td {
 .go_to_six_pm {
   float:left;
   margin-left: 100px;
+}
+
+.brand_table {
+  #colours_body {
+    form {
+      margin: 0px;
+    }
+  }
 }
