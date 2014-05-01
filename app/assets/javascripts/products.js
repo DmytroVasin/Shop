@@ -130,16 +130,19 @@ $(function () {
     });
   }
 
-  $('.color_select #line_item_color').on('change', function(){
+  var colors_under_picture     = $('.color_select #line_item_color'),
+      colors_under_description = $('.main_color_select #line_item_color_description');
+
+  colors_under_picture.on('change', function(){
     var selected_val = $(this).val();
-    $('.main_color_select #line_item_color').val(selected_val);
+    colors_under_description.val(selected_val);
 
     startSlider(selected_val);
   });
 
-  $('.main_color_select #line_item_color').on('change', function(){
+  colors_under_description.on('change', function(){
     var mainColorSelectTag = $(this).val();
-    $('.color_select #line_item_color').val(mainColorSelectTag);
+    colors_under_picture.val(mainColorSelectTag);
 
     startSlider(mainColorSelectTag);
   });

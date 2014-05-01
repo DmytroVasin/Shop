@@ -6,31 +6,31 @@
   <%= form_for @ratings, url: ratings_path do |f| %>
     <div class="list_of_price">
       <%= f.radio_button('point', '1') %>
-      <%= f.label :point, 'Наложенный платеж' %>
+      <%= f.label 'point_1', 'Наложенный платеж' %>
     </div>
     <div class="list_of_price">
       <%= f.radio_button('point', '2') %>
-      <%= f.label :point, 'Приват банк (терминал)' %>
+      <%= f.label 'point_2', 'Приват банк (терминал)' %>
     </div>
     <div class="list_of_price">
       <%= f.radio_button('point', '3') %>
-      <%= f.label :point, 'Webmoney' %>
+      <%= f.label 'point_3', 'Webmoney' %>
     </div>
     <div class="list_of_price">
       <%= f.radio_button('point', '4') %>
-      <%= f.label :point, 'Яндекс-деньги' %>
+      <%= f.label 'point_4', 'Яндекс-деньги' %>
     </div>
     <div class="list_of_price">
       <%= f.radio_button('point', '5') %>
-      <%= f.label :point, 'Оплата картой' %>
+      <%= f.label 'point_5', 'Оплата картой' %>
     </div>
     <div class="list_of_price">
       <%= f.radio_button('point', '6') %>
-      <%= f.label :point, 'Другой вариант' %>
+      <%= f.label 'point_6', 'Другой вариант' %>
     </div>
     <div class="list_of_price">
       <%= f.radio_button('point', '7') %>
-      <%= f.label :point, 'Способ оплаты не важен' %>
+      <%= f.label 'point_7', 'Способ оплаты не важен' %>
     </div>
 
     <%= f.submit 'Отправить', id: 'subm_vote' %>

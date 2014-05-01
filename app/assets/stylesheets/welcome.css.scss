@@ -75,7 +75,11 @@
         font-weight: bold;
         line-height: 25px;
         margin-left: 20px;
-        text-shadow: 0 1px 1px #AAAAAA;
+        text-shadow: 0 1px 1px #aaa;
+
+        > * {
+          cursor: pointer;
+        }
       }
 
       #subm_vote {

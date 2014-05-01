@@ -71,7 +71,7 @@
         <div id="video_space">
           <div class="video_slider btn_order">Показать Видео</div>
           <div class="iframe_video_wrapper">
-            <iframe class='iframe_video' src="<%= @product.video_href %>"></iframe>
+            <iframe class='iframe_video' href="<%= @product.video_href %>"></iframe>
           </div>
         </div>
         <div class="clear"></div>
@@ -103,7 +103,7 @@
 
       <div class='main_color_select'>
         <span>Цвет:</span>
-        <%= f.select 'color', options_from_collection_for_select(@colors_name, 'name', 'name_rus') %>
+        <%= f.select 'color', options_from_collection_for_select(@colors_name, 'name', 'name_rus'), {}, id: 'line_item_color_description' %>
       </div>
 
     </div>
