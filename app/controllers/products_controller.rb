@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
     @genders   = Gender::ALL
 
     @categories = Category.all
-    @brands     = Brand.all
+    @brands     = Brand.order('LOWER(name) ASC')
 
     products = Product.selecting_by(params[:categories_params], 'categories')
                        .includes(:colours)
