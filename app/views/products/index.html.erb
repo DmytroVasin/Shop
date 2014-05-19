@@ -36,7 +36,10 @@
         </div>
       </ul>
     </div>
-    <div id='hidden_loading'></div>
+    <div id='hidden_loading'>
+      Please wait while processing.
+      <div class='process'></div>
+    </div>
   </div>
 <% end %>
 <div class="clear"></div>
@@ -57,5 +60,5 @@
 
   // Adding Spinner
   var spinner = new Spinner(opts).spin();
-  $('#hidden_loading').append(spinner.el);
+  $('#hidden_loading .process').append(spinner.el);
 </script>
