@@ -217,16 +217,19 @@
     }
   }
 
-  #hidden_loading {
-    width: 67px;
-    height: 67px;
-    background : url(/assets/hidden_loading.gif) no-repeat scroll 0 0 transparent;
-    position: absolute;
-    left: 565px;
-    top: 410px;
-    opacity: 0.3;
-  }
+}
 
+#hidden_loading {
+  position: absolute;
+  left: 53%;
+  top: 385px;
+
+  width: 160px;
+  height: 125px;
+  background-color: #fff;
+  border: 1px solid #D86464;
+
+  display: block;
 }
 
 #ednless_paginator {

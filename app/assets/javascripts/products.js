@@ -37,6 +37,7 @@ $(function () {
 
   // Throttle method from underscore.js
   throttle = function(func, wait, options) {
+    var spin = $('#items_bar #hidden_loading');
     var context, args, result;
     var timeout = null;
     var previous = 0;
@@ -44,9 +45,7 @@ $(function () {
     var later = function() {
       previous = options.leading === false ? 0 : new Date;
       timeout = null;
-      // console.log('Hide loading');
-      $('#items_bar').removeClass('hidden_loading');
-      $('#hidden_loading').remove();
+      spin.hide();
       result = func.apply(context, args);
     };
     return function() {
@@ -61,8 +60,7 @@ $(function () {
         previous = now;
         result = func.apply(context, args);
       } else if (!timeout && options.trailing !== false) {
-        // console.log('Show loading');
-        $('#items_bar').addClass('hidden_loading').after("<div id='hidden_loading'></div>");
+        spin.show();
         timeout = setTimeout(later, remaining);
       }
       return result;
@@ -172,5 +170,5 @@ $(function () {
 
   });
 
-  $('#custom-find').on('click', throttle(changeMeter, 2000, {leading: false}));
+  $('#custom-find').on('click', throttle(changeMeter, 1000, {leading: false}));
 });

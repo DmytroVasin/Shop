@@ -32,14 +32,11 @@
     <div id="items">
       <ul>
         <div id='products_displaying'>
-          <% if @products.size > 0 %>
-            <%= render @products %>
-          <% else %>
-            <%= render 'no_match_criteria' %>
-          <% end %>
+          <!-- Block with products... -->
         </div>
       </ul>
     </div>
+    <div id='hidden_loading'></div>
   </div>
 <% end %>
 <div class="clear"></div>
@@ -53,4 +50,12 @@
   if ( $('.pagination ul li').length === 0 || $('.pagination ul li').last().hasClass('disabled') ) {
     $('#ednless_paginator').remove();
   }
+
+  setTimeout(function(){
+    changeMeter();
+  }, 1000);
+
+  // Adding Spinner
+  var spinner = new Spinner(opts).spin();
+  $('#hidden_loading').append(spinner.el);
 </script>

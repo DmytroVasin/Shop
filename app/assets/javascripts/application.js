@@ -9,6 +9,8 @@
 //= require jquery.elevateZoom-3.0.3.min
 //= require_self
 //= require trackbar
+//= require spin
+//= require init_spin
 
 $(function () {
 

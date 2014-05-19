@@ -1,3 +1,5 @@
+$('#hidden_loading').hide();
+
 <% if @flag %>
 	<% if @products.size > 0 %>
     $('#products_displaying').html("<%= j render(@products) %>");
@@ -20,5 +22,4 @@
 	if ($('.pagination ul li').last().hasClass('disabled')) {
 	  $('#ednless_paginator').remove();
 	}
-
 <% end %>
