@@ -157,4 +157,8 @@ module ApplicationHelper
   def percentage_discount old_price, new_price
     (100 - (100 * new_price) / old_price).to_i
   end
+
+  def regulate_length title
+    title.truncate(30)
+  end
 end
