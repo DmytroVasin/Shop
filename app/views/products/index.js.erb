@@ -1,25 +1,9 @@
-$('#hidden_loading').hide();
+$('#spinner_loading').hide();
 
-<% if @flag %>
-	<% if @products.size > 0 %>
-    $('#products_displaying').html("<%= j render(@products) %>");
-  <% else %>
-  	$('#products_displaying').html("<%= j render 'no_match_criteria' %>");
-  <% end %>
-
-	$('#hidden_element').replaceWith("<div id='hidden_element'><%= j paginate(@products) %></div>");
-	if ( $('.pagination ul li').length === 0 || $('.pagination ul li').last().hasClass('disabled') ) {
-	  $('#ednless_paginator').remove();
-	} else {
-		if ( $('#ednless_paginator').length === 0 ) {
-			$( "#hidden_element" ).after("<div id='ednless_paginator'>Показать еще...</div>");
-		}
-	}
+<% if @products.size > 0 %>
+  $('#products_displaying').html("<%= j render(@products) %>");
 <% else %>
-	$('#products_displaying').append('<%= j render(@products) %>');
-	$('.pagination').replaceWith('<%= j paginate @products %>');
-
-	if ($('.pagination ul li').last().hasClass('disabled')) {
-	  $('#ednless_paginator').remove();
-	}
+  $('#products_displaying').html("<%= j render 'no_match_criteria' %>");
 <% end %>
+
+$('.products_paginator').replaceWith("<div class='products_paginator'><%= j paginate(@products, remote: true) %></div>");

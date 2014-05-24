@@ -25,19 +25,16 @@ $(function () {
 
 
   // ENDLESS paginator     -------------------------------------------------------------
-  $('body').on('click', '#ednless_paginator', function () {
 
-   url = $('.pagination .next_page').attr('href').replace("flag=true","flag=false");;
-   if (url) {
-     $.getScript(url);
-     $('.pagination ul').replaceWith('<div id="endless_message"></div>');
-   }
- });
+  $('#items_bar').on('click', '.disabled, .active', function(e) {
+    return false;
+  });
+
   // ENDLESS pagination END  -----------------------------------------------------------
 
   // Throttle method from underscore.js
   throttle = function(func, wait, options) {
-    var spin = $('#items_bar #hidden_loading');
+    var spin = $('#items_bar #spinner_loading');
     var context, args, result;
     var timeout = null;
     var previous = 0;
@@ -104,8 +101,7 @@ $(function () {
         feature_params: getValues(feature),
 
         price_between: getPrice,
-        sort_direction: select_val,
-        flag: true
+        sort_direction: select_val
       }
     });
   };

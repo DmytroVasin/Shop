@@ -30,13 +30,7 @@ module ApplicationHelper
 
   def back_to_products(title, add_bootstrap = true)
     class_name = add_bootstrap ? 'bootstrap_btn' : ''
-
-    if session[:products_params]
-      session[:products_params][:format] = 'html'
-      link_to title, session[:products_params], class: class_name
-    else
-      link_to title, '#', class: class_name, onclick: "history.back(); return false;"
-    end
+    link_to title, :back, class: class_name
   end
 
   def sortable(column, title = nil, model = 'Product')

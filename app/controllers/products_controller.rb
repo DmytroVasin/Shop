@@ -3,8 +3,6 @@ class ProductsController < ApplicationController
   before_filter :find_product, only: [:show, :color_picker]
 
   def index
-    @flag = params[:flag] == "true" ? true : false;
-
     @sort_hash = Product::SORT_HASH
     @genders   = Gender::ALL
 
@@ -30,8 +28,6 @@ class ProductsController < ApplicationController
                 else
                   Kaminari.paginate_array(products).page(params[:page]).per(18)
                 end
-
-    session[:products_params] = params
 
     respond_to do |format|
       format.html

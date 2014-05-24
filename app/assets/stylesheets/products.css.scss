@@ -64,6 +64,8 @@
   width  : 755px;
 
   #sort_bar {
+    margin-bottom: 10px;
+
     .class_name {
       float: left;
       font-family: Georgia, Times, serif;
@@ -89,7 +91,7 @@
 
     .underline {
       height: 1px;
-      margin-top: 11px;
+      margin-top: 5px;
       border-bottom: 1px solid #97002e;
       width: 753px;
     }
@@ -97,19 +99,18 @@
 
   #items {
     width: 755px;
-    margin: 10px 0;
 
     ul li {
       float: left;
       width: 235px;
       background-color: #F4F4F4;
 
-      margin: 0 22px 20px 0;
+      margin: 0 22px 10px 0;
       border: 1px solid #E183A0;
       position: relative;
 
       &.last {
-        margin: 0 0 20px 0;
+        margin: 0 0 10px 0;
       }
 
       a img {
@@ -219,7 +220,7 @@
 
 }
 
-#hidden_loading {
+#spinner_loading {
   display: block;
 
   text-align: center;
@@ -265,10 +266,6 @@
     background: linear-gradient(top, #F8F8F8, #ddd);
     border: 1px solid #a2a2a2;
   }
-}
-
-.pagination ul {
-  display : none;
 }
 
 #endless_message {

@@ -12,12 +12,10 @@
     <%= render 'menu_nav' %>
   </div>
 
-  <div id="items_bar">
-    <div id="sort_bar">
-      <div class="class_name">
-        Каталог:
-      </div>
-      <div class="sort">
+  <div id='items_bar'>
+    <div id='sort_bar'>
+      <div class='class_name'>Каталог:</div>
+      <div class='sort'>
         Сортировать по:
 
         <%= select_tag(:sort_by, options_for_select(@sort_hash, params[:sort_by]),
@@ -25,34 +23,32 @@
                        include_blank: true) %>
 
       </div>
-      <div class="clear"></div>
-      <div class="underline"></div>
+      <div class='clear'></div>
+      <div class='underline'></div>
+
+      <div class='products_paginator'>
+        <%= paginate @products %>
+      </div>
+
     </div>
 
-    <div id="items">
+    <div id='items'>
       <ul>
         <div id='products_displaying'>
           <!-- Block with products... -->
         </div>
       </ul>
     </div>
-    <div id='hidden_loading'>
+    <div id='spinner_loading'>
       Please wait while processing.
       <div class='process'></div>
     </div>
   </div>
 <% end %>
-<div class="clear"></div>
+<div class='clear'></div>
 
-<div id='hidden_element'><%= paginate @products %></div>
 
-<div id="ednless_paginator">Показать еще...</div>
-<div class="clear"></div>
-
-<script type="text/javascript">
-  if ( $('.pagination ul li').length === 0 || $('.pagination ul li').last().hasClass('disabled') ) {
-    $('#ednless_paginator').remove();
-  }
+<script type='text/javascript'>
 
   setTimeout(function(){
     changeMeter();
@@ -60,5 +56,5 @@
 
   // Adding Spinner
   var spinner = new Spinner(opts).spin();
-  $('#hidden_loading .process').append(spinner.el);
+  $('#spinner_loading .process').append(spinner.el);
 </script>
