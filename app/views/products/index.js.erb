@@ -1,4 +1,4 @@
-$('#spinner_loading').hide();
+$('#spinner_loading, #spinner_loading_background').hide();
 
 <% if @products.size > 0 %>
   $('#products_displaying').html("<%= j render(@products) %>");

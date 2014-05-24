@@ -34,7 +34,7 @@ $(function () {
 
   // Throttle method from underscore.js
   throttle = function(func, wait, options) {
-    var spin = $('#items_bar #spinner_loading');
+    var spin = $('#items_bar #spinner_loading, #items_bar #spinner_loading_background');
     var context, args, result;
     var timeout = null;
     var previous = 0;
@@ -42,10 +42,10 @@ $(function () {
     var later = function() {
       previous = options.leading === false ? 0 : new Date;
       timeout = null;
-      spin.hide();
       result = func.apply(context, args);
     };
     return function() {
+      spin.show();
       var now = new Date;
       if (!previous && options.leading === false) previous = now;
       var remaining = wait - (now - previous);
@@ -57,7 +57,6 @@ $(function () {
         previous = now;
         result = func.apply(context, args);
       } else if (!timeout && options.trailing !== false) {
-        spin.show();
         timeout = setTimeout(later, remaining);
       }
       return result;

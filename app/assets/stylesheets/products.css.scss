@@ -246,6 +246,19 @@
   background-clip: padding-box;
 }
 
+#spinner_loading_background {
+  display: block;
+
+  position: absolute;
+  top: 322px;
+  z-index: 9999;
+  width: 755px;
+  height: 1872px;
+
+  background-color: #FFF;
+  opacity: 0.9;
+}
+
 #ednless_paginator {
   color: #97002e;
   text-shadow: 1px 1px 1px #aaa;
