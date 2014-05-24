@@ -6,4 +6,5 @@ $('#spinner_loading').hide();
   $('#products_displaying').html("<%= j render 'no_match_criteria' %>");
 <% end %>
 
-$('.products_paginator').replaceWith("<div class='products_paginator'><%= j paginate(@products, remote: true) %></div>");
+$('.top_products_paginator').replaceWith("<div class='top_products_paginator'><%= j paginate(@products, window: 2, remote: true) %></div>");
+$('.bottom_products_paginator').replaceWith( $('.top_products_paginator').clone() );
