@@ -24,9 +24,9 @@ module Colour::ColourConstants
     ['Серый', 'Gray'],
     ['Синий', 'Blue'],
     ['Тёмно-Серый', 'DarkGray'],
-    ['Фиолетовый', 'Violet']
+    ['Фиолетовый', 'Violet'],
     ['Хаки', 'Khaki'],
-    ['Чёрный', 'Black'],
+    ['Чёрный', 'Black']
   ]
 
   COMMON_COLORS_HASH = {
@@ -35,7 +35,7 @@ module Colour::ColourConstants
     'Bronze' => 'Бронзовый',
     'Burgundy' => 'Бургундский',
     'BlueGay' => 'Голубой',
-    'Yellow' => 'Желтый'
+    'Yellow' => 'Желтый',
     'Animal' => 'Животный рисунок',
     'Green' => 'Зелёный',
     'Gold' => 'Золотой',
@@ -53,9 +53,9 @@ module Colour::ColourConstants
     'Gray' => 'Серый',
     'Blue' => 'Синий',
     'DarkGray' => 'Тёмно-Серый',
-    'Фиолетовый' => 'Violet'
+    'Фиолетовый' => 'Violet',
     'Khaki' => 'Хаки',
-    'Black' => 'Чёрный',
+    'Black' => 'Чёрный'
   }
 
 end
