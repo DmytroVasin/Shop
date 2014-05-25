@@ -26,8 +26,13 @@ $(function () {
 
   // ENDLESS paginator     -------------------------------------------------------------
 
-  $('#items_bar').on('click', '.disabled, .active', function(e) {
+  $('#items_bar').on('click', '.disabled, .active', function() {
     return false;
+  });
+
+  $('#items_bar').on('click', '.pagination ul li:not(.disabled , .active)', function() {
+    var spiner = $('#items_bar #spinner_loading, #items_bar #spinner_loading_background');
+    spiner.show();
   });
 
   // ENDLESS pagination END  -----------------------------------------------------------

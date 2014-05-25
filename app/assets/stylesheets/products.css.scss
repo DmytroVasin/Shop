@@ -42,7 +42,7 @@
       }
 
       .brands_section {
-        max-height: 242px;
+        max-height: 245px;
       }
 
       &.search_bar {
@@ -50,7 +50,7 @@
 
         #custom-find {
           padding: 6px 34px;
-          margin: 7px 0px;
+          margin: 6px 0px;
         }
       }
     }
@@ -115,7 +115,7 @@
 
       a img {
         width: 235px;
-        height: 208px;
+        height: 202px;
       }
 
       .productbrand {
@@ -125,6 +125,10 @@
           font-size: 15px;
           font-weight: bold;
         }
+      }
+
+      .productlinkimg {
+        display: inline-block;
       }
 
       .special_colors {
@@ -253,7 +257,7 @@
   top: 322px;
   z-index: 9999;
   width: 755px;
-  height: 1872px;
+  height: 1880px;
 
   background-color: #FFF;
   opacity: 0.9;
@@ -279,12 +283,4 @@
     background: linear-gradient(top, #F8F8F8, #ddd);
     border: 1px solid #a2a2a2;
   }
-}
-
-#endless_message {
-  background: url(/assets/progres.gif) no-repeat;
-  background-position: center bottom;
-  height: 16px;
-  width: 210px;
-  margin-left: 493px;
 }
