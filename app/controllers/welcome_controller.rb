@@ -1,7 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    session[:products_params] = nil
-
     # Rating menu ( Vote menu )
     @ratings         = Rating.new
 

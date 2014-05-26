@@ -1,7 +1,7 @@
 <% genders.each do |key, value| %>
   <li>
     <label>
-      <%= check_box_tag 'gender_type', key, set_value_by_params(key, params[:gender_params]) %>
+      <%= check_box_tag 'gender_type', key, set_value_by_params(key, session['products_params'].try(:[], 'gender_params')) %>
       <%= value %>
     </label>
   </li>

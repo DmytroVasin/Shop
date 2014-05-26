@@ -1,9 +1,16 @@
 # coding: utf-8
 class ProductsController < ApplicationController
+  skip_before_filter :clear_session
   before_filter :find_product, only: [:show, :color_picker]
 
   def index
-    session[:products_params] = params
+    current_page = session['current_page_applyed'] || params[:page]
+    session['current_page_keeped']  = params[:page] || session['current_page_applyed']
+
+    if params[:format] == 'js'
+      session['current_page_applyed'] = nil if session['current_page_applyed']
+      session[:products_params] = params
+    end
 
     @sort_hash = Product::SORT_HASH
     @genders   = Gender::ALL
@@ -27,9 +34,9 @@ class ProductsController < ApplicationController
 
     @products = if products.kind_of?(Array)
                   # Never call?
-                  products.page(params[:page]).per(18)
+                  products.page(current_page).per(18)
                 else
-                  Kaminari.paginate_array(products).page(params[:page]).per(18)
+                  Kaminari.paginate_array(products).page(current_page).per(18)
                 end
 
     respond_to do |format|
@@ -39,6 +46,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    session['current_page_applyed'] = session['current_page_keeped']
+
     @product_colors = @product.colors.preload(:image)
     @images_count   = @product_colors.count > 4
     @colors_name    = @product.colours.uniq

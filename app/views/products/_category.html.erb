@@ -1,6 +1,6 @@
 <li>
 	<label>
-		<%= check_box_tag 'product_type', category.name, set_value_by_params(category.name, params[:categories_params]) %>
+		<%= check_box_tag 'product_type', category.name, set_value_by_params(category.name, session['products_params'].try(:[], 'categories_params')) %>
 		<%= category.category_rus %>
 	</label>
 </li>

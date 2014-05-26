@@ -109,8 +109,6 @@ $(function () {
       }
     });
   };
-  $('body').on('change', ".sortdropdown, input:checkbox, #leftValue, #rightValue", throttle(changeMeter, 2000, {leading: false}));
-
 
   function startSlider(value){
     var num;
@@ -170,5 +168,6 @@ $(function () {
 
   });
 
+  $('body').on('change', ".sortdropdown, input:checkbox, #leftValue, #rightValue", throttle(changeMeter, 2000, {leading: false}));
   $('#custom-find').on('click', throttle(changeMeter, 1000, {leading: false}));
 });

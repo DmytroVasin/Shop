@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   helper_method :login_page?, :current_cart
-
+  before_filter :clear_session
 
   private
 
@@ -32,5 +32,9 @@ class ApplicationController < ActionController::Base
     end
 
     return hash_with_counts, hash_with_percentege
+  end
+
+  def clear_session
+    reset_session
   end
 end
