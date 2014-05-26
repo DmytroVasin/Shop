@@ -18,7 +18,7 @@
       <div class='sort'>
         Сортировать по:
 
-        <%= select_tag(:sort_by, options_for_select(@sort_hash, params[:sort_by]),
+        <%= select_tag(:sort_by, options_for_select(@sort_hash, session['products_params'].try(:[], 'sort_by')),
                        class: 'sortdropdown',
                        include_blank: true) %>
 

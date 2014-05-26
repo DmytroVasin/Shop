@@ -55,8 +55,9 @@
 
   <div class="section price_bar">
     <h3>Цена (грн):</h3>
-    <%= hidden_field_tag 'leftValue' %>
-    <%= hidden_field_tag 'rightValue' %>
+    <% price_array = session['products_params'].try(:[], 'price_between').try(:split, ',') %>
+    <%= hidden_field_tag 'leftValue',  price_array.try(:[], 0) %>
+    <%= hidden_field_tag 'rightValue', price_array.try(:[], 1) %>
     <!-- <div>width: 250, roundUp: 50, leftLimit: 100, leftValue: 500, rightLimit: 5000, rightValue: 1500</div> -->
     <script type="text/javascript">
 
