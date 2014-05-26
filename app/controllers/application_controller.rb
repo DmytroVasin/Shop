@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :login_page?, :current_cart
   before_filter :clear_session
+  helper_method :login_page?, :current_cart
 
   private
 
@@ -35,6 +35,8 @@ class ApplicationController < ActionController::Base
   end
 
   def clear_session
-    reset_session
+    session['products_params']      = nil
+    session['current_page_applyed'] = nil
+    session['current_page_keeped']  = nil
   end
 end
