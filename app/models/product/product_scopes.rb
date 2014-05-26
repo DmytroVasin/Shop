@@ -9,10 +9,6 @@ module Product::ProductScopes
       scope :best_sellers, -> { where(bestseller: true) }
       scope :except_product, ->(product) { where('id <> ?', product) }
 
-      def get_uniq_colors_hash
-        colours.get_uniq_common_colors
-      end
-
       def first_category
         categories.first
       end

@@ -3,6 +3,8 @@ class ProductsController < ApplicationController
   before_filter :find_product, only: [:show, :color_picker]
 
   def index
+    session[:products_params] = params
+
     @sort_hash = Product::SORT_HASH
     @genders   = Gender::ALL
 
@@ -12,6 +14,7 @@ class ProductsController < ApplicationController
     products = Product.selecting_by(params[:categories_params], 'categories')
                        .includes(:colours)
                        .includes(:brand)
+                       .includes(:images)
                        .selecting_by_keys(params[:color_params], 'colours.common_colors')
                        .selecting_by(params[:brands_params], 'brand', 's')
                        .selecting_by(params[:gender_params], 'genders', '', 'gender')

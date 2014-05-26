@@ -8,8 +8,8 @@
   </div>
 
   <div class="special_colors" data-item-id="<%= product.id %>" >
-    <% product.get_uniq_colors_hash.each do |en_color, _| %>
-      <div class="color_field <%= en_color %>"></div>
+    <% product.colours.each do |color| %>
+      <div class="color_field <%= color.main %>"></div>
     <% end %>
   </div>
 

@@ -59,9 +59,10 @@
 
 
 #items_bar {
-  float  : left;
-  margin : 60px 0 0 23px;
-  width  : 755px;
+  float: left;
+  margin: 60px 0 0 23px;
+  width: 755px;
+  position: relative;
 
   #sort_bar {
     margin-bottom: 10px;
@@ -233,8 +234,8 @@
   padding-bottom: 23px;
   position: absolute;
 
-  left: 40%;
-  top: 400px;
+  left: 24%;
+  top: 200px;
 
   z-index: 10000;
   overflow: auto;
@@ -254,7 +255,7 @@
   display: block;
 
   position: absolute;
-  top: 322px;
+  top: 33px;
   z-index: 9999;
   width: 755px;
   height: 1880px;
