@@ -25,12 +25,12 @@ $(function () {
 
 
   // ENDLESS paginator     -------------------------------------------------------------
-
-  $('#items_bar').on('click', '.disabled, .active', function() {
+  var itemsFolder = $('#items_bar');
+  itemsFolder.on('click', '.disabled, .active', function() {
     return false;
   });
 
-  $('#items_bar').on('click', '.pagination ul li:not(.disabled , .active)', function() {
+  itemsFolder.on('click', '.pagination ul li:not(.disabled , .active)', function() {
     var spiner = $('#items_bar #spinner_loading, #items_bar #spinner_loading_background');
     spiner.show();
   });
@@ -169,5 +169,40 @@ $(function () {
   });
 
   $('body').on('change', ".sortdropdown, input:checkbox, #leftValue, #rightValue", throttle(changeMeter, 2000, {leading: false}));
-  $('#custom-find').on('click', throttle(changeMeter, 1000, {leading: false}));
+  $('.custom-find').on('click', throttle(changeMeter, 1000, {leading: false}));
+
+  // Accordion
+  var sectionHeader = $('.section h3');
+  sectionHeader.on('click', function(){
+    var element,
+        that = $(this),
+        currentSection = that.siblings('ul'),
+        countOfCheckedElements = currentSection.find('input:checkbox:checked').length;
+
+
+    if ( currentSection.length === 0 ){
+      element = $('.trackbar');
+    } else if ( countOfCheckedElements === 0 ){
+      element = currentSection;
+    }
+
+    element.stop().slideToggle('1000');
+  });
+
+  // Reset button
+  var resetButton   = $('.custom-reset'),
+      dropButton    = $('#no_match_criteria span'),
+      findButton    = $('.custom-find').first(),
+      allCheckboxes = $('.section input:checkbox');
+
+  resetButton.on('click', function(){
+    allCheckboxes.each(function(){
+      $(this).prop('checked', false);
+    });
+    findButton.click();
+  });
+
+  itemsFolder.on('click', dropButton, function(){
+    resetButton.first().click();
+  });
 });

@@ -3,6 +3,8 @@
     Выберете продукт:
   </div>
 
+  <%= render partial: 'products/search_reset' %>
+
   <div class="section categories_bar">
     <h3>Категории:</h3>
 
@@ -75,9 +77,7 @@
     });
     </script>
   </div>
-  <div class='section search_bar'>
-    <button id='custom-find' class='btn_order' onclick="handler(event)" >Начать поиск</button>
-  </div>
+  <%= render partial: 'products/search_reset' %>
 </div>
 
 <script>

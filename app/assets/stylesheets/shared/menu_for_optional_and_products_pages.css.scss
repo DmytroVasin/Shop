@@ -1,68 +1,65 @@
 #menu_bar {
-  float : left;
-  margin-bottom: 15px;
-}
+  float: left;
+  margin-bottom: 10px;
 
-#breadcrumb {
-  padding     : 35px 0 10px 15px;
-  font-size   : 13px;
-  font-weight : bold;
-  line-height : 15px;
-  color       : #777;
-  font-family : Georgia, Times, serif;
-}
+  #breadcrumb {
+    padding: 35px 0 10px 15px;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 15px;
+    color: #777;
+    font-family: Georgia, Times, serif;
 
-#breadcrumb ul li {
-  float        : left;
-  margin-right : 5px;
-  color : #97002E;
-}
+    ul li {
+      float: left;
+      margin-right: 5px;
+      color: #97002E;
 
-#breadcrumb ul li a {
-  color: #333;
-}
+      a {
+        color: #333;
 
-#breadcrumb ul li a:hover {
-  text-decoration : underline;
-}
+        &:hover {
+          text-decoration : underline;
+        }
+      }
+    }
+  }
 
-/*   -----   MENU  START   -----   */
+  .menu {
+    width: 200px;
+    margin-left: -2px;
 
-.menu {
-  width       : 200px;
-  margin-left : -2px;
-}
+    .header {
+      height: 40px;
 
-.menu .header {
-  height         : 40px;
+      background: #e183a0;
 
-  background : #e183a0;
+      background: -moz-linear-gradient(top, #e183a0, #97002e);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e183a0), color-stop(100%, #97002e));
+      background: -webkit-linear-gradient(top, #e183a0, #97002e);
+      background: -o-linear-gradient(top, #e183a0, #97002e);
+      background: -ms-linear-gradient(top, #e183a0, #97002e);
+      background: linear-gradient(top, #e183a0, #97002e);
 
-  background : -moz-linear-gradient(top, #e183a0, #97002e);
-  background : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e183a0), color-stop(100%, #97002e));
-  background : -webkit-linear-gradient(top, #e183a0, #97002e);
-  background : -o-linear-gradient(top, #e183a0, #97002e);
-  background : -ms-linear-gradient(top, #e183a0, #97002e);
-  background : linear-gradient(top, #e183a0, #97002e);
+      box-shadow: 0 0 1px #333 inset;
 
-  box-shadow     : 0 0 1px #333333 inset;
+      font-size: 17px;
+      line-height: 40px;
+      color: #fff;
+      text-shadow: 2px 2px 2px #333;
+      text-align: center;
+      vertical-align: middle;
+    }
 
-  font-size      : 17px;
-  line-height    : 40px;
-  color          : #FFFFFF;
-  text-shadow    : 2px 2px 2px #333;
-  text-align     : center;
-  vertical-align : middle;
-}
+    .section {
+      padding: 1px;
+      border: 1px solid #e183a0;
+      border-top: none;
+      font-family: Georgia, Times, serif;
 
-.menu .section {
-  padding       : 1px;
-  border-bottom : 1px solid #e183a0;
-  border-left   : 1px solid #e183a0;
-  border-right  : 1px solid #e183a0;
-  font-family   : Georgia, Times, serif;
-}
-
-.menu .section ul {
-  margin : 5px 0 10px 15px;
+      ul {
+        margin : 5px 0 10px 15px;
+      }
+    }
+  }
 }

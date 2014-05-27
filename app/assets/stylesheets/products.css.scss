@@ -3,7 +3,7 @@
 @import "shared/carts.css.scss";
 @import "shared/orders.css.scss";
 
-#menu_bar{
+#menu_bar {
   .menu {
     .section {
       h3 {
@@ -13,6 +13,11 @@
         font-weight: bold;
         color: #333;
         margin: 10px 0 5px 20px;
+        cursor: pointer;
+
+        -webkit-user-select: none;  /* Chrome all / Safari all */
+        -moz-user-select: none;     /* Firefox all */
+        -ms-user-select: none;      /* IE 10+ */
       }
 
       ul li {
@@ -47,10 +52,25 @@
 
       &.search_bar {
         text-align: center;
+        padding: 5px 0px 6px;
 
-        #custom-find {
-          padding: 6px 34px;
-          margin: 6px 0px;
+        .custom-reset, .custom-find {
+          padding: 6px 16px;
+        }
+        .custom-reset {
+          background-color: #B49DA4;
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #E2D5D9), color-stop(1, #6D6D6D));
+          background: -moz-linear-gradient(center top, #E2D5D9 5%, #6D6D6D 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E2D5D9', endColorstr='#6D6D6D');
+          border: 1px solid #838383;
+          color: #fff;
+
+          &:hover {
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6D6D6D), color-stop(1, #E2D5D9));
+            background: -moz-linear-gradient(center top, #6D6D6D 5%, #E2D5D9 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6D6D6D', endColorstr='#E2D5D9');
+            background-color: #6D6D6D;
+          }
         }
       }
     }
@@ -60,7 +80,7 @@
 
 #items_bar {
   float: left;
-  margin: 60px 0 0 23px;
+  margin: 60px 0 10px 23px;
   width: 755px;
   position: relative;
 
@@ -116,7 +136,7 @@
 
       a img {
         width: 235px;
-        height: 202px;
+        height: 210px;
       }
 
       .productbrand {
@@ -215,11 +235,16 @@
     }
 
     #no_match_criteria {
-      color       : #333333;
-      font-family : Georgia, Times, serif;
-      font-size   : 14px;
-      text-shadow : 0 0 1px #777777;
-      margin-left : 23px;
+      color: #333;
+      font-family: Georgia, Times, serif;
+      font-size: 14px;
+      text-shadow: 0 0 1px #777;
+      margin-left: 23px;
+
+      span {
+        color: red;
+        cursor: pointer;
+      }
     }
   }
 
@@ -258,7 +283,7 @@
   top: 33px;
   z-index: 9999;
   width: 755px;
-  height: 1880px;
+  height: 1930px;
 
   background-color: #FFF;
   opacity: 0.9;
