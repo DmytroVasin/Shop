@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <%= render 'shared/meta_tags' %>
+
   <title><%= content_for?(:title) ? yield(:title) : 'Vako' %></title>
   <%= favicon_link_tag 'favicon.ico' %>
 
