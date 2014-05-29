@@ -191,7 +191,6 @@ $(function () {
 
   // Reset button
   var resetButton   = $('.custom-reset'),
-      dropButton    = $('#no_match_criteria span'),
       findButton    = $('.custom-find').first(),
       allCheckboxes = $('.section input:checkbox');
 
@@ -202,7 +201,7 @@ $(function () {
     findButton.click();
   });
 
-  itemsFolder.on('click', dropButton, function(){
+  itemsFolder.on('click', '#no_match_criteria span', function(){
     resetButton.first().click();
   });
 });
