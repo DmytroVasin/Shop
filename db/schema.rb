@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140424184208) do
+ActiveRecord::Schema.define(:version => 20140529083550) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",              :default => "", :null => false
@@ -43,6 +43,9 @@ ActiveRecord::Schema.define(:version => 20140424184208) do
     t.integer "product_id"
   end
 
+  add_index "categories_products", ["category_id"], :name => "index_categories_products_on_category_id"
+  add_index "categories_products", ["product_id"], :name => "index_categories_products_on_product_id"
+
   create_table "colors", :force => true do |t|
     t.integer  "colour_id"
     t.integer  "image_id"
@@ -50,6 +53,10 @@ ActiveRecord::Schema.define(:version => 20140424184208) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "colors", ["colour_id"], :name => "index_colors_on_colour_id"
+  add_index "colors", ["image_id"], :name => "index_colors_on_image_id"
+  add_index "colors", ["product_id"], :name => "index_colors_on_product_id"
 
   create_table "colours", :force => true do |t|
     t.string "name"
@@ -87,6 +94,9 @@ ActiveRecord::Schema.define(:version => 20140424184208) do
     t.integer "gender_id"
     t.integer "product_id"
   end
+
+  add_index "genders_products", ["gender_id"], :name => "index_genders_products_on_gender_id"
+  add_index "genders_products", ["product_id"], :name => "index_genders_products_on_product_id"
 
   create_table "images", :force => true do |t|
     t.text "small"
@@ -140,6 +150,7 @@ ActiveRecord::Schema.define(:version => 20140424184208) do
     t.hstore   "features"
   end
 
+  add_index "products", ["brand_id"], :name => "index_products_on_brand_id"
   add_index "products", ["features"], :name => "index_products_on_features"
   add_index "products", ["materials"], :name => "index_products_on_materials"
   add_index "products", ["zippers"], :name => "index_products_on_zippers"
