@@ -25,9 +25,6 @@ class ProductsController < ApplicationController
     @brands     = Brand.order('LOWER(name) ASC')
 
     products = Product.selecting_by(params[:categories_params], 'categories')
-                       .includes(:colours)
-                       .includes(:brand)
-                       .includes(:images)
                        .selecting_by_keys(params[:color_params], 'colours.common_colors')
                        .selecting_by(params[:brands_params], 'brand', 's')
                        .selecting_by(params[:gender_params], 'genders', '', 'gender')
@@ -42,6 +39,7 @@ class ProductsController < ApplicationController
                   # Never call?
                   products.page(current_page).per(18)
                 else
+                  products = products.includes(:colours).includes(:brand).includes(:images)
                   Kaminari.paginate_array(products).page(current_page).per(18)
                 end
 

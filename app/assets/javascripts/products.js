@@ -30,10 +30,10 @@ $(function () {
     return false;
   });
 
-  // itemsFolder.on('click', '.pagination ul li:not(.disabled , .active)', function() {
-  //   var spiner = $('#items_bar #spinner_loading, #items_bar #spinner_loading_background');
-  //   spiner.show();
-  // });
+  itemsFolder.on('click', '.pagination ul li:not(.disabled , .active)', function() {
+    var spiner = $('#items_bar #spinner_loading, #items_bar #spinner_loading_background');
+    spiner.show();
+  });
 
   // ENDLESS pagination END  -----------------------------------------------------------
 
@@ -50,7 +50,7 @@ $(function () {
       result = func.apply(context, args);
     };
     return function() {
-      // spin.show();
+      spin.show();
       var now = new Date;
       if (!previous && options.leading === false) previous = now;
       var remaining = wait - (now - previous);
