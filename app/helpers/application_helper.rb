@@ -155,4 +155,12 @@ module ApplicationHelper
   def regulate_length title
     title.truncate(30)
   end
+
+  def hidden_rank score, voters_count
+    if score.zero?
+      score
+    else
+      number_with_precision(score.to_f/voters_count)
+    end
+  end
 end

@@ -1,0 +1,20 @@
+<div class='stars_raiting' data-product-id= <%= product.id %> >
+  <div id='vote_update'>
+    <div class='hidden_rank'>
+      <%= hidden_rank( product.score, product.voters_count ) %>
+    </div>
+
+    <% if session[product.id] %>
+      <div class='raiting_display_only'>
+        <div class='raiting_blank'></div>
+        <div class='raiting_votes'></div>
+      </div>
+    <% else %>
+      <div class='raiting'>
+        <div class='raiting_blank'></div>
+        <div class='raiting_hover'></div>
+        <div class='raiting_votes'></div>
+      </div>
+    <% end %>
+  </div>
+</div>

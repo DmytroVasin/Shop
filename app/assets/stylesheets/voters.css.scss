@@ -1,0 +1,54 @@
+#menu_bar {
+  .FormWrapper {
+    .product_info {
+      #stars_block {
+        margin: 5px 0;
+
+        .stars_raiting {
+          #vote_update {
+            width: 100%;
+            line-height: 10px;
+            text-align: center;
+
+            .hidden_rank {
+              display: none;
+            }
+
+            .raiting {
+              cursor: pointer;
+            }
+            .raiting, .raiting_display_only {
+              position: relative;
+              height: 16px;
+              width: 83px;
+              display: inline-block;
+
+              .raiting_blank {
+                height: 16px;
+                position: absolute;
+                width: 83px;
+                background: url('ratings.png');
+              }
+              .raiting_votes {
+                display: block;
+
+                height: 16px;
+                position: absolute;
+                background: url('ratings.png');
+                background-position: 0 -16px;
+              }
+              .raiting_hover {
+                display: none;
+
+                height: 16px;
+                position: absolute;
+                background: url('ratings.png');
+                background-position: 0 -32px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

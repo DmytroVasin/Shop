@@ -1,0 +1,4 @@
+$('#content').prepend("<%= j render partial: 'shared/flash_messages' %>");
+
+$('#stars_block').html("<%= j render partial: 'products/stars', locals: { product: @product } %>");
+$('.raiting_votes').width( $('.hidden_rank').html() * 17);

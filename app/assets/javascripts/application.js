@@ -10,6 +10,7 @@
 //= require_self
 //= require trackbar
 //= require spin
+//= require voters
 //= require init_spin
 
 $(function () {

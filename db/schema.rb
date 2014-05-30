@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140529083550) do
+ActiveRecord::Schema.define(:version => 20140529131736) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",              :default => "", :null => false
@@ -136,18 +136,20 @@ ActiveRecord::Schema.define(:version => 20140529083550) do
   create_table "products", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.decimal  "price",       :precision => 8, :scale => 2
+    t.decimal  "price",        :precision => 8, :scale => 2
     t.integer  "brand_id"
-    t.datetime "created_at",                                                   :null => false
-    t.datetime "updated_at",                                                   :null => false
-    t.integer  "rank",                                      :default => 0
+    t.datetime "created_at",                                                    :null => false
+    t.datetime "updated_at",                                                    :null => false
+    t.integer  "rank",                                       :default => 0
     t.text     "video_href"
     t.text     "link_href"
-    t.decimal  "old_price",   :precision => 8, :scale => 2
-    t.boolean  "bestseller",                                :default => false
+    t.decimal  "old_price",    :precision => 8, :scale => 2
+    t.boolean  "bestseller",                                 :default => false
     t.hstore   "materials"
     t.hstore   "zippers"
     t.hstore   "features"
+    t.integer  "voters_count",                               :default => 0
+    t.integer  "score",                                      :default => 0
   end
 
   add_index "products", ["brand_id"], :name => "index_products_on_brand_id"

@@ -12,6 +12,8 @@ def products_and_dependencies
     product.created_at  = 1.months.ago..Time.now
     product.rank        = [0, 1, 2, 3, 4, 5, 6]
     product.brand_id    = brands_ids
+    product.score       = 0
+    product.voters_count= 0
   end
 
 
