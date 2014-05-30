@@ -13,27 +13,6 @@
     </ul>
   </div>
 
-  <div class="section brand_bar">
-    <h3>Бренды:</h3>
-    <ul class="brands_section">
-      <%= render partial: 'products/brand', collection: @brands %>
-    </ul>
-  </div>
-
-  <div class="section gender_bar">
-    <h3>Пол:</h3>
-    <ul>
-      <%= render partial: 'products/gender', locals: { genders: @genders } %>
-    </ul>
-  </div>
-
-  <div class="section color_bar">
-    <h3>Цвет:</h3>
-    <ul class="brands_section">
-      <%= render partial: 'products/hstore_tags', locals: { params_array: session['products_params'].try(:[], 'color_params') , current_array: Colour::COMMON_COLORS_RUS } %>
-    </ul>
-  </div>
-
   <div class="section material_bar">
     <h3>Материал:</h3>
     <ul class="brands_section">
@@ -52,6 +31,27 @@
     <h3>Особенности:</h3>
     <ul class="brands_section">
       <%= render partial: 'products/hstore_tags', locals: { params_array: session['products_params'].try(:[], 'feature_params'), current_array: Product::FEATURES } %>
+    </ul>
+  </div>
+
+  <div class="section brand_bar">
+    <h3>Бренды:</h3>
+    <ul class="brands_section">
+      <%= render partial: 'products/brand', collection: @brands %>
+    </ul>
+  </div>
+
+  <div class="section gender_bar">
+    <h3>Пол:</h3>
+    <ul>
+      <%= render partial: 'products/gender', locals: { genders: @genders } %>
+    </ul>
+  </div>
+
+  <div class="section color_bar">
+    <h3>Цвет:</h3>
+    <ul class="brands_section">
+      <%= render partial: 'products/hstore_tags', locals: { params_array: session['products_params'].try(:[], 'color_params') , current_array: Colour::COMMON_COLORS_RUS } %>
     </ul>
   </div>
 
