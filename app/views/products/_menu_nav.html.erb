@@ -13,13 +13,6 @@
     </ul>
   </div>
 
-  <div class="section brand_bar">
-    <h3>Бренды:</h3>
-    <ul class="brands_section">
-      <%= render partial: 'products/brand', collection: @brands %>
-    </ul>
-  </div>
-
   <div class="section gender_bar">
     <h3>Пол:</h3>
     <ul>
@@ -34,6 +27,13 @@
     </ul>
   </div>
 
+  <div class="section brand_bar">
+    <h3>Бренды:</h3>
+    <ul class="brands_section">
+      <%= render partial: 'products/brand', collection: @brands %>
+    </ul>
+  </div>
+
   <div class="section material_bar">
     <h3>Материал:</h3>
     <ul class="brands_section">
@@ -41,17 +41,17 @@
     </ul>
   </div>
 
-  <div class="section zipper_bar">
-    <h3>Закрытие:</h3>
-    <ul class="brands_section">
-      <%= render partial: 'products/hstore_tags', locals: { params_array: session['products_params'].try(:[], 'zipper_params'), current_array: Product::CLOSING_TYPE } %>
-    </ul>
-  </div>
-
   <div class="section feature_bar">
     <h3>Особенности:</h3>
     <ul class="brands_section">
       <%= render partial: 'products/hstore_tags', locals: { params_array: session['products_params'].try(:[], 'feature_params'), current_array: Product::FEATURES } %>
+    </ul>
+  </div>
+
+  <div class="section zipper_bar">
+    <h3>Тип закрытия:</h3>
+    <ul class="brands_section">
+      <%= render partial: 'products/hstore_tags', locals: { params_array: session['products_params'].try(:[], 'zipper_params'), current_array: Product::CLOSING_TYPE } %>
     </ul>
   </div>
 

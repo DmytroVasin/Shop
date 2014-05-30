@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
     @sort_hash = Product::SORT_HASH
     @genders   = Gender::ALL
 
-    @categories = Category.all
+    @categories = Category.order('category_rus ASC')
     @brands     = Brand.order('LOWER(name) ASC')
 
     products = Product.selecting_by(params[:categories_params], 'categories')
