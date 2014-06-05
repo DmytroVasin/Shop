@@ -1,9 +1,4 @@
 $(function () {
-  $('.video_slider').on('click', function(){
-    $('.iframe_video_wrapper').stop(true).slideToggle('show');
-    $(this).toggleClass('border_bottom');
-  });
-
 
   // ZOOM paginator      --------------------------------------------------------------
   var main_image = $('.image_polaroid img');

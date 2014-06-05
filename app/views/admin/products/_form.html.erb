@@ -78,7 +78,7 @@
   <div class="control-group">
     <%= f.label :video, 'Видео: ', class: 'control-label' %>
     <div class="controls">
-      <iframe class='iframe_video' href="<%= @product.video_href %>"></iframe>
+      <a class='video_link' href="<%= @product.video_href %>" target='_blank' >Показать видео</a>
     </div>
   </div>
 <% end %>

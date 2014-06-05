@@ -68,11 +68,8 @@
 
     <div class="product_info">
       <% if @product.video_href %>
-        <div id="video_space">
-          <div class="video_slider btn_order">Показать Видео</div>
-          <div class="iframe_video_wrapper">
-            <iframe class='iframe_video' href="<%= @product.video_href %>"></iframe>
-          </div>
+        <div id='video_space'>
+          <a href="<%= @product.video_href %>" class='video_slider btn_order' target='_blank' >Показать Видео</a>
         </div>
         <div class="clear"></div>
       <% end %>
