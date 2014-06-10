@@ -6,11 +6,11 @@
     <li><a href='#'><%= image_tag('a_next.png', class: 'nextBigImg') %></a></li>
   </ol>
   <ul>
-    <li class='show'><a href='#'><%= image_tag('big_1.jpg') %></a></li>
-    <li><a href='#'><%= image_tag('big_2.jpg') %></a></li>
-    <li><a href='#'><%= image_tag('big_3.jpg') %></a></li>
-    <li><a href='#'><%= image_tag('big_4.jpg') %></a></li>
-    <li><a href='#'><%= image_tag('big_5.jpg') %></a></li>
+    <li class='show'><%= link_to image_tag('big_free_delivery.jpg'), delivery_path %></li>
+    <li><%= link_to image_tag('big_different_colors.jpg'), product_path(3) %></li>
+    <li><a href='/products?brands_params%5B%5D=GUESS' ><%= image_tag('big_guess.jpg') %></a></li>
+    <li><a href='/products?brands_params%5B%5D=Nike' ><%= image_tag('big_nike.jpg') %></a></li>
+    <li><a href='/products?brands_params%5B%5D=Steve Madden'><%= image_tag('big_steve_madden.jpg') %></a></li>
   </ul>
 </div>
 

@@ -4,9 +4,10 @@ class ProductsController < ApplicationController
   before_filter :find_product, only: [:show, :color_picker]
 
   def index
-    if params[:gender_params]
+    if params[:gender_params] || params[:brands_params]
       session['products_params'] = {}
       session['products_params']['gender_params'] = params[:gender_params]
+      session['products_params']['brands_params'] = params[:brands_params]
     end
 
 
