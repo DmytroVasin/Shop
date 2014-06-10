@@ -1,4 +1,8 @@
 $(function (){
+// ------------------------------------------ Trick to preload image
+	(new Image()).src = '/assets/progres.gif';
+// ------------------------------------------ Trick to preload image
+
 // ------------------------------------------ Slider
 	theRotator();
 // ------------------------------------------ Top Product slider
