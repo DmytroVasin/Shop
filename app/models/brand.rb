@@ -4,4 +4,6 @@ class Brand < ActiveRecord::Base
   validates :name, presence: true
 
   has_many :products, dependent: :destroy
+
+  include Brand::BrandConstants
 end

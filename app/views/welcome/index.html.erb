@@ -37,16 +37,17 @@
   <div class="second underline_index"></div>
   <div class='clear'></div>
 </div>
-<div id="rightarea">
+<div id='rightarea'>
   <%= render 'ratings/voting_menu' %>
 
   <div id="remote_site">
-    <!-- <div class="aboveline_blog"></div> -->
-    <% (1..16).to_a.sample(4).each do |number|  %>
-      <div class="aboveline_blog"></div>
-      <%= image_tag('banner_'+number.to_s+'.jpg', class: 'banner') %>
+    <% Brand::BRAND_RUS.sample(4).each do |sample| %>
+      <div class='aboveline_blog'></div>
+      <a href="/products?brands_params%5B%5D=<%= sample %>"  >
+        <%= image_tag('banner '+sample+'.jpg', class: 'banner') %>
+      </a>
     <% end %>
-    <div class="underline_blog"></div>
+    <div class='underline_blog'></div>
   </div>
 </div>
-<div class="clear"></div>
+<div class='clear'></div>
