@@ -14,35 +14,38 @@ class ProductsController < ApplicationController
     current_page = session['current_page_applyed'] || params[:page]
     session['current_page_keeped']  = params[:page] || session['current_page_applyed']
 
-    if params[:format] == 'js'
-      session['current_page_applyed'] = nil if session['current_page_applyed']
-      session[:products_params] = params
-    end
-
     @sort_hash = Product::SORT_HASH
     @genders   = Gender::ALL
 
     @categories = Category.order('category_rus ASC')
     @brands     = Brand.order('LOWER(name) ASC')
 
-    products = Product.selecting_by(params[:categories_params], 'categories')
-                       .selecting_by_keys(params[:color_params], 'colours.common_colors')
-                       .selecting_by(params[:brands_params], 'brand', 's')
-                       .selecting_by(params[:gender_params], 'genders', '', 'gender')
-                       .selecting_by_keys(params[:zipper_params], 'zippers')
-                       .selecting_by_keys(params[:material_params], 'materials')
-                       .selecting_by_keys(params[:feature_params], 'features')
-                       .price_between(params[:price_between])
-                       .sort_direction(params[:sort_direction], @sort_hash)
+
+    # Recreate this - to another method.
+    if params[:format] == 'js'
+      session['current_page_applyed'] = nil if session['current_page_applyed']
+      session[:products_params] = params
+
+      products = Product.selecting_by(params[:categories_params], 'categories')
+                         .selecting_by_keys(params[:color_params], 'colours.common_colors')
+                         .selecting_by(params[:brands_params], 'brand', 's')
+                         .selecting_by(params[:gender_params], 'genders', '', 'gender')
+                         .selecting_by_keys(params[:zipper_params], 'zippers')
+                         .selecting_by_keys(params[:material_params], 'materials')
+                         .selecting_by_keys(params[:feature_params], 'features')
+                         .price_between(params[:price_between])
+                         .sort_direction(params[:sort_direction], @sort_hash)
 
 
-    @products = if products.kind_of?(Array)
-                  # Never call?
-                  products.page(current_page).per(18)
-                else
-                  products = products.includes(:colours).includes(:brand).includes(:images)
-                  Kaminari.paginate_array(products).page(current_page).per(18)
-                end
+      @products = if products.kind_of?(Array)
+                    # Never call?
+                    products.page(current_page).per(18)
+                  else
+                    products = products.includes(:colours).includes(:brand).includes(:images)
+                    Kaminari.paginate_array(products).page(current_page).per(18)
+                  end
+
+    end
 
     respond_to do |format|
       format.html
