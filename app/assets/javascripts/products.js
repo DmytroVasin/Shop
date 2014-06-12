@@ -88,7 +88,7 @@ $(function () {
 
     $.ajax({
       type: "GET",
-      url: '/products.js',
+      url: '/products/product_search.js',
       data: {
         categories_params: getValues(categories),
         brands_params: getValues(brands),

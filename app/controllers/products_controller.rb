@@ -1,53 +1,33 @@
 # coding: utf-8
 class ProductsController < ApplicationController
-  skip_before_filter :clear_session
-  before_filter :find_product, only: [:show, :color_picker]
-
   def index
-    if params[:gender_params] || params[:brands_params]
-      session['products_params'] = {}
-      session['products_params']['gender_params'] = params[:gender_params]
-      session['products_params']['brands_params'] = params[:brands_params]
-    end
+    find_sort_hash
 
+    @genders   = Gender::ALL
+    @categories = Category.order('category_rus ASC')
+    @brands     = Brand.order('LOWER(name) ASC')
+  end
 
-    current_page = session['current_page_applyed'] || params[:page]
-    session['current_page_keeped']  = params[:page] || session['current_page_applyed']
+  def product_search
+    find_sort_hash
 
-    @sort_hash = Product::SORT_HASH
+    current_page = params[:page]
 
-    # Recreate this - to another method.
-    if params[:format] == 'js'
-      session['current_page_applyed'] = nil if session['current_page_applyed']
-      session[:products_params] = params
+    products = Product.selecting_by(params[:categories_params], 'categories')
+                      .selecting_by_keys(params[:color_params], 'colours.common_colors')
+                      .selecting_by(params[:brands_params], 'brand', 's')
+                      .selecting_by(params[:gender_params], 'genders', '', 'gender')
+                      .selecting_by_keys(params[:zipper_params], 'zippers')
+                      .selecting_by_keys(params[:material_params], 'materials')
+                      .selecting_by_keys(params[:feature_params], 'features')
+                      .price_between(params[:price_between])
+                      .sort_direction(params[:sort_direction], @sort_hash)
 
-      products = Product.selecting_by(params[:categories_params], 'categories')
-                        .selecting_by_keys(params[:color_params], 'colours.common_colors')
-                        .selecting_by(params[:brands_params], 'brand', 's')
-                        .selecting_by(params[:gender_params], 'genders', '', 'gender')
-                        .selecting_by_keys(params[:zipper_params], 'zippers')
-                        .selecting_by_keys(params[:material_params], 'materials')
-                        .selecting_by_keys(params[:feature_params], 'features')
-                        .price_between(params[:price_between])
-                        .sort_direction(params[:sort_direction], @sort_hash)
-
-
-      @products = products.page(current_page).per(18).includes(:colours).includes(:brand).includes(:images)
-
-    else
-      @genders   = Gender::ALL
-      @categories = Category.order('category_rus ASC')
-      @brands     = Brand.order('LOWER(name) ASC')
-    end
-
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    @products = products.page(current_page).per(18).includes(:colours).includes(:brand).includes(:images)
   end
 
   def show
-    session['current_page_applyed'] = session['current_page_keeped']
+    find_product
 
     @product_colors = @product.colors.preload(:image)
     @images_count   = @product_colors.count > 4
@@ -59,6 +39,8 @@ class ProductsController < ApplicationController
   end
 
   def color_picker
+    find_product
+
     @image_link = @product.images.choose_by_color( params[:color] ).get_splited_representative_img[0] + '-p-MULTIVIEW.jpg'
 
     respond_to do |format|
@@ -70,6 +52,10 @@ class ProductsController < ApplicationController
 
   def find_product
     @product = Product.find(params[:id])
+  end
+
+  def find_sort_hash
+    @sort_hash = Product::SORT_HASH
   end
 
 end

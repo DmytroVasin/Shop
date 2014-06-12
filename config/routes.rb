@@ -33,6 +33,7 @@ Shop::Application.routes.draw do
 
   resources :products do
     get 'color_picker', on: :collection
+    get 'product_search', on: :collection
 
     resource :vote, only: [:update, :destroy]
   end
