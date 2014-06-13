@@ -1,7 +1,7 @@
 <% current_array.each do |object| %>
   <li>
     <label>
-      <%= check_box_tag 'object_type', object[1], set_value_by_params(object[1], params_array) %>
+      <%= check_box_tag 'object_type', object[1] %>
       <%= object[0] %>
     </label>
   </li>

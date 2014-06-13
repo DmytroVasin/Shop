@@ -70,11 +70,6 @@ module ApplicationHelper
     check_box_tag 'best_sellers', value, value, disabled: disabling, data: { product_id: id }
   end
 
-  def set_value_by_params item, params
-    return item.in? params if params
-    false
-  end
-
   def url_to_product id
     "products/#{id}"
   end

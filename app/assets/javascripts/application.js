@@ -98,8 +98,14 @@ var App = {
   getFilters: function(){
     if (localStorage.getItem('filters') === null) {
       localStorage.setItem('filters', JSON.stringify({"categories_params":[],"brands_params":[],"gender_params":[],"color_params":[],"material_params":[],"zipper_params":[],"feature_params":[],"price_between":["0","4000"],"sort_direction":""}) );
+      localStorage.setItem('page_number', 1);
     };
 
     return JSON.parse(localStorage.getItem('filters'));
+  },
+
+  clearFilters: function(){
+    localStorage.removeItem('filters');
+    localStorage.removeItem('page_number');
   }
 };

@@ -75,7 +75,6 @@ $(function () {
     var feature    = $('.feature_bar input[type=checkbox]:checked');
 
     var select_val = $('.sortdropdown').val();
-    var page_number= $('.pagination:first .active a').text();
 
     function getValues(checkboxes) {
       return checkboxes.map(function (index, element) {
@@ -94,13 +93,17 @@ $(function () {
       feature_params: getValues(feature),
 
       price_between: Array($('#leftValue').val(), $('#rightValue').val()),
-      sort_direction: select_val
+      sort_direction: select_val,
     }
 
-    localStorage.setItem('filters', JSON.stringify(datas));
-    // localStorage.setItem('page_number', 1);
 
-    console.log(datas);
+    if ( JSON.stringify(datas) != localStorage.getItem('filters') ){
+      localStorage.setItem('filters', JSON.stringify(datas));
+      localStorage.setItem('page_number', 1);
+    } else {
+      datas.page = localStorage.getItem('page_number');
+    }
+
 
     $.ajax({
       type: "GET",
@@ -191,12 +194,22 @@ $(function () {
   // Reset button
   var resetButton   = $('.custom-reset'),
       findButton    = $('.custom-find').first(),
-      allCheckboxes = $('.section input:checkbox');
+      allCheckboxes = $('.section input:checkbox'),
+      sortDropdown  = $('#sort_by');
 
   resetButton.on('click', function(){
     allCheckboxes.each(function(){
       $(this).prop('checked', false);
     });
+
+    sortDropdown.prop('selectedIndex',0);
+
+    $('#leftValue').val('0');
+    $('#rightValue').val('4000');
+
+    App.clearFilters();
+    App.getFilters();
+
     findButton.click();
   });
 

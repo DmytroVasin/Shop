@@ -23,7 +23,7 @@
   <div class="section color_bar">
     <h3>Цвет:</h3>
     <ul class="brands_section">
-      <%= render partial: 'products/hstore_tags', locals: { params_array: session['products_params'].try(:[], 'color_params') , current_array: Colour::COMMON_COLORS_RUS } %>
+      <%= render partial: 'products/hstore_tags', locals: { current_array: Colour::COMMON_COLORS_RUS } %>
     </ul>
   </div>
 
@@ -37,21 +37,21 @@
   <div class="section material_bar">
     <h3>Материал:</h3>
     <ul class="brands_section">
-      <%= render partial: 'products/hstore_tags', locals: { params_array: session['products_params'].try(:[], 'material_params'), current_array: Product::MATERIAL } %>
+      <%= render partial: 'products/hstore_tags', locals: { current_array: Product::MATERIAL } %>
     </ul>
   </div>
 
   <div class="section feature_bar">
     <h3>Особенности:</h3>
     <ul class="brands_section">
-      <%= render partial: 'products/hstore_tags', locals: { params_array: session['products_params'].try(:[], 'feature_params'), current_array: Product::FEATURES } %>
+      <%= render partial: 'products/hstore_tags', locals: { current_array: Product::FEATURES } %>
     </ul>
   </div>
 
   <div class="section zipper_bar">
     <h3>Тип закрытия:</h3>
     <ul class="brands_section">
-      <%= render partial: 'products/hstore_tags', locals: { params_array: session['products_params'].try(:[], 'zipper_params'), current_array: Product::CLOSING_TYPE } %>
+      <%= render partial: 'products/hstore_tags', locals: { current_array: Product::CLOSING_TYPE } %>
     </ul>
   </div>
 
@@ -74,10 +74,11 @@
         leftValue : filter_object['price_between'][0] || 0, // unit of value
         rightLimit : 4000, // unit of value
         rightValue : filter_object['price_between'][1] || 4000, // unit of value
-        roundUp : 5, // unit of value
+        roundUp : 20, // unit of value
       });
     </script>
   </div>
+
   <%= render partial: 'products/search_reset' %>
 </div>
 
