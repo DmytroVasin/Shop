@@ -57,24 +57,25 @@
 
   <div class="section price_bar">
     <h3>Цена (грн):</h3>
-    <% price_array = session['products_params'].try(:[], 'price_between').try(:split, ',') %>
-    <%= hidden_field_tag 'leftValue',  price_array.try(:[], 0) %>
-    <%= hidden_field_tag 'rightValue', price_array.try(:[], 1) %>
+    <%= hidden_field_tag 'leftValue'%>
+    <%= hidden_field_tag 'rightValue'%>
     <!-- <div>width: 250, roundUp: 50, leftLimit: 100, leftValue: 500, rightLimit: 5000, rightValue: 1500</div> -->
-    <script type="text/javascript">
 
-    trackbar.getObject('one').init({
-      onMove : function() {
-        $('#leftValue').val(this.leftValue).change();
-        $('#rightValue').val(this.rightValue).change();
-      },
-      width : 140, // px
-      leftLimit : 0, // unit of value
-      leftValue : 0, // unit of value
-      rightLimit : 4000, // unit of value
-      rightValue : 4000, // unit of value
-      roundUp : 5, // unit of value
-    });
+    <script type="text/javascript">
+      var filter_object = App.getFilters();
+
+      trackbar.getObject('one').init({
+        onMove : function() {
+          $('#leftValue').val(this.leftValue).change();
+          $('#rightValue').val(this.rightValue).change();
+        },
+        width : 140, // px
+        leftLimit : 0, // unit of value
+        leftValue : filter_object['price_between'][0] || 0, // unit of value
+        rightLimit : 4000, // unit of value
+        rightValue : filter_object['price_between'][1] || 4000, // unit of value
+        roundUp : 5, // unit of value
+      });
     </script>
   </div>
   <%= render partial: 'products/search_reset' %>

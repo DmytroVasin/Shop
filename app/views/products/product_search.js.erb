@@ -8,3 +8,5 @@ $('#spinner_loading, #spinner_loading_background').hide();
 
 $('.top_products_paginator').replaceWith("<div class='top_products_paginator'><%= j paginate(@products, window: 2, remote: true) %></div>");
 $('.bottom_products_paginator').replaceWith( $('.top_products_paginator').clone() );
+
+// localStorage.setItem('page_number', "<%= @products.current_page %>");

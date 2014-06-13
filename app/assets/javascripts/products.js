@@ -75,6 +75,7 @@ $(function () {
     var feature    = $('.feature_bar input[type=checkbox]:checked');
 
     var select_val = $('.sortdropdown').val();
+    var page_number= $('.pagination:first .active a').text();
 
     function getValues(checkboxes) {
       return checkboxes.map(function (index, element) {
@@ -82,26 +83,29 @@ $(function () {
       }).toArray();
     };
 
-    function getPrice() {
-      return Array($('#leftValue').val(), $('#rightValue').val());
-    };
+    datas = {
+      categories_params: getValues(categories),
+      brands_params: getValues(brands),
+      gender_params: getValues(gender),
+      color_params: getValues(color),
+
+      material_params: getValues(material),
+      zipper_params: getValues(zipper),
+      feature_params: getValues(feature),
+
+      price_between: Array($('#leftValue').val(), $('#rightValue').val()),
+      sort_direction: select_val
+    }
+
+    localStorage.setItem('filters', JSON.stringify(datas));
+    // localStorage.setItem('page_number', 1);
+
+    console.log(datas);
 
     $.ajax({
       type: "GET",
       url: '/products/product_search.js',
-      data: {
-        categories_params: getValues(categories),
-        brands_params: getValues(brands),
-        gender_params: getValues(gender),
-        color_params: getValues(color),
-
-        material_params: getValues(material),
-        zipper_params: getValues(zipper),
-        feature_params: getValues(feature),
-
-        price_between: getPrice,
-        sort_direction: select_val
-      }
+      data: datas
     });
   };
 

@@ -14,19 +14,6 @@
 //= require init_spin
 
 $(function () {
-
-// ------------------------------------------ Tooltip ( Ask Valera how to do blur and focus on tooltip ?)
-// TODO: Fix this!
-  // var input_field = $('.clickTip');
-  // var hidden_tooltip = $('#aToolTip');
-  // input_field.focus(function () {
-  //   hidden_tooltip.show();
-  // });
-  // input_field.blur(function () {
-  //   hidden_tooltip.hide();
-  // });
-
-// ------------------------------------------ Main menu
   $('#sdt_menu > li').bind('mouseenter',function () {
     var $elem = $(this);
     $elem.find('img')
@@ -69,3 +56,50 @@ $(function () {
             .css('display', 'none');
       });
 });
+
+var App = {
+  applyFilters: function(){
+    var filter_object = App.getFilters();
+
+    $.each( filter_object['categories_params'], function( index, value ) {
+      $("#categories_section [value='" + value + "']").prop('checked', true);
+    });
+
+    $.each( filter_object['gender_params'], function( index, value ) {
+      $(".gender_bar [value='" + value + "']").prop('checked', true);
+    });
+
+    $.each( filter_object['color_params'], function( index, value ) {
+      $(".color_bar [value='" + value + "']").prop('checked', true);
+    });
+
+    $.each( filter_object['brands_params'], function( index, value ) {
+      $(".brand_bar [value='" + value + "']").prop('checked', true);
+    });
+
+    $.each( filter_object['material_params'], function( index, value ) {
+      $(".material_bar [value='" + value + "']").prop('checked', true);
+    });
+
+    $.each( filter_object['feature_params'], function( index, value ) {
+      $(".feature_bar [value='" + value + "']").prop('checked', true);
+    });
+
+    $.each( filter_object['zipper_params'], function( index, value ) {
+      $(".zipper_bar [value='" + value + "']").prop('checked', true);
+    });
+
+    $('#leftValue').val( filter_object['price_between'][0]);
+    $('#rightValue').val( filter_object['price_between'][1]);
+
+    $(".sortdropdown [value='"+filter_object['sort_direction']+"']").attr("selected", "selected");
+  },
+
+  getFilters: function(){
+    if (localStorage.getItem('filters') === null) {
+      localStorage.setItem('filters', JSON.stringify({"categories_params":[],"brands_params":[],"gender_params":[],"color_params":[],"material_params":[],"zipper_params":[],"feature_params":[],"price_between":["0","4000"],"sort_direction":""}) );
+    };
+
+    return JSON.parse(localStorage.getItem('filters'));
+  }
+};

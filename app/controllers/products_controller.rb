@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   def index
     find_sort_hash
 
-    @genders   = Gender::ALL
+    @genders    = Gender::ALL
     @categories = Category.order('category_rus ASC')
     @brands     = Brand.order('LOWER(name) ASC')
   end

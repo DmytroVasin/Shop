@@ -41,8 +41,7 @@ module Product::ProductScopes
 
       def self.price_between(params_arr)
         if params_arr
-          price_arr = params_arr.split(',')
-          where("price between ? AND ?", price_arr[0], price_arr[1])
+          where("price between ? AND ?", params_arr[0], params_arr[1])
         else
           scoped
         end
