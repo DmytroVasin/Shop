@@ -191,7 +191,8 @@ $(function () {
     element.stop().slideToggle('1000');
   });
 
-  // Reset button
+
+  // Reset button ---------------------------------------------------------
   var resetButton   = $('.custom-reset'),
       findButton    = $('.custom-find').first(),
       allCheckboxes = $('.section input:checkbox'),
@@ -216,4 +217,24 @@ $(function () {
   itemsFolder.on('click', '#no_match_criteria span', function(){
     resetButton.first().click();
   });
+
+  // Reset button ---------------------------------------------------------
+
+  // Pick brand from image ------------------------------------------------
+
+  var rightAdBlock = $('#remote_site, #rotator');
+
+  rightAdBlock.find('[data-item-name]').on('click', function(){
+    var filterName   = $(this).data('item-name'),
+        categoryName = $(this).data('category-name');
+
+    App.clearFilters();
+    App.addItemToFilter(categoryName, filterName );
+
+    window.location='/products';
+    return false;
+  });
+
+  // Pick brand from image ------------------------------------------------
+
 });

@@ -1,6 +1,6 @@
 <% page_title 'Welcome!' %>
 
-<div id="rotator">
+<div id='rotator'>
   <ol id='rotator_arrow'>
     <li><a href='#'><%= image_tag('a_prev.png', class: 'prevBigImg') %></a></li>
     <li><a href='#'><%= image_tag('a_next.png', class: 'nextBigImg') %></a></li>
@@ -8,17 +8,17 @@
   <ul>
     <li class='show'><%= link_to image_tag('big_free_delivery.jpg'), delivery_path %></li>
     <li><%= link_to image_tag('big_different_colors.jpg'), product_path(3) %></li>
-    <li><a href='/products?brands_params%5B%5D=GUESS' ><%= image_tag('big_guess.jpg') %></a></li>
-    <li><a href='/products?brands_params%5B%5D=Nike' ><%= image_tag('big_nike.jpg') %></a></li>
-    <li><a href='/products?brands_params%5B%5D=Steve Madden'><%= image_tag('big_steve_madden.jpg') %></a></li>
+    <li><%= image_tag('big_guess.jpg', data: { category_name: 'brands', item_name: 'GUESS' }) %></li>
+    <li><%= image_tag('big_nike.jpg', data: { category_name: 'brands', item_name: 'Nike' }) %></li>
+    <li><%= image_tag('big_steve_madden.jpg', data: { category_name: 'brands', item_name: 'Steve Madden' }) %></li>
   </ul>
 </div>
 
-<div id="leftarea">
-  <div id="top_list">
-    <div id="top_icon"></div>
+<div id='leftarea'>
+  <div id='top_list'>
+    <div id='top_icon'></div>
     <%= image_tag('top_icon.jpg', id: 'top_icon_img') %>
-    <a href="javascript:void(0);" class="previousproduct"></a>
+    <a href='javascript:void(0);' class='previousproduct'></a>
     <div id='wrap'>
       <ul id="slider" style="left: 0px;">
         <%= render partial: 'new_product', locals: { new_products: @newest } %>
@@ -40,12 +40,10 @@
 <div id='rightarea'>
   <%= render 'ratings/voting_menu' %>
 
-  <div id="remote_site">
+  <div id='remote_site'>
     <% Brand::BRAND_RUS.sample(4).each do |sample| %>
       <div class='aboveline_blog'></div>
-      <a href="/products?brands_params%5B%5D=<%= sample %>"  >
-        <%= image_tag('banner '+sample+'.jpg', class: 'banner') %>
-      </a>
+      <%= image_tag('banner '+sample+'.jpg', class: 'banner',  data: { category_name: 'brands', item_name: sample } ) %>
     <% end %>
     <div class='underline_blog'></div>
   </div>

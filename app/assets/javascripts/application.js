@@ -62,7 +62,7 @@ var App = {
     var filter_object = App.getFilters();
 
     $.each( filter_object['categories_params'], function( index, value ) {
-      $("#categories_section [value='" + value + "']").prop('checked', true);
+      $(".categories_bar [value='" + value + "']").prop('checked', true);
     });
 
     $.each( filter_object['gender_params'], function( index, value ) {
@@ -107,5 +107,13 @@ var App = {
   clearFilters: function(){
     localStorage.removeItem('filters');
     localStorage.removeItem('page_number');
+  },
+
+  addItemToFilter: function(category, itemName){
+    var filter_object = App.getFilters();
+    filter_object[category + '_params'].push(itemName);
+
+    localStorage.setItem('filters', JSON.stringify(filter_object));
   }
+
 };
