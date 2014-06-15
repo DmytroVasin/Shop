@@ -84,7 +84,7 @@ $(function () {
 
     datas = {
       categories_params: getValues(categories),
-      brands_params: getValues(brands),
+      brand_params: getValues(brands),
       gender_params: getValues(gender),
       color_params: getValues(color),
 

@@ -59,35 +59,22 @@ $(function () {
 
 var App = {
   applyFilters: function(){
-    var filter_object = App.getFilters();
+    var filter_object = App.getFilters(),
+        filter_properties = [
+          'categories',
+          'gender',
+          'color',
+          'brand',
+          'material',
+          'feature',
+          'zipper'
+        ];
 
-    $.each( filter_object['categories_params'], function( index, value ) {
-      $(".categories_bar [value='" + value + "']").prop('checked', true);
-    });
-
-    $.each( filter_object['gender_params'], function( index, value ) {
-      $(".gender_bar [value='" + value + "']").prop('checked', true);
-    });
-
-    $.each( filter_object['color_params'], function( index, value ) {
-      $(".color_bar [value='" + value + "']").prop('checked', true);
-    });
-
-    $.each( filter_object['brands_params'], function( index, value ) {
-      $(".brand_bar [value='" + value + "']").prop('checked', true);
-    });
-
-    $.each( filter_object['material_params'], function( index, value ) {
-      $(".material_bar [value='" + value + "']").prop('checked', true);
-    });
-
-    $.each( filter_object['feature_params'], function( index, value ) {
-      $(".feature_bar [value='" + value + "']").prop('checked', true);
-    });
-
-    $.each( filter_object['zipper_params'], function( index, value ) {
-      $(".zipper_bar [value='" + value + "']").prop('checked', true);
-    });
+    for ( i = 0; i < filter_properties.length; i += 1 ) {
+      $.each( filter_object[ filter_properties[i] + '_params'], function( index, value ) {
+        $('.' + filter_properties[i] + "_bar [value='" + value + "']").prop('checked', true);
+      });
+    };
 
     $('#leftValue').val( filter_object['price_between'][0]);
     $('#rightValue').val( filter_object['price_between'][1]);
@@ -97,7 +84,7 @@ var App = {
 
   getFilters: function(){
     if (localStorage.getItem('filters') === null) {
-      localStorage.setItem('filters', JSON.stringify({"categories_params":[],"brands_params":[],"gender_params":[],"color_params":[],"material_params":[],"zipper_params":[],"feature_params":[],"price_between":["0","4000"],"sort_direction":""}) );
+      localStorage.setItem('filters', JSON.stringify({"categories_params":[],"brand_params":[],"gender_params":[],"color_params":[],"material_params":[],"zipper_params":[],"feature_params":[],"price_between":["0","4000"],"sort_direction":""}) );
       localStorage.setItem('page_number', 1);
     };
 

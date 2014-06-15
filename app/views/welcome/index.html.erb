@@ -8,9 +8,9 @@
   <ul>
     <li class='show'><%= link_to image_tag('big_free_delivery.jpg'), delivery_path %></li>
     <li><%= link_to image_tag('big_different_colors.jpg'), product_path(3) %></li>
-    <li><%= image_tag('big_guess.jpg', data: { category_name: 'brands', item_name: 'GUESS' }) %></li>
-    <li><%= image_tag('big_nike.jpg', data: { category_name: 'brands', item_name: 'Nike' }) %></li>
-    <li><%= image_tag('big_steve_madden.jpg', data: { category_name: 'brands', item_name: 'Steve Madden' }) %></li>
+    <li><%= image_tag('big_guess.jpg', data: { category_name: 'brand', item_name: 'GUESS' }) %></li>
+    <li><%= image_tag('big_nike.jpg', data: { category_name: 'brand', item_name: 'Nike' }) %></li>
+    <li><%= image_tag('big_steve_madden.jpg', data: { category_name: 'brand', item_name: 'Steve Madden' }) %></li>
   </ul>
 </div>
 
@@ -43,7 +43,7 @@
   <div id='remote_site'>
     <% Brand::BRAND_RUS.sample(4).each do |sample| %>
       <div class='aboveline_blog'></div>
-      <%= image_tag('banner '+sample+'.jpg', class: 'banner',  data: { category_name: 'brands', item_name: sample } ) %>
+      <%= image_tag('banner '+sample+'.jpg', class: 'banner',  data: { category_name: 'brand', item_name: sample } ) %>
     <% end %>
     <div class='underline_blog'></div>
   </div>
