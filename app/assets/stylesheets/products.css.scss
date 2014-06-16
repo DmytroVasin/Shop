@@ -87,7 +87,7 @@
   #sort_bar {
     margin-bottom: 10px;
 
-    .class_name {
+    .catalog {
       float: left;
       font-family: Georgia, Times, serif;
       text-shadow: 1px 1px 3px #E183A0;
@@ -95,6 +95,21 @@
       line-height: 17px;
       color: #333;
       margin: 10px 0 0 0;
+    }
+
+    .filter_is_on {
+      display: none;
+
+      float: left;
+      margin-left: 116px;
+      font-size: 18px;
+      color: #FFF;
+      border: 1px solid #000;
+      line-height: 24px;
+      width: 200px;
+      background-color: #3ABB3A;
+      text-shadow: 2px 2px 2px #000;
+      text-align: center;
     }
 
     .sort {

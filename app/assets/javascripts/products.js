@@ -65,16 +65,17 @@ $(function () {
 
   // Submit form in every change:
   changeMeter = function () {
-    var categories = $('.categories_bar input[type=checkbox]:checked');
-    var brands     = $('.brand_bar input[type=checkbox]:checked');
-    var gender     = $('.gender_bar input[type=checkbox]:checked');
-    var color      = $('.color_bar input[type=checkbox]:checked');
+    var categories = $('.categories_bar input[type=checkbox]:checked'),
+        brands     = $('.brand_bar input[type=checkbox]:checked'),
+        gender     = $('.gender_bar input[type=checkbox]:checked'),
+        color      = $('.color_bar input[type=checkbox]:checked'),
 
-    var material   = $('.material_bar input[type=checkbox]:checked');
-    var zipper     = $('.zipper_bar input[type=checkbox]:checked');
-    var feature    = $('.feature_bar input[type=checkbox]:checked');
+        material   = $('.material_bar input[type=checkbox]:checked'),
+        zipper     = $('.zipper_bar input[type=checkbox]:checked'),
+        feature    = $('.feature_bar input[type=checkbox]:checked'),
 
-    var select_val = $('.sortdropdown').val();
+        select_val = $('.sortdropdown').val(),
+        stringified_datas;
 
     function getValues(checkboxes) {
       return checkboxes.map(function (index, element) {
@@ -93,12 +94,14 @@ $(function () {
       feature_params: getValues(feature),
 
       price_between: Array($('#leftValue').val(), $('#rightValue').val()),
-      sort_direction: select_val,
+      sort_direction: select_val
     }
 
+    stringified_datas = JSON.stringify(datas)
+    App.showFiltersPopup(stringified_datas);
 
-    if ( JSON.stringify(datas) != localStorage.getItem('filters') ){
-      localStorage.setItem('filters', JSON.stringify(datas));
+    if ( stringified_datas != localStorage.getItem('filters') ){
+      localStorage.setItem('filters', stringified_datas);
       localStorage.setItem('page_number', 1);
     } else {
       datas.page = localStorage.getItem('page_number');

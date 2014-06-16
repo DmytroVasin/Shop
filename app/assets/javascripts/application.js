@@ -82,9 +82,13 @@ var App = {
     $(".sortdropdown [value='"+filter_object['sort_direction']+"']").attr("selected", "selected");
   },
 
+  defaultFilters: function(){
+    return JSON.stringify({"categories_params":[],"brand_params":[],"gender_params":[],"color_params":[],"material_params":[],"zipper_params":[],"feature_params":[],"price_between":["0","4000"],"sort_direction":""});
+  },
+
   getFilters: function(){
     if (localStorage.getItem('filters') === null) {
-      localStorage.setItem('filters', JSON.stringify({"categories_params":[],"brand_params":[],"gender_params":[],"color_params":[],"material_params":[],"zipper_params":[],"feature_params":[],"price_between":["0","4000"],"sort_direction":""}) );
+      localStorage.setItem('filters', this.defaultFilters() );
       localStorage.setItem('page_number', 1);
     };
 
@@ -101,6 +105,19 @@ var App = {
     filter_object[category + '_params'].push(itemName);
 
     localStorage.setItem('filters', JSON.stringify(filter_object));
+  },
+
+  showFiltersPopup: function(datas){
+    var filterPopup = $('.filter_is_on');
+
+    console.log(datas);
+    console.log(this.defaultFilters());
+
+    if ( datas == this.defaultFilters() ){
+      filterPopup.hide();
+    } else {
+      filterPopup.show();
+    }
   }
 
 };
