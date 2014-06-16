@@ -110,9 +110,6 @@ var App = {
   showFiltersPopup: function(datas){
     var filterPopup = $('.filter_is_on');
 
-    console.log(datas);
-    console.log(this.defaultFilters());
-
     if ( datas == this.defaultFilters() ){
       filterPopup.hide();
     } else {
