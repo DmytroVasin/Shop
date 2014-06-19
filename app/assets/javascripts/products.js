@@ -227,12 +227,11 @@ $(function () {
 
   var rightAdBlock = $('#remote_site, #rotator');
 
-  rightAdBlock.find('[data-item-name]').on('click', function(){
-    var filterName   = $(this).data('item-name'),
-        categoryName = $(this).data('category-name');
+  rightAdBlock.find('[data-filters]').on('click', function(){
+    var filter = $(this).data('filters');
 
     App.clearFilters();
-    App.addItemToFilter(categoryName, filterName );
+    App.addItemsToFilter( filter );
 
     window.location='/products';
     return false;

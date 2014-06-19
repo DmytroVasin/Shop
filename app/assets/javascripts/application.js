@@ -100,9 +100,13 @@ var App = {
     localStorage.removeItem('page_number');
   },
 
-  addItemToFilter: function(category, itemName){
+  addItemsToFilter: function(filtersHash){
     var filter_object = App.getFilters();
-    filter_object[category + '_params'].push(itemName);
+
+    $.each(filtersHash, function(key, value){
+      valueArray = value.split(',');
+      filter_object[key + '_params'] = valueArray;
+    })
 
     localStorage.setItem('filters', JSON.stringify(filter_object));
   },
