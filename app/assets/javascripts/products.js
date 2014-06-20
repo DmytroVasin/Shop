@@ -1,5 +1,4 @@
 $(function () {
-
   // ZOOM paginator      --------------------------------------------------------------
   var main_image = $('.image_polaroid img');
   main_image.elevateZoom({ gallery:'wrap_image_rotator',
@@ -238,5 +237,4 @@ $(function () {
   });
 
   // Pick brand from image ------------------------------------------------
-
 });

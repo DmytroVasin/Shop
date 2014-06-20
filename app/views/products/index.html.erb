@@ -54,12 +54,24 @@
 
 
 <script type='text/javascript'>
+  // Find filter by advertisement
+  var achor = window.location.hash.replace('#', '');
 
+  if ( achor in App.adLinksRequired() ){
+    var filter = App.adLinksRequired()[achor];
+
+    App.clearFilters();
+    App.addItemsToFilter( filter );
+    window.location.hash = '';
+  };
+
+
+  // Find products
   setTimeout(function(){
-    // Find products
     App.applyFilters();
     $('.custom-find').first().click();
   }, 1000);
+
 
   // Adding Spinner
   var spinner = new Spinner(opts).spin();

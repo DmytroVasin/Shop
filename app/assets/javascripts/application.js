@@ -119,6 +119,22 @@ var App = {
     } else {
       filterPopup.show();
     }
-  }
+  },
 
+  getFilterFromAdLink: function(){
+    return {"gender":"Mens,Unisex"}
+  },
+
+  adLinksRequired: function(){
+    return {
+      'ad_link_1': {"material":"leather"},
+      'ad_link_2': {"color":"White"},
+      'ad_link_3': {"categories":"Luggage"},
+      'ad_link_4': {"color":"White,Multi"},
+      'ad_link_5': {"categories":"Duffle Bags"},
+      'ad_link_6': {"categories":"Laptop Bags"},
+      'ad_link_7': {"categories":"Laptop Bags","feature":"laptop_sleeve"},
+      'ad_link_8': {"gender":"Womens","material":"leather"}
+    }
+  }
 };
