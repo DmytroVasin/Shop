@@ -4,7 +4,7 @@ $(function (){
 // ------------------------------------------ Trick to preload image
 
 // ------------------------------------------ Slider
-	// theRotator();
+	theRotator();
 // ------------------------------------------ Top Product slider
 
 
