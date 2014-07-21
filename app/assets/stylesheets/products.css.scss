@@ -237,12 +237,13 @@
             font-size: 15px;
             position: relative;
 
-            &:before {
-              border-bottom: 2px solid red;
-              position: absolute;
-              content: '';
+            .dashed_line {
+              border-bottom: 2px solid #F00;
               width: 100%;
-              height: 72%;
+              display: inline-block;
+              position: absolute;
+              top: 7px;
+              left: 0px;
             }
           }
         }

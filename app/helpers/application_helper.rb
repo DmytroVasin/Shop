@@ -148,7 +148,7 @@ module ApplicationHelper
   end
 
   def regulate_length title
-    title.truncate(30)
+    title.truncate(27)
   end
 
   def hidden_rank score, voters_count

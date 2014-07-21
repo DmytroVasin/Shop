@@ -24,7 +24,10 @@
       </div>
       <div class="price">
         Цена: <%= product.price %>грн.
-        <span class="old_price"><%= product.old_price %>грн.</span>
+        <span class='old_price'>
+          <span class='dashed_line'></span>
+          <%= product.old_price %>грн.
+        </span>
       </div>
     </div>
   </div>
