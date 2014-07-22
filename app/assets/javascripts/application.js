@@ -141,7 +141,7 @@ var App = {
       'ad_link_12': {"brand":"GUESS"},
       'ad_link_13': {"brand":"Calvin Klein"},
       'ad_link_14': {"brand":"Dakine"},
-      'ad_link_15': {"brand":"Adidas"},
+      'ad_link_15': {"brand":"adidas"},
       'ad_link_16': {"brand":"ALDO"},
       'ad_link_17': {"brand":"Betsey Johnson"},
       'ad_link_18': {"brand":"Big Buddha"},
@@ -163,7 +163,15 @@ var App = {
       'ad_link_34': {"brand":"PUMA"},
       'ad_link_35': {"categories":"Wallets & Accessories","gender":"Womens,Unisex","material":"leather"},
       'ad_link_36': {"categories":"Wallets & Accessories","zipper":"zipper"},
-      'ad_link_37': {"categories":"Wallets & Accessories","gender":"Womens,Unisex","zipper":"zipper"}
+      'ad_link_37': {"categories":"Wallets & Accessories","gender":"Womens,Unisex","zipper":"zipper"},
+      'ad_link_38': {"categories":"Briefcases","gender":"Mens,Unisex"},
+      'ad_link_39': {"categories":"Backpacks","gender":"Mens,Unisex"},
+      'ad_link_40': {"categories":"Messenger Bags","gender":"Mens,Unisex"},
+      'ad_link_41': {"categories":"Duffle Bags","gender":"Mens,Unisex"},
+      'ad_link_42': {"categories":"Handbags","gender":"Womens,Unisex"},
+      'ad_link_43': {"categories":"Messenger Bags","gender":"Womens,Unisex"},
+      'ad_link_44': {"categories":"Backpacks","gender":"Womens,Unisex"},
+      'ad_link_45': {"categories":"Briefcases","gender":"Womens,Unisex"}
     }
   }
 };
