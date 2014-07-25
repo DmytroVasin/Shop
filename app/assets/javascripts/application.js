@@ -121,10 +121,6 @@ var App = {
     }
   },
 
-  getFilterFromAdLink: function(){
-    return {"gender":"Mens,Unisex"}
-  },
-
   adLinksRequired: function(){
     return {
       'ad_link_1': {"material":"leather"},

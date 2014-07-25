@@ -224,9 +224,10 @@ $(function () {
 
   // Pick brand from image ------------------------------------------------
 
-  var rightAdBlock = $('#remote_site, #rotator, #sdt_menu');
+  var rightAdBlock = $('#remote_site, #rotator, #sdt_menu, #footer');
 
   rightAdBlock.find('[data-filters]').on('click', function(){
+    console.log('asdasdasdasd');
     var filter = $(this).data('filters');
 
     App.clearFilters();
