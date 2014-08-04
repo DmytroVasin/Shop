@@ -167,7 +167,10 @@ var App = {
       'ad_link_42': {"categories":"Handbags","gender":"Womens,Unisex"},
       'ad_link_43': {"categories":"Messenger Bags","gender":"Womens,Unisex"},
       'ad_link_44': {"categories":"Backpacks","gender":"Womens,Unisex"},
-      'ad_link_45': {"categories":"Briefcases","gender":"Womens,Unisex"}
+      'ad_link_45': {"categories":"Briefcases","gender":"Womens,Unisex"},
+      'ad_link_46': {"categories":"Backpacks"},
+      'ad_link_47': {"categories":"Backpacks","feature":"laptop_sleeve"},
+      'ad_link_48': {"feature":"laptop_sleeve"}
     }
   }
 };

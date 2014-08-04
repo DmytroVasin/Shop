@@ -56,7 +56,8 @@ module ApplicationHelper
     end
   end
 
-  def small_image_by_id(id)
+  def small_image_by_id(src)
+    id = src.split('/')[-1].to_i
     product = Product.where(id: id).first
     product ? small_image_by_product(product) : no_image
   end
