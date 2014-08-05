@@ -1,9 +1,5 @@
 <div class="review_item">
-	<ul>
-		<li><a href= <%= url_to_product(review.url_id) %> class="link_color"><%= title_of_product(review.url_id) %></a></li>
-	</ul>
-	<div class="clear"></div>
-	<%= image_tag small_image_by_id(review.url_id), class: 'cart_image' %>
+	<%= image_with_link(review.url_id) %>
 	<p>
 		<span>Сроки доставки:</span>
 		<%= review.delivery_time %>

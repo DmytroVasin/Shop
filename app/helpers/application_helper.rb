@@ -1,9 +1,5 @@
 # coding: utf-8
 module ApplicationHelper
-  def page_title title_text
-    content_for :title, "Vako - #{title_text}"
-  end
-
   def is_last_on_page product_counter
     (product_counter-2)%3 == 0 ? 'last' : ''
   end
@@ -71,8 +67,10 @@ module ApplicationHelper
     check_box_tag 'best_sellers', value, value, disabled: disabling, data: { product_id: id }
   end
 
-  def url_to_product id
-    "products/#{id}"
+  def image_with_link url_id
+    link_to url_id do
+      image_tag small_image_by_id(url_id), class: 'cart_image'
+    end
   end
 
   def title_of_product id
