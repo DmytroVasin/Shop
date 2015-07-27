@@ -15,3 +15,8 @@ class Image < ActiveRecord::Base
   end
 
 end
+asdasdasd
+asdasdasda
+
+
+asdasdas
